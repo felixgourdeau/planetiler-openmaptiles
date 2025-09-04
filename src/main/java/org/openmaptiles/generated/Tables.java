@@ -363,14 +363,28 @@ public class Tables {
     }
 
     /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
-    public static final Expression MAPPING = and(or(
-      matchAny("highway", "motorway", "motorway_link", "trunk", "trunk_link", "primary", "primary_link", "secondary",
-        "secondary_link", "tertiary", "tertiary_link", "unclassified", "residential", "living_street", "road",
-        "pedestrian", "path", "footway", "cycleway", "steps", "bridleway", "corridor", "service", "track", "raceway",
-        "busway", "bus_guideway", "construction"),
-      matchAny("public_transport", "platform"), matchAny("man_made", "pier"),
-      matchAny("service", "driveway", "parking_aisle")), matchType("linestring"));
-
+    //public static final Expression MAPPING = and(or(
+    //  matchAny("highway", "motorway", "motorway_link", "trunk", "trunk_link", "primary", "primary_link", "secondary",
+    //    "secondary_link", "tertiary", "tertiary_link", "unclassified", "residential", "living_street", "road",
+    //    "pedestrian", "path", "footway", "cycleway", "steps", "bridleway", "corridor", "service", "track", "raceway",
+    //    "busway", "bus_guideway", "construction"),
+    //  matchAny("public_transport", "platform"), matchAny("man_made", "pier"),
+    //  matchAny("service", "driveway", "parking_aisle")), matchType("linestring"));
+    /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
+    public static final Expression MAPPING = and(
+      or(
+        matchAny("highway", "motorway", "motorway_link", "trunk", "trunk_link", "primary", "primary_link", "secondary",
+          "secondary_link", "tertiary", "tertiary_link", "unclassified", "residential", "living_street", "road",
+          "pedestrian", "path", "footway", "cycleway", "steps", "bridleway", "corridor", "service", "track", "raceway",
+          "busway", "bus_guideway", "construction"),
+        matchAny("public_transport", "platform"),
+        matchAny("man_made", "pier"),
+        matchAny("service", "driveway", "parking_aisle"),
+        // keep lifecycle-prefixed highways like destroyed:highway=*
+        matchField("destroyed:highway")
+      ),
+      matchType("linestring")
+    );
     /**
      * Interface for layer implementations to extend to subscribe to OSM elements filtered and parsed as
      * {@link OsmHighwayLinestring}.
@@ -774,7 +788,9 @@ public class Tables {
         "rugby_union", "running", "sailing", "scuba_diving", "shooting", "shooting_range", "skateboard", "skating",
         "skiing", "soccer", "surfing", "swimming", "table_soccer", "table_tennis", "team_handball", "tennis",
         "toboggan", "volleyball", "water_ski", "yoga"),
-      matchAny("tourism", "alpine_hut", "aquarium", "artwork", "attraction", "bed_and_breakfast", "camp_site",
+      matchAny("natural", "stone"),
+      matchAny("waterway", "waterfall"),
+      matchAny("tourism", "alpine_hut", "aquarium", "artwork", "attraction", "bed_and_breakfast", "camp_site", "camp_pitch",
         "caravan_site", "chalet", "gallery", "guest_house", "hostel", "hotel", "information", "motel", "museum",
         "picnic_site", "theme_park", "viewpoint", "zoo"),
       matchAny("waterway", "dock")), matchType("point"));
@@ -853,7 +869,7 @@ public class Tables {
         "rugby_union", "running", "sailing", "scuba_diving", "shooting", "shooting_range", "skateboard", "skating",
         "skiing", "soccer", "surfing", "swimming", "table_soccer", "table_tennis", "team_handball", "tennis",
         "toboggan", "volleyball", "water_ski", "yoga"),
-      matchAny("tourism", "alpine_hut", "aquarium", "artwork", "attraction", "bed_and_breakfast", "camp_site",
+      matchAny("tourism", "alpine_hut", "aquarium", "artwork", "attraction", "bed_and_breakfast", "camp_site", "camp_pitch",
         "caravan_site", "chalet", "gallery", "guest_house", "hostel", "hotel", "information", "motel", "museum",
         "picnic_site", "theme_park", "viewpoint", "zoo"),
       matchAny("waterway", "dock")), matchType("polygon"));

@@ -472,8 +472,22 @@ public class Transportation implements
     RouteRelation routeRelation = getRouteRelation(element);
     RouteNetwork networkType = routeRelation != null ? routeRelation.networkType : null;
 
+    //String highway = element.highway();
+    //String highwayClass = highwayClass(element.highway(), element.publicTransport(), element.construction(),
+    //  element.manMade());
+    // Promote lifecycle-tagged ways: destroyed:highway=*
     String highway = element.highway();
-    String highwayClass = highwayClass(element.highway(), element.publicTransport(), element.construction(),
+    String lifecycle = null;
+    if (highway == null) {
+      String destroyed = element.source().getString("destroyed:highway");
+      if (destroyed != null && !destroyed.isEmpty()) {
+        highway = destroyed;      // e.g. "path"
+        lifecycle = "destroyed";  // keep for styling
+      }
+    }
+
+    // Compute class using the (possibly) synthesized highway value
+    String highwayClass = highwayClass(highway, element.publicTransport(), element.construction(),
       element.manMade());
     String service = service(element.service());
     if (highwayClass != null) {
@@ -506,7 +520,10 @@ public class Transportation implements
         .setAttrWithMinzoom(Fields.FOOT, nullIfEmpty(element.foot()), 9)
         .setAttrWithMinzoom(Fields.HORSE, nullIfEmpty(element.horse()), 9)
         .setAttrWithMinzoom(Fields.MTB_SCALE, nullIfEmpty(element.mtbScale()), 9)
-        .setAttrWithMinzoom(Fields.ACCESS, access(element.access()), 9)
+        //.setAttrWithMinzoom(Fields.ACCESS, access(element.access()), 9)
+        .setAttrWithMinzoom(Fields.ACCESS, nullIfEmpty(element.access()), 9)
+        // expose lifecycle so styles can render destroyed ways differently (e.g., dashed)
+        .setAttrWithMinzoom("lifecycle", lifecycle, 9)
         .setAttrWithMinzoom(Fields.TOLL, element.toll() ? 1 : null, 9)
         // sometimes z9+, sometimes z12+
         .setAttr(Fields.RAMP, minzoom >= 12 ? rampAboveZ12 :

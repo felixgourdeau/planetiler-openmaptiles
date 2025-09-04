@@ -101,6 +101,7 @@ public class Poi implements
     entry("zoo", 95),
     entry(FieldValues.CLASS_TOWN_HALL, 100),
     entry(FieldValues.CLASS_CAMPSITE, 110),
+    entry(FieldValues.CLASS_CAMP_PITCH, 111),
     entry(FieldValues.CLASS_CEMETERY, 115),
     entry(FieldValues.CLASS_PARK, 120),
     entry(FieldValues.CLASS_LIBRARY, 130),
@@ -154,6 +155,7 @@ public class Poi implements
   private int minzoom(String subclass, String mappingKey) {
     boolean lowZoom = ("station".equals(subclass) && "railway".equals(mappingKey)) ||
       "halt".equals(subclass) || "ferry_terminal".equals(subclass);
+    if ("camp_pitch".equals(subclass)) return 14;
     return lowZoom ? 12 : 12;
   }
 
@@ -164,6 +166,33 @@ public class Poi implements
 
   @Override
   public void process(Tables.OsmPoiPoint element, FeatureCollector features) {
+
+
+    // natural=stone as a POI
+    if ("natural".equals(element.mappingKey()) && "stone".equals(element.subclass())) {
+      var f = features.point(LAYER_NAME)
+          .setBufferPixels(BUFFER_SIZE)
+          .setAttr(Fields.CLASS, FieldValues.CLASS_ATTRACTION) // or a dedicated constant if you have one
+          .setAttr(Fields.SUBCLASS, "stone")
+          .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
+          .setMinZoom(12); // tweak to taste
+      // if you want the usual POI common tags/logic:
+      // setupPoiFeature(element, f, /*rank or null*/ null);
+      return;
+    }
+
+    // waterway=waterfall as a POI
+    if ("waterway".equals(element.mappingKey()) && "waterfall".equals(element.subclass())) {
+      var f = features.point(LAYER_NAME)
+          .setBufferPixels(BUFFER_SIZE)
+          .setAttr(Fields.CLASS, "waterfall")                  // or FieldValues.CLASS_WATERFALL if you add it
+          .setAttr(Fields.SUBCLASS, "waterfall")
+          .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
+          .setMinZoom(12); // waterfalls are usually a bit more prominent
+      // setupPoiFeature(element, f, /*rank or null*/ null);
+      return;
+    }
+
     if (element.uicRef() != null && AGG_STOP_SUBCLASS_ORDER.contains(element.subclass())) {
       // multiple threads may update this concurrently
       String aggStopKey = element.uicRef()
@@ -293,6 +322,48 @@ public class Poi implements
         tags.put("name", name);
       }
     }
+
+    // Camp pitch: tiny features, often have only a numeric ref -> use it as a fallback name
+    if ("camp_pitch".equals(rawSubclass) && nullOrEmpty(name)) {
+      String ref = nullIfEmpty(element.ref());
+      if (ref != null) {
+        name = ref;
+        tags.put("name", name);
+      }
+    }
+
+    //if ("natural".equals(element.mappingKey()) && "stone".equals(element.subclass())) {
+    //  var f = features.point(LAYER_NAME)
+    //    .setBufferPixels(BUFFER_SIZE)
+    //    .setAttr(Fields.CLASS, FieldValues.CLASS_ATTRACTION) // or define a dedicated CLASS_STONE if you prefer
+    //    .setAttr(Fields.SUBCLASS, "stone")
+    //    .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
+    //    .setMinZoom(13);
+    //  // add any extra tags you rely on...
+    //}
+//
+//
+    //if ("waterway".equals(element.mappingKey()) && "waterfall".equals(element.subclass())) {
+    //  features.point(LAYER_NAME)
+    //    .setBufferPixels(BUFFER_SIZE)
+    //    .setAttr(Fields.CLASS, "waterfall")     // or define FieldValues.CLASS_WATERFALL = "waterfall"
+    //    .setAttr(Fields.SUBCLASS, "waterfall")
+    //    .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations)) // adds name + name:xx if present
+    //    .setMinZoom(12)                         // tweak to taste (12–14 is typical)
+    //    .setSortKey(0);                         // or any ranking you use for POIs
+    //}
+//
+    //if ("stone".equals(sf.getTag("natural"))) {
+    //  final var name = sf.getTag("name");
+    //  final var fc = features.point(LAYER_NAME)
+    //    .setBufferPixels(BUFFER_SIZE)
+    //    .setAttr(Fields.CLASS, OpenMapTilesSchema.Poi.FieldValues.CLASS_ATTRACTION)
+    //    .setAttr(Fields.SUBCLASS, "stone")
+    //    .setMinZoom(13); // adjust if needed
+    //  if (name != null && !name.isBlank()) {
+    //    fc.setAttr(Fields.NAME, name);
+    //  }
+    //}
 
     String subclass = switch (rawSubclass) {
       case "information" -> nullIfEmpty(element.information());

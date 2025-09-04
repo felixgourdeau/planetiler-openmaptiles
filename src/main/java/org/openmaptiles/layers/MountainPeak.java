@@ -112,31 +112,46 @@ public class MountainPeak implements
     }
   }
 
-  @Override
-  public void process(Tables.OsmPeakPoint element, FeatureCollector features) {
-    Double meters = Parse.meters(element.ele());
-    if (meters != null && Math.abs(meters) < 10_000) {
-      var feature = features.point(LAYER_NAME)
-        .setAttr(Fields.CLASS, element.source().getTag("natural"))
-        .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
-        .putAttrs(elevationTags(meters))
-        .setSortKeyDescending(
-          meters.intValue() +
-            (nullIfEmpty(element.wikipedia()) != null ? 10_000 : 0) +
-            (nullIfEmpty(element.name()) != null ? 10_000 : 0)
-        )
-        .setMinZoom(7)
-        // need to use a larger buffer size to allow enough points through to not cut off
-        // any label grid squares which could lead to inconsistent label ranks for a feature
-        // in adjacent tiles. postProcess() will remove anything outside the desired buffer.
-        .setBufferPixels(100)
-        .setPointLabelGridSizeAndLimit(13, 100, 5);
+@Override
+public void process(Tables.OsmPeakPoint element, FeatureCollector features) {
+  String natural = element.source().getString("natural");   // <-- fix here
+  boolean isSaddle = "saddle".equals(natural);
 
-      if (peakInAreaUsingFeet(element)) {
-        feature.setAttr(Fields.CUSTOMARY_FT, 1);
-      }
+  Double meters = Parse.meters(element.ele());
+
+  if (isSaddle) {
+    var feature = features.point(LAYER_NAME)
+      .setAttr(Fields.CLASS, element.source().getString("natural")) // already OK
+      .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
+      .setMinZoom(11)
+      .setBufferPixels(100)
+      .setPointLabelGridSizeAndLimit(13, 100, 5);
+    if (meters != null && Math.abs(meters) < 10_000) {
+      feature.putAttrs(elevationTags(meters));
     }
+    int rankBoost =
+      (nullIfEmpty(element.wikipedia()) != null ? 10_000 : 0) +
+      (nullIfEmpty(element.name()) != null ? 10_000 : 0);
+    int elevPart = (meters != null) ? meters.intValue() : 0;
+    feature.setSortKeyDescending(elevPart + rankBoost);
+    if (peakInAreaUsingFeet(element)) feature.setAttr(Fields.CUSTOMARY_FT, 1);
+
+  } else if (meters != null && Math.abs(meters) < 10_000) {
+    var feature = features.point(LAYER_NAME)
+      .setAttr(Fields.CLASS, element.source().getString("natural")) // <-- fix here
+      .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
+      .putAttrs(elevationTags(meters))
+      .setSortKeyDescending(
+        meters.intValue() +
+          (nullIfEmpty(element.wikipedia()) != null ? 10_000 : 0) +
+          (nullIfEmpty(element.name()) != null ? 10_000 : 0)
+      )
+      .setMinZoom(7)
+      .setBufferPixels(100)
+      .setPointLabelGridSizeAndLimit(13, 100, 5);
+    if (peakInAreaUsingFeet(element)) feature.setAttr(Fields.CUSTOMARY_FT, 1);
   }
+}
 
   @Override
   public void process(Tables.OsmMountainLinestring element, FeatureCollector features) {

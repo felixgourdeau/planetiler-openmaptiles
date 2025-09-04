@@ -110,6 +110,15 @@ public class OpenMapTilesSchema {
     /** Attribute names for map elements in the water layer. */
     final class Fields {
       /**
+       * The OSM name value for named landcover features (exposed for selected subclasses like bare_rock).
+       * Language-specific values are in name:xx.
+       */
+      public static final String NAME = "name";
+      /** English name name:en if available, otherwise name (deprecated, kept for compatibility). */
+      public static final String NAME_EN = "name_en";
+      /** German name name:de if available, otherwise name/name:en (deprecated, kept for compatibility). */
+      public static final String NAME_DE = "name_de";
+      /**
        * From zoom 6 are taken OSM IDs. Up to zoom 5 there are used Natural Earth lakes, where are propagated the OSM
        * IDs insted of Natural Earth IDs. For smaller area then planet, NE lakes keep their Natural Earth IDs.
        */
@@ -300,6 +309,10 @@ public class OpenMapTilesSchema {
 
     /** Attribute names for map elements in the landcover layer. */
     final class Fields {
+      /**
+       * Names for selected landcover subclasses (e.g., bare_rock).
+       */
+      public static final String NAME = "name";
       /**
        * Use the <strong>class</strong> to assign natural colors for <strong>landcover</strong>.
        * <p>
@@ -1896,6 +1909,7 @@ public class OpenMapTilesSchema {
       public static final String CLASS_AERIALWAY = "aerialway";
       public static final String CLASS_ENTRANCE = "entrance";
       public static final String CLASS_CAMPSITE = "campsite";
+      public static final String CLASS_CAMP_PITCH = "camp_pitch";
       public static final String CLASS_LAUNDRY = "laundry";
       public static final String CLASS_GROCERY = "grocery";
       public static final String CLASS_LIBRARY = "library";
@@ -1959,7 +1973,7 @@ public class OpenMapTilesSchema {
             matchAny("subclass", "halt", "tram_stop", "subway"))),
         MultiExpression.entry("aerialway", and(matchAny("subclass", "station"), matchAny("mapping_key", "aerialway"))),
         MultiExpression.entry("entrance", matchAny("subclass", "subway_entrance", "train_station_entrance")),
-        MultiExpression.entry("campsite", matchAny("subclass", "camp_site", "caravan_site")),
+        MultiExpression.entry("campsite", matchAny("subclass", "camp_site", "caravan_site", "camp_pitch")),
         MultiExpression.entry("laundry", matchAny("subclass", "laundry", "dry_cleaning")),
         MultiExpression.entry("grocery",
           matchAny("subclass", "supermarket", "deli", "delicatessen", "department_store", "greengrocer",

@@ -124,7 +124,16 @@ public class Landcover implements
     String subclass = element.subclass();
     String clazz = getClassFromSubclass(subclass);
     if (clazz != null) {
-      features.polygon(LAYER_NAME).setBufferPixels(BUFFER_SIZE)
+      //features.polygon(LAYER_NAME).setBufferPixels(BUFFER_SIZE)
+      //  .setMinPixelSizeOverrides(MIN_PIXEL_SIZE_THRESHOLDS)
+      //  // default is 0.1, this helps reduce size of some heavy z7-10 tiles
+      //  .setPixelToleranceBelowZoom(10, 0.25)
+      //  .setAttr(Fields.CLASS, clazz)
+      //  .setAttr(Fields.SUBCLASS, subclass)
+      //  .setNumPointsAttr(TEMP_NUM_POINTS_ATTR)
+      //  .setMinZoom(7);
+      var fc = features.polygon(LAYER_NAME)
+        .setBufferPixels(BUFFER_SIZE)
         .setMinPixelSizeOverrides(MIN_PIXEL_SIZE_THRESHOLDS)
         // default is 0.1, this helps reduce size of some heavy z7-10 tiles
         .setPixelToleranceBelowZoom(10, 0.25)
@@ -132,6 +141,18 @@ public class Landcover implements
         .setAttr(Fields.SUBCLASS, subclass)
         .setNumPointsAttr(TEMP_NUM_POINTS_ATTR)
         .setMinZoom(7);
+
+      // Add a name only for bare_rock
+      // Add names for selected subclasses: bare_rock, glacier, saddle, stone
+      if ("bare_rock".equals(subclass)
+        || FieldValues.SUBCLASS_GLACIER.equals(subclass)
+        || "saddle".equals(subclass)
+        || "stone".equals(subclass)) {
+        var name = element.source().getTag("name");
+        if (name != null) {
+          fc.setAttr(Fields.NAME, name);
+        }
+      }
     }
   }
 
