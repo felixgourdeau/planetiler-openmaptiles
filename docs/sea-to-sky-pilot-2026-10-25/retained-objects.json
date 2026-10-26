@@ -1,0 +1,102 @@
+[
+    {
+        "Key": "bundle/backfill-peak-elevations.mts",
+        "Size": 10338
+    },
+    {
+        "Key": "bundle/bundle-manifest.json",
+        "Size": 812
+    },
+    {
+        "Key": "bundle/outmap.jar",
+        "Size": 88000565
+    },
+    {
+        "Key": "bundle/run-pilot.mts",
+        "Size": 6540
+    },
+    {
+        "Key": "bundle/run-plan.json",
+        "Size": 933
+    },
+    {
+        "Key": "bundle/source-snapshot.tar.gz",
+        "Size": 134410
+    },
+    {
+        "Key": "bundle/working-tree.patch",
+        "Size": 292237
+    },
+    {
+        "Key": "prepared/auxiliary-inputs.sha256",
+        "Size": 341
+    },
+    {
+        "Key": "prepared/corridor-elevations.jsonl",
+        "Size": 13110
+    },
+    {
+        "Key": "prepared/corridor-peaks.geojsonseq",
+        "Size": 228083
+    },
+    {
+        "Key": "prepared/elevation-counts.json",
+        "Size": 142
+    },
+    {
+        "Key": "prepared/global-peaks.geojsonseq",
+        "Size": 232893439
+    },
+    {
+        "Key": "prepared/peaks.osm.pbf",
+        "Size": 35747349
+    },
+    {
+        "Key": "prepared/sources/lake_centerline.shp.zip",
+        "Size": 80961538
+    },
+    {
+        "Key": "prepared/sources/natural_earth_vector.sqlite.zip",
+        "Size": 433384440
+    },
+    {
+        "Key": "prepared/sources/planet-261019.osm.pbf",
+        "Size": 95507771401
+    },
+    {
+        "Key": "prepared/sources/water-polygons-split-3857.zip",
+        "Size": 931729171
+    },
+    {
+        "Key": "results/build-initial-attempt-status.json",
+        "Size": 119
+    },
+    {
+        "Key": "results/build-initial-attempt.log",
+        "Size": 232550
+    },
+    {
+        "Key": "results/build-r2.log",
+        "Size": 287907
+    },
+    {
+        "Key": "results/build-status.json",
+        "Size": 219
+    },
+    {
+        "Key": "results/prepare-status.json",
+        "Size": 260
+    },
+    {
+        "Key": "results/prepare.log",
+        "Size": 18881
+    },
+    {
+        "Key": "results/sea-to-sky-20261025-r2.pmtiles",
+        "Size": 63500379
+    },
+    {
+        "Key": "results/thread-dump.txt",
+        "Size": 226974
+    }
+]

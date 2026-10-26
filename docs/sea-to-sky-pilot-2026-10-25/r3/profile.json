@@ -1,0 +1,10 @@
+{
+    "InstanceProfile": {
+        "Path": "/",
+        "InstanceProfileName": "outmap-planet-pilot-20261025",
+        "InstanceProfileId": "AIPAWN3NGYITE3TVSHKEP",
+        "Arn": "arn:aws:iam::442073793062:instance-profile/outmap-planet-pilot-20261025",
+        "CreateDate": "2026-10-25T23:29:55+00:00",
+        "Roles": []
+    }
+}

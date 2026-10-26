@@ -1,0 +1,88 @@
+import java.nio.file.*;
+import java.util.*;
+import java.io.*;
+import java.util.zip.*;
+import com.onthegomap.planetiler.pmtiles.*;
+import com.onthegomap.planetiler.geo.TileCoord;
+import com.onthegomap.planetiler.VectorTile;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+/** Manual archive acceptance: full coordinate directory scan plus geographically stratified MVT samples. */
+public class ValidateWorld {
+  static byte[] raw(byte[] bytes) throws IOException {
+    return bytes.length > 1 && bytes[0] == 31 && bytes[1] == (byte) 139 ?
+      new GZIPInputStream(new ByteArrayInputStream(bytes)).readAllBytes() : bytes;
+  }
+  public static void main(String[] args) throws Exception {
+    Path input = Path.of(args[0]);
+    Map<String, Object> result = new LinkedHashMap<>();
+    Map<Integer, Long> counts = new TreeMap<>();
+    Map<String, Long> layers = new TreeMap<>();
+    Set<Integer> samples = new LinkedHashSet<>();
+    List<Object> sampleDetails = new ArrayList<>();
+    try (var archive = ReadablePmtiles.newReadFromFile(input)) {
+      var reader = (ReadablePmtiles) archive;
+      var header = reader.getHeader();
+      if (header.specVersion() != 3 || header.minZoom() != 0 || header.maxZoom() != 14 ||
+        header.minLonE7() != -1800000000 || header.maxLonE7() != 1800000000 ||
+        !"MVT".equals(header.tileType().name())) throw new IllegalStateException("Unexpected world archive header");
+      for (long[] section : List.of(new long[]{header.rootDirOffset(), header.rootDirLength()},
+        new long[]{header.jsonMetadataOffset(), header.jsonMetadataLength()},
+        new long[]{header.leafDirectoriesOffset(), header.leafDirectoriesLength()},
+        new long[]{header.tileDataOffset(), header.tileDataLength()})) {
+        if (section[0] < 127 || section[1] < 0 || Math.addExact(section[0], section[1]) > Files.size(input))
+          throw new IllegalStateException("Archive section outside file");
+      }
+      long addressed = 0; int previous = -1;
+      try (var coords = reader.getAllTileCoords()) {
+        while (coords.hasNext()) {
+          var tile = coords.next(); int id = tile.hilbertEncoded();
+          if (id <= previous || tile.z() > 14) throw new IllegalStateException("Invalid tile directory ordering");
+          previous = id; addressed++;
+          counts.merge(tile.z(), 1L, Long::sum);
+          if (tile.z() <= 5 || addressed % 100003 == 0) samples.add(tile.encoded());
+        }
+      }
+      if (addressed != header.numAddressedTiles()) throw new IllegalStateException("Addressed tile count mismatch");
+      // Sea to Sky plus cities/mountains on all inhabited continents, across every output zoom.
+      double[][] locations = {{-123.12,49.70},{-122.96,50.12},{-123.12,49.28},{2.35,48.86},
+        {139.69,35.68},{85.32,27.72},{7.75,46.02},{18.42,-33.92},{-70.67,-33.45},
+        {-43.20,-22.91},{151.21,-33.87},{174.76,-36.85},{-73.98,40.75},{-105.58,40.34}};
+      for (var location : locations) for (int z = 0; z <= 14; z++)
+        samples.add(TileCoord.aroundLngLat(location[0], location[1], z).encoded());
+      long features = 0, missing = 0, distances = 0;
+      for (int id : samples) {
+        var coord = TileCoord.decode(id); byte[] bytes = reader.getTile(coord.x(), coord.y(), coord.z());
+        if (bytes == null) { missing++; continue; }
+        var decoded = VectorTile.decode(raw(bytes));
+        Set<String> present = new TreeSet<>();
+        for (var feature : decoded) {
+          feature.geometry().decode(); features++; present.add(feature.layer());
+          layers.merge(feature.layer(), 1L, Long::sum);
+          if (feature.layer().equals("trail_segment_label")) {
+            distances++;
+            Object length = feature.tags().get("length_m");
+            if (coord.z() != 14 || !(length instanceof Number value) || value.longValue() < 25)
+              throw new IllegalStateException("Invalid trail distance zoom/value");
+          }
+          if (feature.layer().equals("poi") && ("kerb".equals(feature.tags().get("subclass")) ||
+            "sidewalk".equals(feature.tags().get("subclass"))))
+            throw new IllegalStateException("Removed POI category present");
+        }
+        if (sampleDetails.size() < 100 || coord.z() == 14 && present.contains("trail_segment_label"))
+          sampleDetails.add(Map.of("tile", coord.z()+"/"+coord.x()+"/"+coord.y(), "gzipBytes", bytes.length,
+            "features", decoded.size(), "layers", present));
+      }
+      if (distances == 0 || !layers.containsKey("poi") || !layers.containsKey("transportation") ||
+        !layers.containsKey("mountain_peak")) throw new IllegalStateException("Expected layer absent from samples");
+      result.put("header", header); result.put("metadata", reader.metadata().toMap());
+      result.put("directoryAddressedTiles", addressed); result.put("tileCountsByZoom", counts);
+      result.put("sampleCoordinates", samples.size()); result.put("sampleMissingCoordinates", missing);
+      result.put("decodedFeatures", features); result.put("decodedTrailDistances", distances);
+      result.put("sampleLayerFeatureCounts", layers); result.put("sampleDetails", sampleDetails);
+    }
+    result.put("scope", "All directory coordinates checked; sampled MVT contents only. No exhaustive worldwide geometry/rendering certification.");
+    new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(Path.of(args[1]).toFile(), result);
+    System.out.println("WORLD_ARCHIVE_ACCEPTANCE_COMPLETE");
+  }
+}

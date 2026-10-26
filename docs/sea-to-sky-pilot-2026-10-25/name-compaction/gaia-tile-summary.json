@@ -1,0 +1,139 @@
+{
+  "counts": {
+    "admin/LINE": 1,
+    "aeroway/POLYGON": 19,
+    "barrier_line/LINE": 26,
+    "building/POLYGON": 1632,
+    "chairlift/LINE": 1,
+    "kilometers/LINE": 320,
+    "lake_label/POINT": 9,
+    "land/POLYGON": 1,
+    "landcover/POLYGON": 125,
+    "landuse/POLYGON": 126,
+    "ocean/POLYGON": 1,
+    "park/POLYGON": 35,
+    "place_label/POINT": 36,
+    "poi/POINT": 572,
+    "power_tower/POINT": 319,
+    "powerline/LINE": 26,
+    "rail/LINE": 69,
+    "road/LINE": 742,
+    "road_route/LINE": 1,
+    "trail/LINE": 1175,
+    "trail/POINT": 343,
+    "water/LINE": 316,
+    "water/POLYGON": 23,
+    "water_structure/LINE": 30,
+    "water_structure/POLYGON": 14
+  },
+  "trailFields": {
+    "access": 13,
+    "bicycle": 220,
+    "bridge": 45,
+    "difficulty": 9,
+    "foot": 323,
+    "informal": 70,
+    "kilometers": 320,
+    "label_name": 234,
+    "mileage_minzoom": 320,
+    "miles": 663,
+    "minzoom": 1237,
+    "motor_vehicle": 141,
+    "name": 266,
+    "osm_id": 1175,
+    "route_count": 209,
+    "sac_scale": 126,
+    "surface": 610,
+    "surface_style": 332,
+    "trail_type": 1175,
+    "type": 1518
+  },
+  "examples": {
+    "LINE/steps": {
+      "id": 479,
+      "geometryType": "LINE",
+      "tags": {
+        "osm_id": 358216197,
+        "surface": "wood",
+        "type": "steps",
+        "route_count": 605,
+        "trail_type": "hiking",
+        "mileage_minzoom": 15,
+        "miles": "0.2",
+        "motor_vehicle": "no",
+        "kilometers": "0.4",
+        "name": "Chief Peaks Trail",
+        "sac_scale": "hiking",
+        "surface_style": "paved",
+        "label_name": "Chief Peaks Trl",
+        "foot": "yes",
+        "minzoom": 16
+      }
+    },
+    "LINE/track": {
+      "id": 205,
+      "geometryType": "LINE",
+      "tags": {
+        "osm_id": 311081495,
+        "kilometers": "0.1",
+        "type": "track",
+        "minzoom": 14,
+        "trail_type": "hiking",
+        "mileage_minzoom": 16,
+        "miles": "0.1"
+      }
+    },
+    "LINE/track_trail": {
+      "id": 527,
+      "geometryType": "LINE",
+      "tags": {
+        "osm_id": 41929077,
+        "motor_vehicle": "no",
+        "surface": "compacted",
+        "kilometers": "0.4",
+        "surface_style": "gravel",
+        "type": "track_trail",
+        "foot": "yes",
+        "route_count": 22,
+        "trail_type": "hiking",
+        "mileage_minzoom": 14,
+        "miles": "0.3"
+      }
+    },
+    "LINE/trail": {
+      "id": 52,
+      "geometryType": "LINE",
+      "tags": {
+        "osm_id": 1429642701,
+        "kilometers": "0.4",
+        "type": "trail",
+        "minzoom": 13,
+        "trail_type": "hiking",
+        "mileage_minzoom": 15,
+        "miles": "0.2"
+      }
+    },
+    "POINT/track_mileage": {
+      "id": 1294,
+      "geometryType": "POINT",
+      "tags": {
+        "type": "track_mileage",
+        "minzoom": 14,
+        "miles": "0.4"
+      }
+    },
+    "POINT/trail_mileage": {
+      "id": 1184,
+      "geometryType": "POINT",
+      "tags": {
+        "type": "trail_mileage",
+        "minzoom": 13,
+        "miles": "1.3"
+      }
+    }
+  },
+  "tile": "12/646/1394",
+  "bytes": 119076,
+  "tileURL": "https://vectortiles.gaiagps.com/osm4/12/646/1394.pbf",
+  "styleURL": "https://static.gaiagps.com/GaiaTopoGL/v6/gaiatopo-meters.json"
+}

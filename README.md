@@ -5,6 +5,9 @@ on [OpenMapTiles](https://github.com/openmaptiles/openmaptiles).
 
 ## How to run
 
+For Outmap production archives, follow [the immutable planet release procedure](docs/planet-releases.md).
+Use `scripts/publish-planet.mts` to require a new revision and refuse an existing destination.
+
 Using pre-built docker image:
 
 ```bash
@@ -145,6 +148,13 @@ registers source data and output location.
 
 ## Regenerating Code
 
+Outmap currently has custom filters and schema constants edited directly in the
+generated Java files. Normal tile builds use those checked-in files and do not
+require regeneration. Do not run the regeneration script until those customizations
+are preserved in generator overrides or customized upstream YAML. The script's
+default input is upstream `master`; use a pinned tag or commit for reproducible
+regeneration once a preservation approach is in place.
+
 To run `Generate.java`,
 use [scripts/regenerate-openmaptiles.sh](https://github.com/openmaptiles/planetiler-openmaptiles/blob/main/scripts/regenerate-openmaptiles.sh)
 script with the
@@ -161,6 +171,19 @@ If you want to regenerate from a different repository than the default openmapti
 ```bash
 ./scripts/regenerate-openmaptiles.sh v3.15 https://raw.githubusercontent.com/openmaptiles/openmaptiles/
 ```
+
+## Expanded OSM detail and 3D building support
+
+The local single-archive expansion and its measured size tradeoffs are documented
+in [OSM coverage and acceptance](docs/osm-coverage-2026-10-25/README.md).
+The measured growth exceeds the original target and was accepted pending broader
+validation; client integration and publication remain pending. Building support uses lightweight extrusion, with roof metadata
+preserved for future rendering.
+
+## Marine features
+
+Outmap's additive OSM marine coverage, style helper, and image assets are documented
+in [Marine features](docs/marine-features.md).
 
 ## License
 

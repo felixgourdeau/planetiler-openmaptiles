@@ -1,0 +1,21 @@
+{
+  "Role": {
+    "Path": "/",
+    "RoleName": "outmap-planet-build-20261025-r1",
+    "RoleId": "AROAWN3NGYITBBSMYMHON",
+    "Arn": "arn:aws:iam::442073793062:role/outmap-planet-build-20261025-r1",
+    "CreateDate": "2026-10-26T02:47:22+00:00",
+    "AssumeRolePolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    }
+  }
+}

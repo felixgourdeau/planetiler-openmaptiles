@@ -1,0 +1,7 @@
+{
+  "scope": "Existing Monaco extract exercises new global code path; not a world-coverage claim",
+  "featuresRegional": 584,
+  "featuresGlobalMode": 584,
+  "orderedFeaturesIdentical": true,
+  "differences": 0
+}

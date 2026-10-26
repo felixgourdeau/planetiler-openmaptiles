@@ -1,0 +1,23 @@
+	Command being timed: "timeout 4h java -Xmx48g -Djava.io.tmpdir=/mnt/planet/tmp -jar outmap.jar --osm-path=/mnt/planet/sources/planet-261019.osm.pbf --download-dir=/mnt/planet/sources --output=/mnt/planet/planet-20261025-r1.pmtiles --bounds=-180,-85.0511287798066,180,85.0511287798066 --minzoom=0 --maxzoom=14 --threads=64 --storage=mmap --tmpdir=/mnt/planet/tmp --nodemap-type=array --nodemap-storage=mmap --peak-elevation-snapshot=/mnt/planet/snapshots/elevations.jsonl --trail-segment-snapshot=/mnt/planet/snapshots/trail-segments.geojsonseq --trail-snapshot-planet-md5=5bbb8c9cae945af88e6af773fed33a3e --download=false"
+	User time (seconds): 374047.69
+	System time (seconds): 5016.89
+	Percent of CPU this job got: 3331%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:09:38
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 136503480
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 83741195
+	Minor (reclaiming a frame) page faults: 363480248
+	Voluntary context switches: 175172717
+	Involuntary context switches: 5716181
+	Swaps: 0
+	File system inputs: 2339860376
+	File system outputs: 2115792536
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

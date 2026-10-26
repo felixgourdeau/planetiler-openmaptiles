@@ -59,6 +59,7 @@ import org.openmaptiles.OpenMapTilesProfile;
 import org.openmaptiles.generated.OpenMapTilesSchema;
 import org.openmaptiles.generated.Tables;
 import org.openmaptiles.util.OmtLanguageUtils;
+import org.openmaptiles.util.PeakElevationSnapshot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -87,6 +88,7 @@ public class MountainPeak implements
 
   private final Translations translations;
   private final Stats stats;
+  private final PeakElevationSnapshot elevationSnapshot;
   // keep track of areas that prefer feet to meters to set customary_ft=1 (just U.S.)
   private PreparedGeometry unitedStates = null;
   private final AtomicBoolean loggedNoUS = new AtomicBoolean(false);
@@ -94,6 +96,8 @@ public class MountainPeak implements
   public MountainPeak(Translations translations, PlanetilerConfig config, Stats stats) {
     this.translations = translations;
     this.stats = stats;
+    this.elevationSnapshot = PeakElevationSnapshot.load(config.arguments().getString("peak_elevation_snapshot",
+      "Completed local peak/saddle elevation snapshot; only fills missing or invalid OSM elevations", null));
   }
 
   @Override
@@ -118,6 +122,9 @@ public void process(Tables.OsmPeakPoint element, FeatureCollector features) {
   boolean isSaddle = "saddle".equals(natural);
 
   Double meters = Parse.meters(element.ele());
+  if (!PeakElevationSnapshot.validElevation(meters)) {
+    meters = elevationSnapshot.elevation(element.source(), element.ele());
+  }
 
   if (isSaddle) {
     var feature = features.point(LAYER_NAME)
@@ -136,19 +143,21 @@ public void process(Tables.OsmPeakPoint element, FeatureCollector features) {
     feature.setSortKeyDescending(elevPart + rankBoost);
     if (peakInAreaUsingFeet(element)) feature.setAttr(Fields.CUSTOMARY_FT, 1);
 
-  } else if (meters != null && Math.abs(meters) < 10_000) {
+  } else if ((meters != null && Math.abs(meters) < 10_000) || nullIfEmpty(element.name()) != null) {
+    boolean hasElevation = meters != null && Double.isFinite(meters) && Math.abs(meters) < 10_000;
     var feature = features.point(LAYER_NAME)
       .setAttr(Fields.CLASS, element.source().getString("natural")) // <-- fix here
       .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
-      .putAttrs(elevationTags(meters))
       .setSortKeyDescending(
-        meters.intValue() +
+        (hasElevation ? meters.intValue() : 0) +
           (nullIfEmpty(element.wikipedia()) != null ? 10_000 : 0) +
           (nullIfEmpty(element.name()) != null ? 10_000 : 0)
       )
       .setMinZoom(7)
       .setBufferPixels(100)
       .setPointLabelGridSizeAndLimit(13, 100, 5);
+    // Missing/invalid elevation is unknown, never a published zero-metre summit.
+    if (hasElevation) feature.putAttrs(elevationTags(meters));
     if (peakInAreaUsingFeet(element)) feature.setAttr(Fields.CUSTOMARY_FT, 1);
   }
 }

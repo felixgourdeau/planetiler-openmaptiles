@@ -1,0 +1,12 @@
+import java.nio.file.*;import java.util.*;import com.onthegomap.planetiler.pmtiles.*;import com.onthegomap.planetiler.VectorTile;import com.fasterxml.jackson.databind.ObjectMapper;import org.openmaptiles.util.OmtLanguageUtils;
+class AuditClimbing {
+static boolean climbing(VectorTile.Feature f){var t=f.tags();return f.layer().equals("poi")&&(Set.of("climbing","climbing_adventure").contains(String.valueOf(t.get("class")))||Set.of("climbing","climbing_adventure").contains(String.valueOf(t.get("subclass")))||Arrays.asList(String.valueOf(t.get("sport")).split(";")).contains("climbing"));}
+public static void main(String[]args)throws Exception{Map<Integer,long[]> sums=new TreeMap<>();Map<String,Long> categories=new TreeMap<>();Set<Long> ids=new HashSet<>();List<Object> examples=new ArrayList<>();Map<String,Long> broad=new TreeMap<>();
+try(var a=ReadablePmtiles.newReadFromFile(Path.of(args[0]));var all=a.getAllTiles()){while(all.hasNext()){var tile=all.next();var fs=VectorTile.decode(AuditAttributes.raw(tile.bytes()));List<VectorTile.Feature> filtered=new ArrayList<>(),named=new ArrayList<>(),namedFiltered=new ArrayList<>();long removed=0;
+for(var f:fs){boolean drop=climbing(f);var tags=new LinkedHashMap<>(f.tags());OmtLanguageUtils.removeRedundantNames(tags);var n=new VectorTile.Feature(f.layer(),f.id(),f.geometry(),tags);named.add(n);if(!drop){filtered.add(f);namedFiltered.add(n);}else{removed++;ids.add(f.id());categories.merge(f.tags().get("class")+"/"+f.tags().get("subclass"),1L,Long::sum);if(examples.size()<6)examples.add(Map.of("id",f.id(),"tags",tags));}
+for(var e:f.tags().entrySet())if(e.getKey().contains("climbing")||String.valueOf(e.getValue()).equals("climbing"))broad.merge(f.layer()+":"+e.getKey(),1L,Long::sum);
+}
+long[] v=sums.computeIfAbsent(tile.coord().z(),k->new long[6]);v[0]++;v[1]+=removed;v[2]+=AuditAttributes.size(fs);v[3]+=AuditAttributes.size(filtered);v[4]+=AuditAttributes.size(named);v[5]+=AuditAttributes.size(namedFiltered);
+}}
+new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(Path.of(args[1]).toFile(),Map.of("columns",List.of("tiles","removedOccurrences","baselineGzip","withoutClimbingGzip","namesBaselineGzip","namesWithoutClimbingGzip"),"zooms",sums,"uniqueIds",ids.size(),"categories",categories,"climbingTagOccurrencesByLayer",broad,"examples",examples));
+}}

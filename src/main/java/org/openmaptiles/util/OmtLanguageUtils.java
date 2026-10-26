@@ -118,6 +118,28 @@ public class OmtLanguageUtils {
     return nullIfEmpty(obj == null ? null : obj.toString());
   }
 
+  /**
+   * Compact final tile attributes, after source-name fallbacks and layer merging have finished.
+   * Keep distinct translations and the Latin name required by current bilingual/Latin-first styles.
+   */
+  public static void removeRedundantNames(Map<String, Object> attributes) {
+    Object name = attributes.get("name");
+    if (!(name instanceof String text) || text.isEmpty()) return;
+
+    Object english = attributes.get("name_en");
+    boolean keepLatin = attributes.containsKey("name:nonlatin") ||
+      (english != null && !name.equals(english));
+    attributes.entrySet().removeIf(entry -> {
+      String key = entry.getKey();
+      if ("name".equals(key)) return false;
+      if (!name.equals(entry.getValue())) return false;
+      if ("name:latin".equals(key)) return !keepLatin;
+      if ("name:nonlatin".equals(key)) return false;
+      return "name_en".equals(key) || "name_de".equals(key) || "name_int".equals(key) ||
+        VALID_NAME_TAGS.test(key);
+    });
+  }
+
   public static String transliteratedName(Map<String, Object> tags) {
     return Translations.transliterate(string(tags.get("name")));
   }

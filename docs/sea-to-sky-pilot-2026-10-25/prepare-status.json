@@ -1,0 +1,11 @@
+{
+  "stage": "prepare",
+  "state": "complete",
+  "updatedAt": "2026-10-25T16:35:35.347Z",
+  "elapsedSeconds": 1357.342,
+  "globalNodes": 1202166,
+  "globalCandidates": 357665,
+  "corridorNodes": 1217,
+  "corridorCandidates": 61,
+  "globalRequestsAt250": 1431
+}

@@ -19,6 +19,8 @@ public class OpenMapTilesMain {
   }
 
   static void run(Arguments arguments) throws Exception {
+    // Parallel node writes: measured on the full planet with 256 GiB RAM and local NVMe.
+    arguments = arguments.withDefault("nodemap_type", "array").withDefault("nodemap_storage", "mmap");
     Path dataDir = Path.of("data");
     Path sourcesDir = arguments.file("download_dir", "download directory", dataDir.resolve("sources"));
     // use --area=... argument, AREA=... env var or area=... in config to set the region of the world to use
@@ -29,7 +31,7 @@ public class OpenMapTilesMain {
       "monaco"
     );
 
-    Planetiler.create(arguments)
+    var runner = Planetiler.create(arguments)
       .setDefaultLanguages(OpenMapTilesSchema.LANGUAGES)
       .fetchWikidataNameTranslations(sourcesDir.resolve("wikidata_names.json"))
       // defer creation of the profile because it depends on data from the runner
@@ -54,8 +56,40 @@ public class OpenMapTilesMain {
         sourcesDir.resolve(area.replaceAll("[^a-zA-Z]+", "_") + ".osm.pbf"),
         "planet".equalsIgnoreCase(area) ? ("aws:latest") : ("geofabrik:" + area))
       // override with --mbtiles=... argument or MBTILES=... env var or mbtiles=... in a config file
-      .setOutput("mbtiles", dataDir.resolve("output.mbtiles"))
-      .run();
+      .setOutput("mbtiles", dataDir.resolve("output.mbtiles"));
+    String icelandNames = arguments.getString("iceland_names", "Reviewed Iceland names GeoJSON pilot snapshot", "");
+    if (!icelandNames.isBlank()) {
+      runner.addGeoJsonSource("iceland_names", Path.of(icelandNames));
+    }
+    String trailSnapshot = arguments.getString("trail_segment_snapshot", "Prepared segment snapshot", "");
+    if (!trailSnapshot.isBlank()) {
+      Path snapshot = Path.of(trailSnapshot);
+      var manifest = new com.fasterxml.jackson.databind.ObjectMapper().readTree(
+        Path.of(trailSnapshot + ".json").toFile());
+      String expectedMd5 = arguments.getString("trail_snapshot_planet_md5", "Verified full PBF MD5", "");
+      if (!"complete".equals(manifest.path("state").asText()) ||
+        !org.openmaptiles.tools.PrepareTrailSegments.POLICY.equals(manifest.path("policy").asText()) ||
+        expectedMd5.isBlank() || !expectedMd5.equals(manifest.path("planetMd5").asText()) ||
+        !org.openmaptiles.tools.PrepareTrailSegments.sha256(snapshot).equals(manifest.path("sha256").asText())) {
+        throw new IllegalArgumentException("Trail snapshot provenance/checksum mismatch");
+      }
+      var bounds = runner.config().bounds().latLon();
+      var prepared = manifest.path("preparationBounds");
+      boolean planetSnapshot = "planet".equals(manifest.path("scope").asText());
+      if (planetSnapshot && (!manifest.path("parentPlanetSha256").asText().matches("[a-f0-9]{64}") ||
+        manifest.path("parentPlanetBytes").asLong() <= 0 || prepared.size() != 4 ||
+        prepared.get(0).asDouble() != -180 || prepared.get(1).asDouble() != -90 ||
+        prepared.get(2).asDouble() != 180 || prepared.get(3).asDouble() != 90)) {
+        throw new IllegalArgumentException("Global trail snapshot provenance/coverage mismatch");
+      }
+      if (!planetSnapshot && (prepared.size() != 4 || bounds.getMinX() <= prepared.get(0).asDouble() ||
+        bounds.getMinY() <= prepared.get(1).asDouble() || bounds.getMaxX() >= prepared.get(2).asDouble() ||
+        bounds.getMaxY() >= prepared.get(3).asDouble())) {
+        throw new IllegalArgumentException("Output bounds must be inside trail preparation bounds");
+      }
+      runner.addGeoJsonSource(org.openmaptiles.addons.TrailSegmentSnapshot.SOURCE, snapshot);
+    }
+    runner.run();
 
     LOGGER.info("""
       Acknowledgments

@@ -1,0 +1,9 @@
+{
+  "instanceId": "i-03eff3f4e503145ed",
+  "instanceState": "terminated",
+  "temporaryRoleDeleted": true,
+  "temporaryInstanceProfileDeleted": true,
+  "remainingAttachedVolumes": 0,
+  "checkedAt": "2026-10-26T02:27:16.303218+00:00",
+  "s3BenchmarkEvidenceRetained": true
+}

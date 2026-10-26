@@ -1,0 +1,29 @@
+import java.nio.file.*;import java.util.*;import java.io.*;import java.util.zip.*;import com.onthegomap.planetiler.pmtiles.*;import com.onthegomap.planetiler.VectorTile;import com.fasterxml.jackson.databind.ObjectMapper;import org.openmaptiles.util.OmtLanguageUtils;
+class AuditAttributes {
+static byte[] raw(byte[] b)throws Exception{return b.length>1&&b[0]==31&&b[1]==(byte)139?new GZIPInputStream(new ByteArrayInputStream(b)).readAllBytes():b;}
+static int size(List<VectorTile.Feature> fs)throws Exception{Map<String,List<VectorTile.Feature>> groups=new LinkedHashMap<>();for(var f:fs)groups.computeIfAbsent(f.layer(),k->new ArrayList<>()).add(f);var tile=new VectorTile();groups.forEach(tile::addLayerFeatures);var out=new ByteArrayOutputStream();try(var g=new GZIPOutputStream(out)){g.write(tile.encode());}return out.size();}
+static final Set<String> CONTACT=Set.of("website","phone","mobile","email","fax","opening_hours","opening_hours:conditional");
+static final List<String> MODES=List.of("names_only","poi_equal_subclass","poi_equal_sport","equal_raw_normalized","poi_contact_hours_diagnostic","poi_rank_diagnostic","poi_exact_duplicates","equal_raw_to_normalized","poi_equal_raw_to_normalized","combined_equal_aliases");
+static Map<String,Long> freq=new TreeMap<>(),pairs=new TreeMap<>(),poiClasses=new TreeMap<>();
+static boolean eq(Map<String,Object> t,String a,String b){return t.containsKey(a)&&t.containsKey(b)&&Objects.equals(t.get(a),t.get(b));}
+public static void main(String[]args)throws Exception{
+Map<String,Map<Integer,Long>> sizes=new LinkedHashMap<>();for(String m:MODES)sizes.put(m,new TreeMap<>());Map<String,Long> changes=new TreeMap<>();long tiles=0,pois=0,dups=0;List<Object> largest=new ArrayList<>();
+try(var a=ReadablePmtiles.newReadFromFile(Path.of(args[0]));var all=a.getAllTiles()){
+while(all.hasNext()){var t=all.next();tiles++;var fs=VectorTile.decode(raw(t.bytes()));List<VectorTile.Feature> base=new ArrayList<>();Set<String> seen=new HashSet<>();long tilePoi=0;
+for(var f:fs){var tags=new LinkedHashMap<>(f.tags());OmtLanguageUtils.removeRedundantNames(tags);base.add(new VectorTile.Feature(f.layer(),f.id(),f.geometry(),tags));
+if(f.layer().equals("poi")){pois++;tilePoi++;poiClasses.merge(String.valueOf(tags.get("class"))+"/"+tags.get("subclass"),1L,Long::sum);for(var e:tags.entrySet())freq.merge(e.getKey(),1L,Long::sum);String identity=f.id()+"|"+f.geometry().decode().toText()+"|"+new TreeMap<>(tags);if(!seen.add(identity))dups++;}
+var keys=new ArrayList<>(tags.keySet());for(int i=0;i<keys.size();i++)for(int j=i+1;j<keys.size();j++){String x=keys.get(i),y=keys.get(j);if(x.startsWith("name")||y.startsWith("name"))continue;Object v=tags.get(x);if(v instanceof String s&&!s.isEmpty()&&Objects.equals(v,tags.get(y))){String pair=x.compareTo(y)<0?x+" = "+y:y+" = "+x;pairs.merge(f.layer()+": "+pair,1L,Long::sum);}}
+}
+if(t.bytes().length>200000)largest.add(Map.of("tile",t.coord().z()+"/"+t.coord().x()+"/"+t.coord().y(),"gzip",t.bytes().length,"poiOccurrences",tilePoi));
+for(String mode:MODES){List<VectorTile.Feature> candidate=new ArrayList<>();Set<String> unique=new HashSet<>();for(var f:base){var tags=new LinkedHashMap<>(f.tags());int before=tags.size();boolean poi=f.layer().equals("poi");switch(mode){case "poi_equal_subclass":if(poi&&eq(tags,"subclass","class"))tags.remove("subclass");break;case "poi_equal_sport":if(poi&&(eq(tags,"sport","subclass")||eq(tags,"sport","class")))tags.remove("sport");break;case "equal_raw_normalized":for(String k:new ArrayList<>(tags.keySet())){if(k.endsWith("_raw")&&eq(tags,k,k.substring(0,k.length()-4)))tags.remove(k);else if(k.endsWith("_normalized")&&eq(tags,k,k.substring(0,k.length()-11)))tags.remove(k);}break;case "equal_raw_to_normalized":case "poi_equal_raw_to_normalized":case "combined_equal_aliases":
+if (!mode.equals("poi_equal_raw_to_normalized") || poi) {
+for(String k:new ArrayList<>(tags.keySet()))if(k.endsWith("_raw")&&eq(tags,k,k.substring(0,k.length()-4)+"_normalized"))tags.remove(k);
+if(mode.equals("combined_equal_aliases"))for(String k:new ArrayList<>(tags.keySet())){
+if(k.endsWith("_raw")&&eq(tags,k,k.substring(0,k.length()-4)))tags.remove(k);
+else if(k.endsWith("_normalized")&&eq(tags,k,k.substring(0,k.length()-11)))tags.remove(k);}}
+break;case "poi_contact_hours_diagnostic":if(poi)tags.keySet().removeAll(CONTACT);break;case "poi_rank_diagnostic":if(poi)tags.remove("rank");break;case "poi_exact_duplicates":if(poi&&!unique.add(f.id()+"|"+f.geometry().decode().toText()+"|"+new TreeMap<>(tags)))continue;break;}
+changes.merge(mode,(long)(before-tags.size()),Long::sum);candidate.add(new VectorTile.Feature(f.layer(),f.id(),f.geometry(),tags));}sizes.get(mode).merge(t.coord().z(),(long)size(candidate),Long::sum);}
+if(tiles%2000==0)System.out.println("tiles="+tiles);
+}}
+Map<String,Object> result=new LinkedHashMap<>();result.put("tiles",tiles);result.put("poiOccurrences",pois);result.put("exactPoiDuplicatesWithinTile",dups);result.put("gzipBytesByModeAndZoom",sizes);result.put("removedFieldsByMode",changes);result.put("poiFieldOccurrences",freq);result.put("equalStringPairs",pairs);result.put("poiClassOccurrences",poiClasses);result.put("largeTiles",largest);new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(Path.of(args[1]).toFile(),result);System.out.println("complete tiles="+tiles+" poi="+pois+" duplicates="+dups);
+}}

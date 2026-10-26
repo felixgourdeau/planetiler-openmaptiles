@@ -1,0 +1,20 @@
+import java.nio.file.*;
+import java.util.*;
+import java.io.*;
+import java.util.zip.*;
+import com.onthegomap.planetiler.pmtiles.*;
+import com.onthegomap.planetiler.VectorTile;
+import com.fasterxml.jackson.databind.ObjectMapper;
+class ComparePilot {
+ static Path root=Path.of("/private/tmp/outmap-sea-to-sky-20261025"); static ObjectMapper json=new ObjectMapper();
+ static byte[] raw(byte[] b)throws Exception{return b.length>1&&b[0]==31&&b[1]==(byte)139?new GZIPInputStream(new ByteArrayInputStream(b)).readAllBytes():b;}
+ static int compressed(byte[] b)throws Exception{var out=new ByteArrayOutputStream();try(var gz=new GZIPOutputStream(out)){gz.write(b);}return out.size();}
+ static Map<String,Long> counts=new TreeMap<>(); static Map<String,Set<Long>> ids=new TreeMap<>();static List<Object> tiles=new ArrayList<>();static Map<String,Object> examples=new TreeMap<>();
+ static void inspect(String side,int zoom,byte[] bytes)throws Exception{for(var f:VectorTile.decode(bytes)){String base=side+"/"+zoom+"/"+f.layer();counts.merge(base,1L,Long::sum);if(f.layer().equals("poi")){Object rank=f.tags().get("rank");if(rank instanceof Number n)counts.merge(base+"/#rank"+(n.intValue()<=6?"1-6":n.intValue()<=19?"7-19":"20+"),1L,Long::sum);}
+String category=base+"/"+f.tags().get("class")+"/"+f.tags().get("subclass");counts.merge(category,1L,Long::sum);ids.computeIfAbsent(base,k->new HashSet<>()).add(f.id());for(String field:f.tags().keySet())counts.merge(base+"/@"+field,1L,Long::sum);if(zoom==14)examples.putIfAbsent(side+"/"+f.layer()+"/"+f.tags().get("class")+"/"+f.tags().get("subclass"),Map.of("id",f.id(),"tags",f.tags()));}}
+ public static void main(String[]args)throws Exception{
+ try(var archive=ReadablePmtiles.newReadFromFile(root.resolve("sea-to-sky-20261025-r2.pmtiles"));var all=archive.getAllTiles()){while(all.hasNext()){var t=all.next();int z=t.coord().z();String key=z+"/"+t.coord().x()+"/"+t.coord().y();byte[] candidate=raw(t.bytes());inspect("pilot",z,candidate);var path=root.resolve("production/"+key.replace('/','_')+".mvt");Map<String,Object> row=new LinkedHashMap<>();row.put("key",key);row.put("pilotStored",t.bytes().length);row.put("pilotRaw",candidate.length);row.put("pilotGzip",compressed(candidate));if(Files.exists(path)){byte[] production=raw(Files.readAllBytes(path));inspect("production",z,production);row.put("productionRaw",production.length);row.put("productionGzip",compressed(production));}tiles.add(row);}}
+ Map<String,Object> identity=new TreeMap<>(); for(var e:ids.entrySet()){if(!e.getKey().startsWith("pilot/"))continue;String k=e.getKey().substring(6);var old=ids.getOrDefault("production/"+k,Set.of());var shared=new HashSet<>(e.getValue());shared.retainAll(old);identity.put(k,Map.of("pilot",e.getValue().size(),"production",old.size(),"shared",shared.size()));}
+ json.writerWithDefaultPrettyPrinter().writeValue(root.resolve("comparison.json").toFile(),Map.of("counts",counts,"identities",identity,"examples",examples,"tiles",tiles));System.out.println("Compared "+tiles.size()+" tile coordinates");
+ }
+}

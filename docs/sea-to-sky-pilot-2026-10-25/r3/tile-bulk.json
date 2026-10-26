@@ -1,0 +1,2997 @@
+{
+  "lowZoomPruningSimulation" : {
+    "12" : [ 468, 6782980, 6764527, 732 ],
+    "13" : [ 1750, 13022416, 13013433, 332 ]
+  },
+  "largeTiles" : [ {
+    "rawBytes" : 695487,
+    "layers" : {
+      "boundary" : {
+        "classCounts" : {
+          "null" : 3
+        },
+        "rawBytes" : 916,
+        "featureMessagesBytes" : 845,
+        "valueDictionaryBytes" : 8,
+        "standaloneGzip" : 890,
+        "features" : 3
+      },
+      "building" : {
+        "classCounts" : {
+          "null" : 1193
+        },
+        "rawBytes" : 73372,
+        "featureMessagesBytes" : 59633,
+        "valueDictionaryBytes" : 8976,
+        "standaloneGzip" : 46562,
+        "features" : 1193
+      },
+      "housenumber" : {
+        "classCounts" : {
+          "null" : 919
+        },
+        "rawBytes" : 32503,
+        "featureMessagesBytes" : 23748,
+        "valueDictionaryBytes" : 5048,
+        "standaloneGzip" : 19644,
+        "features" : 919
+      },
+      "landcover" : {
+        "classCounts" : {
+          "farmland" : 1,
+          "grass" : 89,
+          "sand" : 3,
+          "wood" : 9
+        },
+        "rawBytes" : 5851,
+        "featureMessagesBytes" : 5454,
+        "valueDictionaryBytes" : 121,
+        "standaloneGzip" : 4379,
+        "features" : 102
+      },
+      "landuse" : {
+        "classCounts" : {
+          "commercial" : 34,
+          "hospital" : 1,
+          "industrial" : 4,
+          "library" : 1,
+          "neighbourhood" : 1,
+          "pitch" : 10,
+          "playground" : 21,
+          "railway" : 1,
+          "residential" : 1,
+          "retail" : 35,
+          "school" : 1,
+          "stadium" : 1
+        },
+        "rawBytes" : 9887,
+        "featureMessagesBytes" : 9494,
+        "valueDictionaryBytes" : 124,
+        "standaloneGzip" : 7730,
+        "features" : 111
+      },
+      "outdoor" : {
+        "classCounts" : {
+          "barrier" : 11,
+          "man_made" : 1,
+          "natural" : 3
+        },
+        "rawBytes" : 3625,
+        "featureMessagesBytes" : 3142,
+        "valueDictionaryBytes" : 269,
+        "standaloneGzip" : 3030,
+        "features" : 15
+      },
+      "park" : {
+        "classCounts" : {
+          "protected_area" : 1
+        },
+        "rawBytes" : 172,
+        "featureMessagesBytes" : 30,
+        "valueDictionaryBytes" : 64,
+        "standaloneGzip" : 181,
+        "features" : 1
+      },
+      "place" : {
+        "classCounts" : {
+          "aboriginal_lands" : 1,
+          "city" : 1,
+          "island" : 2,
+          "neighbourhood" : 16,
+          "suburb" : 6
+        },
+        "rawBytes" : 2558,
+        "featureMessagesBytes" : 898,
+        "valueDictionaryBytes" : 1008,
+        "standaloneGzip" : 1774,
+        "features" : 26
+      },
+      "poi" : {
+        "classCounts" : {
+          "alcohol_shop" : 17,
+          "art_gallery" : 105,
+          "atm" : 27,
+          "attraction" : 67,
+          "bakery" : 34,
+          "bank" : 25,
+          "bar" : 46,
+          "beer" : 29,
+          "bicycle" : 13,
+          "bicycle_parking" : 723,
+          "bicycle_rental" : 65,
+          "block" : 3,
+          "bollard" : 89,
+          "border_control" : 1,
+          "boxing" : 2,
+          "brownfield" : 12,
+          "bus" : 162,
+          "butcher" : 5,
+          "cafe" : 177,
+          "car" : 11,
+          "cinema" : 3,
+          "clothing_store" : 132,
+          "college" : 22,
+          "cycling" : 1,
+          "dentist" : 35,
+          "doctors" : 5,
+          "dog_park" : 7,
+          "drinking_water" : 32,
+          "elevator" : 7,
+          "entrance" : 18,
+          "escape_game" : 1,
+          "fast_food" : 151,
+          "ferry_terminal" : 9,
+          "fire_station" : 2,
+          "fuel" : 11,
+          "garden" : 45,
+          "gate" : 77,
+          "golf" : 1,
+          "grocery" : 41,
+          "hackerspace" : 2,
+          "hairdresser" : 100,
+          "harbor" : 182,
+          "height_restrictor" : 4,
+          "hospital" : 18,
+          "ice_cream" : 9,
+          "ice_rink" : 1,
+          "information" : 1549,
+          "jersey_barrier" : 7,
+          "laundry" : 13,
+          "library" : 12,
+          "lift_gate" : 1,
+          "lodging" : 57,
+          "monument" : 5,
+          "motorcycle_parking" : 21,
+          "museum" : 4,
+          "music" : 4,
+          "office" : 153,
+          "park" : 38,
+          "parking" : 377,
+          "pharmacy" : 20,
+          "pitch" : 28,
+          "place_of_worship" : 16,
+          "playground" : 31,
+          "police" : 5,
+          "post" : 100,
+          "railway" : 7,
+          "recycling" : 7,
+          "restaurant" : 327,
+          "school" : 15,
+          "shelter" : 8,
+          "shop" : 517,
+          "sports_centre" : 6,
+          "stadium" : 2,
+          "stepping_stones" : 1,
+          "swimming_pool" : 24,
+          "swing_gate" : 2,
+          "theatre" : 15,
+          "toilets" : 33,
+          "town_hall" : 9,
+          "turning_circle" : 21,
+          "veterinary" : 8,
+          "waste_basket" : 241,
+          "water_park" : 1,
+          "waterfall" : 1,
+          "yes" : 3,
+          "yoga" : 4
+        },
+        "rawBytes" : 443614,
+        "featureMessagesBytes" : 235049,
+        "valueDictionaryBytes" : 179034,
+        "standaloneGzip" : 210618,
+        "features" : 6222
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 4,
+          "beach" : 2,
+          "island" : 1,
+          "lake" : 1,
+          "park" : 49
+        },
+        "rawBytes" : 3608,
+        "featureMessagesBytes" : 2006,
+        "valueDictionaryBytes" : 1214,
+        "standaloneGzip" : 2344,
+        "features" : 57
+      },
+      "trail_segment_label" : {
+        "classCounts" : {
+          "null" : 279
+        },
+        "rawBytes" : 7188,
+        "featureMessagesBytes" : 5863,
+        "valueDictionaryBytes" : 390,
+        "standaloneGzip" : 3659,
+        "features" : 279
+      },
+      "transportation" : {
+        "classCounts" : {
+          "bridge" : 8,
+          "ferry" : 1,
+          "minor" : 102,
+          "minor_construction" : 1,
+          "path" : 733,
+          "pier" : 20,
+          "primary" : 90,
+          "rail" : 2,
+          "secondary" : 122,
+          "service" : 186,
+          "tertiary" : 67,
+          "transit" : 2,
+          "trunk" : 27
+        },
+        "rawBytes" : 94932,
+        "featureMessagesBytes" : 85373,
+        "valueDictionaryBytes" : 4608,
+        "standaloneGzip" : 47627,
+        "features" : 1361
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "ferry" : 6,
+          "minor" : 48,
+          "minor_construction" : 1,
+          "path" : 71,
+          "primary" : 9,
+          "secondary" : 13,
+          "service" : 18,
+          "tertiary" : 16,
+          "trunk" : 6
+        },
+        "rawBytes" : 13856,
+        "featureMessagesBytes" : 10286,
+        "valueDictionaryBytes" : 2650,
+        "standaloneGzip" : 9935,
+        "features" : 188
+      },
+      "water" : {
+        "classCounts" : {
+          "lake" : 5,
+          "ocean" : 1,
+          "pond" : 7,
+          "swimming_pool" : 14
+        },
+        "rawBytes" : 2145,
+        "featureMessagesBytes" : 1800,
+        "valueDictionaryBytes" : 191,
+        "standaloneGzip" : 1758,
+        "features" : 27
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 6,
+          "lake" : 3
+        },
+        "rawBytes" : 816,
+        "featureMessagesBytes" : 521,
+        "valueDictionaryBytes" : 159,
+        "standaloneGzip" : 703,
+        "features" : 9
+      },
+      "waterway" : {
+        "classCounts" : {
+          "ditch" : 1,
+          "stream" : 1,
+          "weir" : 10
+        },
+        "rawBytes" : 392,
+        "featureMessagesBytes" : 297,
+        "valueDictionaryBytes" : 25,
+        "standaloneGzip" : 266,
+        "features" : 12
+      }
+    },
+    "tile" : "14/2588/5607",
+    "ablations" : {
+      "rank12PlusTransit" : 360863,
+      "reencodedBaseline" : 360863,
+      "roadDetailsDeferredTo14" : 360863,
+      "withoutContactAndHours" : 305011,
+      "without_outdoor" : 357899,
+      "without_poi" : 149201,
+      "without_polygon_label" : 358467,
+      "without_transportation" : 314111
+    },
+    "storedGzip" : 360772
+  }, {
+    "rawBytes" : 698379,
+    "layers" : {
+      "aerodrome_label" : {
+        "classCounts" : {
+          "other" : 3
+        },
+        "rawBytes" : 347,
+        "featureMessagesBytes" : 99,
+        "valueDictionaryBytes" : 120,
+        "standaloneGzip" : 323,
+        "features" : 3
+      },
+      "aeroway" : {
+        "classCounts" : {
+          "aerodrome" : 1,
+          "apron" : 2,
+          "runway" : 3,
+          "taxiway" : 16
+        },
+        "rawBytes" : 982,
+        "featureMessagesBytes" : 807,
+        "valueDictionaryBytes" : 78,
+        "standaloneGzip" : 745,
+        "features" : 22
+      },
+      "boundary" : {
+        "classCounts" : {
+          "aboriginal_lands" : 7
+        },
+        "rawBytes" : 870,
+        "featureMessagesBytes" : 514,
+        "valueDictionaryBytes" : 236,
+        "standaloneGzip" : 561,
+        "features" : 7
+      },
+      "landcover" : {
+        "classCounts" : {
+          "farmland" : 34,
+          "grass" : 61,
+          "wetland" : 6,
+          "wood" : 8
+        },
+        "rawBytes" : 17622,
+        "featureMessagesBytes" : 17222,
+        "valueDictionaryBytes" : 105,
+        "standaloneGzip" : 14210,
+        "features" : 109
+      },
+      "landuse" : {
+        "classCounts" : {
+          "cemetery" : 2,
+          "commercial" : 1,
+          "hospital" : 1,
+          "industrial" : 59,
+          "neighbourhood" : 3,
+          "quarry" : 2,
+          "railway" : 6,
+          "residential" : 1,
+          "retail" : 4,
+          "university" : 3
+        },
+        "rawBytes" : 41746,
+        "featureMessagesBytes" : 41425,
+        "valueDictionaryBytes" : 109,
+        "standaloneGzip" : 32519,
+        "features" : 82
+      },
+      "mountain_peak" : {
+        "classCounts" : {
+          "cliff" : 163,
+          "peak" : 39,
+          "ridge" : 7
+        },
+        "rawBytes" : 8506,
+        "featureMessagesBytes" : 6784,
+        "valueDictionaryBytes" : 951,
+        "standaloneGzip" : 5405,
+        "features" : 209
+      },
+      "park" : {
+        "classCounts" : {
+          "national_park" : 5,
+          "nature_reserve" : 26,
+          "protected_area" : 27,
+          "provincial_park" : 2,
+          "regional_park" : 6,
+          "regional_park_reserve" : 1
+        },
+        "rawBytes" : 8882,
+        "featureMessagesBytes" : 6598,
+        "valueDictionaryBytes" : 1921,
+        "standaloneGzip" : 6546,
+        "features" : 67
+      },
+      "place" : {
+        "classCounts" : {
+          "aboriginal_lands" : 35,
+          "city" : 14,
+          "island" : 36,
+          "town" : 4,
+          "village" : 6
+        },
+        "rawBytes" : 6482,
+        "featureMessagesBytes" : 3192,
+        "valueDictionaryBytes" : 2351,
+        "standaloneGzip" : 4110,
+        "features" : 95
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 3,
+          "island" : 2,
+          "lake" : 1,
+          "park" : 11
+        },
+        "rawBytes" : 1404,
+        "featureMessagesBytes" : 725,
+        "valueDictionaryBytes" : 474,
+        "standaloneGzip" : 1034,
+        "features" : 17
+      },
+      "transportation" : {
+        "classCounts" : {
+          "ferry" : 1,
+          "motorway" : 691,
+          "path" : 3822,
+          "path_construction" : 33,
+          "primary" : 1136,
+          "primary_construction" : 16,
+          "rail" : 5,
+          "secondary" : 1982,
+          "secondary_construction" : 3,
+          "track" : 241,
+          "track_construction" : 1,
+          "trunk" : 550
+        },
+        "rawBytes" : 594997,
+        "featureMessagesBytes" : 535204,
+        "valueDictionaryBytes" : 36374,
+        "standaloneGzip" : 274420,
+        "features" : 8481
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "motorway" : 68,
+          "primary" : 4,
+          "secondary" : 1,
+          "trunk" : 30
+        },
+        "rawBytes" : 5375,
+        "featureMessagesBytes" : 4042,
+        "valueDictionaryBytes" : 800,
+        "standaloneGzip" : 3469,
+        "features" : 103
+      },
+      "water" : {
+        "classCounts" : {
+          "lake" : 14,
+          "ocean" : 1,
+          "river" : 16
+        },
+        "rawBytes" : 8108,
+        "featureMessagesBytes" : 7750,
+        "valueDictionaryBytes" : 174,
+        "standaloneGzip" : 6353,
+        "features" : 31
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 3,
+          "lake" : 3,
+          "strait" : 3
+        },
+        "rawBytes" : 1216,
+        "featureMessagesBytes" : 896,
+        "valueDictionaryBytes" : 167,
+        "standaloneGzip" : 1097,
+        "features" : 9
+      },
+      "waterway" : {
+        "classCounts" : {
+          "river" : 12
+        },
+        "rawBytes" : 1797,
+        "featureMessagesBytes" : 1447,
+        "valueDictionaryBytes" : 218,
+        "standaloneGzip" : 1562,
+        "features" : 12
+      }
+    },
+    "tile" : "10/162/350",
+    "ablations" : {
+      "rank12PlusTransit" : 352849,
+      "reencodedBaseline" : 352849,
+      "roadDetailsDeferredTo14" : 276065,
+      "withoutContactAndHours" : 352849,
+      "without_outdoor" : 352849,
+      "without_poi" : 352849,
+      "without_polygon_label" : 352250,
+      "without_transportation" : 77011
+    },
+    "storedGzip" : 352603
+  }, {
+    "rawBytes" : 567460,
+    "layers" : {
+      "aerodrome_label" : {
+        "classCounts" : {
+          "other" : 1
+        },
+        "rawBytes" : 180,
+        "featureMessagesBytes" : 32,
+        "valueDictionaryBytes" : 51,
+        "standaloneGzip" : 187,
+        "features" : 1
+      },
+      "aeroway" : {
+        "classCounts" : {
+          "aerodrome" : 1,
+          "gate" : 2,
+          "helipad" : 1
+        },
+        "rawBytes" : 415,
+        "featureMessagesBytes" : 353,
+        "valueDictionaryBytes" : 26,
+        "standaloneGzip" : 390,
+        "features" : 4
+      },
+      "boundary" : {
+        "classCounts" : {
+          "null" : 3
+        },
+        "rawBytes" : 410,
+        "featureMessagesBytes" : 339,
+        "valueDictionaryBytes" : 8,
+        "standaloneGzip" : 427,
+        "features" : 3
+      },
+      "building" : {
+        "classCounts" : {
+          "null" : 1165
+        },
+        "rawBytes" : 68592,
+        "featureMessagesBytes" : 55427,
+        "valueDictionaryBytes" : 8542,
+        "standaloneGzip" : 42912,
+        "features" : 1165
+      },
+      "housenumber" : {
+        "classCounts" : {
+          "null" : 849
+        },
+        "rawBytes" : 28087,
+        "featureMessagesBytes" : 19911,
+        "valueDictionaryBytes" : 4749,
+        "standaloneGzip" : 15960,
+        "features" : 849
+      },
+      "landcover" : {
+        "classCounts" : {
+          "grass" : 95,
+          "sand" : 1,
+          "wood" : 5
+        },
+        "rawBytes" : 4581,
+        "featureMessagesBytes" : 4209,
+        "valueDictionaryBytes" : 104,
+        "standaloneGzip" : 3199,
+        "features" : 101
+      },
+      "landuse" : {
+        "classCounts" : {
+          "college" : 1,
+          "commercial" : 43,
+          "military" : 1,
+          "neighbourhood" : 1,
+          "pitch" : 3,
+          "playground" : 3,
+          "residential" : 1,
+          "retail" : 34,
+          "school" : 3
+        },
+        "rawBytes" : 8155,
+        "featureMessagesBytes" : 7841,
+        "valueDictionaryBytes" : 94,
+        "standaloneGzip" : 6208,
+        "features" : 90
+      },
+      "outdoor" : {
+        "classCounts" : {
+          "barrier" : 8,
+          "man_made" : 1,
+          "natural" : 2,
+          "route" : 1
+        },
+        "rawBytes" : 1907,
+        "featureMessagesBytes" : 1470,
+        "valueDictionaryBytes" : 225,
+        "standaloneGzip" : 1671,
+        "features" : 12
+      },
+      "park" : {
+        "classCounts" : {
+          "protected_area" : 2
+        },
+        "rawBytes" : 357,
+        "featureMessagesBytes" : 118,
+        "valueDictionaryBytes" : 100,
+        "standaloneGzip" : 312,
+        "features" : 2
+      },
+      "place" : {
+        "classCounts" : {
+          "aboriginal_lands" : 1,
+          "island" : 2,
+          "neighbourhood" : 14,
+          "suburb" : 3
+        },
+        "rawBytes" : 1221,
+        "featureMessagesBytes" : 633,
+        "valueDictionaryBytes" : 384,
+        "standaloneGzip" : 890,
+        "features" : 20
+      },
+      "poi" : {
+        "classCounts" : {
+          "alcohol_shop" : 15,
+          "art_gallery" : 89,
+          "atm" : 23,
+          "attraction" : 47,
+          "bakery" : 17,
+          "bank" : 30,
+          "bar" : 31,
+          "beer" : 26,
+          "bicycle" : 12,
+          "bicycle_parking" : 532,
+          "bicycle_rental" : 50,
+          "block" : 1,
+          "bollard" : 52,
+          "border_control" : 1,
+          "boxing" : 1,
+          "brownfield" : 2,
+          "bus" : 147,
+          "butcher" : 1,
+          "cafe" : 184,
+          "car" : 1,
+          "castle" : 2,
+          "chain" : 2,
+          "cinema" : 3,
+          "clothing_store" : 116,
+          "college" : 21,
+          "cycle_barrier" : 1,
+          "cycling" : 1,
+          "dentist" : 29,
+          "doctors" : 2,
+          "dog_park" : 3,
+          "drinking_water" : 32,
+          "elevator" : 12,
+          "entrance" : 17,
+          "fast_food" : 151,
+          "ferry_terminal" : 3,
+          "fire_station" : 2,
+          "fuel" : 11,
+          "garden" : 51,
+          "gate" : 38,
+          "golf" : 1,
+          "grocery" : 33,
+          "hackerspace" : 2,
+          "hairdresser" : 79,
+          "harbor" : 200,
+          "height_restrictor" : 3,
+          "hospital" : 13,
+          "ice_cream" : 11,
+          "ice_rink" : 2,
+          "information" : 1301,
+          "jersey_barrier" : 6,
+          "laundry" : 10,
+          "library" : 9,
+          "lift_gate" : 2,
+          "lodging" : 62,
+          "monument" : 7,
+          "motorcycle_parking" : 15,
+          "museum" : 2,
+          "music" : 2,
+          "office" : 149,
+          "park" : 24,
+          "parking" : 240,
+          "pharmacy" : 18,
+          "picnic_site" : 3,
+          "pitch" : 28,
+          "place_of_worship" : 13,
+          "playground" : 11,
+          "police" : 4,
+          "post" : 107,
+          "railway" : 7,
+          "recycling" : 5,
+          "restaurant" : 347,
+          "rowing" : 1,
+          "running" : 1,
+          "school" : 15,
+          "shelter" : 3,
+          "shop" : 387,
+          "sports_centre" : 5,
+          "swimming_pool" : 27,
+          "swing_gate" : 2,
+          "theatre" : 9,
+          "toilets" : 31,
+          "town_hall" : 8,
+          "turning_circle" : 7,
+          "veterinary" : 3,
+          "waste_basket" : 207,
+          "yoga" : 4
+        },
+        "rawBytes" : 380287,
+        "featureMessagesBytes" : 197505,
+        "valueDictionaryBytes" : 157529,
+        "standaloneGzip" : 181043,
+        "features" : 5185
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 3,
+          "beach" : 2,
+          "island" : 1,
+          "lake" : 7,
+          "park" : 32
+        },
+        "rawBytes" : 2953,
+        "featureMessagesBytes" : 1541,
+        "valueDictionaryBytes" : 1049,
+        "standaloneGzip" : 1961,
+        "features" : 45
+      },
+      "trail_segment_label" : {
+        "classCounts" : {
+          "null" : 182
+        },
+        "rawBytes" : 4767,
+        "featureMessagesBytes" : 3760,
+        "valueDictionaryBytes" : 322,
+        "standaloneGzip" : 2501,
+        "features" : 182
+      },
+      "transportation" : {
+        "classCounts" : {
+          "bridge" : 1,
+          "ferry" : 1,
+          "minor" : 96,
+          "minor_construction" : 1,
+          "path" : 411,
+          "pier" : 23,
+          "primary" : 41,
+          "rail" : 2,
+          "secondary" : 60,
+          "service" : 115,
+          "tertiary" : 40,
+          "transit" : 5,
+          "trunk" : 4
+        },
+        "rawBytes" : 55136,
+        "featureMessagesBytes" : 49057,
+        "valueDictionaryBytes" : 2641,
+        "standaloneGzip" : 30202,
+        "features" : 800
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "ferry" : 1,
+          "minor" : 24,
+          "minor_construction" : 1,
+          "path" : 22,
+          "primary" : 7,
+          "secondary" : 15,
+          "service" : 11,
+          "tertiary" : 15,
+          "trunk" : 5
+        },
+        "rawBytes" : 7177,
+        "featureMessagesBytes" : 5267,
+        "valueDictionaryBytes" : 1272,
+        "standaloneGzip" : 5314,
+        "features" : 101
+      },
+      "water" : {
+        "classCounts" : {
+          "lake" : 8,
+          "ocean" : 1,
+          "pond" : 2,
+          "swimming_pool" : 12
+        },
+        "rawBytes" : 1600,
+        "featureMessagesBytes" : 1295,
+        "valueDictionaryBytes" : 167,
+        "standaloneGzip" : 1314,
+        "features" : 23
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 8,
+          "lake" : 10
+        },
+        "rawBytes" : 1494,
+        "featureMessagesBytes" : 1006,
+        "valueDictionaryBytes" : 303,
+        "standaloneGzip" : 1175,
+        "features" : 18
+      },
+      "waterway" : {
+        "classCounts" : {
+          "stream" : 1
+        },
+        "rawBytes" : 84,
+        "featureMessagesBytes" : 32,
+        "valueDictionaryBytes" : 10,
+        "standaloneGzip" : 105,
+        "features" : 1
+      }
+    },
+    "tile" : "14/2588/5606",
+    "ablations" : {
+      "rank12PlusTransit" : 295017,
+      "reencodedBaseline" : 295017,
+      "roadDetailsDeferredTo14" : 295017,
+      "withoutContactAndHours" : 246761,
+      "without_outdoor" : 293606,
+      "without_poi" : 113258,
+      "without_polygon_label" : 293042,
+      "without_transportation" : 265505
+    },
+    "storedGzip" : 294927
+  }, {
+    "rawBytes" : 540354,
+    "layers" : {
+      "boundary" : {
+        "classCounts" : {
+          "null" : 3
+        },
+        "rawBytes" : 599,
+        "featureMessagesBytes" : 528,
+        "valueDictionaryBytes" : 8,
+        "standaloneGzip" : 601,
+        "features" : 3
+      },
+      "building" : {
+        "classCounts" : {
+          "null" : 579
+        },
+        "rawBytes" : 49619,
+        "featureMessagesBytes" : 44261,
+        "valueDictionaryBytes" : 3136,
+        "standaloneGzip" : 33998,
+        "features" : 579
+      },
+      "housenumber" : {
+        "classCounts" : {
+          "null" : 879
+        },
+        "rawBytes" : 30522,
+        "featureMessagesBytes" : 22458,
+        "valueDictionaryBytes" : 4517,
+        "standaloneGzip" : 18349,
+        "features" : 879
+      },
+      "landcover" : {
+        "classCounts" : {
+          "farmland" : 1,
+          "grass" : 73,
+          "sand" : 3,
+          "wetland" : 2,
+          "wood" : 9
+        },
+        "rawBytes" : 5038,
+        "featureMessagesBytes" : 4698,
+        "valueDictionaryBytes" : 94,
+        "standaloneGzip" : 3825,
+        "features" : 88
+      },
+      "landuse" : {
+        "classCounts" : {
+          "college" : 1,
+          "commercial" : 47,
+          "industrial" : 9,
+          "neighbourhood" : 1,
+          "pitch" : 19,
+          "playground" : 14,
+          "railway" : 1,
+          "residential" : 1,
+          "retail" : 46,
+          "school" : 2,
+          "stadium" : 2,
+          "university" : 3
+        },
+        "rawBytes" : 10587,
+        "featureMessagesBytes" : 10119,
+        "valueDictionaryBytes" : 126,
+        "standaloneGzip" : 8086,
+        "features" : 146
+      },
+      "mountain_peak" : {
+        "classCounts" : {
+          "cliff" : 1
+        },
+        "rawBytes" : 76,
+        "featureMessagesBytes" : 28,
+        "valueDictionaryBytes" : 9,
+        "standaloneGzip" : 97,
+        "features" : 1
+      },
+      "outdoor" : {
+        "classCounts" : {
+          "barrier" : 13,
+          "man_made" : 1,
+          "natural" : 2
+        },
+        "rawBytes" : 3678,
+        "featureMessagesBytes" : 3211,
+        "valueDictionaryBytes" : 250,
+        "standaloneGzip" : 3023,
+        "features" : 16
+      },
+      "place" : {
+        "classCounts" : {
+          "city" : 1,
+          "island" : 2,
+          "neighbourhood" : 14,
+          "suburb" : 5
+        },
+        "rawBytes" : 2370,
+        "featureMessagesBytes" : 777,
+        "valueDictionaryBytes" : 961,
+        "standaloneGzip" : 1679,
+        "features" : 22
+      },
+      "poi" : {
+        "classCounts" : {
+          "alcohol_shop" : 10,
+          "archery" : 1,
+          "art_gallery" : 101,
+          "atm" : 12,
+          "attraction" : 46,
+          "bakery" : 18,
+          "bank" : 16,
+          "bar" : 36,
+          "beer" : 39,
+          "bicycle" : 12,
+          "bicycle_parking" : 548,
+          "bicycle_rental" : 55,
+          "block" : 7,
+          "bollard" : 57,
+          "boxing" : 3,
+          "brownfield" : 8,
+          "bus" : 177,
+          "butcher" : 5,
+          "cafe" : 130,
+          "car" : 26,
+          "children" : 2,
+          "clothing_store" : 71,
+          "college" : 18,
+          "cycling" : 1,
+          "dentist" : 26,
+          "doctors" : 2,
+          "dog_park" : 5,
+          "drinking_water" : 24,
+          "elevator" : 4,
+          "entrance" : 16,
+          "escape_game" : 2,
+          "fast_food" : 104,
+          "ferry_terminal" : 4,
+          "fire_station" : 3,
+          "fuel" : 8,
+          "garden" : 30,
+          "gate" : 131,
+          "grocery" : 20,
+          "hackerspace" : 4,
+          "hairdresser" : 59,
+          "harbor" : 44,
+          "hospital" : 18,
+          "ice_cream" : 6,
+          "information" : 1075,
+          "jersey_barrier" : 11,
+          "laundry" : 3,
+          "library" : 14,
+          "lift_gate" : 2,
+          "lodging" : 27,
+          "monument" : 7,
+          "motorcycle_parking" : 20,
+          "museum" : 8,
+          "music" : 3,
+          "office" : 146,
+          "park" : 35,
+          "parking" : 403,
+          "pharmacy" : 25,
+          "picnic_site" : 3,
+          "pitch" : 37,
+          "place_of_worship" : 19,
+          "playground" : 34,
+          "police" : 5,
+          "post" : 58,
+          "railway" : 7,
+          "recycling" : 3,
+          "restaurant" : 213,
+          "school" : 14,
+          "school_zone" : 3,
+          "shelter" : 3,
+          "shop" : 393,
+          "sliding_gate" : 2,
+          "sports_centre" : 9,
+          "stadium" : 2,
+          "stepping_stones" : 2,
+          "swimming_pool" : 2,
+          "swing_gate" : 1,
+          "theatre" : 11,
+          "toilets" : 29,
+          "town_hall" : 20,
+          "turning_circle" : 9,
+          "veterinary" : 4,
+          "waste_basket" : 118,
+          "waterfall" : 1,
+          "yes" : 3,
+          "yoga" : 2
+        },
+        "rawBytes" : 341091,
+        "featureMessagesBytes" : 179877,
+        "valueDictionaryBytes" : 138550,
+        "standaloneGzip" : 163668,
+        "features" : 4695
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 2,
+          "island" : 1,
+          "lake" : 1,
+          "park" : 42
+        },
+        "rawBytes" : 2887,
+        "featureMessagesBytes" : 1596,
+        "valueDictionaryBytes" : 952,
+        "standaloneGzip" : 1884,
+        "features" : 46
+      },
+      "trail_segment_label" : {
+        "classCounts" : {
+          "null" : 269
+        },
+        "rawBytes" : 6935,
+        "featureMessagesBytes" : 5656,
+        "valueDictionaryBytes" : 378,
+        "standaloneGzip" : 3494,
+        "features" : 269
+      },
+      "transportation" : {
+        "classCounts" : {
+          "bridge" : 6,
+          "ferry" : 1,
+          "minor" : 130,
+          "minor_construction" : 7,
+          "path" : 529,
+          "path_construction" : 10,
+          "pier" : 8,
+          "primary" : 76,
+          "rail" : 4,
+          "secondary" : 121,
+          "service" : 147,
+          "service_construction" : 4,
+          "tertiary" : 47,
+          "transit" : 11
+        },
+        "rawBytes" : 74498,
+        "featureMessagesBytes" : 66237,
+        "valueDictionaryBytes" : 4026,
+        "standaloneGzip" : 39390,
+        "features" : 1101
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "ferry" : 2,
+          "minor" : 52,
+          "minor_construction" : 6,
+          "path" : 30,
+          "path_construction" : 1,
+          "primary" : 9,
+          "secondary" : 14,
+          "service" : 4,
+          "tertiary" : 15
+        },
+        "rawBytes" : 10212,
+        "featureMessagesBytes" : 7396,
+        "valueDictionaryBytes" : 2170,
+        "standaloneGzip" : 7568,
+        "features" : 133
+      },
+      "water" : {
+        "classCounts" : {
+          "lake" : 4,
+          "ocean" : 1,
+          "pond" : 8,
+          "river" : 2,
+          "swimming_pool" : 1
+        },
+        "rawBytes" : 1410,
+        "featureMessagesBytes" : 1166,
+        "valueDictionaryBytes" : 130,
+        "standaloneGzip" : 1172,
+        "features" : 16
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 3,
+          "lake" : 2
+        },
+        "rawBytes" : 507,
+        "featureMessagesBytes" : 292,
+        "valueDictionaryBytes" : 95,
+        "standaloneGzip" : 479,
+        "features" : 5
+      },
+      "waterway" : {
+        "classCounts" : {
+          "canal" : 1,
+          "ditch" : 1,
+          "stream" : 4
+        },
+        "rawBytes" : 274,
+        "featureMessagesBytes" : 171,
+        "valueDictionaryBytes" : 34,
+        "standaloneGzip" : 248,
+        "features" : 6
+      }
+    },
+    "tile" : "14/2589/5607",
+    "ablations" : {
+      "rank12PlusTransit" : 286091,
+      "reencodedBaseline" : 286091,
+      "roadDetailsDeferredTo14" : 286091,
+      "withoutContactAndHours" : 246236,
+      "without_outdoor" : 283336,
+      "without_poi" : 122286,
+      "without_polygon_label" : 284302,
+      "without_transportation" : 247522
+    },
+    "storedGzip" : 286053
+  }, {
+    "rawBytes" : 505138,
+    "layers" : {
+      "aerodrome_label" : {
+        "classCounts" : {
+          "other" : 3
+        },
+        "rawBytes" : 476,
+        "featureMessagesBytes" : 103,
+        "valueDictionaryBytes" : 216,
+        "standaloneGzip" : 359,
+        "features" : 3
+      },
+      "aeroway" : {
+        "classCounts" : {
+          "aerodrome" : 1,
+          "apron" : 2,
+          "runway" : 6,
+          "taxiway" : 94
+        },
+        "rawBytes" : 3821,
+        "featureMessagesBytes" : 3161,
+        "valueDictionaryBytes" : 295,
+        "standaloneGzip" : 2426,
+        "features" : 103
+      },
+      "boundary" : {
+        "classCounts" : {
+          "aboriginal_lands" : 5
+        },
+        "rawBytes" : 1059,
+        "featureMessagesBytes" : 869,
+        "valueDictionaryBytes" : 87,
+        "standaloneGzip" : 635,
+        "features" : 5
+      },
+      "landcover" : {
+        "classCounts" : {
+          "farmland" : 9,
+          "grass" : 47,
+          "rock" : 1,
+          "shoal" : 1,
+          "wetland" : 16,
+          "wood" : 8
+        },
+        "rawBytes" : 11075,
+        "featureMessagesBytes" : 10677,
+        "valueDictionaryBytes" : 147,
+        "standaloneGzip" : 9000,
+        "features" : 82
+      },
+      "landuse" : {
+        "classCounts" : {
+          "cemetery" : 1,
+          "commercial" : 3,
+          "industrial" : 19,
+          "institutional" : 1,
+          "military" : 1,
+          "neighbourhood" : 3,
+          "railway" : 2,
+          "residential" : 1,
+          "retail" : 4,
+          "university" : 1
+        },
+        "rawBytes" : 25017,
+        "featureMessagesBytes" : 24781,
+        "valueDictionaryBytes" : 116,
+        "standaloneGzip" : 19283,
+        "features" : 36
+      },
+      "mountain_peak" : {
+        "classCounts" : {
+          "cliff" : 187,
+          "peak" : 24,
+          "ridge" : 6
+        },
+        "rawBytes" : 8586,
+        "featureMessagesBytes" : 7272,
+        "valueDictionaryBytes" : 617,
+        "standaloneGzip" : 5477,
+        "features" : 217
+      },
+      "park" : {
+        "classCounts" : {
+          "national_park" : 6,
+          "nature_reserve" : 15,
+          "protected_area" : 27,
+          "provincial_park" : 1,
+          "regional_park" : 2
+        },
+        "rawBytes" : 5985,
+        "featureMessagesBytes" : 4432,
+        "valueDictionaryBytes" : 1262,
+        "standaloneGzip" : 4124,
+        "features" : 51
+      },
+      "place" : {
+        "classCounts" : {
+          "aboriginal_lands" : 36,
+          "city" : 12,
+          "island" : 73,
+          "town" : 2,
+          "village" : 10
+        },
+        "rawBytes" : 8488,
+        "featureMessagesBytes" : 4520,
+        "valueDictionaryBytes" : 2883,
+        "standaloneGzip" : 5208,
+        "features" : 133
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 3,
+          "island" : 4,
+          "park" : 10,
+          "strait" : 2
+        },
+        "rawBytes" : 1434,
+        "featureMessagesBytes" : 722,
+        "valueDictionaryBytes" : 501,
+        "standaloneGzip" : 993,
+        "features" : 19
+      },
+      "transportation" : {
+        "classCounts" : {
+          "ferry" : 1,
+          "motorway" : 354,
+          "path" : 2975,
+          "path_construction" : 23,
+          "primary" : 849,
+          "primary_construction" : 3,
+          "rail" : 4,
+          "secondary" : 1350,
+          "track" : 190,
+          "trunk" : 371,
+          "trunk_construction" : 1
+        },
+        "rawBytes" : 429119,
+        "featureMessagesBytes" : 380855,
+        "valueDictionaryBytes" : 30277,
+        "standaloneGzip" : 193236,
+        "features" : 6121
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "motorway" : 51,
+          "trunk" : 18
+        },
+        "rawBytes" : 3445,
+        "featureMessagesBytes" : 2416,
+        "valueDictionaryBytes" : 550,
+        "standaloneGzip" : 2154,
+        "features" : 69
+      },
+      "water" : {
+        "classCounts" : {
+          "lake" : 6,
+          "ocean" : 1,
+          "pond" : 1,
+          "river" : 2
+        },
+        "rawBytes" : 5102,
+        "featureMessagesBytes" : 4936,
+        "valueDictionaryBytes" : 75,
+        "standaloneGzip" : 3944,
+        "features" : 10
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 3,
+          "lake" : 1,
+          "strait" : 3
+        },
+        "rawBytes" : 976,
+        "featureMessagesBytes" : 692,
+        "valueDictionaryBytes" : 142,
+        "standaloneGzip" : 892,
+        "features" : 7
+      },
+      "waterway" : {
+        "classCounts" : {
+          "river" : 3
+        },
+        "rawBytes" : 511,
+        "featureMessagesBytes" : 354,
+        "valueDictionaryBytes" : 64,
+        "standaloneGzip" : 507,
+        "features" : 3
+      }
+    },
+    "tile" : "10/161/350",
+    "ablations" : {
+      "rank12PlusTransit" : 248014,
+      "reencodedBaseline" : 248014,
+      "roadDetailsDeferredTo14" : 189511,
+      "withoutContactAndHours" : 248014,
+      "without_outdoor" : 248014,
+      "without_poi" : 248014,
+      "without_polygon_label" : 247304,
+      "without_transportation" : 54302
+    },
+    "storedGzip" : 247713
+  }, {
+    "rawBytes" : 510213,
+    "layers" : {
+      "aerodrome_label" : {
+        "classCounts" : {
+          "other" : 1
+        },
+        "rawBytes" : 180,
+        "featureMessagesBytes" : 32,
+        "valueDictionaryBytes" : 51,
+        "standaloneGzip" : 187,
+        "features" : 1
+      },
+      "aeroway" : {
+        "classCounts" : {
+          "aerodrome" : 1,
+          "heliport" : 1
+        },
+        "rawBytes" : 177,
+        "featureMessagesBytes" : 127,
+        "valueDictionaryBytes" : 21,
+        "standaloneGzip" : 194,
+        "features" : 2
+      },
+      "boundary" : {
+        "classCounts" : {
+          "aboriginal_lands" : 3,
+          "null" : 4
+        },
+        "rawBytes" : 2264,
+        "featureMessagesBytes" : 2049,
+        "valueDictionaryBytes" : 68,
+        "standaloneGzip" : 1796,
+        "features" : 7
+      },
+      "landcover" : {
+        "classCounts" : {
+          "grass" : 11,
+          "rock" : 1,
+          "wetland" : 1,
+          "wood" : 1
+        },
+        "rawBytes" : 2179,
+        "featureMessagesBytes" : 2034,
+        "valueDictionaryBytes" : 59,
+        "standaloneGzip" : 1798,
+        "features" : 14
+      },
+      "landuse" : {
+        "classCounts" : {
+          "college" : 1,
+          "commercial" : 80,
+          "hospital" : 2,
+          "industrial" : 60,
+          "military" : 1,
+          "neighbourhood" : 1,
+          "pitch" : 5,
+          "quarry" : 1,
+          "railway" : 7,
+          "residential" : 1,
+          "retail" : 50,
+          "school" : 18,
+          "stadium" : 2,
+          "track" : 6,
+          "university" : 2
+        },
+        "rawBytes" : 19326,
+        "featureMessagesBytes" : 18644,
+        "valueDictionaryBytes" : 149,
+        "standaloneGzip" : 15201,
+        "features" : 237
+      },
+      "mountain_peak" : {
+        "classCounts" : {
+          "cliff" : 34,
+          "peak" : 3,
+          "ridge" : 2
+        },
+        "rawBytes" : 1802,
+        "featureMessagesBytes" : 1533,
+        "valueDictionaryBytes" : 72,
+        "standaloneGzip" : 1342,
+        "features" : 39
+      },
+      "park" : {
+        "classCounts" : {
+          "protected_area" : 2,
+          "regional_park" : 1
+        },
+        "rawBytes" : 581,
+        "featureMessagesBytes" : 311,
+        "valueDictionaryBytes" : 141,
+        "standaloneGzip" : 532,
+        "features" : 3
+      },
+      "place" : {
+        "classCounts" : {
+          "aboriginal_lands" : 8,
+          "city" : 4,
+          "island" : 3,
+          "suburb" : 43,
+          "town" : 1
+        },
+        "rawBytes" : 4405,
+        "featureMessagesBytes" : 1956,
+        "valueDictionaryBytes" : 1664,
+        "standaloneGzip" : 2966,
+        "features" : 59
+      },
+      "poi" : {
+        "classCounts" : {
+          "archery" : 1,
+          "athletics" : 3,
+          "attraction" : 126,
+          "bicycle" : 14,
+          "billiards" : 1,
+          "bollard" : 4,
+          "boxing" : 3,
+          "bus" : 1065,
+          "campsite" : 2,
+          "chess" : 2,
+          "climbing" : 4,
+          "cycling" : 4,
+          "drinking_water" : 195,
+          "gate" : 8,
+          "golf" : 9,
+          "gymnastics" : 2,
+          "harbor" : 620,
+          "horse_racing" : 1,
+          "ice_rink" : 5,
+          "jersey_barrier" : 3,
+          "judo" : 1,
+          "lift_gate" : 1,
+          "lodging" : 7,
+          "park" : 268,
+          "parking" : 1790,
+          "pitch" : 567,
+          "restaurant" : 1,
+          "rowing" : 1,
+          "running" : 8,
+          "shelter" : 56,
+          "shop" : 49,
+          "sports_centre" : 58,
+          "stadium" : 6,
+          "swimming_pool" : 233,
+          "toilets" : 159,
+          "water" : 1,
+          "waterfall" : 3,
+          "yes" : 1,
+          "yoga" : 20
+        },
+        "rawBytes" : 229038,
+        "featureMessagesBytes" : 160579,
+        "valueDictionaryBytes" : 50700,
+        "standaloneGzip" : 100008,
+        "features" : 5302
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 5,
+          "park" : 2
+        },
+        "rawBytes" : 802,
+        "featureMessagesBytes" : 416,
+        "valueDictionaryBytes" : 207,
+        "standaloneGzip" : 683,
+        "features" : 7
+      },
+      "transportation" : {
+        "classCounts" : {
+          "busway" : 2,
+          "ferry" : 1,
+          "minor" : 997,
+          "motorway" : 3,
+          "path" : 1530,
+          "path_construction" : 10,
+          "primary" : 311,
+          "rail" : 5,
+          "secondary" : 527,
+          "tertiary" : 294,
+          "track" : 4,
+          "trunk" : 52
+        },
+        "rawBytes" : 242575,
+        "featureMessagesBytes" : 219496,
+        "valueDictionaryBytes" : 12272,
+        "standaloneGzip" : 112524,
+        "features" : 3736
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "ferry" : 1,
+          "minor" : 1,
+          "motorway" : 1,
+          "path" : 2,
+          "primary" : 3,
+          "secondary" : 4,
+          "tertiary" : 2,
+          "trunk" : 2
+        },
+        "rawBytes" : 1846,
+        "featureMessagesBytes" : 1116,
+        "valueDictionaryBytes" : 401,
+        "standaloneGzip" : 1540,
+        "features" : 16
+      },
+      "water" : {
+        "classCounts" : {
+          "dock" : 4,
+          "lake" : 5,
+          "ocean" : 1,
+          "pond" : 7,
+          "river" : 2,
+          "swimming_pool" : 1
+        },
+        "rawBytes" : 3127,
+        "featureMessagesBytes" : 2836,
+        "valueDictionaryBytes" : 159,
+        "standaloneGzip" : 2584,
+        "features" : 20
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 6,
+          "lake" : 1,
+          "strait" : 2
+        },
+        "rawBytes" : 1502,
+        "featureMessagesBytes" : 1161,
+        "valueDictionaryBytes" : 189,
+        "standaloneGzip" : 1326,
+        "features" : 9
+      },
+      "waterway" : {
+        "classCounts" : {
+          "river" : 4
+        },
+        "rawBytes" : 361,
+        "featureMessagesBytes" : 209,
+        "valueDictionaryBytes" : 43,
+        "standaloneGzip" : 343,
+        "features" : 4
+      }
+    },
+    "tile" : "12/647/1401",
+    "ablations" : {
+      "rank12PlusTransit" : 242898,
+      "reencodedBaseline" : 243322,
+      "roadDetailsDeferredTo14" : 213518,
+      "withoutContactAndHours" : 243322,
+      "without_outdoor" : 243322,
+      "without_poi" : 142302,
+      "without_polygon_label" : 242787,
+      "without_transportation" : 130200
+    },
+    "storedGzip" : 243212
+  }, {
+    "rawBytes" : 443227,
+    "layers" : {
+      "boundary" : {
+        "classCounts" : {
+          "null" : 1
+        },
+        "rawBytes" : 122,
+        "featureMessagesBytes" : 64,
+        "valueDictionaryBytes" : 4,
+        "standaloneGzip" : 144,
+        "features" : 1
+      },
+      "building" : {
+        "classCounts" : {
+          "null" : 255
+        },
+        "rawBytes" : 66430,
+        "featureMessagesBytes" : 64983,
+        "valueDictionaryBytes" : 578,
+        "standaloneGzip" : 45471,
+        "features" : 255
+      },
+      "housenumber" : {
+        "classCounts" : {
+          "null" : 1369
+        },
+        "rawBytes" : 50232,
+        "featureMessagesBytes" : 37255,
+        "valueDictionaryBytes" : 7470,
+        "standaloneGzip" : 29993,
+        "features" : 1369
+      },
+      "landcover" : {
+        "classCounts" : {
+          "grass" : 44,
+          "wood" : 1
+        },
+        "rawBytes" : 1886,
+        "featureMessagesBytes" : 1705,
+        "valueDictionaryBytes" : 46,
+        "standaloneGzip" : 1369,
+        "features" : 45
+      },
+      "landuse" : {
+        "classCounts" : {
+          "college" : 2,
+          "commercial" : 48,
+          "hospital" : 1,
+          "industrial" : 2,
+          "pitch" : 22,
+          "playground" : 23,
+          "railway" : 1,
+          "residential" : 1,
+          "retail" : 74,
+          "school" : 7,
+          "university" : 2
+        },
+        "rawBytes" : 14297,
+        "featureMessagesBytes" : 13775,
+        "valueDictionaryBytes" : 112,
+        "standaloneGzip" : 10376,
+        "features" : 183
+      },
+      "outdoor" : {
+        "classCounts" : {
+          "barrier" : 6,
+          "natural" : 2
+        },
+        "rawBytes" : 1169,
+        "featureMessagesBytes" : 878,
+        "valueDictionaryBytes" : 133,
+        "standaloneGzip" : 1014,
+        "features" : 8
+      },
+      "place" : {
+        "classCounts" : {
+          "city" : 1,
+          "island" : 1,
+          "neighbourhood" : 10,
+          "suburb" : 6
+        },
+        "rawBytes" : 2168,
+        "featureMessagesBytes" : 649,
+        "valueDictionaryBytes" : 909,
+        "standaloneGzip" : 1539,
+        "features" : 18
+      },
+      "poi" : {
+        "classCounts" : {
+          "alcohol_shop" : 8,
+          "archery" : 1,
+          "art_gallery" : 92,
+          "atm" : 4,
+          "attraction" : 17,
+          "bakery" : 16,
+          "bank" : 13,
+          "bar" : 17,
+          "beer" : 13,
+          "bicycle" : 13,
+          "bicycle_parking" : 537,
+          "bicycle_rental" : 46,
+          "bollard" : 35,
+          "brownfield" : 7,
+          "bus" : 97,
+          "cafe" : 74,
+          "car" : 42,
+          "children" : 4,
+          "cinema" : 1,
+          "clothing_store" : 41,
+          "college" : 5,
+          "cycling" : 1,
+          "dentist" : 35,
+          "doctors" : 11,
+          "dog_park" : 3,
+          "drinking_water" : 20,
+          "elevator" : 4,
+          "entrance" : 2,
+          "escape_game" : 2,
+          "fast_food" : 47,
+          "ferry_terminal" : 1,
+          "fire_station" : 1,
+          "fuel" : 3,
+          "garden" : 53,
+          "gate" : 61,
+          "grocery" : 23,
+          "gymnastics" : 1,
+          "hackerspace" : 1,
+          "hairdresser" : 48,
+          "harbor" : 2,
+          "hospital" : 20,
+          "ice_cream" : 5,
+          "information" : 855,
+          "jersey_barrier" : 5,
+          "judo" : 1,
+          "laundry" : 6,
+          "library" : 5,
+          "lodging" : 4,
+          "monument" : 2,
+          "motorcycle_parking" : 13,
+          "music" : 4,
+          "office" : 86,
+          "park" : 24,
+          "parking" : 331,
+          "pharmacy" : 20,
+          "pitch" : 42,
+          "place_of_worship" : 30,
+          "playground" : 42,
+          "police" : 1,
+          "post" : 49,
+          "railway" : 3,
+          "recycling" : 9,
+          "restaurant" : 161,
+          "running" : 1,
+          "school" : 12,
+          "school_zone" : 6,
+          "shelter" : 2,
+          "shop" : 283,
+          "sports_centre" : 5,
+          "swimming_pool" : 6,
+          "theatre" : 2,
+          "toilets" : 6,
+          "town_hall" : 8,
+          "turning_circle" : 7,
+          "veterinary" : 6,
+          "waste_basket" : 70,
+          "yes" : 2,
+          "yoga" : 5
+        },
+        "rawBytes" : 250271,
+        "featureMessagesBytes" : 131791,
+        "valueDictionaryBytes" : 101356,
+        "standaloneGzip" : 118067,
+        "features" : 3541
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 2,
+          "island" : 1,
+          "lake" : 1,
+          "park" : 35
+        },
+        "rawBytes" : 2296,
+        "featureMessagesBytes" : 1358,
+        "valueDictionaryBytes" : 650,
+        "standaloneGzip" : 1466,
+        "features" : 39
+      },
+      "trail_segment_label" : {
+        "classCounts" : {
+          "null" : 49
+        },
+        "rawBytes" : 1413,
+        "featureMessagesBytes" : 1028,
+        "valueDictionaryBytes" : 126,
+        "standaloneGzip" : 821,
+        "features" : 49
+      },
+      "transportation" : {
+        "classCounts" : {
+          "minor" : 227,
+          "minor_construction" : 4,
+          "path" : 165,
+          "path_construction" : 5,
+          "primary" : 46,
+          "primary_construction" : 2,
+          "rail" : 1,
+          "secondary" : 55,
+          "service" : 88,
+          "tertiary" : 29,
+          "transit" : 3
+        },
+        "rawBytes" : 43907,
+        "featureMessagesBytes" : 38711,
+        "valueDictionaryBytes" : 2262,
+        "standaloneGzip" : 24209,
+        "features" : 625
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "minor" : 47,
+          "minor_construction" : 2,
+          "path" : 13,
+          "path_construction" : 1,
+          "primary" : 8,
+          "primary_construction" : 2,
+          "secondary" : 7,
+          "service" : 4,
+          "tertiary" : 9
+        },
+        "rawBytes" : 7297,
+        "featureMessagesBytes" : 5451,
+        "valueDictionaryBytes" : 1247,
+        "standaloneGzip" : 5156,
+        "features" : 93
+      },
+      "water" : {
+        "classCounts" : {
+          "swimming_pool" : 2
+        },
+        "rawBytes" : 144,
+        "featureMessagesBytes" : 66,
+        "valueDictionaryBytes" : 29,
+        "standaloneGzip" : 160,
+        "features" : 2
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 2,
+          "lake" : 8
+        },
+        "rawBytes" : 735,
+        "featureMessagesBytes" : 447,
+        "valueDictionaryBytes" : 148,
+        "standaloneGzip" : 612,
+        "features" : 10
+      },
+      "waterway" : {
+        "classCounts" : {
+          "stream" : 18
+        },
+        "rawBytes" : 812,
+        "featureMessagesBytes" : 640,
+        "valueDictionaryBytes" : 37,
+        "standaloneGzip" : 443,
+        "features" : 18
+      }
+    },
+    "tile" : "14/2589/5608",
+    "ablations" : {
+      "rank12PlusTransit" : 240207,
+      "reencodedBaseline" : 240207,
+      "roadDetailsDeferredTo14" : 240207,
+      "withoutContactAndHours" : 209325,
+      "without_outdoor" : 239344,
+      "without_poi" : 121619,
+      "without_polygon_label" : 238924,
+      "without_transportation" : 217087
+    },
+    "storedGzip" : 240178
+  }, {
+    "rawBytes" : 519314,
+    "layers" : {
+      "boundary" : {
+        "classCounts" : {
+          "null" : 3
+        },
+        "rawBytes" : 579,
+        "featureMessagesBytes" : 507,
+        "valueDictionaryBytes" : 8,
+        "standaloneGzip" : 583,
+        "features" : 3
+      },
+      "landcover" : {
+        "classCounts" : {
+          "grass" : 25,
+          "wood" : 2
+        },
+        "rawBytes" : 2785,
+        "featureMessagesBytes" : 2624,
+        "valueDictionaryBytes" : 59,
+        "standaloneGzip" : 1752,
+        "features" : 27
+      },
+      "landuse" : {
+        "classCounts" : {
+          "cemetery" : 2,
+          "college" : 2,
+          "commercial" : 36,
+          "hospital" : 2,
+          "industrial" : 19,
+          "institutional" : 1,
+          "neighbourhood" : 1,
+          "pitch" : 4,
+          "railway" : 6,
+          "residential" : 1,
+          "retail" : 34,
+          "school" : 50,
+          "stadium" : 1,
+          "track" : 5,
+          "university" : 2
+        },
+        "rawBytes" : 22535,
+        "featureMessagesBytes" : 21995,
+        "valueDictionaryBytes" : 156,
+        "standaloneGzip" : 17357,
+        "features" : 166
+      },
+      "mountain_peak" : {
+        "classCounts" : {
+          "cliff" : 21,
+          "peak" : 4,
+          "ridge" : 3
+        },
+        "rawBytes" : 1336,
+        "featureMessagesBytes" : 1076,
+        "valueDictionaryBytes" : 80,
+        "standaloneGzip" : 1028,
+        "features" : 28
+      },
+      "park" : {
+        "classCounts" : {
+          "protected_area" : 2,
+          "regional_park" : 1
+        },
+        "rawBytes" : 466,
+        "featureMessagesBytes" : 149,
+        "valueDictionaryBytes" : 187,
+        "standaloneGzip" : 426,
+        "features" : 3
+      },
+      "place" : {
+        "classCounts" : {
+          "aboriginal_lands" : 9,
+          "city" : 4,
+          "island" : 8,
+          "suburb" : 39
+        },
+        "rawBytes" : 4406,
+        "featureMessagesBytes" : 1994,
+        "valueDictionaryBytes" : 1625,
+        "standaloneGzip" : 2996,
+        "features" : 60
+      },
+      "poi" : {
+        "classCounts" : {
+          "archery" : 1,
+          "athletics" : 9,
+          "attraction" : 49,
+          "bar" : 1,
+          "bicycle" : 11,
+          "billiards" : 1,
+          "bollard" : 1,
+          "boxing" : 3,
+          "bus" : 1350,
+          "chess" : 2,
+          "cycling" : 3,
+          "disc_golf" : 1,
+          "drinking_water" : 183,
+          "gate" : 10,
+          "golf" : 8,
+          "gymnastics" : 1,
+          "harbor" : 407,
+          "ice_rink" : 6,
+          "jersey_barrier" : 2,
+          "judo" : 1,
+          "karting" : 1,
+          "lodging" : 3,
+          "park" : 207,
+          "parking" : 1729,
+          "pitch" : 758,
+          "running" : 13,
+          "shelter" : 41,
+          "shop" : 40,
+          "sports_centre" : 61,
+          "stadium" : 4,
+          "swimming_pool" : 494,
+          "toilets" : 135,
+          "turning_circle" : 4,
+          "waterfall" : 4,
+          "yoga" : 14
+        },
+        "rawBytes" : 246748,
+        "featureMessagesBytes" : 171088,
+        "valueDictionaryBytes" : 57511,
+        "standaloneGzip" : 103561,
+        "features" : 5558
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 4,
+          "island" : 1,
+          "park" : 1
+        },
+        "rawBytes" : 571,
+        "featureMessagesBytes" : 277,
+        "valueDictionaryBytes" : 149,
+        "standaloneGzip" : 512,
+        "features" : 6
+      },
+      "transportation" : {
+        "classCounts" : {
+          "busway" : 3,
+          "minor" : 1475,
+          "path" : 782,
+          "path_construction" : 33,
+          "primary" : 540,
+          "primary_construction" : 3,
+          "rail" : 1,
+          "secondary" : 395,
+          "tertiary" : 238,
+          "track" : 1,
+          "trunk" : 102
+        },
+        "rawBytes" : 235345,
+        "featureMessagesBytes" : 215271,
+        "valueDictionaryBytes" : 9869,
+        "standaloneGzip" : 105974,
+        "features" : 3573
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "minor" : 5,
+          "primary" : 5,
+          "secondary" : 6,
+          "tertiary" : 3,
+          "trunk" : 3
+        },
+        "rawBytes" : 1944,
+        "featureMessagesBytes" : 1404,
+        "valueDictionaryBytes" : 337,
+        "standaloneGzip" : 1591,
+        "features" : 22
+      },
+      "water" : {
+        "classCounts" : {
+          "lake" : 13,
+          "ocean" : 1,
+          "pond" : 2
+        },
+        "rawBytes" : 1108,
+        "featureMessagesBytes" : 899,
+        "valueDictionaryBytes" : 101,
+        "standaloneGzip" : 913,
+        "features" : 16
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 6,
+          "lake" : 1,
+          "strait" : 2
+        },
+        "rawBytes" : 1452,
+        "featureMessagesBytes" : 1102,
+        "valueDictionaryBytes" : 198,
+        "standaloneGzip" : 1283,
+        "features" : 9
+      }
+    },
+    "tile" : "12/647/1402",
+    "ablations" : {
+      "rank12PlusTransit" : 238901,
+      "reencodedBaseline" : 239359,
+      "roadDetailsDeferredTo14" : 216251,
+      "withoutContactAndHours" : 239359,
+      "without_outdoor" : 239359,
+      "without_poi" : 134303,
+      "without_polygon_label" : 238922,
+      "without_transportation" : 132411
+    },
+    "storedGzip" : 239266
+  }, {
+    "rawBytes" : 496139,
+    "layers" : {
+      "boundary" : {
+        "classCounts" : {
+          "null" : 3
+        },
+        "rawBytes" : 689,
+        "featureMessagesBytes" : 617,
+        "valueDictionaryBytes" : 8,
+        "standaloneGzip" : 682,
+        "features" : 3
+      },
+      "landcover" : {
+        "classCounts" : {
+          "grass" : 33,
+          "wetland" : 3,
+          "wood" : 3
+        },
+        "rawBytes" : 7158,
+        "featureMessagesBytes" : 6935,
+        "valueDictionaryBytes" : 85,
+        "standaloneGzip" : 5484,
+        "features" : 39
+      },
+      "landuse" : {
+        "classCounts" : {
+          "cemetery" : 3,
+          "commercial" : 67,
+          "hospital" : 1,
+          "industrial" : 44,
+          "neighbourhood" : 2,
+          "pitch" : 4,
+          "quarry" : 1,
+          "railway" : 1,
+          "residential" : 1,
+          "retail" : 36,
+          "school" : 35,
+          "stadium" : 1,
+          "theme_park" : 1,
+          "track" : 2,
+          "university" : 1
+        },
+        "rawBytes" : 24601,
+        "featureMessagesBytes" : 23994,
+        "valueDictionaryBytes" : 152,
+        "standaloneGzip" : 19643,
+        "features" : 200
+      },
+      "mountain_peak" : {
+        "classCounts" : {
+          "cliff" : 29,
+          "peak" : 1,
+          "ridge" : 3
+        },
+        "rawBytes" : 1921,
+        "featureMessagesBytes" : 1701,
+        "valueDictionaryBytes" : 45,
+        "standaloneGzip" : 1461,
+        "features" : 33
+      },
+      "park" : {
+        "classCounts" : {
+          "nature_reserve" : 2,
+          "protected_area" : 1,
+          "regional_park" : 1
+        },
+        "rawBytes" : 660,
+        "featureMessagesBytes" : 340,
+        "valueDictionaryBytes" : 214,
+        "standaloneGzip" : 565,
+        "features" : 4
+      },
+      "place" : {
+        "classCounts" : {
+          "aboriginal_lands" : 4,
+          "city" : 4,
+          "island" : 7,
+          "suburb" : 38,
+          "village" : 1
+        },
+        "rawBytes" : 4085,
+        "featureMessagesBytes" : 1801,
+        "valueDictionaryBytes" : 1525,
+        "standaloneGzip" : 2808,
+        "features" : 54
+      },
+      "poi" : {
+        "classCounts" : {
+          "athletics" : 3,
+          "attraction" : 39,
+          "bar" : 1,
+          "baseball" : 1,
+          "basketball" : 1,
+          "bicycle" : 10,
+          "billiards" : 2,
+          "boxing" : 1,
+          "bus" : 1182,
+          "drinking_water" : 186,
+          "golf" : 10,
+          "harbor" : 42,
+          "ice_rink" : 3,
+          "karting" : 1,
+          "lodging" : 1,
+          "park" : 163,
+          "parking" : 1546,
+          "pitch" : 605,
+          "running" : 9,
+          "shelter" : 45,
+          "shop" : 14,
+          "sports_centre" : 53,
+          "stadium" : 3,
+          "swimming_pool" : 543,
+          "table_tennis" : 1,
+          "toilets" : 127,
+          "yoga" : 5
+        },
+        "rawBytes" : 202193,
+        "featureMessagesBytes" : 141253,
+        "valueDictionaryBytes" : 46948,
+        "standaloneGzip" : 86090,
+        "features" : 4597
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 3,
+          "island" : 2,
+          "park" : 3
+        },
+        "rawBytes" : 742,
+        "featureMessagesBytes" : 366,
+        "valueDictionaryBytes" : 212,
+        "standaloneGzip" : 628,
+        "features" : 8
+      },
+      "transportation" : {
+        "classCounts" : {
+          "minor" : 986,
+          "motorway" : 115,
+          "path" : 1091,
+          "path_construction" : 16,
+          "primary" : 479,
+          "rail" : 2,
+          "secondary" : 358,
+          "tertiary" : 546,
+          "tertiary_construction" : 7,
+          "track" : 8,
+          "trunk" : 63
+        },
+        "rawBytes" : 247673,
+        "featureMessagesBytes" : 221650,
+        "valueDictionaryBytes" : 14895,
+        "standaloneGzip" : 112754,
+        "features" : 3671
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "minor" : 1,
+          "motorway" : 11,
+          "primary" : 4,
+          "secondary" : 3,
+          "tertiary" : 8,
+          "trunk" : 4
+        },
+        "rawBytes" : 2916,
+        "featureMessagesBytes" : 2012,
+        "valueDictionaryBytes" : 572,
+        "standaloneGzip" : 2290,
+        "features" : 31
+      },
+      "water" : {
+        "classCounts" : {
+          "lake" : 6,
+          "pond" : 6,
+          "river" : 10,
+          "swimming_pool" : 1
+        },
+        "rawBytes" : 2002,
+        "featureMessagesBytes" : 1694,
+        "valueDictionaryBytes" : 166,
+        "standaloneGzip" : 1645,
+        "features" : 23
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 6,
+          "lake" : 1,
+          "strait" : 2
+        },
+        "rawBytes" : 1381,
+        "featureMessagesBytes" : 1042,
+        "valueDictionaryBytes" : 188,
+        "standaloneGzip" : 1237,
+        "features" : 9
+      },
+      "waterway" : {
+        "classCounts" : {
+          "canal" : 1
+        },
+        "rawBytes" : 77,
+        "featureMessagesBytes" : 26,
+        "valueDictionaryBytes" : 9,
+        "standaloneGzip" : 98,
+        "features" : 1
+      }
+    },
+    "tile" : "12/648/1402",
+    "ablations" : {
+      "rank12PlusTransit" : 235121,
+      "reencodedBaseline" : 235240,
+      "roadDetailsDeferredTo14" : 208223,
+      "withoutContactAndHours" : 235240,
+      "without_outdoor" : 235240,
+      "without_poi" : 148389,
+      "without_polygon_label" : 234789,
+      "without_transportation" : 122407
+    },
+    "storedGzip" : 235252
+  }, {
+    "rawBytes" : 402219,
+    "layers" : {
+      "aeroway" : {
+        "classCounts" : {
+          "helipad" : 1
+        },
+        "rawBytes" : 79,
+        "featureMessagesBytes" : 32,
+        "valueDictionaryBytes" : 15,
+        "standaloneGzip" : 101,
+        "features" : 1
+      },
+      "boundary" : {
+        "classCounts" : {
+          "null" : 2
+        },
+        "rawBytes" : 273,
+        "featureMessagesBytes" : 209,
+        "valueDictionaryBytes" : 6,
+        "standaloneGzip" : 291,
+        "features" : 2
+      },
+      "building" : {
+        "classCounts" : {
+          "null" : 281
+        },
+        "rawBytes" : 61445,
+        "featureMessagesBytes" : 59787,
+        "valueDictionaryBytes" : 637,
+        "standaloneGzip" : 42538,
+        "features" : 281
+      },
+      "housenumber" : {
+        "classCounts" : {
+          "null" : 1273
+        },
+        "rawBytes" : 42541,
+        "featureMessagesBytes" : 30284,
+        "valueDictionaryBytes" : 7134,
+        "standaloneGzip" : 23254,
+        "features" : 1273
+      },
+      "landcover" : {
+        "classCounts" : {
+          "grass" : 98,
+          "wetland" : 1,
+          "wood" : 11
+        },
+        "rawBytes" : 5177,
+        "featureMessagesBytes" : 4804,
+        "valueDictionaryBytes" : 88,
+        "standaloneGzip" : 3469,
+        "features" : 110
+      },
+      "landuse" : {
+        "classCounts" : {
+          "bus_station" : 1,
+          "commercial" : 9,
+          "hospital" : 1,
+          "industrial" : 2,
+          "kindergarten" : 1,
+          "pitch" : 18,
+          "playground" : 13,
+          "railway" : 2,
+          "residential" : 1,
+          "retail" : 48,
+          "school" : 4
+        },
+        "rawBytes" : 9513,
+        "featureMessagesBytes" : 9149,
+        "valueDictionaryBytes" : 118,
+        "standaloneGzip" : 7208,
+        "features" : 100
+      },
+      "outdoor" : {
+        "classCounts" : {
+          "barrier" : 11,
+          "natural" : 1
+        },
+        "rawBytes" : 1893,
+        "featureMessagesBytes" : 1505,
+        "valueDictionaryBytes" : 200,
+        "standaloneGzip" : 1581,
+        "features" : 12
+      },
+      "park" : {
+        "classCounts" : {
+          "protected_area" : 2
+        },
+        "rawBytes" : 259,
+        "featureMessagesBytes" : 115,
+        "valueDictionaryBytes" : 64,
+        "standaloneGzip" : 260,
+        "features" : 2
+      },
+      "place" : {
+        "classCounts" : {
+          "aboriginal_lands" : 1,
+          "city" : 1,
+          "island" : 1,
+          "neighbourhood" : 8,
+          "suburb" : 6
+        },
+        "rawBytes" : 2075,
+        "featureMessagesBytes" : 611,
+        "valueDictionaryBytes" : 864,
+        "standaloneGzip" : 1453,
+        "features" : 17
+      },
+      "poi" : {
+        "classCounts" : {
+          "alcohol_shop" : 7,
+          "art_gallery" : 41,
+          "atm" : 6,
+          "attraction" : 13,
+          "bakery" : 11,
+          "bank" : 17,
+          "bar" : 4,
+          "beer" : 2,
+          "bicycle" : 5,
+          "bicycle_parking" : 272,
+          "bicycle_rental" : 34,
+          "block" : 4,
+          "bollard" : 24,
+          "brownfield" : 5,
+          "bus" : 92,
+          "cafe" : 65,
+          "car" : 7,
+          "cinema" : 1,
+          "clothing_store" : 30,
+          "college" : 4,
+          "dentist" : 26,
+          "doctors" : 18,
+          "dog_park" : 4,
+          "drinking_water" : 18,
+          "elevator" : 4,
+          "entrance" : 2,
+          "escape_game" : 2,
+          "fast_food" : 44,
+          "ferry_terminal" : 3,
+          "fire_station" : 1,
+          "garden" : 52,
+          "gate" : 29,
+          "grocery" : 12,
+          "gymnastics" : 1,
+          "hairdresser" : 31,
+          "harbor" : 75,
+          "height_restrictor" : 3,
+          "hospital" : 30,
+          "ice_cream" : 2,
+          "information" : 1153,
+          "jersey_barrier" : 3,
+          "laundry" : 5,
+          "library" : 6,
+          "lodging" : 8,
+          "monument" : 1,
+          "motorcycle_parking" : 4,
+          "museum" : 1,
+          "music" : 1,
+          "office" : 64,
+          "park" : 23,
+          "parking" : 213,
+          "pharmacy" : 19,
+          "pitch" : 45,
+          "place_of_worship" : 16,
+          "playground" : 28,
+          "police" : 1,
+          "post" : 52,
+          "railway" : 2,
+          "recycling" : 8,
+          "restaurant" : 127,
+          "school" : 11,
+          "school_zone" : 10,
+          "shelter" : 4,
+          "shop" : 227,
+          "sports_centre" : 1,
+          "swimming_pool" : 48,
+          "theatre" : 8,
+          "toilets" : 6,
+          "town_hall" : 4,
+          "turning_circle" : 9,
+          "veterinary" : 7,
+          "waste_basket" : 57,
+          "water_park" : 1,
+          "waterfall" : 1,
+          "yes" : 2,
+          "yoga" : 3
+        },
+        "rawBytes" : 207508,
+        "featureMessagesBytes" : 112676,
+        "valueDictionaryBytes" : 80219,
+        "standaloneGzip" : 97997,
+        "features" : 3180
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 4,
+          "island" : 1,
+          "lake" : 1,
+          "park" : 35
+        },
+        "rawBytes" : 2513,
+        "featureMessagesBytes" : 1452,
+        "valueDictionaryBytes" : 764,
+        "standaloneGzip" : 1641,
+        "features" : 41
+      },
+      "trail_segment_label" : {
+        "classCounts" : {
+          "null" : 149
+        },
+        "rawBytes" : 3943,
+        "featureMessagesBytes" : 3101,
+        "valueDictionaryBytes" : 267,
+        "standaloneGzip" : 2054,
+        "features" : 149
+      },
+      "transportation" : {
+        "classCounts" : {
+          "bridge" : 3,
+          "busway" : 4,
+          "minor" : 201,
+          "minor_construction" : 4,
+          "path" : 277,
+          "path_construction" : 4,
+          "pier" : 2,
+          "primary" : 86,
+          "primary_construction" : 3,
+          "secondary" : 57,
+          "service" : 103,
+          "service_construction" : 1,
+          "tertiary" : 26,
+          "transit" : 4
+        },
+        "rawBytes" : 53743,
+        "featureMessagesBytes" : 47450,
+        "valueDictionaryBytes" : 2846,
+        "standaloneGzip" : 29079,
+        "features" : 775
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "busway" : 2,
+          "minor" : 52,
+          "minor_construction" : 2,
+          "path" : 36,
+          "primary" : 5,
+          "primary_construction" : 2,
+          "secondary" : 5,
+          "service" : 4,
+          "tertiary" : 9
+        },
+        "rawBytes" : 8740,
+        "featureMessagesBytes" : 6418,
+        "valueDictionaryBytes" : 1639,
+        "standaloneGzip" : 6387,
+        "features" : 117
+      },
+      "water" : {
+        "classCounts" : {
+          "lake" : 2,
+          "ocean" : 1,
+          "pond" : 3,
+          "swimming_pool" : 18
+        },
+        "rawBytes" : 1429,
+        "featureMessagesBytes" : 1115,
+        "valueDictionaryBytes" : 173,
+        "standaloneGzip" : 1069,
+        "features" : 24
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 3,
+          "lake" : 9
+        },
+        "rawBytes" : 896,
+        "featureMessagesBytes" : 569,
+        "valueDictionaryBytes" : 179,
+        "standaloneGzip" : 726,
+        "features" : 12
+      },
+      "waterway" : {
+        "classCounts" : {
+          "stream" : 2
+        },
+        "rawBytes" : 138,
+        "featureMessagesBytes" : 80,
+        "valueDictionaryBytes" : 12,
+        "standaloneGzip" : 156,
+        "features" : 2
+      }
+    },
+    "tile" : "14/2588/5608",
+    "ablations" : {
+      "rank12PlusTransit" : 218816,
+      "reencodedBaseline" : 218816,
+      "roadDetailsDeferredTo14" : 218816,
+      "withoutContactAndHours" : 193982,
+      "without_outdoor" : 217258,
+      "without_poi" : 119916,
+      "without_polygon_label" : 217301,
+      "without_transportation" : 191113
+    },
+    "storedGzip" : 218813
+  }, {
+    "rawBytes" : 420633,
+    "layers" : {
+      "boundary" : {
+        "classCounts" : {
+          "aboriginal_lands" : 18,
+          "null" : 3
+        },
+        "rawBytes" : 2202,
+        "featureMessagesBytes" : 1436,
+        "valueDictionaryBytes" : 527,
+        "standaloneGzip" : 1292,
+        "features" : 21
+      },
+      "landcover" : {
+        "classCounts" : {
+          "farmland" : 440,
+          "grass" : 151,
+          "reef" : 1,
+          "sand" : 4,
+          "wetland" : 53,
+          "wood" : 3
+        },
+        "rawBytes" : 63206,
+        "featureMessagesBytes" : 61604,
+        "valueDictionaryBytes" : 185,
+        "standaloneGzip" : 46667,
+        "features" : 652
+      },
+      "landuse" : {
+        "classCounts" : {
+          "industrial" : 19,
+          "military" : 1,
+          "neighbourhood" : 3,
+          "quarry" : 2,
+          "railway" : 2,
+          "residential" : 1,
+          "university" : 1
+        },
+        "rawBytes" : 39686,
+        "featureMessagesBytes" : 39511,
+        "valueDictionaryBytes" : 79,
+        "standaloneGzip" : 29215,
+        "features" : 29
+      },
+      "mountain_peak" : {
+        "classCounts" : {
+          "cliff" : 194,
+          "peak" : 45,
+          "ridge" : 19
+        },
+        "rawBytes" : 10722,
+        "featureMessagesBytes" : 8719,
+        "valueDictionaryBytes" : 1074,
+        "standaloneGzip" : 6574,
+        "features" : 258
+      },
+      "park" : {
+        "classCounts" : {
+          "conservation_area" : 2,
+          "ecological_conservancy_area" : 1,
+          "national_park" : 6,
+          "national_recreation_area" : 1,
+          "national_wildlife_area" : 1,
+          "nature_reserve" : 28,
+          "protected_area" : 42,
+          "provincial_park" : 3,
+          "regional_greenway" : 1,
+          "regional_park" : 11,
+          "regional_park_reserve" : 3,
+          "state_park" : 1,
+          "wilderness_area" : 1
+        },
+        "rawBytes" : 14299,
+        "featureMessagesBytes" : 10653,
+        "valueDictionaryBytes" : 3113,
+        "standaloneGzip" : 9928,
+        "features" : 101
+      },
+      "place" : {
+        "classCounts" : {
+          "aboriginal_lands" : 19,
+          "city" : 19,
+          "island" : 28,
+          "town" : 17,
+          "village" : 56
+        },
+        "rawBytes" : 9265,
+        "featureMessagesBytes" : 4961,
+        "valueDictionaryBytes" : 3144,
+        "standaloneGzip" : 5843,
+        "features" : 139
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 3,
+          "island" : 1,
+          "park" : 7,
+          "strait" : 1
+        },
+        "rawBytes" : 924,
+        "featureMessagesBytes" : 396,
+        "valueDictionaryBytes" : 344,
+        "standaloneGzip" : 679,
+        "features" : 12
+      },
+      "transportation" : {
+        "classCounts" : {
+          "ferry" : 1,
+          "motorway" : 1001,
+          "motorway_construction" : 11,
+          "primary" : 883,
+          "primary_construction" : 31,
+          "rail" : 3,
+          "secondary" : 2255,
+          "secondary_construction" : 3,
+          "trunk" : 773,
+          "trunk_construction" : 2
+        },
+        "rawBytes" : 260889,
+        "featureMessagesBytes" : 237116,
+        "valueDictionaryBytes" : 11133,
+        "standaloneGzip" : 98852,
+        "features" : 4963
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "motorway" : 11,
+          "trunk" : 12
+        },
+        "rawBytes" : 3263,
+        "featureMessagesBytes" : 2171,
+        "valueDictionaryBytes" : 774,
+        "standaloneGzip" : 2296,
+        "features" : 23
+      },
+      "water" : {
+        "classCounts" : {
+          "lake" : 27,
+          "ocean" : 1,
+          "river" : 24
+        },
+        "rawBytes" : 11057,
+        "featureMessagesBytes" : 10494,
+        "valueDictionaryBytes" : 282,
+        "standaloneGzip" : 8451,
+        "features" : 52
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 4,
+          "lake" : 2,
+          "strait" : 4
+        },
+        "rawBytes" : 1188,
+        "featureMessagesBytes" : 854,
+        "valueDictionaryBytes" : 178,
+        "standaloneGzip" : 1032,
+        "features" : 10
+      },
+      "waterway" : {
+        "classCounts" : {
+          "river" : 21
+        },
+        "rawBytes" : 3893,
+        "featureMessagesBytes" : 3365,
+        "valueDictionaryBytes" : 354,
+        "standaloneGzip" : 3101,
+        "features" : 21
+      }
+    },
+    "tile" : "9/81/175",
+    "ablations" : {
+      "rank12PlusTransit" : 214035,
+      "reencodedBaseline" : 214035,
+      "roadDetailsDeferredTo14" : 183507,
+      "withoutContactAndHours" : 214035,
+      "without_outdoor" : 214035,
+      "without_poi" : 214035,
+      "without_polygon_label" : 213644,
+      "without_transportation" : 114626
+    },
+    "storedGzip" : 213924
+  }, {
+    "rawBytes" : 414764,
+    "layers" : {
+      "boundary" : {
+        "classCounts" : {
+          "null" : 1
+        },
+        "rawBytes" : 460,
+        "featureMessagesBytes" : 401,
+        "valueDictionaryBytes" : 4,
+        "standaloneGzip" : 486,
+        "features" : 1
+      },
+      "landcover" : {
+        "classCounts" : {
+          "farmland" : 6,
+          "grass" : 17,
+          "wetland" : 2,
+          "wood" : 4
+        },
+        "rawBytes" : 6537,
+        "featureMessagesBytes" : 6359,
+        "valueDictionaryBytes" : 63,
+        "standaloneGzip" : 4883,
+        "features" : 29
+      },
+      "landuse" : {
+        "classCounts" : {
+          "cemetery" : 5,
+          "college" : 1,
+          "commercial" : 36,
+          "hospital" : 2,
+          "industrial" : 92,
+          "neighbourhood" : 2,
+          "quarry" : 1,
+          "railway" : 6,
+          "residential" : 1,
+          "retail" : 21,
+          "school" : 13,
+          "university" : 1
+        },
+        "rawBytes" : 34706,
+        "featureMessagesBytes" : 34165,
+        "valueDictionaryBytes" : 126,
+        "standaloneGzip" : 28007,
+        "features" : 181
+      },
+      "mountain_peak" : {
+        "classCounts" : {
+          "cliff" : 41,
+          "peak" : 4,
+          "ridge" : 3
+        },
+        "rawBytes" : 2284,
+        "featureMessagesBytes" : 1955,
+        "valueDictionaryBytes" : 97,
+        "standaloneGzip" : 1640,
+        "features" : 48
+      },
+      "park" : {
+        "classCounts" : {
+          "nature_reserve" : 8,
+          "protected_area" : 5,
+          "regional_park" : 2,
+          "regional_park_reserve" : 1
+        },
+        "rawBytes" : 1932,
+        "featureMessagesBytes" : 1117,
+        "valueDictionaryBytes" : 656,
+        "standaloneGzip" : 1498,
+        "features" : 16
+      },
+      "place" : {
+        "classCounts" : {
+          "aboriginal_lands" : 14,
+          "city" : 11,
+          "hamlet" : 2,
+          "island" : 21,
+          "suburb" : 116,
+          "town" : 1,
+          "village" : 2
+        },
+        "rawBytes" : 10250,
+        "featureMessagesBytes" : 5881,
+        "valueDictionaryBytes" : 3130,
+        "standaloneGzip" : 6399,
+        "features" : 167
+      },
+      "polygon_label" : {
+        "classCounts" : {
+          "bay" : 3,
+          "island" : 2,
+          "park" : 3
+        },
+        "rawBytes" : 746,
+        "featureMessagesBytes" : 349,
+        "valueDictionaryBytes" : 233,
+        "standaloneGzip" : 605,
+        "features" : 8
+      },
+      "transportation" : {
+        "classCounts" : {
+          "busway" : 1,
+          "ferry" : 1,
+          "motorway" : 414,
+          "path" : 1738,
+          "path_construction" : 35,
+          "primary" : 659,
+          "rail" : 4,
+          "secondary" : 983,
+          "secondary_construction" : 1,
+          "tertiary" : 1151,
+          "tertiary_construction" : 5,
+          "track" : 49,
+          "track_construction" : 1,
+          "trunk" : 327
+        },
+        "rawBytes" : 347228,
+        "featureMessagesBytes" : 320594,
+        "valueDictionaryBytes" : 12225,
+        "standaloneGzip" : 154797,
+        "features" : 5369
+      },
+      "transportation_name" : {
+        "classCounts" : {
+          "motorway" : 43,
+          "primary" : 3,
+          "trunk" : 7
+        },
+        "rawBytes" : 3704,
+        "featureMessagesBytes" : 2671,
+        "valueDictionaryBytes" : 639,
+        "standaloneGzip" : 2593,
+        "features" : 53
+      },
+      "water" : {
+        "classCounts" : {
+          "lake" : 6,
+          "pond" : 2,
+          "river" : 7
+        },
+        "rawBytes" : 4323,
+        "featureMessagesBytes" : 4106,
+        "valueDictionaryBytes" : 104,
+        "standaloneGzip" : 3505,
+        "features" : 15
+      },
+      "water_name" : {
+        "classCounts" : {
+          "bay" : 7,
+          "lake" : 1,
+          "strait" : 3
+        },
+        "rawBytes" : 1602,
+        "featureMessagesBytes" : 1225,
+        "valueDictionaryBytes" : 219,
+        "standaloneGzip" : 1415,
+        "features" : 11
+      },
+      "waterway" : {
+        "classCounts" : {
+          "river" : 6
+        },
+        "rawBytes" : 954,
+        "featureMessagesBytes" : 735,
+        "valueDictionaryBytes" : 123,
+        "standaloneGzip" : 900,
+        "features" : 6
+      }
+    },
+    "tile" : "11/324/701",
+    "ablations" : {
+      "rank12PlusTransit" : 206508,
+      "reencodedBaseline" : 206508,
+      "roadDetailsDeferredTo14" : 170747,
+      "withoutContactAndHours" : 206508,
+      "without_outdoor" : 206508,
+      "without_poi" : 206508,
+      "without_polygon_label" : 206198,
+      "without_transportation" : 51272
+    },
+    "storedGzip" : 206367
+  } ]
+}

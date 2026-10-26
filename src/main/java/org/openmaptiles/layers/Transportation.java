@@ -62,6 +62,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -75,6 +76,7 @@ import org.locationtech.jts.geom.prep.PreparedGeometryFactory;
 import org.openmaptiles.OpenMapTilesProfile;
 import org.openmaptiles.generated.OpenMapTilesSchema;
 import org.openmaptiles.generated.Tables;
+import org.openmaptiles.util.OutdoorAttributes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -96,7 +98,8 @@ public class Transportation implements
   OpenMapTilesProfile.NaturalEarthProcessor,
   ForwardingProfile.LayerPostProcessor,
   ForwardingProfile.OsmRelationPreprocessor,
-  OpenMapTilesProfile.IgnoreWikidata {
+  OpenMapTilesProfile.IgnoreWikidata,
+  OpenMapTilesProfile.OsmAllProcessor {
 
   /*
    * Generates the shape for roads, trails, ferries, railways with detailed
@@ -216,6 +219,31 @@ public class Transportation implements
       SURFACE_UNPAVED_VALUES.contains(value) ? FieldValues.SURFACE_UNPAVED : null;
   }
 
+  /** Canonical OSM values worldwide; unknown values do not imply an easy or visible trail. */
+  private static String hikingDifficulty(String value) {
+    if (value == null) return null;
+    String normalized = value.strip().toLowerCase(Locale.ROOT);
+    return switch (normalized) {
+      case "strolling", "hiking", "mountain_hiking", "demanding_mountain_hiking", "alpine_hiking",
+        "demanding_alpine_hiking", "difficult_alpine_hiking" -> normalized;
+      default -> null;
+    };
+  }
+
+  private static String trailVisibility(String value) {
+    if (value == null) return null;
+    String normalized = value.strip().toLowerCase(Locale.ROOT);
+    return switch (normalized) {
+      case "excellent", "good", "intermediate", "bad", "horrible", "no" -> normalized;
+      default -> null;
+    };
+  }
+
+  /** Preserve the expression verbatim: interpreting it requires time, location, mode and context. */
+  private static String conditionalAccess(String value) {
+    return value == null || value.isBlank() ? null : value;
+  }
+
   /** Returns a value for {@code access} tag constrained to a small set of known values from raw OSM data. */
   private static String access(String value) {
     return value == null ? null : ACCESS_NO_VALUES.contains(value) ? "no" : null;
@@ -333,7 +361,8 @@ public class Transportation implements
 
   @Override
   public List<OsmRelationInfo> preprocessOsmRelation(OsmElement.Relation relation) {
-    if (relation.hasTag("route", "road", "hiking")) {
+    if (relation.hasTag("route", "road", "hiking", "foot", "walking", "bicycle", "mtb", "horse",
+      "ski", "snowmobile", "motorcycle", "motorcar", "atv", "offroad", "piste", "canoe", "via_ferrata")) {
       RouteNetwork networkType = null;
       String network = relation.getString("network");
       String ref = relation.getString("ref");
@@ -377,9 +406,10 @@ public class Transportation implements
         default -> (relation.hasTag("osmc:symbol") || relation.hasTag("colour")) ? 2 : 3;
       };
 
-      if (network != null || rank < 3) {
+      if (network != null || rank < 3 || name != null || ref != null) {
         return List
-          .of(new RouteRelation(coalesce(ref, ""), network, name, colour, networkType, (byte) rank, relation.id()));
+          .of(new RouteRelation(coalesce(ref, ""), network, name, colour, networkType, (byte) rank, relation.id(),
+            relation.getString("route"), routeDetails(relation)));
       }
     }
     return null;
@@ -463,6 +493,18 @@ public class Transportation implements
     return all.isEmpty() ? null : all.getFirst();
   }
 
+  /** Supplement lifecycle mappings without regenerating Outmap's customized tables. */
+  @Override
+  public void processAllOsm(SourceFeature source, FeatureCollector features) {
+    if (!source.canBeLine() || Tables.OsmHighwayLinestring.MAPPING.evaluate(source)) return;
+    for (String lifecycle : OutdoorAttributes.LIFECYCLES) {
+      if (OutdoorAttributes.normalized(source.getString(lifecycle + ":highway")) != null) {
+        process(new Tables.OsmHighwayLinestring(source, lifecycle + ":highway"), features);
+        return;
+      }
+    }
+  }
+
   @Override
   public void process(Tables.OsmHighwayLinestring element, FeatureCollector features) {
     if (element.isArea()) {
@@ -472,17 +514,16 @@ public class Transportation implements
     RouteRelation routeRelation = getRouteRelation(element);
     RouteNetwork networkType = routeRelation != null ? routeRelation.networkType : null;
 
-    //String highway = element.highway();
-    //String highwayClass = highwayClass(element.highway(), element.publicTransport(), element.construction(),
-    //  element.manMade());
-    // Promote lifecycle-tagged ways: destroyed:highway=*
     String highway = element.highway();
     String lifecycle = null;
     if (highway == null) {
-      String destroyed = element.source().getString("destroyed:highway");
-      if (destroyed != null && !destroyed.isEmpty()) {
-        highway = destroyed;      // e.g. "path"
-        lifecycle = "destroyed";  // keep for styling
+      for (String candidate : OutdoorAttributes.LIFECYCLES) {
+        String value = OutdoorAttributes.normalized(element.source().getString(candidate + ":highway"));
+        if (value != null) {
+          highway = value;
+          lifecycle = candidate;
+          break;
+        }
       }
     }
 
@@ -505,23 +546,35 @@ public class Transportation implements
       Integer rampBelowZ12 = highwayRamp ? 1 : null;
 
       boolean expressway = element.expressway() && !"motorway".equals(highway) && !(element.isRamp() || highwayRamp);
+      // Current styles use layer for bridge rendering; retain short crossings from z10.
+      int crossingAttributesAlwaysZoom = element.isBridge() ? 10 : 12;
 
       FeatureCollector.Feature feature = features.line(LAYER_NAME).setBufferPixels(BUFFER_SIZE)
         // main attributes at all zoom levels (used for grouping <= z8)
         .setAttr(Fields.CLASS, highwayClass)
         .setAttr(Fields.SUBCLASS, highwaySubclass(highwayClass, element.publicTransport(), highway))
         .setAttr(Fields.NETWORK, networkType != null ? networkType.name : null)
-        .setAttrWithMinSize(Fields.BRUNNEL, brunnel(element.isBridge(), element.isTunnel(), element.isFord()), 4, 4, 12)
+        .setAttrWithMinSize(Fields.BRUNNEL, brunnel(element.isBridge(), element.isTunnel(), element.isFord()),
+          4, 4, crossingAttributesAlwaysZoom)
         // z8+
         .setAttrWithMinzoom(Fields.EXPRESSWAY, expressway ? 1 : null, 8)
         // z9+
-        .setAttrWithMinSize(Fields.LAYER, nullIfLong(element.layer(), 0), 4, 9, 12)
+        .setAttrWithMinSize(Fields.LAYER, nullIfLong(element.layer(), 0), 4, 9, crossingAttributesAlwaysZoom)
         .setAttrWithMinzoom(Fields.BICYCLE, nullIfEmpty(element.bicycle()), 9)
         .setAttrWithMinzoom(Fields.FOOT, nullIfEmpty(element.foot()), 9)
         .setAttrWithMinzoom(Fields.HORSE, nullIfEmpty(element.horse()), 9)
         .setAttrWithMinzoom(Fields.MTB_SCALE, nullIfEmpty(element.mtbScale()), 9)
         //.setAttrWithMinzoom(Fields.ACCESS, access(element.access()), 9)
         .setAttrWithMinzoom(Fields.ACCESS, nullIfEmpty(element.access()), 9)
+        .setAttrWithMinzoom("sac_scale", hikingDifficulty(element.sacScale()), 9)
+        .setAttrWithMinzoom("trail_visibility", trailVisibility(element.source().getString("trail_visibility")), 9)
+        .setAttrWithMinzoom("access:conditional", conditionalAccess(element.source().getString("access:conditional")), 9)
+        .setAttrWithMinzoom("foot:conditional", conditionalAccess(element.source().getString("foot:conditional")), 9)
+        .setAttrWithMinzoom("bicycle:conditional", conditionalAccess(element.source().getString("bicycle:conditional")), 9)
+        .setAttrWithMinzoom("horse:conditional", conditionalAccess(element.source().getString("horse:conditional")), 9)
+        .setAttrWithMinzoom("vehicle:conditional", conditionalAccess(element.source().getString("vehicle:conditional")), 9)
+        .setAttrWithMinzoom("motor_vehicle:conditional",
+          conditionalAccess(element.source().getString("motor_vehicle:conditional")), 9)
         // expose lifecycle so styles can render destroyed ways differently (e.g., dashed)
         .setAttrWithMinzoom("lifecycle", lifecycle, 9)
         .setAttrWithMinzoom(Fields.TOLL, element.toll() ? 1 : null, 9)
@@ -535,6 +588,19 @@ public class Transportation implements
         .setMinPixelSize(0) // merge during post-processing, then limit by size
         .setSortKey(element.zOrder())
         .setMinZoom(minzoom);
+
+      OutdoorAttributes.copy(element.source(), feature, 9);
+      org.openmaptiles.util.CoverageAttributes.copy(element.source(), feature,
+        "mtb:scale:amtb", "mtb:scale:amtb:inclusive", "mtb:scale:amtb:technical", "mtb:description",
+        "piste:name", "piste:ref", "patrolled");
+
+      if (FieldValues.CLASS_TRACK.equals(highwayClass) ||
+        FieldValues.CLASS_PATH.equals(highwayClass)) {
+        feature.setAttr(
+          "piste_type",
+          nullIfEmpty(element.source().getString("piste:type"))
+        );
+      }
 
       if (isFootwayOrSteps(highway)) {
         feature
@@ -690,12 +756,14 @@ public class Transportation implements
     double tolerance = config.tolerance(zoom);
     double minLength = coalesce(MIN_LENGTH.apply(zoom), 0).doubleValue();
 
-    // don't merge road segments with oneway tag
-    // TODO merge preserving oneway instead ignoring
+    // Keep source orientation for one-way, incline, and side/direction-specific attributes.
     int onewayId = 1;
     for (var item : items) {
       var oneway = item.tags().get(Fields.ONEWAY);
-      if (oneway instanceof Number n && ONEWAY_VALUES.contains(n.intValue())) {
+      boolean directional = item.tags().keySet().stream().anyMatch(key ->
+        key.startsWith("oneway") || key.startsWith("incline") || key.contains(":forward") ||
+          key.contains(":backward") || key.contains(":left") || key.contains(":right"));
+      if (directional || (oneway instanceof Number n && ONEWAY_VALUES.contains(n.intValue()))) {
         item.tags().put(LIMIT_MERGE_TAG, onewayId++);
       }
     }
@@ -735,6 +803,15 @@ public class Transportation implements
   }
 
   /** Information extracted from route relations to use when processing ways in that relation. */
+  private static Map<String, String> routeDetails(OsmElement.Relation relation) {
+    Map<String, String> result = new java.util.LinkedHashMap<>();
+    for (String key : List.of("osmc:symbol", "piste:type", "piste:difficulty", "piste:grooming", "whitewater:grade")) {
+      String value = relation.getString(key);
+      if (value != null && !value.isBlank()) result.put(key, value);
+    }
+    return Map.copyOf(result);
+  }
+
   record RouteRelation(
     String ref,
     String network,
@@ -742,8 +819,15 @@ public class Transportation implements
     String colour,
     RouteNetwork networkType,
     byte rank,
-    @Override long id
+    @Override long id,
+    String routeType,
+    Map<String, String> details
   ) implements OsmRelationInfo, Comparable<RouteRelation> {
+
+    RouteRelation(String ref, String network, String name, String colour, RouteNetwork networkType,
+      byte rank, long id) {
+      this(ref, network, name, colour, networkType, rank, id, "road", Map.of());
+    }
 
     @Override
     public long estimateMemoryUsageBytes() {
@@ -753,6 +837,8 @@ public class Transportation implements
         POINTER_BYTES + estimateSize(network) +
         POINTER_BYTES + estimateSize(name) +
         POINTER_BYTES + estimateSize(colour) +
+        POINTER_BYTES + estimateSize(routeType) +
+        64 + details.entrySet().stream().mapToLong(entry -> 64L + estimateSize(entry.getKey()) + estimateSize(entry.getValue())).sum() +
         POINTER_BYTES + // networkType
         MemoryEstimator.estimateSizeLong(id);
     }

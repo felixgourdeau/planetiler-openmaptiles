@@ -84,9 +84,12 @@ public class Landcover implements
   private static final String TEMP_NUM_POINTS_ATTR = "_numpoints";
   private static final Set<String> WOOD_OR_FOREST = Set.of(
     FieldValues.SUBCLASS_WOOD,
-    FieldValues.SUBCLASS_FOREST
+    FieldValues.SUBCLASS_FOREST,
+    FieldValues.SUBCLASS_TREES
   );
   private final MultiExpression.Index<String> classMapping;
+  private final MultiExpression.Index<String> legacyMapping = MultiExpression.of(List.of(
+    MultiExpression.entry("legacy", Tables.OsmLandcoverPolygon.LEGACY_MAPPING))).simplify().index();
 
   public Landcover(Translations translations, PlanetilerConfig config, Stats stats) {
     this.classMapping = FieldMappings.Class.index();
@@ -121,17 +124,37 @@ public class Landcover implements
 
   @Override
   public void process(Tables.OsmLandcoverPolygon element, FeatureCollector features) {
+    SourceFeature source = element.source();
     String subclass = element.subclass();
     String clazz = getClassFromSubclass(subclass);
+    var legacyMatches = legacyMapping.getMatchesWithTriggers(source);
+    String wetland = source.getString("wetland");
+    if (wetland != null && !wetland.isBlank() &&
+      (source.hasTag("natural", "wetland") || legacyMatches.isEmpty())) {
+      subclass = wetland;
+      clazz = FieldValues.CLASS_WETLAND;
+    } else if (!legacyMatches.isEmpty()) {
+      // Use exactly the legacy expression's trigger order, independent of new fallback keys.
+      subclass = source.getString(legacyMatches.getFirst().keys().getFirst());
+      clazz = getClassFromSubclass(subclass);
+    } else {
+      String natural = source.getString("natural");
+      if (Set.of("shingle", "mud", "reef", "shoal").contains(natural == null ? "" : natural)) {
+        subclass = natural;
+        clazz = getClassFromSubclass(subclass);
+      } else {
+        subclass = source.getString("landcover");
+        // Water is emitted by the water handler, never duplicated as terrestrial cover.
+        if (subclass == null || subclass.isBlank() || "water".equals(subclass)) {
+          return;
+        }
+        clazz = getClassFromSubclass(subclass);
+        if (clazz == null) {
+          clazz = FieldValues.CLASS_OTHER;
+        }
+      }
+    }
     if (clazz != null) {
-      //features.polygon(LAYER_NAME).setBufferPixels(BUFFER_SIZE)
-      //  .setMinPixelSizeOverrides(MIN_PIXEL_SIZE_THRESHOLDS)
-      //  // default is 0.1, this helps reduce size of some heavy z7-10 tiles
-      //  .setPixelToleranceBelowZoom(10, 0.25)
-      //  .setAttr(Fields.CLASS, clazz)
-      //  .setAttr(Fields.SUBCLASS, subclass)
-      //  .setNumPointsAttr(TEMP_NUM_POINTS_ATTR)
-      //  .setMinZoom(7);
       var fc = features.polygon(LAYER_NAME)
         .setBufferPixels(BUFFER_SIZE)
         .setMinPixelSizeOverrides(MIN_PIXEL_SIZE_THRESHOLDS)
@@ -139,6 +162,8 @@ public class Landcover implements
         .setPixelToleranceBelowZoom(10, 0.25)
         .setAttr(Fields.CLASS, clazz)
         .setAttr(Fields.SUBCLASS, subclass)
+        .setAttr(Fields.SURFACE, source.getTag("surface"))
+        .setAttr(Fields.TIDAL, source.getTag("tidal"))
         .setNumPointsAttr(TEMP_NUM_POINTS_ATTR)
         .setMinZoom(7);
 

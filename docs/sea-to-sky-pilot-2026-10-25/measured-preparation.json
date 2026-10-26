@@ -1,0 +1,13 @@
+{
+  "downloadSeconds": 180.595,
+  "preparationSeconds": 1357.342,
+  "globalPeakNodes": 1202166,
+  "globalElevationCandidates": 357665,
+  "potentialBatchesAt250": 1431,
+  "bufferedCorridorNodes": 1217,
+  "corridorElevationCandidates": 61,
+  "corridorSampled": 61,
+  "corridorNoData": 0,
+  "corridorBackfillProcessSeconds": 1.897,
+  "nvmeStagingSeconds": 283.875
+}

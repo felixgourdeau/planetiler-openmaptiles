@@ -1,0 +1,10 @@
+[
+    {
+        "Key": "prepared/auxiliary-inputs.sha256",
+        "Bytes": 341
+    },
+    {
+        "Key": "prepared/sources/planet-261019.osm.pbf",
+        "Bytes": 95507771401
+    }
+]

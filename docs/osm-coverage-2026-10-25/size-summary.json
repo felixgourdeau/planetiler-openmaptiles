@@ -1,0 +1,140 @@
+{
+  "monaco": {
+    "archiveGrowthPercent": 7.54,
+    "archiveBytesBefore": 818014,
+    "archiveBytesAfter": 879702,
+    "p95GrowthByZoom": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0,
+      "7": 0.0,
+      "8": 0.0,
+      "9": 0.0,
+      "10": 0.0,
+      "11": 0.0,
+      "12": 0.0,
+      "13": 0.0,
+      "14": 0.0
+    },
+    "z14BusyMatchedTiles": 8,
+    "z14BusyP95Before": 148699,
+    "z14BusyP95After": 171654,
+    "z14BusyP95GrowthPercent": 15.44,
+    "z14MaxBefore": 148699,
+    "z14MaxAfter": 171654,
+    "z14SumGrowthPercent": 18.42,
+    "poiParity": {
+      "after": 2720,
+      "lost": [],
+      "before": 2310,
+      "changedClassification": 0
+    },
+    "passes10PercentAllZoomP95": true,
+    "baselineHeaderVerification": {
+      "exitCode": 0,
+      "output": "Completed verify in 612.25\u00b5s.\n",
+      "sha256": "8d098f685df700b0e633ee42270e4c7fd5262bf763cba8c9584a2874c0016c00"
+    },
+    "candidateHeaderVerification": {
+      "exitCode": 0,
+      "output": "Completed verify in 120.167\u00b5s.\n",
+      "sha256": "7bde86dddbaa5fb41a4691189634773321c1c61837097ccf64e3e4fbc399688a"
+    }
+  },
+  "whistler": {
+    "archiveGrowthPercent": 6.34,
+    "archiveBytesBefore": 2111932,
+    "archiveBytesAfter": 2245729,
+    "p95GrowthByZoom": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0,
+      "7": 0.79,
+      "8": 0.45,
+      "9": 0.18,
+      "10": 0.07,
+      "11": -0.02,
+      "12": -0.04,
+      "13": -0.0,
+      "14": 22.29
+    },
+    "z14BusyMatchedTiles": 180,
+    "z14BusyP95Before": 18564,
+    "z14BusyP95After": 21171,
+    "z14BusyP95GrowthPercent": 14.04,
+    "z14MaxBefore": 75442,
+    "z14MaxAfter": 86877,
+    "z14SumGrowthPercent": 13.45,
+    "poiParity": {
+      "after": 1754,
+      "lost": [],
+      "before": 1530,
+      "changedClassification": 0
+    },
+    "passes10PercentAllZoomP95": false,
+    "baselineHeaderVerification": {
+      "exitCode": 0,
+      "output": "Completed verify in 130.041\u00b5s.\n",
+      "sha256": "17a123d51e6d3cca06296e547bdacdd01b94b9f2202fce0d14769d8747f13b9d"
+    },
+    "candidateHeaderVerification": {
+      "exitCode": 0,
+      "output": "Completed verify in 108.167\u00b5s.\n",
+      "sha256": "1aad0e0b85356dac7bfb32bac9363074891d6dd7b997f80f970c21d9109c43b9"
+    }
+  },
+  "sanfrancisco": {
+    "archiveGrowthPercent": 8.93,
+    "archiveBytesBefore": 623446,
+    "archiveBytesAfter": 679147,
+    "p95GrowthByZoom": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0,
+      "7": 0.0,
+      "8": 0.0,
+      "9": 0.0,
+      "10": 0.0,
+      "11": 0.0,
+      "12": 0.0,
+      "13": -0.07,
+      "14": 18.97
+    },
+    "z14BusyMatchedTiles": 4,
+    "z14BusyP95Before": 94356,
+    "z14BusyP95After": 112256,
+    "z14BusyP95GrowthPercent": 18.97,
+    "z14MaxBefore": 94356,
+    "z14MaxAfter": 112256,
+    "z14SumGrowthPercent": 19.54,
+    "poiParity": {
+      "after": 2227,
+      "lost": [],
+      "before": 2067,
+      "changedClassification": 0
+    },
+    "passes10PercentAllZoomP95": false,
+    "baselineHeaderVerification": {
+      "exitCode": 0,
+      "output": "Completed verify in 81.208\u00b5s.\n",
+      "sha256": "65bc3a6e6edef1312957a02021b89c2cfc0715ec3de2dfba1e4a6f945f7877af"
+    },
+    "candidateHeaderVerification": {
+      "exitCode": 0,
+      "output": "Completed verify in 95.208\u00b5s.\n",
+      "sha256": "33ff00c881ab2d3416d9102ecbab8f5408387092a9ada9c422d5c6838120aaea"
+    }
+  }
+}

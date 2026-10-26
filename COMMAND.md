@@ -1,5 +1,9 @@
 https://docs.protomaps.com/basemaps/build
 
+Production publishing: follow [docs/planet-releases.md](docs/planet-releases.md).
+Every rebuild needs a new `planet-YYYYMMDD-rN.pmtiles` object and matching client URL.
+The commands and logs below are historical build notes, not production upload instructions.
+
 Pour build les adirondacks:
 
 ./mvnw -q -DskipTests clean package

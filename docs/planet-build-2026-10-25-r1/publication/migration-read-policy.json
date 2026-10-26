@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectAttributes",
+        "s3:GetObjectTagging"
+      ],
+      "Resource": "arn:aws:s3:::outmap-planet-pilot-442073793062-20261025/planet-20261025-r1/artifacts/planet-20261025-r1.pmtiles",
+      "Condition": {
+        "DateLessThan": {
+          "aws:CurrentTime": "2026-10-26T19:08:57.252110+00:00"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::outmap-planet-pilot-442073793062-20261025",
+      "Condition": {
+        "DateLessThan": {
+          "aws:CurrentTime": "2026-10-26T19:08:57.252110+00:00"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::outmap-planet-pilot-442073793062-20261025",
+      "Condition": {
+        "DateLessThan": {
+          "aws:CurrentTime": "2026-10-26T19:08:57.252110+00:00"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "53daf2e70f7d45d1b2504c5f462463714bde36725712a66481bf33ea9d0821d4",
+  "createdAt": "2026-10-26T13:18:02.000Z",
+  "finishedAt": "2026-10-26T13:37:46.000Z",
+  "overwrite": false,
+  "status": "completed",
+  "source": {
+    "bucket": "outmap-planet-pilot-442073793062-20261025",
+    "vendor": "s3",
+    "pathPrefix": "planet-20261025-r1/artifacts/planet-20261025-r1.pmtiles"
+  },
+  "target": {
+    "bucket": "tiles"
+  }
+}

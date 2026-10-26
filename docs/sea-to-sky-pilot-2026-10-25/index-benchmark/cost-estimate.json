@@ -1,0 +1,17 @@
+{
+  "spotUsdPerHour": 1.2787,
+  "launchTime": "2026-10-26T02:01:44+00:00",
+  "runnerCompletion": "2026-10-26T02:26:21Z",
+  "terminationConfirmedBy": "2026-10-26T02:27:16.303218+00:00",
+  "computeUsdLowerBound": 0.5246221944444445,
+  "computeUsdConservativeUpperBound": 0.5442655902379444,
+  "estimatedTransientTotalUsd": [
+    0.55,
+    0.6
+  ],
+  "excludes": [
+    "tax",
+    "existing retained S3 inputs and archives"
+  ],
+  "invoiceVerified": false
+}

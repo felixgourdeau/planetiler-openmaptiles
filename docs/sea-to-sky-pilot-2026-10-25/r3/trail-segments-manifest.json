@@ -1,0 +1,16 @@
+{
+  "rejectedChains": 69788,
+  "sourceSha256": "3ef72f7f53f007e9b604fd57fb2fd5e01bbbf691bce29f3ac9451efa4a6d4268",
+  "elapsedSeconds": 14.948973987,
+  "segments": 95768,
+  "sha256": "d350fd6b6dbfb36ecac217a1647fa36fa32a7520dd427ce4f660774ba406cb6d",
+  "planetMd5": "5bbb8c9cae945af88e6af773fed33a3e",
+  "state": "complete",
+  "policy": "trail-segments-v1",
+  "preparationBounds": [
+    -124.25,
+    48.75,
+    -121.75,
+    51.15
+  ]
+}

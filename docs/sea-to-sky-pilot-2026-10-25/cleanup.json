@@ -1,0 +1,8 @@
+{
+  "verifiedAt": "2026-10-25T18:03:32.482480+00:00",
+  "instanceState": "terminated",
+  "rootVolumeCount": 0,
+  "temporaryRoleDeleted": true,
+  "temporaryInstanceProfileDeleted": true,
+  "privateBucketRetained": true
+}

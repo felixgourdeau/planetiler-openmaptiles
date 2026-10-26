@@ -1,0 +1,15 @@
+{
+  "gzipBytes" : {
+    "baseline_level6" : 54687157,
+    "baseline_level9" : 54672746,
+    "sorted_keys_level6" : 54123212,
+    "sorted_keys_level9" : 54102620
+  },
+  "tiles" : 9303,
+  "gzipOnlyNanos" : {
+    "baseline_level6" : 1796075415,
+    "baseline_level9" : 1805784734,
+    "sorted_keys_level6" : 1676710985,
+    "sorted_keys_level9" : 1743878286
+  }
+}

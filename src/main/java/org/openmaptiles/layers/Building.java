@@ -167,6 +167,15 @@ public class Building implements
         .setAttrWithMinzoom(Fields.COLOUR, color, 14)
         .setAttrWithMinzoom(Fields.HIDE_3D, hide3d, 14)
         .setSortKey(renderHeight);
+      org.openmaptiles.util.CoverageAttributes.copy(element.source(), feature,
+        "building:use", "roof:shape", "roof:height", "roof:levels", "roof:angle", "roof:direction",
+        "roof:orientation", "roof:colour", "roof:material");
+      if (element.building() != null && !"yes".equals(element.building())) {
+        feature.setAttrWithMinzoom("building", element.building(), 14);
+      }
+      if (element.buildingpart() != null) {
+        feature.setAttrWithMinzoom("building:part", element.buildingpart(), 14);
+      }
       if (mergeZ13Buildings) {
         feature
           .setMinPixelSize(0.1)

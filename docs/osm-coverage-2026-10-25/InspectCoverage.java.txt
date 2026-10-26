@@ -1,0 +1,68 @@
+import java.nio.file.*;
+import java.io.*;
+import java.util.*;
+import java.util.zip.*;
+import com.onthegomap.planetiler.pmtiles.*;
+import com.onthegomap.planetiler.VectorTile;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+class InspectCoverage {
+  static final Path ROOT = Path.of("/private/tmp/outmap-coverage-20261025");
+  static final ObjectMapper JSON = new ObjectMapper();
+  static byte[] raw(byte[] bytes) throws IOException {
+    return bytes.length > 1 && bytes[0] == 31 && bytes[1] == (byte) 139 ?
+      new GZIPInputStream(new ByteArrayInputStream(bytes)).readAllBytes() : bytes;
+  }
+  static long percentile(List<Integer> sizes, double p) {
+    return sizes.get(Math.max(0, (int)Math.ceil(sizes.size() * p) - 1));
+  }
+  static Map<String, Object> inspect(String name, Map<Long, String> pois) throws Exception {
+    Map<Integer, List<Integer>> zooms = new TreeMap<>();
+    Map<String, Integer> classes = new TreeMap<>();
+    Map<String, Integer> fields = new TreeMap<>();
+    Map<String, Object> examples = new TreeMap<>();
+    Map<String, Integer> tilesizes = new TreeMap<>();
+    try (var archive = ReadablePmtiles.newReadFromFile(ROOT.resolve(name + ".pmtiles"));
+      var tiles = archive.getAllTiles()) {
+      while (tiles.hasNext()) {
+        var tile = tiles.next();
+        int z = tile.coord().z();
+        tilesizes.put(z + "/" + tile.coord().x() + "/" + tile.coord().y(), tile.bytes().length);
+        zooms.computeIfAbsent(z, key -> new ArrayList<>()).add(tile.bytes().length);
+        for (var feature : VectorTile.decode(raw(tile.bytes()))) {
+          if (z != 14) continue;
+          String category = feature.layer() + "/" + feature.tags().get("class") + "/" + feature.tags().get("subclass");
+          classes.merge(category, 1, Integer::sum);
+          for (String field : feature.tags().keySet()) fields.merge(feature.layer() + "/" + field, 1, Integer::sum);
+          if (feature.layer().equals("poi")) pois.put(feature.id(), feature.tags().get("class") + "/" + feature.tags().get("subclass"));
+          if (feature.layer().equals("outdoor") || feature.tags().containsKey("kind") ||
+            feature.tags().containsKey("roof:shape") || feature.tags().containsKey("opening_hours")) {
+            examples.putIfAbsent(category, Map.of("id", feature.id(), "tags", feature.tags()));
+          }
+        }
+      }
+    }
+    Map<Integer, Object> metrics = new TreeMap<>();
+    for (var entry : zooms.entrySet()) {
+      var sizes = entry.getValue(); Collections.sort(sizes);
+      metrics.put(entry.getKey(), Map.of("tiles", sizes.size(), "sum", sizes.stream().mapToLong(Integer::longValue).sum(),
+        "median", percentile(sizes, .5), "p95", percentile(sizes, .95), "p99", percentile(sizes, .99), "max", sizes.getLast()));
+    }
+    JSON.writerWithDefaultPrettyPrinter().writeValue(ROOT.resolve(name + "-tile-sizes.json").toFile(), tilesizes);
+    return Map.of("archiveBytes", Files.size(ROOT.resolve(name + ".pmtiles")), "zooms", metrics,
+      "z14Classes", classes, "z14Fields", fields, "examples", examples);
+  }
+  public static void main(String[] args) throws Exception {
+    Map<String, Object> report = new LinkedHashMap<>();
+    for (String region : args) {
+      Map<Long, String> before = new TreeMap<>(), after = new TreeMap<>();
+      report.put(region + "-baseline", inspect(region + "-baseline", before));
+      report.put(region + "-candidate", inspect(region + "-candidate", after));
+      var lost = new TreeSet<>(before.keySet()); lost.removeAll(after.keySet());
+      long changed = before.entrySet().stream().filter(e -> after.containsKey(e.getKey()) && !after.get(e.getKey()).equals(e.getValue())).count();
+      report.put(region + "-poi-parity", Map.of("before", before.size(), "after", after.size(), "lost", lost, "changedClassification", changed));
+    }
+    JSON.writerWithDefaultPrettyPrinter().writeValue(ROOT.resolve("analysis.json").toFile(), report);
+    System.out.println("Decoded archives for " + String.join(", ", args));
+  }
+}

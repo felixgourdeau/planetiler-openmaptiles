@@ -51,6 +51,7 @@ import com.onthegomap.planetiler.expression.MultiExpression;
 import com.onthegomap.planetiler.geo.GeoUtils;
 import com.onthegomap.planetiler.geo.GeometryException;
 import com.onthegomap.planetiler.reader.SimpleFeature;
+import com.onthegomap.planetiler.reader.SourceFeature;
 import com.onthegomap.planetiler.stats.Stats;
 import com.onthegomap.planetiler.util.Parse;
 import com.onthegomap.planetiler.util.Translations;
@@ -66,6 +67,8 @@ import org.openmaptiles.OpenMapTilesProfile;
 import org.openmaptiles.generated.OpenMapTilesSchema;
 import org.openmaptiles.generated.Tables;
 import org.openmaptiles.util.OmtLanguageUtils;
+import org.openmaptiles.util.OutdoorAttributes;
+import org.openmaptiles.util.CoverageAttributes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -80,6 +83,7 @@ public class Poi implements
   OpenMapTilesSchema.Poi,
   Tables.OsmPoiPoint.Handler,
   Tables.OsmPoiPolygon.Handler,
+  OpenMapTilesProfile.OsmAllProcessor,
   ForwardingProfile.LayerPostProcessor,
   ForwardingProfile.FinishHandler {
 
@@ -101,7 +105,6 @@ public class Poi implements
     entry("zoo", 95),
     entry(FieldValues.CLASS_TOWN_HALL, 100),
     entry(FieldValues.CLASS_CAMPSITE, 110),
-    entry(FieldValues.CLASS_CAMP_PITCH, 111),
     entry(FieldValues.CLASS_CEMETERY, 115),
     entry(FieldValues.CLASS_PARK, 120),
     entry(FieldValues.CLASS_LIBRARY, 130),
@@ -114,6 +117,14 @@ public class Poi implements
     entry(FieldValues.CLASS_CLOTHING_STORE, 700),
     entry(FieldValues.CLASS_BAR, 800)
   );
+  // Keep current client classes; priority is based on the precise OSM subtype.
+  private static final Set<String> ULTRA_PRIORITY_SUBCLASSES = Set.of(
+    "viewpoint", "attraction", "camp_site", "caravan_site", "camp_pitch", "outdoor", "sports",
+    "alpine_hut", "wilderness_hut", "chalet", "hostel", "shelter", "drinking_water", "water_point", "toilets",
+    "waterfall", "stone", "trailhead", "cave_entrance", "bicycle_repair_station",
+    "sports_centre", "stadium", "pitch", "swimming_area", "swimming_pool", "golf_course", "miniature_golf", "ice_rink"
+  );
+
   private static final Set<String> UNIVERSITY_POI_SUBCLASSES = Set.of("university", "college");
   private static final List<String> AGG_STOP_SUBCLASS_ORDER = List.of(
     "subway",
@@ -124,22 +135,92 @@ public class Poi implements
   private static final Comparator<Tables.OsmPoiPoint> BY_SUBCLASS = Comparator
     .comparingInt(s -> AGG_STOP_SUBCLASS_ORDER.indexOf(s.subclass()));
   private static final Set<String> BRAND_OPERATOR_REF_SUBCLASSES = Set.of("charging_station", "parcel_locker");
+  private static final Set<String> MARINE_BUOYS = Set.of(
+    "buoy_cardinal", "buoy_lateral", "buoy_isolated_danger", "buoy_safe_water", "buoy_special_purpose",
+    "buoy_installation");
+  private static final Set<String> MARINE_BEACONS = Set.of(
+    "beacon_cardinal", "beacon_lateral", "beacon_isolated_danger", "beacon_safe_water", "beacon_special_purpose",
+    "light_major", "light_minor", "daymark");
+  private record MarineTag(String key, String kind) {}
+
+  /** A bounded set of mapped features, not an inference from water depth or proximity to the coast. */
+  private static MarineTag marineTag(SourceFeature source) {
+    String seamark = source.getString("seamark:type");
+    if ("wreck".equals(seamark)) return new MarineTag("seamark:type", "wreck");
+    if (source.hasTag("historic", "wreck")) return new MarineTag("historic", "wreck");
+    if (source.hasTag("man_made", "lighthouse")) return new MarineTag("man_made", "lighthouse");
+    if (source.hasTag("leisure", "slipway")) return new MarineTag("leisure", "slipway");
+    if (source.hasTag("highway", "service") && source.hasTag("service", "slipway")) {
+      return new MarineTag("service", "slipway");
+    }
+    if (seamark != null && MARINE_BUOYS.contains(seamark)) return new MarineTag("seamark:type", "buoy");
+    if (seamark != null && MARINE_BEACONS.contains(seamark)) return new MarineTag("seamark:type", "beacon");
+    if (source.hasTag("man_made", "buoy", "beacon")) {
+      return new MarineTag("man_made", source.getString("man_made"));
+    }
+    if (source.hasTag("seamark", "buoy", "beacon")) {
+      return new MarineTag("seamark", source.getString("seamark"));
+    }
+    if ("rock".equals(seamark)) return new MarineTag("seamark:type", "marine_rock");
+    if (source.hasTag("natural", "reef", "shoal")) return new MarineTag("natural", source.getString("natural"));
+    if (source.hasTag("sport", "surfing", "swimming", "scuba_diving", "canoe", "sailing", "rowing", "water_ski")) {
+      return new MarineTag("sport", source.getString("sport"));
+    }
+    if (source.hasTag("leisure", "marina", "swimming_area")) {
+      return new MarineTag("leisure", source.hasTag("leisure", "marina") ? "marina" : "swimming");
+    }
+    if (source.hasTag("waterway", "dock")) return new MarineTag("waterway", "dock");
+    if (source.hasTag("man_made", "pier")) return new MarineTag("man_made", "pier");
+    if (seamark != null && !seamark.isBlank() && !Set.of("no", "yes").contains(seamark)) {
+      return new MarineTag("seamark:type", "seamark");
+    }
+    if (source.hasTag("mooring") && !source.hasTag("mooring", "no")) return new MarineTag("mooring", "mooring");
+    return null;
+  }
   private final MultiExpression.Index<String> classMapping;
   private final Translations translations;
   private final Stats stats;
+  private final int maximumZoom;
+  private static final String KEEP_LOW_ZOOM = "__keep_low_zoom";
   private final Map<String, List<Tables.OsmPoiPoint>> aggStops = new HashMap<>();
 
   public Poi(Translations translations, PlanetilerConfig config, Stats stats) {
     this.classMapping = FieldMappings.Class.index();
     this.translations = translations;
     this.stats = stats;
+    this.maximumZoom = config.maxzoom();
   }
 
   static int poiClassRank(String clazz) {
     return CLASS_RANKS.getOrDefault(clazz, 1_000);
   }
 
+  /** Do not infer outdoor/public parking from a name, surface, or nearby landscape. */
+  private static boolean isPublicTrailheadParking(SourceFeature source) {
+    if (!source.hasTag("amenity", "parking") ||
+      !(source.hasTag("trailhead", "yes") || source.hasTag("highway", "trailhead"))) return false;
+    for (String key : List.of("access", "vehicle", "motor_vehicle", "motorcar", "foot")) {
+      String value = source.getString(key);
+      if (value != null && !Set.of("yes", "public", "permissive").contains(value)) return false;
+      if (source.hasTag(key + ":conditional")) return false;
+    }
+    // Missing access is unknown, not proof that a car park is public.
+    return source.hasTag("access", "yes", "public", "permissive");
+  }
+
   private String poiClass(String subclass, String mappingKey) {
+    // New standalone types reuse icons already present in current client sprites.
+    if ("highway".equals(mappingKey) && "trailhead".equals(subclass)) return "information";
+    if ("tourism".equals(mappingKey) && "wilderness_hut".equals(subclass)) return "lodging";
+    if ("natural".equals(mappingKey) && Set.of("stone", "cave_entrance").contains(subclass)) return "attraction";
+    if ("amenity".equals(mappingKey)) {
+      if ("water_point".equals(subclass)) return "water"; // Do not imply potability.
+      if ("bicycle_repair_station".equals(subclass)) return "bicycle";
+      if ("bench".equals(subclass)) return "information";
+    }
+    if ("sport".equals(mappingKey) && Set.of("hiking", "walking", "trail_running").contains(subclass)) {
+      return "information";
+    }
     // Special case subclass collision between office=university and amenity=university
     if ("amenity".equals(mappingKey) && "university".equals(subclass)) {
       return FieldValues.CLASS_COLLEGE;
@@ -164,35 +245,115 @@ public class Poi implements
     aggStops.clear();
   }
 
+  private static final Set<String> OUTDOOR_BARRIERS = Set.of(
+    "gate", "lift_gate", "swing_gate", "kissing_gate", "sliding_gate", "hampshire_gate",
+    "chain", "rope", "block", "bollard", "cycle_barrier", "motorcycle_barrier", "stile",
+    "cattle_grid", "bump_gate", "kerb", "log", "debris", "jersey_barrier", "height_restrictor",
+    "horse_stile", "turnstile", "full-height_turnstile", "sally_port", "border_control", "toll_booth");
+
+  private static String obstacleKey(SourceFeature source) {
+    String barrier = OutdoorAttributes.normalized(source.getString("barrier"));
+    if (barrier != null && OUTDOOR_BARRIERS.contains(barrier)) return "barrier";
+    String hazard = OutdoorAttributes.normalized(source.getString("hazard"));
+    if (hazard != null && !"no".equals(hazard)) return "hazard";
+    if (source.hasTag("highway", "ford", "elevator", "passing_place", "turning_circle")) return "highway";
+    if (source.hasTag("ford", "yes", "stepping_stones")) return "ford";
+    return null;
+  }
+
+  private static String supplementalOutdoorKey(SourceFeature source) {
+    String original = originalSupplementKey(source);
+    if (original != null) return original;
+    if (source.hasTag("highway", "trailhead")) return "highway";
+    if (source.hasTag("tourism", "wilderness_hut")) return "tourism";
+    if (source.hasTag("natural", "cave_entrance", "stone", "spring", "hot_spring", "geyser",
+      "sinkhole", "arch", "cape", "peninsula", "valley") ||
+      (source.hasTag("natural", "tree") && (source.hasTag("name") ||
+        source.hasTag("denotation", "landmark", "natural_monument")))) return "natural";
+    if (source.hasTag("waterway", "waterfall")) return "waterway";
+    if (source.hasTag("emergency", "phone", "access_point", "assembly_point", "mountain_rescue",
+      "defibrillator", "lifeguard", "water_rescue", "rescue_box")) return "emergency";
+    if (source.hasTag("highway", "emergency_access_point")) return "highway";
+    if (source.hasTag("leisure", "picnic_table", "firepit", "fitness_station", "fitness_centre",
+      "fishing", "bird_hide", "bathing_place", "beach_resort")) return "leisure";
+    if (source.hasTag("man_made", "tower", "observation_tower", "survey_point", "adit", "mineshaft",
+      "water_well", "avalanche_protection", "breakwater", "groyne")) return "man_made";
+    if (source.hasTag("whitewater", "put_in", "egress", "put_in;egress", "rapid", "waterfall")) return "whitewater";
+    if (source.hasTag("entrance") && !source.hasTag("entrance", "no")) return "entrance";
+    // Open vocabularies: preserve previously unlisted actual categories without interpreting boolean placeholders.
+    for (String key : List.of("shop", "amenity", "sport", "historic")) {
+      String value = source.getString(key);
+      if (value != null && !value.isBlank() && !Set.of("no", "none", "yes", "vacant").contains(value)) return key;
+    }
+    return null;
+  }
+
+  private static boolean existingPoiMapping(SourceFeature source) {
+    return Tables.OsmPoiPoint.MAPPING.evaluate(source) || Tables.OsmPoiPolygon.MAPPING.evaluate(source);
+  }
+
+  private static String originalSupplementKey(SourceFeature source) {
+    return source.hasTag("highway", "trailhead") ? "highway" :
+      source.hasTag("tourism", "wilderness_hut") ? "tourism" :
+      source.hasTag("natural", "cave_entrance") ? "natural" :
+      source.hasTag("amenity", "bench", "water_point", "bicycle_repair_station") ? "amenity" :
+      source.hasTag("sport", "hiking", "walking", "trail_running") ? "sport" : null;
+  }
+
+  private static boolean originalSupplement(SourceFeature source) {
+    return originalSupplementKey(source) != null;
+  }
+
+  /** Add missing outdoor/marine mappings without regenerating the custom generated tables. */
+  @Override
+  public void processAllOsm(SourceFeature source, FeatureCollector features) {
+    String obstacle = obstacleKey(source);
+    if (obstacle != null && !Tables.OsmPoiPoint.MAPPING.evaluate(source) &&
+      !Tables.OsmPoiPolygon.MAPPING.evaluate(source)) {
+      var element = new Tables.OsmPoiPoint(source, obstacle);
+      if (source.isPoint()) {
+        setupPoiFeature(element, features.point(LAYER_NAME), null);
+      } else if (source.canBePolygon() && !source.hasTag("area", "no")) {
+        setupPoiFeature(element, features.pointOnSurface(LAYER_NAME), null);
+      } else if (source.canBeLine()) {
+        setupPoiFeature(element, features.lineMidpoint(LAYER_NAME), null);
+      }
+      return;
+    }
+    String key = supplementalOutdoorKey(source);
+    MarineTag marine = marineTag(source);
+    if (marine != null) {
+      // Preserve marine classification/placement for objects admitted before this expansion.
+      if (!Set.of("seamark", "mooring").contains(marine.kind())) key = originalSupplementKey(source);
+      // Existing dispatch emits the POI when it matches; setupPoiFeature adds marine attributes there too.
+      if ((source.isPoint() && Tables.OsmPoiPoint.MAPPING.evaluate(source)) ||
+        (source.canBePolygon() && Tables.OsmPoiPolygon.MAPPING.evaluate(source))) return;
+      var element = new Tables.OsmPoiPoint(source, key == null ? marine.key() : key);
+      if (source.isPoint()) {
+        setupPoiFeature(element, features.point(LAYER_NAME), null);
+      } else if (source.canBePolygon() && !source.hasTag("area", "no")) {
+        setupPoiFeature(element, key == null ? features.pointOnSurface(LAYER_NAME) :
+          features.centroidIfConvex(LAYER_NAME), null);
+      } else if (source.canBeLine()) {
+        setupPoiFeature(element, features.lineMidpoint(LAYER_NAME), null);
+      }
+      return;
+    }
+    if (key == null) return;
+    // Existing dispatch wins for multi-tag features; never emit a duplicate POI.
+    if (source.isPoint() && !Tables.OsmPoiPoint.MAPPING.evaluate(source)) {
+      process(new Tables.OsmPoiPoint(source, key), features);
+    } else if (source.canBePolygon() && !source.hasTag("area", "no") &&
+      !Tables.OsmPoiPolygon.MAPPING.evaluate(source)) {
+      setupPoiFeature(new Tables.OsmPoiPolygon(source, key), originalSupplement(source) ?
+        features.centroidIfConvex(LAYER_NAME) : features.pointOnSurface(LAYER_NAME), null);
+    } else if (source.canBeLine() && source.hasTag("waterway", "waterfall")) {
+      setupPoiFeature(new Tables.OsmPoiPoint(source, key), features.lineMidpoint(LAYER_NAME), null);
+    }
+  }
+
   @Override
   public void process(Tables.OsmPoiPoint element, FeatureCollector features) {
-
-
-    // natural=stone as a POI
-    if ("natural".equals(element.mappingKey()) && "stone".equals(element.subclass())) {
-      var f = features.point(LAYER_NAME)
-          .setBufferPixels(BUFFER_SIZE)
-          .setAttr(Fields.CLASS, FieldValues.CLASS_ATTRACTION) // or a dedicated constant if you have one
-          .setAttr(Fields.SUBCLASS, "stone")
-          .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
-          .setMinZoom(12); // tweak to taste
-      // if you want the usual POI common tags/logic:
-      // setupPoiFeature(element, f, /*rank or null*/ null);
-      return;
-    }
-
-    // waterway=waterfall as a POI
-    if ("waterway".equals(element.mappingKey()) && "waterfall".equals(element.subclass())) {
-      var f = features.point(LAYER_NAME)
-          .setBufferPixels(BUFFER_SIZE)
-          .setAttr(Fields.CLASS, "waterfall")                  // or FieldValues.CLASS_WATERFALL if you add it
-          .setAttr(Fields.SUBCLASS, "waterfall")
-          .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
-          .setMinZoom(12); // waterfalls are usually a bit more prominent
-      // setupPoiFeature(element, f, /*rank or null*/ null);
-      return;
-    }
-
     if (element.uicRef() != null && AGG_STOP_SUBCLASS_ORDER.contains(element.subclass())) {
       // multiple threads may update this concurrently
       String aggStopKey = element.uicRef()
@@ -332,39 +493,6 @@ public class Poi implements
       }
     }
 
-    //if ("natural".equals(element.mappingKey()) && "stone".equals(element.subclass())) {
-    //  var f = features.point(LAYER_NAME)
-    //    .setBufferPixels(BUFFER_SIZE)
-    //    .setAttr(Fields.CLASS, FieldValues.CLASS_ATTRACTION) // or define a dedicated CLASS_STONE if you prefer
-    //    .setAttr(Fields.SUBCLASS, "stone")
-    //    .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
-    //    .setMinZoom(13);
-    //  // add any extra tags you rely on...
-    //}
-//
-//
-    //if ("waterway".equals(element.mappingKey()) && "waterfall".equals(element.subclass())) {
-    //  features.point(LAYER_NAME)
-    //    .setBufferPixels(BUFFER_SIZE)
-    //    .setAttr(Fields.CLASS, "waterfall")     // or define FieldValues.CLASS_WATERFALL = "waterfall"
-    //    .setAttr(Fields.SUBCLASS, "waterfall")
-    //    .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations)) // adds name + name:xx if present
-    //    .setMinZoom(12)                         // tweak to taste (12–14 is typical)
-    //    .setSortKey(0);                         // or any ranking you use for POIs
-    //}
-//
-    //if ("stone".equals(sf.getTag("natural"))) {
-    //  final var name = sf.getTag("name");
-    //  final var fc = features.point(LAYER_NAME)
-    //    .setBufferPixels(BUFFER_SIZE)
-    //    .setAttr(Fields.CLASS, OpenMapTilesSchema.Poi.FieldValues.CLASS_ATTRACTION)
-    //    .setAttr(Fields.SUBCLASS, "stone")
-    //    .setMinZoom(13); // adjust if needed
-    //  if (name != null && !name.isBlank()) {
-    //    fc.setAttr(Fields.NAME, name);
-    //  }
-    //}
-
     String subclass = switch (rawSubclass) {
       case "information" -> nullIfEmpty(element.information());
       case "place_of_worship" -> nullIfEmpty(element.religion());
@@ -372,11 +500,45 @@ public class Poi implements
       default -> rawSubclass;
     };
     String poiClass = poiClass(rawSubclass, element.mappingKey());
+    MarineTag marine = marineTag(element.source());
+    // New standalone marine features use an existing client icon class as a compatibility fallback.
+    // Existing POI classifications (e.g. a lighthouse also tagged tourism=attraction) are preserved.
+    if (marine != null && originalSupplementKey(element.source()) == null &&
+      !Tables.OsmPoiPoint.MAPPING.evaluate(element.source()) &&
+      !Tables.OsmPoiPolygon.MAPPING.evaluate(element.source())) {
+      poiClass = FieldValues.CLASS_HARBOR;
+    }
+    boolean addedCoverage = !existingPoiMapping(element.source()) &&
+      !originalSupplement(element.source()) && obstacleKey(element.source()) == null &&
+      marine == null;
+    if (addedCoverage) {
+      subclass = rawSubclass;
+      poiClass = switch (element.mappingKey()) {
+        case "shop" -> "shop";
+        case "natural" -> element.source().hasTag("natural", "spring", "hot_spring", "geyser") ? "water" : "attraction";
+        case "historic", "man_made" -> "attraction";
+        case "waterway" -> "waterfall";
+        case "whitewater" -> "harbor";
+        default -> "information";
+      };
+    }
     int poiClassRank = poiClassRank(poiClass);
-    int rankOrder = poiClassRank + ((nullOrEmpty(name)) ? 2000 : 0);
+    boolean ultraPriority = "parking".equals(rawSubclass) ? isPublicTrailheadParking(element.source()) :
+      ULTRA_PRIORITY_SUBCLASSES.contains(rawSubclass) ||
+        !nullOrEmpty(element.sport()) || "winter_sports".equals(rawSubclass);
+    // Even unnamed essentials precede ordinary named POIs (whose best class score is 20).
+    // Camp pitches explicitly use their raw subtype here, while their class stays "campsite".
+    int rankOrder = ultraPriority ? (nullOrEmpty(name) ? 1 : 0) :
+      obstacleKey(element.source()) != null ? (nullOrEmpty(name) ? 3 : 2) :
+      "bench".equals(rawSubclass) ? (nullOrEmpty(name) ? 11 : 10) :
+      poiClassRank + (nullOrEmpty(name) ? 2000 : 0);
 
-    int minzoom = minzoom(element.subclass(), element.mappingKey());
-    if (UNIVERSITY_POI_SUBCLASSES.contains(rawSubclass)) {
+    int minzoom = addedCoverage || (marine != null && Set.of("seamark", "mooring").contains(marine.kind())) ?
+      14 : minzoom(element.subclass(), element.mappingKey());
+    // Remove this internal marker after ranking. It never becomes a tile attribute.
+    output.setAttr(KEEP_LOW_ZOOM, ultraPriority || "parking".equals(rawSubclass) ||
+      "harbor".equals(poiClass) || "park".equals(poiClass) || "water".equals(poiClass));
+    if (!addedCoverage && UNIVERSITY_POI_SUBCLASSES.contains(rawSubclass)) {
       // universities that are at least 10% of a tile may appear from Z10
       output.setMinPixelSizeBelowZoom(13, 80); // 80x80px is ~10% of a 256x256px tile
       minzoom = 10;
@@ -393,6 +555,23 @@ public class Poi implements
       .setPointLabelGridPixelSize(14, 64)
       .setSortKey(rankOrder)
       .setMinZoom(minzoom);
+    CoverageAttributes.poi(element.source(), output);
+    if (addedCoverage) output.setAttr("kind", element.mappingKey());
+    if (obstacleKey(element.source()) != null) {
+      OutdoorAttributes.copy(element.source(), output, minzoom);
+      output.setAttr("outdoor_obstacle", obstacleKey(element.source()))
+        .setAttr("outdoor_geometry", element.source().isPoint() ? "point" :
+          element.source().canBePolygon() && !element.source().hasTag("area", "no") ? "area" : "line");
+    }
+    if (marine != null) {
+      output.setAttr(Fields.MARINE_KIND, marine.kind())
+        .setAttr(Fields.SEAMARK_TYPE, element.source().getString("seamark:type"));
+      if (nullOrEmpty(name)) {
+        String marineName = coalesce(nullIfEmpty(element.source().getString("seamark:name")),
+          nullIfEmpty(element.ref()));
+        if (marineName != null) output.setAttr(Fields.NAME, marineName);
+      }
+    }
   }
 
   @Override
@@ -406,6 +585,15 @@ public class Poi implements
         feature.tags().put(Fields.RANK, gridrank);
       }
     }
-    return items;
+    List<VectorTile.Feature> retained = new ArrayList<>(items.size());
+    for (VectorTile.Feature feature : items) {
+      boolean keep = Boolean.TRUE.equals(feature.tags().remove(KEEP_LOW_ZOOM));
+      Object rank = feature.tags().get(Fields.RANK);
+      boolean transit = Set.of("airport", "rail").contains(String.valueOf(feature.tags().get(Fields.CLASS))) ||
+        ("bus".equals(feature.tags().get(Fields.CLASS)) && "bus_stop".equals(feature.tags().get(Fields.SUBCLASS)));
+      if (zoom < 12 || zoom >= 14 || zoom == maximumZoom || keep || transit ||
+        !(rank instanceof Number number) || number.intValue() <= 12) retained.add(feature);
+    }
+    return retained;
   }
 }

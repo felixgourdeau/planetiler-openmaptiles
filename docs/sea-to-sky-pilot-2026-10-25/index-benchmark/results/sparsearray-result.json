@@ -1,0 +1,11 @@
+{
+  "pass1Seconds" : 868.397662605,
+  "nodeMapType" : "sparsearray",
+  "nodeMapDiskBytes" : 99333150000,
+  "nodeMapEstimatedMemoryBytes" : 525487232,
+  "readerEstimatedMemoryBytes" : 1643781716,
+  "sampleLookupCount" : 100000,
+  "sampleLookupHits" : 68727,
+  "sampleLookupSha256" : "eff346c83cbec8768bae4437d862497ca941ba6759b46993db46327c35161b5e",
+  "dataErrors" : { }
+}

@@ -1,0 +1,21 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "outmap-planet-pilot-20261025",
+        "RoleId": "AROAWN3NGYITOAQP7GEJH",
+        "Arn": "arn:aws:iam::442073793062:role/outmap-planet-pilot-20261025",
+        "CreateDate": "2026-10-25T23:29:51+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "ec2.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}

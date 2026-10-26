@@ -1,0 +1,14 @@
+{
+  "sparsearrayPass1Seconds": 868.397662605,
+  "arrayPass1Seconds": 152.19726561,
+  "speedup": 5.705737610491885,
+  "timeReductionPercent": 82.4737822124668,
+  "secondsSaved": 716.2003969950001,
+  "sampleFingerprintsMatch": true,
+  "sampleHitsMatch": true,
+  "readerMemoryEstimatesMatch": true,
+  "nodes": 10949467954,
+  "ways": 1225912321,
+  "relations": 14957553,
+  "scope": "Single cold-cache full-planet first pass per index; no pass2 or tiles."
+}

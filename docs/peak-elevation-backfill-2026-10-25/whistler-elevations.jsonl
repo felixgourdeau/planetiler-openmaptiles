@@ -1,0 +1,5 @@
+{"type":"header","version":1,"policy":"fill-gaps","endpoint":"https://m3apwpaoxqoo5isj2pwjfbodgq0zyofc.lambda-url.ca-central-1.on.aws/elevations","inputSha256":"89a61da91f01c8a50943c68950798c4345ebb947d15b95987854f89b9c5ef01e"}
+{"type":"point","id":"n3229029055","kind":"saddle","longitude":-122.8080783,"latitude":50.1402874,"osmElevation":null,"elevation":2256.8474769555605,"status":"sampled","retrievedAt":"2026-10-25T14:47:39.029Z"}
+{"type":"point","id":"n3498316398","kind":"saddle","longitude":-122.7924406,"latitude":50.1371044,"osmElevation":null,"elevation":2620.372743350381,"status":"sampled","retrievedAt":"2026-10-25T14:47:39.029Z"}
+{"type":"point","id":"n9477294476","kind":"saddle","longitude":-122.8881138,"latitude":50.0285039,"osmElevation":null,"elevation":1717.5024603850916,"status":"sampled","retrievedAt":"2026-10-25T14:47:39.029Z"}
+{"type":"complete","count":3,"sha256":"7a34fbbcc480307ef7df59f99ebd4d055d41ff8f688ac4dac8309278dc5ba5aa"}

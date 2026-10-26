@@ -1,0 +1,26 @@
+{
+  "gitHead": "f1f7f2ca2273f939b3ca35449f0d2250f0c72603",
+  "workingTreeIncluded": true,
+  "files": {
+    "backfill-peak-elevations.mts": {
+      "bytes": 10338,
+      "sha256": "55da3a954a31eccebf97fe016ea13d88a6a440825eada928c15a35be03f98891"
+    },
+    "outmap.jar": {
+      "bytes": 88000565,
+      "sha256": "5410bb2f64c598611a817d7d49fba66b7aaecc026a3e12f15437c295dee9a591"
+    },
+    "run-plan.json": {
+      "bytes": 933,
+      "sha256": "9689d26e835a252991a5b62df9ca3da4e84f9ad8ea575308f92e41ffb3ac737c"
+    },
+    "source-snapshot.tar.gz": {
+      "bytes": 134410,
+      "sha256": "8c47c03e9dfbb15a1c6257f3dbddc7cde33a3916890c97ddf8a1b95f06d87c14"
+    },
+    "working-tree.patch": {
+      "bytes": 292237,
+      "sha256": "f898064db687ef3a434a0409d279124bab82417a32c6a313263d9d86135f1349"
+    }
+  }
+}

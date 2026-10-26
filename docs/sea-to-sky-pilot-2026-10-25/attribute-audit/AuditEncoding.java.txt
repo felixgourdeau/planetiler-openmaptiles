@@ -1,0 +1,13 @@
+import java.nio.file.*;import java.util.*;import java.io.*;import java.util.zip.*;import com.onthegomap.planetiler.pmtiles.*;import com.onthegomap.planetiler.VectorTile;import com.fasterxml.jackson.databind.ObjectMapper;import org.openmaptiles.util.OmtLanguageUtils;
+class AuditEncoding {
+static byte[] encode(List<VectorTile.Feature> fs){Map<String,List<VectorTile.Feature>> groups=new LinkedHashMap<>();for(var f:fs)groups.computeIfAbsent(f.layer(),k->new ArrayList<>()).add(f);var tile=new VectorTile();groups.forEach(tile::addLayerFeatures);return tile.encode();}
+static class Gzip extends GZIPOutputStream {Gzip(OutputStream o,int level)throws IOException{super(o);def.setLevel(level);}}
+static int size(byte[] raw,int level)throws Exception{var out=new ByteArrayOutputStream();try(var g=new Gzip(out,level)){g.write(raw);}return out.size();}
+public static void main(String[] args)throws Exception{
+Map<String,Long> bytes=new LinkedHashMap<>(),nanos=new LinkedHashMap<>();long tiles=0;
+try(var a=ReadablePmtiles.newReadFromFile(Path.of(args[0]));var all=a.getAllTiles()){
+while(all.hasNext()){var tile=all.next();tiles++;var fs=VectorTile.decode(AuditAttributes.raw(tile.bytes()));List<VectorTile.Feature> base=new ArrayList<>(),sorted=new ArrayList<>();for(var f:fs){var tags=new LinkedHashMap<>(f.tags());OmtLanguageUtils.removeRedundantNames(tags);base.add(new VectorTile.Feature(f.layer(),f.id(),f.geometry(),tags));sorted.add(new VectorTile.Feature(f.layer(),f.id(),f.geometry(),new TreeMap<>(tags)));}
+byte[] b=encode(base),s=encode(sorted);for(String mode:List.of("baseline_level6","baseline_level9","sorted_keys_level6","sorted_keys_level9")){long start=System.nanoTime();int count=size(mode.startsWith("sorted")?s:b,mode.endsWith("9")?9:6);bytes.merge(mode,(long)count,Long::sum);nanos.merge(mode,System.nanoTime()-start,Long::sum);}
+}}
+new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(Path.of(args[1]).toFile(),Map.of("tiles",tiles,"gzipBytes",bytes,"gzipOnlyNanos",nanos));
+}}

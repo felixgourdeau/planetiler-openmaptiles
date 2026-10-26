@@ -1,0 +1,55 @@
+{
+  "status": "complete-validated-cleaned-up",
+  "region": "us-east-1",
+  "planet": {
+    "uri": "s3://osm-pds/2026/planet-261019.osm.pbf",
+    "bytes": 95507771401,
+    "md5": "5bbb8c9cae945af88e6af773fed33a3e"
+  },
+  "outputBoundsWestSouthEastNorth": [
+    -123.75,
+    49.25,
+    -122.25,
+    50.65
+  ],
+  "elevationPreparationBoundsWestSouthEastNorth": [
+    -123.85,
+    49.15,
+    -122.15,
+    50.75
+  ],
+  "minimumZoom": 0,
+  "maximumZoom": 14,
+  "generatorInput": "full planet PBF; no BC or corridor PBF substitution",
+  "preparationInstance": "m7g.xlarge",
+  "buildInstance": "c7gd.16xlarge",
+  "preparationVolumeGiB": 200,
+  "buildTemporaryStorage": "local instance-store NVMe",
+  "elevationPolicy": "Complete corridor snapshot before build; count global candidates without starting global API backfill",
+  "productionPromotion": false,
+  "unitTests": "Not run: prohibited by AGENTS.md",
+  "repositoryTypechecks": "Not run: prohibited by AGENTS.md",
+  "instanceId": "i-0e8a6e44234352f3c",
+  "bucket": "outmap-planet-pilot-442073793062-20261025",
+  "verifiedOnDemandHourlyUSD": {
+    "m7g.xlarge": 0.1632,
+    "c7gd.16xlarge": 2.903
+  },
+  "preparationStartedAt": "2026-10-25T16:10:05Z",
+  "buildStageStartedAt": "2026-10-25T16:37:29Z",
+  "blocker": {
+    "handler": "TrailSegmentLabels.processAllOsm",
+    "sampledWorkerThreads": 62,
+    "sampledBlockedWorkers": 54,
+    "defaultGlobalGraphNodeLimit": 2000000,
+    "note": "Run stopped before finish; cap failure was inferred from global preprocessing and source limits, not observed as a thrown runtime error."
+  },
+  "pilotOnlyExcludedLayer": "trail_segment_label",
+  "pilotOnlyFlag": "--trail-segment-labels=false",
+  "outputRevision": "sea-to-sky-20261025-r2",
+  "exclusionApprovedByUser": true,
+  "completedAt": "2026-10-25T18:00:04.919Z",
+  "archive": "results/sea-to-sky-20261025-r2.pmtiles",
+  "archiveBytes": 63500379,
+  "buildStageSeconds": 3132.739
+}

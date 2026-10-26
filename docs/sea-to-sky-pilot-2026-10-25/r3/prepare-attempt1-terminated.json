@@ -1,0 +1,90 @@
+{
+    "Reservations": [
+        {
+            "Groups": [],
+            "Instances": [
+                {
+                    "AmiLaunchIndex": 0,
+                    "ImageId": "ami-09a93d801db0bafae",
+                    "InstanceId": "i-0d0e5b3e3d0f10d91",
+                    "InstanceType": "m7g.xlarge",
+                    "LaunchTime": "2026-10-25T23:30:28+00:00",
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "Placement": {
+                        "AvailabilityZone": "us-east-1a",
+                        "GroupName": "",
+                        "Tenancy": "default"
+                    },
+                    "PrivateDnsName": "",
+                    "ProductCodes": [],
+                    "PublicDnsName": "",
+                    "State": {
+                        "Code": 48,
+                        "Name": "terminated"
+                    },
+                    "StateTransitionReason": "Service initiated (2026-10-25 23:38:41 GMT)",
+                    "Architecture": "arm64",
+                    "BlockDeviceMappings": [],
+                    "ClientToken": "9e35e8be-6184-470f-909e-2f3d4ab32412",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "InstanceLifecycle": "spot",
+                    "NetworkInterfaces": [],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [],
+                    "SpotInstanceRequestId": "sir-4ahzmpng",
+                    "StateReason": {
+                        "Code": "Server.SpotInstanceTermination",
+                        "Message": "Server.SpotInstanceTermination: Spot instance termination"
+                    },
+                    "Tags": [
+                        {
+                            "Key": "Purpose",
+                            "Value": "temporary-pilot"
+                        },
+                        {
+                            "Key": "Name",
+                            "Value": "outmap-sea-to-sky-r3-prepare"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 4,
+                        "ThreadsPerCore": 1
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "pending",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2026-10-25T23:30:28+00:00",
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi"
+                }
+            ],
+            "OwnerId": "442073793062",
+            "ReservationId": "r-01414068d2043a92d"
+        }
+    ]
+}

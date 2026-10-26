@@ -1,0 +1,202 @@
+[
+  {
+    "name": "paris",
+    "z": 11,
+    "x": 1037,
+    "y": 704,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/11/1037/704.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/paris-11.mvt",
+    "bytes": 389380,
+    "status": 200
+  },
+  {
+    "name": "paris",
+    "z": 12,
+    "x": 2074,
+    "y": 1409,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/12/2074/1409.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/paris-12.mvt",
+    "bytes": 5039884,
+    "status": 200
+  },
+  {
+    "name": "paris",
+    "z": 13,
+    "x": 4148,
+    "y": 2819,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/13/4148/2819.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/paris-13.mvt",
+    "bytes": 1066812,
+    "status": 200
+  },
+  {
+    "name": "paris",
+    "z": 14,
+    "x": 8297,
+    "y": 5638,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/14/8297/5638.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/paris-14.mvt",
+    "bytes": 531229,
+    "status": 200
+  },
+  {
+    "name": "tokyo",
+    "z": 11,
+    "x": 1819,
+    "y": 806,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/11/1819/806.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/tokyo-11.mvt",
+    "bytes": 263718,
+    "status": 200
+  },
+  {
+    "name": "tokyo",
+    "z": 12,
+    "x": 3638,
+    "y": 1612,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/12/3638/1612.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/tokyo-12.mvt",
+    "bytes": 4854354,
+    "status": 200
+  },
+  {
+    "name": "tokyo",
+    "z": 13,
+    "x": 7277,
+    "y": 3225,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/13/7277/3225.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/tokyo-13.mvt",
+    "bytes": 1224312,
+    "status": 200
+  },
+  {
+    "name": "tokyo",
+    "z": 14,
+    "x": 14554,
+    "y": 6450,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/14/14554/6450.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/tokyo-14.mvt",
+    "bytes": 708297,
+    "status": 200
+  },
+  {
+    "name": "taipei",
+    "z": 11,
+    "x": 1715,
+    "y": 876,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/11/1715/876.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/taipei-11.mvt",
+    "bytes": 283167,
+    "status": 200
+  },
+  {
+    "name": "taipei",
+    "z": 12,
+    "x": 3430,
+    "y": 1753,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/12/3430/1753.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/taipei-12.mvt",
+    "bytes": 4485039,
+    "status": 200
+  },
+  {
+    "name": "taipei",
+    "z": 13,
+    "x": 6861,
+    "y": 3507,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/13/6861/3507.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/taipei-13.mvt",
+    "bytes": 2248250,
+    "status": 200
+  },
+  {
+    "name": "taipei",
+    "z": 14,
+    "x": 13722,
+    "y": 7014,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/14/13722/7014.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/taipei-14.mvt",
+    "bytes": 1112774,
+    "status": 200
+  },
+  {
+    "name": "london",
+    "z": 11,
+    "x": 1023,
+    "y": 680,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/11/1023/680.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/london-11.mvt",
+    "bytes": 304783,
+    "status": 200
+  },
+  {
+    "name": "london",
+    "z": 12,
+    "x": 2046,
+    "y": 1361,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/12/2046/1361.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/london-12.mvt",
+    "bytes": 2939618,
+    "status": 200
+  },
+  {
+    "name": "london",
+    "z": 13,
+    "x": 4092,
+    "y": 2723,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/13/4092/2723.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/london-13.mvt",
+    "bytes": 1086144,
+    "status": 200
+  },
+  {
+    "name": "london",
+    "z": 14,
+    "x": 8185,
+    "y": 5446,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/14/8185/5446.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/london-14.mvt",
+    "bytes": 338937,
+    "status": 200
+  },
+  {
+    "name": "montreal",
+    "z": 11,
+    "x": 605,
+    "y": 732,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/11/605/732.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/montreal-11.mvt",
+    "bytes": 320040,
+    "status": 200
+  },
+  {
+    "name": "montreal",
+    "z": 12,
+    "x": 1210,
+    "y": 1465,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/12/1210/1465.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/montreal-12.mvt",
+    "bytes": 1461972,
+    "status": 200
+  },
+  {
+    "name": "montreal",
+    "z": 13,
+    "x": 2421,
+    "y": 2930,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/13/2421/2930.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/montreal-13.mvt",
+    "bytes": 722081,
+    "status": 200
+  },
+  {
+    "name": "montreal",
+    "z": 14,
+    "x": 4843,
+    "y": 5861,
+    "url": "https://planet.tiles.outmap.pro/planet-250825/14/4843/5861.mvt",
+    "file": "/private/tmp/outmap-poi-audit-20261025/montreal-14.mvt",
+    "bytes": 427481,
+    "status": 200
+  }
+]

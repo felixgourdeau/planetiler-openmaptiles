@@ -172,7 +172,9 @@ public class Water implements
   @Override
   public void process(Tables.OsmWaterPolygon element, FeatureCollector features) {
     if (!"bay".equals(element.natural())) {
-      String clazz = classMapping.getOrElse(element.source(), FieldValues.CLASS_LAKE);
+      boolean genericWater = !Tables.OsmWaterPolygon.LEGACY_MAPPING.evaluate(element.source());
+      String clazz = genericWater ? FieldValues.CLASS_WATER :
+        classMapping.getOrElse(element.source(), FieldValues.CLASS_LAKE);
       features.polygon(LAYER_NAME)
         .setBufferPixels(BUFFER_SIZE)
         .setMinPixelSizeBelowZoom(11, 2)
@@ -182,6 +184,9 @@ public class Water implements
         .setAttrWithMinzoom(Fields.BRUNNEL, Utils.brunnel(element.isBridge(), element.isTunnel()), 12)
         .setAttr(Fields.CLASS, clazz);
 
+      if (genericWater) {
+        return;
+      }
       try {
         attemptNeLakeIdMapping(element);
       } catch (GeometryException e) {

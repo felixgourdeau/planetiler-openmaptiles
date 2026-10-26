@@ -1,0 +1,12 @@
+{
+  "verifiedAt": "2026-10-26T08:33Z",
+  "activeRunInstances": [],
+  "remainingRootVolumes": [],
+  "incompleteMultipartUploads": [],
+  "checkpointObjects": [],
+  "temporaryRoleExists": false,
+  "temporaryInstanceProfileExists": false,
+  "archiveBytes": 104924743209,
+  "archiveSha256": "c105a182bb9b921aafbce12ecfe40f2724d2f1c547786a7b44a0083c90e3a0d9",
+  "retained": "Final archive, release inputs and provenance; earlier cache and archives unchanged."
+}

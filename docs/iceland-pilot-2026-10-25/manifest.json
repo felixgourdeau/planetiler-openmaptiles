@@ -1,0 +1,24 @@
+{
+  "bbox": [
+    -19.15,
+    63.9,
+    -18.95,
+    64.05
+  ],
+  "createdAt": "2026-10-25T15:29:08.886Z",
+  "reusedSnapshots": "/private/tmp/iceland-pilot-20261025-v2",
+  "officialCount": 109,
+  "osmCount": 215402,
+  "approvedCount": 3,
+  "hashes": {
+    "official-punktar.json": "019127995863fad08c5bde3742d39c696c32903eebdfdfcb8c872426fbf8357e",
+    "official-linur.json": "1be4d7c8364bc4f8f693f1f1cfb4a30ff2b99d8fdf1edf417c1ea28ca8da5115",
+    "official-flakar.json": "1bce3d009ff6580860f1e36f7ffee4f5753ca1b098ab83dad0ae86b35e0b110f",
+    "osm.json": "684c07a635e7d73b2624e57f49bb40e5ee9875d7cc3142b2310c6c2b9ce8dd93",
+    "comparison.json": "c596a369cdae0f8b6a739c9ad053b3c7ee21c4c7111584e8caac25b1e7a2515d",
+    "approved.geojson": "64f6d0f823365a3742356eac8d9efd47b3d1a44f59442786e9cb779a559f86a1"
+  },
+  "attribution": "© NÁTT / IS 50V Örnefni — CC BY 4.0",
+  "source": "https://www.natt.is/is/midlun/kortagogn/ornefni",
+  "limitations": "Name/bounding-box comparison is conservative, not semantic deduplication. Review unmatched features against OSM geometry and existing tiles before approving. No feature is imported automatically."
+}

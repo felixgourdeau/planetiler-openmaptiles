@@ -1,0 +1,1778 @@
+[
+  {
+    "id": "34d4f2c5-d8e1-6316-2603-eec24472d7c0",
+    "name": "Jónsfoss",
+    "category": "foss",
+    "geometry": "MultiPoint",
+    "bounds": [
+      -19.0755,
+      63.925,
+      -19.0755,
+      63.925
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": true
+  },
+  {
+    "id": "5c83757c-8364-432b-bdee-efddfb1f8699",
+    "name": "Tvílitafossar",
+    "category": "foss",
+    "geometry": "MultiPoint",
+    "bounds": [
+      -19.1006,
+      63.9147,
+      -19.1006,
+      63.9147
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": true
+  },
+  {
+    "id": "79a5c625-e3f9-3cdb-9f3a-b020405087d7",
+    "name": "Stútur",
+    "category": "gígur",
+    "geometry": "MultiPoint",
+    "bounds": [
+      -19.0407,
+      64.0131,
+      -19.0407,
+      64.0131
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n5809030553"
+    ],
+    "approved": false
+  },
+  {
+    "id": "19544bcc-0921-1919-b83f-a9bc0d866b5d",
+    "name": "Bólið",
+    "category": "hóll",
+    "geometry": "MultiPoint",
+    "bounds": [
+      -18.9502,
+      64.0061,
+      -18.9502,
+      64.0061
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": true
+  },
+  {
+    "id": "4bbb4b4b-1cb1-2e7c-47bd-d63c9b092e18",
+    "name": "Tungnaá",
+    "category": "á",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.4254,
+      64.0042,
+      -18.0265,
+      64.4156
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w28110432",
+      "export/w79696463",
+      "export/w172227037",
+      "export/w172323417",
+      "export/w474375209",
+      "export/w570048662",
+      "export/w633514312",
+      "export/w633514314",
+      "export/w655488350",
+      "export/w1203872687"
+    ],
+    "approved": false
+  },
+  {
+    "id": "8272f62a-9a29-31ef-db47-5cc49bda67a0",
+    "name": "Móhella",
+    "category": "klettur",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.123,
+      63.9462,
+      -19.1074,
+      63.9464
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "2a15bef6-20c6-d140-6916-502f319ccec7",
+    "name": "Kaldaklof",
+    "category": "botn",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0911,
+      63.9129,
+      -19.0841,
+      63.915
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "307964f2-f6b0-3bb0-be39-503344b45099",
+    "name": "Vesturbarmur",
+    "category": "brún",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0301,
+      63.9683,
+      -19.0209,
+      63.9714
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "1cb2a383-2026-c553-0a04-a55c265f9d4e",
+    "name": "Austurbarmur",
+    "category": "brún",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0165,
+      63.9724,
+      -19.0094,
+      63.977
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "f3975b58-8101-7aa8-d3d3-994b0f87de7f",
+    "name": "Halldórsgil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -18.9701,
+      63.9669,
+      -18.9655,
+      63.972
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "8591a96f-7903-5af7-26da-02ebfcafa63c",
+    "name": "Brandsgil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0554,
+      63.9748,
+      -19.0513,
+      63.9777
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "e088075c-ff85-8c1c-f71f-015312753d8a",
+    "name": "Grænagil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.08,
+      63.9832,
+      -19.0682,
+      63.9838
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "08e1b7ec-d29c-1dee-b4af-ddd98465fb82",
+    "name": "Dalbotn",
+    "category": "botn",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.038,
+      63.9249,
+      -19.0319,
+      63.9308
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "6cafae35-849d-1c87-b58a-6797b60f4648",
+    "name": "Stóra-Brandsgil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0691,
+      63.9676,
+      -19.0603,
+      63.972
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "719c4287-3a3a-1df4-63fe-34f3e745a1d3",
+    "name": "Stóra-Hamragil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0833,
+      63.9406,
+      -19.0744,
+      63.9453
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "ec6538bd-b4cb-acad-0407-1af493fe4098",
+    "name": "Litla-Brandsgil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0474,
+      63.9654,
+      -19.0414,
+      63.9705
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "896100d1-4ba3-6469-f7ef-8bdfcbe518cb",
+    "name": "Tröllhöfði",
+    "category": "höfði",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.131,
+      63.9761,
+      -19.1239,
+      63.9797
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "87b2f033-e10a-9de0-b4c9-316ce8c758ef",
+    "name": "Jökulsgilsbotn",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0626,
+      63.9308,
+      -19.0489,
+      63.9309
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "c0695438-3dc5-d4a2-d443-b16be27f0f77",
+    "name": "Útigönguból",
+    "category": "hvammur",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0118,
+      63.9327,
+      -19.0097,
+      63.9337
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "42348c4b-9605-c9bd-aa74-1c3af1abfd95",
+    "name": "Grænugil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.074,
+      63.9275,
+      -19.0694,
+      63.93
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "10356dc8-49b1-240d-9602-976ebf20895f",
+    "name": "Þrengsli",
+    "category": "skarð",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0153,
+      63.9363,
+      -19.0098,
+      63.9388
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "312bf94f-765c-2581-28c5-4395ea3583b4",
+    "name": "Vörðuhnúkur",
+    "category": "hnjúkur",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0184,
+      63.9663,
+      -19.0123,
+      63.9673
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "0044c550-c0b7-63ab-0384-bc0f31de584b",
+    "name": "Voðagil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0247,
+      63.9586,
+      -19.0175,
+      63.96
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "405d2d9d-465b-19a7-3cbd-7202024b0d6e",
+    "name": "Hveragil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0459,
+      63.9264,
+      -19.0451,
+      63.9302
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "a8d4cf16-cf52-4ff3-aa8b-a0f5066d4650",
+    "name": "Svigagil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -18.9855,
+      63.9437,
+      -18.9818,
+      63.9473
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "ced6e7a6-0885-2b5e-1ca8-e69e2f387b3c",
+    "name": "Vondugil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.123,
+      63.9928,
+      -19.1133,
+      63.9928
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n6594208105"
+    ],
+    "approved": false
+  },
+  {
+    "id": "2e2d16a1-a3ed-2d84-2865-586a544623fe",
+    "name": "Hellan",
+    "category": "klettur",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.015,
+      63.9335,
+      -19.0143,
+      63.9345
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4212125601"
+    ],
+    "approved": false
+  },
+  {
+    "id": "8974f020-95d5-5789-1a95-cf7363c15c8d",
+    "name": "Rótarbrekkur",
+    "category": "brekka",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0698,
+      63.9301,
+      -19.0673,
+      63.932
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "265a36d8-5c48-aeac-be92-88350f51b9ff",
+    "name": "Uppgöngutorfa",
+    "category": "hryggur",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0975,
+      63.917,
+      -19.0794,
+      63.9251
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "dcc09317-503d-c1ba-9733-234b33b57c4e",
+    "name": "Dómadalshraun",
+    "category": "hraun",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.1208,
+      64.0369,
+      -19.1128,
+      64.047
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "5c6c0be0-a8db-8a69-1a1f-37a3c95b741d",
+    "name": "Hattver",
+    "category": "graslendi",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0437,
+      63.9342,
+      -19.0243,
+      63.9342
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "44396ebf-c71f-5b18-2ff9-f5dee309ba0a",
+    "name": "Laugabarmur",
+    "category": "brún",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0488,
+      63.9718,
+      -19.0338,
+      63.9735
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "8c76909c-11b3-3ab8-3bad-630788aa6852",
+    "name": "Suðurnámsgil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.1154,
+      64.0072,
+      -19.1006,
+      64.0132
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "607cd353-e1c3-39aa-e922-c1dd629ce9de",
+    "name": "Kirkjufellsháls",
+    "category": "háls",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -18.9564,
+      63.963,
+      -18.9421,
+      63.9709
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "5aa7c6d8-7d13-91a6-beec-e05e07b7d2a3",
+    "name": "Litla-Hamragil",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0976,
+      63.9355,
+      -19.0777,
+      63.9355
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "a8d7cf2b-d794-939e-9c06-ec44a7f24e20",
+    "name": "Dómadalur",
+    "category": "dalur",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.1437,
+      64.031,
+      -19.1319,
+      64.0362
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "81728bf7-1fc6-c9f7-c84b-22cf3e754399",
+    "name": "Kýlingaskarð",
+    "category": "skarð",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0296,
+      63.988,
+      -19.0106,
+      63.9938
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "3d9e5e86-4a69-5153-5b20-f3bc34400ee7",
+    "name": "Heitaklof",
+    "category": "gil",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0704,
+      63.9135,
+      -19.0609,
+      63.9191
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "1267b2e1-249c-95bb-7eed-0e7cd300d396",
+    "name": "Háöldukvísl",
+    "category": "kvísl",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.1422,
+      63.99,
+      -19.1322,
+      63.9927
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w422864022"
+    ],
+    "approved": false
+  },
+  {
+    "id": "c05a3516-1617-a861-5910-8d088e6203ee",
+    "name": "Brandsgilskvísl",
+    "category": "kvísl",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.065,
+      63.9681,
+      -19.0571,
+      63.9718
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w422863929"
+    ],
+    "approved": false
+  },
+  {
+    "id": "082aaf74-6398-c466-0366-3fad4e456cdd",
+    "name": "Hamragilskvísl",
+    "category": "kvísl",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0756,
+      63.932,
+      -19.0658,
+      63.9391
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w422864042",
+      "export/w991208463"
+    ],
+    "approved": false
+  },
+  {
+    "id": "4edd74c5-697f-8ec5-8475-1db5820c02eb",
+    "name": "Brennisteinsöldukvísl",
+    "category": "kvísl",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0827,
+      63.9803,
+      -19.0612,
+      63.9854
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w422863930"
+    ],
+    "approved": false
+  },
+  {
+    "id": "f2448b0e-75d5-c265-7686-7b7675722d21",
+    "name": "Stórihver",
+    "category": "hver",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.1507,
+      63.9559,
+      -19.1484,
+      63.9559
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n817319572"
+    ],
+    "approved": false
+  },
+  {
+    "id": "c29b9d83-6b21-bb93-ac6d-5ddeef539536",
+    "name": "Hamragiljakjaftur",
+    "category": "kvísl",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0658,
+      63.9313,
+      -19.0628,
+      63.9319
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "297f07e4-5411-989c-fbeb-0b38e26d6521",
+    "name": "Háuhverir",
+    "category": "hver",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0944,
+      63.9294,
+      -19.0885,
+      63.9295
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "f7d6c898-fd77-63da-5d39-fd437d922b90",
+    "name": "Sveinsgilskjaftur",
+    "category": "kvísl",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0024,
+      63.9607,
+      -18.9994,
+      63.9608
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "5b98c2ce-238b-a795-f7c2-531fcc15ec0f",
+    "name": "Jökulgilskvísl",
+    "category": "á",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0643,
+      63.9306,
+      -18.9715,
+      64.0267
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w401754233",
+      "export/w422863994",
+      "export/w422864045",
+      "export/w422864051",
+      "export/w422864052",
+      "export/w422864055",
+      "export/w511354270"
+    ],
+    "approved": false
+  },
+  {
+    "id": "35663381-6078-44ad-b4e3-84326883297f",
+    "name": "Sveinsgilskvísl",
+    "category": "kvísl",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0067,
+      63.9364,
+      -18.9836,
+      63.9603
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "21d65f6a-421c-74e7-5dd8-dcde3b73bb96",
+    "name": "Námskvísl",
+    "category": "kvísl",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -19.0972,
+      63.9929,
+      -19.0523,
+      63.9974
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w37449194",
+      "export/w422864015"
+    ],
+    "approved": false
+  },
+  {
+    "id": "bcbdf6b0-ce58-ad6f-93ad-425508d60eae",
+    "name": "Þjórsá",
+    "category": "á",
+    "geometry": "MultiLineString",
+    "bounds": [
+      -20.8089,
+      63.7749,
+      -18.2103,
+      64.8889
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w319378061",
+      "export/w405261448",
+      "export/w405261450",
+      "export/w516450731",
+      "export/w633484333",
+      "export/w633484427",
+      "export/w633484433",
+      "export/w633484436",
+      "export/w633514300",
+      "export/w633514301",
+      "export/w633514305",
+      "export/w633514306",
+      "export/w633514307",
+      "export/w633631735",
+      "export/w676137250",
+      "export/w676313137",
+      "export/w676313138",
+      "export/w676546942",
+      "export/w695981036",
+      "export/w695981037",
+      "export/w695981038",
+      "export/w695981039",
+      "export/w695981040",
+      "export/w740706038",
+      "export/w968808153",
+      "export/w968808154",
+      "export/w986654772"
+    ],
+    "approved": false
+  },
+  {
+    "id": "edad4935-83d6-910c-0e05-06760afa67ab",
+    "name": "Ljótipollur",
+    "category": "stöðuvatn",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0067,
+      64.0311,
+      -18.9886,
+      64.0395
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w48321153",
+      "export/w48321222",
+      "export/w68191480",
+      "export/a136382960",
+      "export/w1079545179",
+      "export/w1079546152",
+      "export/w1227035763"
+    ],
+    "approved": false
+  },
+  {
+    "id": "45baf2ca-c72f-9283-0af2-ec760d98fdcc",
+    "name": "Reykjafjöll",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1546,
+      63.913,
+      -19.1196,
+      63.9349
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "4a206d32-b30f-41eb-da47-7edfefdd317c",
+    "name": "Kaldaklofsfjöll",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1646,
+      63.8736,
+      -19.0836,
+      63.909
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4212125613"
+    ],
+    "approved": false
+  },
+  {
+    "id": "3b5484db-351c-6592-0af7-577f79f2a37e",
+    "name": "Torfajökull",
+    "category": "jökull",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0461,
+      63.8799,
+      -18.9585,
+      63.9155
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w421683025",
+      "export/a843366050"
+    ],
+    "approved": false
+  },
+  {
+    "id": "70ba2fd0-46fe-6cde-90f4-1555a19adb88",
+    "name": "Landmannalaugar",
+    "category": "lind",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0635,
+      63.9892,
+      -19.0596,
+      63.9941
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n3837475783",
+      "export/n3837484579",
+      "export/n4384228092",
+      "export/w25469557",
+      "export/a50939114",
+      "export/w380414047",
+      "export/a760828094"
+    ],
+    "approved": false
+  },
+  {
+    "id": "e79b2974-08e0-a0ea-35fc-c7244aa2c02d",
+    "name": "Frostastaðavatn",
+    "category": "stöðuvatn",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0767,
+      64.0087,
+      -19.0413,
+      64.0283
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n794813893",
+      "export/a29086065"
+    ],
+    "approved": false
+  },
+  {
+    "id": "0c9b6ee2-ab9a-56f5-747b-8e88d2fd2822",
+    "name": "Kirkjufell",
+    "category": "fell",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -18.9643,
+      63.9725,
+      -18.914,
+      63.9907
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4212125615"
+    ],
+    "approved": false
+  },
+  {
+    "id": "3f224bd3-877a-9ff1-17bc-11635e1b4edd",
+    "name": "Norðurnámsver",
+    "category": "graslendi",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0074,
+      64.012,
+      -18.9868,
+      64.0262
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "39319bb8-97fd-4ac9-9437-05d57aa84287",
+    "name": "Milli-Hamragilja",
+    "category": "gil",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0979,
+      63.9365,
+      -19.0798,
+      63.9438
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "df54453b-be18-092c-3ede-29f77a8a1cb6",
+    "name": "Aldan",
+    "category": "alda",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0114,
+      63.9931,
+      -18.999,
+      63.9997
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "d3d0a029-ab3c-7ee2-64c8-78240819bc72",
+    "name": "Frostastaðahraun",
+    "category": "hraun",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0464,
+      64.0244,
+      -19.01,
+      64.0394
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/a29086069"
+    ],
+    "approved": false
+  },
+  {
+    "id": "cd56aafa-65c9-1b7e-bc93-738475305554",
+    "name": "Austurkrókur",
+    "category": "krókur",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -18.98,
+      64.0091,
+      -18.9596,
+      64.0252
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "944b9a9a-76c2-6994-614f-6db6a06387b9",
+    "name": "Norðurnámur",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0263,
+      64.0177,
+      -19.0073,
+      64.0251
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n3665605238"
+    ],
+    "approved": false
+  },
+  {
+    "id": "ed9f007c-fc30-82b3-bf5b-92f4bb5771eb",
+    "name": "Norðurnámshraun",
+    "category": "hraun",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0418,
+      64.0037,
+      -18.9948,
+      64.0202
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/a28219183"
+    ],
+    "approved": false
+  },
+  {
+    "id": "83d0766d-5b8a-7886-bf0f-35ba0eb17562",
+    "name": "Bláhnúkur",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0835,
+      63.9728,
+      -19.058,
+      63.9837
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n438032744"
+    ],
+    "approved": false
+  },
+  {
+    "id": "01480ba3-6506-1a40-8cb3-5665ea430c8f",
+    "name": "Jökulgil",
+    "category": "gil",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0471,
+      63.9439,
+      -19.0033,
+      63.9878
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "e83a149d-d638-c042-5ebc-5ec69761b57a",
+    "name": "Laugahraun",
+    "category": "hraun",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.089,
+      63.9795,
+      -19.0599,
+      63.9948
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/a29086075"
+    ],
+    "approved": false
+  },
+  {
+    "id": "05ae0311-aaa0-2009-a063-83533c137c40",
+    "name": "Barmur",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0273,
+      63.9662,
+      -18.9834,
+      63.9869
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "c259b6b7-87ed-d3a5-9bcb-90104c0abd82",
+    "name": "Háölduhraun",
+    "category": "hraun",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1567,
+      63.997,
+      -19.1169,
+      64.0123
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "0d6aa661-47a2-5253-4853-1411ab19dd9d",
+    "name": "Háalda",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1777,
+      63.9876,
+      -19.1319,
+      63.9989
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4212125609"
+    ],
+    "approved": false
+  },
+  {
+    "id": "9121902f-5c06-103d-bbf1-6e54fb2c2e51",
+    "name": "Litlikýlingur",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -18.9842,
+      63.9888,
+      -18.957,
+      64.001
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4212125620"
+    ],
+    "approved": false
+  },
+  {
+    "id": "a96c3727-6690-2dc8-0ee2-9099d60014bd",
+    "name": "Breiðalda",
+    "category": "alda",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1494,
+      63.9773,
+      -19.1233,
+      63.9855
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "906a18c6-0f87-7f4e-ca7b-4e0dd54957c0",
+    "name": "Tjaldfell",
+    "category": "fell",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1181,
+      64.0124,
+      -19.0959,
+      64.0261
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "6a2b79e8-ea37-4bde-80c6-4036e028df33",
+    "name": "Tjörvafell",
+    "category": "fell",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0476,
+      64.034,
+      -19.0188,
+      64.0488
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n5922290831"
+    ],
+    "approved": false
+  },
+  {
+    "id": "aa7cea8f-eabf-b9b4-0820-fd1fa6b8b15e",
+    "name": "Suðurnámshraun",
+    "category": "hraun",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0622,
+      64.0039,
+      -19.052,
+      64.0108
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "1a10f57a-2364-67dd-f51a-5ee0f4149922",
+    "name": "Jarðfallið",
+    "category": "hraun",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0427,
+      64.0113,
+      -19.0336,
+      64.0173
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "b2194a12-cf07-e268-efc9-7cdbea7814fb",
+    "name": "Frostastaðaháls",
+    "category": "háls",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0542,
+      64.005,
+      -19.0365,
+      64.019
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "e61fd95a-8c91-3bb5-eafe-9389e07562ab",
+    "name": "Hnaus",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -18.9563,
+      64.0051,
+      -18.9375,
+      64.0123
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "42ca3bf0-5409-6e1d-13ea-cafb18e02a02",
+    "name": "Sveinsgil",
+    "category": "gil",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0065,
+      63.9342,
+      -18.9827,
+      63.9602
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "ff548bc3-2354-fdb1-0087-39250d9e9449",
+    "name": "Uppgönguhryggur",
+    "category": "hryggur",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0391,
+      63.9394,
+      -19.032,
+      63.9471
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "bf7e167f-416a-ee01-76cb-329a9ef93874",
+    "name": "Skalli",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0462,
+      63.9516,
+      -19.038,
+      63.9548
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n5921060684"
+    ],
+    "approved": false
+  },
+  {
+    "id": "8e1b6de9-5990-7171-55a8-b0b3fc9bcdd8",
+    "name": "Suðurnámshorn",
+    "category": "hyrna",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0528,
+      64.0018,
+      -19.0373,
+      64.0066
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "06ccfdba-dd2e-caa8-5d45-9de6c30f7faa",
+    "name": "Grákolla",
+    "category": "hæð",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0668,
+      64.0351,
+      -19.0586,
+      64.0387
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "6631006e-db15-c309-4b47-3542c598d6c0",
+    "name": "Gráskalli",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1088,
+      63.9626,
+      -19.1012,
+      63.9663
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "68c1f0a5-4196-8301-0ab3-24afd7041c53",
+    "name": "Vondugiljaaurar",
+    "category": "sandur",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1084,
+      63.9903,
+      -19.0887,
+      63.9943
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "eeb9fb46-6e35-0790-fe2c-42a48ee26bfb",
+    "name": "Gvendarhyrna",
+    "category": "hyrna",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0036,
+      63.9829,
+      -18.9979,
+      63.9872
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "a2176bab-54be-abe1-cf52-131ef91b3ab0",
+    "name": "Brennisteinsalda",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1028,
+      63.9783,
+      -19.0903,
+      63.9837
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4335045353",
+      "export/n5327944441",
+      "export/n10211757384"
+    ],
+    "approved": false
+  },
+  {
+    "id": "323976bb-30ba-291d-0705-a641c413a0a9",
+    "name": "Sauðanef",
+    "category": "graslendi",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.083,
+      63.9268,
+      -19.0679,
+      63.9329
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4212125636"
+    ],
+    "approved": false
+  },
+  {
+    "id": "0e15e166-6f0e-0909-71b5-b64d3cc64e48",
+    "name": "Reykjakollur",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0482,
+      63.9767,
+      -19.0351,
+      63.9846
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4212125632"
+    ],
+    "approved": false
+  },
+  {
+    "id": "2c7ef5fe-dda4-75ac-7508-cd17227d5a1a",
+    "name": "Námshraun",
+    "category": "hraun",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0613,
+      63.9985,
+      -19.0429,
+      64.0039
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/a29086067"
+    ],
+    "approved": false
+  },
+  {
+    "id": "55196bd5-b441-2941-7ad6-555439edceae",
+    "name": "Grákollur",
+    "category": "alda",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0928,
+      64.0309,
+      -19.074,
+      64.0364
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "8e4ac813-3be2-8f11-4f14-c5362161fe1a",
+    "name": "Söðull",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1673,
+      63.9357,
+      -19.1455,
+      63.9415
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "5c57cb6f-8796-aeb1-ac51-756b63ca5a4a",
+    "name": "Suður-Skalli",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0579,
+      63.9393,
+      -19.0454,
+      63.9442
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "812a55ec-52d1-4dc2-992f-7a8b1df45ae1",
+    "name": "Norðurbarmur",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0529,
+      63.9886,
+      -19.0357,
+      63.9941
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4212125627"
+    ],
+    "approved": false
+  },
+  {
+    "id": "87866c84-3c00-b9de-227e-52eedc806f44",
+    "name": "Halldórsfell",
+    "category": "fell",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -18.9821,
+      63.9686,
+      -18.966,
+      63.9751
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "920f7bdc-63d9-1090-e10a-fad84d1565b9",
+    "name": "Sólvangur",
+    "category": "graslendi",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0428,
+      64.0018,
+      -19.0343,
+      64.0053
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "3de8efcd-0685-4125-bad7-df8083b92630",
+    "name": "Grænihryggur",
+    "category": "hryggur",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0112,
+      63.936,
+      -19.0073,
+      63.9368
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4991266307"
+    ],
+    "approved": false
+  },
+  {
+    "id": "7b91ed8f-aa59-cecf-6a40-fc843c3231bf",
+    "name": "Hattur",
+    "category": "klettabelti",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0555,
+      63.9343,
+      -19.0527,
+      63.9358
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4212125600"
+    ],
+    "approved": false
+  },
+  {
+    "id": "808b25a8-db0b-4310-cc35-2c96722bd943",
+    "name": "Jökultungur",
+    "category": "fjallgarður",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.235,
+      63.8668,
+      -19.083,
+      63.9014
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "13dc13f0-56b9-b909-c757-c961fd5a6dbc",
+    "name": "Suðurnámur",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1126,
+      63.995,
+      -19.0648,
+      64.0103
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n5864303960"
+    ],
+    "approved": false
+  },
+  {
+    "id": "898e7d84-177d-9b77-bbf0-c675bac7cc61",
+    "name": "Hnausar",
+    "category": "tindur",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0743,
+      63.9132,
+      -19.0093,
+      63.9317
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/n4212125605"
+    ],
+    "approved": false
+  },
+  {
+    "id": "d62b8b05-a465-7ee5-c87e-39f285551c34",
+    "name": "Lifrarfjöll",
+    "category": "fjallgarður",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1954,
+      64.0303,
+      -19.14,
+      64.0564
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "ab1e0e82-96df-a8a6-a042-161ca05d9f64",
+    "name": "Hábarmur",
+    "category": "fjall",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -18.9744,
+      63.9247,
+      -18.9339,
+      63.9494
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "27e32675-8db1-be9b-f8b4-ca3b694c9bb4",
+    "name": "Sigölduhraun",
+    "category": "hraun",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -20.0286,
+      63.9887,
+      -19.1016,
+      64.1651
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  },
+  {
+    "id": "e35fae32-340d-c3b6-f2c5-f80744d2756b",
+    "name": "Kýlingavatn",
+    "category": "stöðuvatn",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -18.9942,
+      63.988,
+      -18.9628,
+      64.0057
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/a28219177"
+    ],
+    "approved": false
+  },
+  {
+    "id": "9a338228-51a7-95ac-f879-6deba44b5a79",
+    "name": "Blautaver",
+    "category": "stöðuvatn",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -18.9951,
+      64.0419,
+      -18.987,
+      64.0464
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/a29086057"
+    ],
+    "approved": false
+  },
+  {
+    "id": "3a2adcef-4a22-180d-3450-bf6b073ab125",
+    "name": "Dómadalsvatn",
+    "category": "stöðuvatn",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.1554,
+      64.0324,
+      -19.1467,
+      64.0377
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w27280990",
+      "export/a54561980"
+    ],
+    "approved": false
+  },
+  {
+    "id": "b79d8b2b-57f8-e241-1cdf-928729d5c4d2",
+    "name": "Hnausapollur",
+    "category": "stöðuvatn",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -19.0382,
+      64.0486,
+      -19.0249,
+      64.0551
+    ],
+    "status": "osm-name-match",
+    "matches": [
+      "export/w64807650",
+      "export/a129615300"
+    ],
+    "approved": false
+  },
+  {
+    "id": "b0f0396e-304c-437a-8372-e132f33a57d3",
+    "name": "Hábarmsjökull",
+    "category": "jökull",
+    "geometry": "MultiPolygon",
+    "bounds": [
+      -18.9548,
+      63.9409,
+      -18.9462,
+      63.9445
+    ],
+    "status": "review-required",
+    "matches": [],
+    "approved": false
+  }
+]

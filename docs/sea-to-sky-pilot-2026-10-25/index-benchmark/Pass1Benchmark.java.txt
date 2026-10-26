@@ -1,0 +1,56 @@
+import java.nio.file.*;
+import java.util.*;
+import java.security.*;
+import java.nio.ByteBuffer;
+import com.onthegomap.planetiler.collection.*;
+import com.onthegomap.planetiler.config.*;
+import com.onthegomap.planetiler.reader.osm.*;
+import com.onthegomap.planetiler.stats.Stats;
+import com.onthegomap.planetiler.util.Translations;
+import org.openmaptiles.OpenMapTilesProfile;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+/** Manual full-PBF performance measurement: pass1 only; never constructs a tile writer. */
+public class Pass1Benchmark {
+  public static void main(String[] args) throws Exception {
+    if (args.length != 4 || !Set.of("array", "sparsearray").contains(args[1])) {
+      throw new IllegalArgumentException("input.pbf array|sparsearray scratch-directory result.json");
+    }
+    Path scratch = Path.of(args[2]);
+    Files.createDirectories(scratch);
+    var arguments = Arguments.of("threads", "64", "storage", "mmap", "nodemap_type", args[1],
+      "bounds", "-123.75,49.25,-122.25,50.65", "trail_segment_snapshot", "pass1-only-not-read",
+      "loginterval", "30s", "tmpdir", scratch.toString());
+    var config = PlanetilerConfig.from(arguments);
+    var stats = Stats.inMemory();
+    var profile = new OpenMapTilesProfile(Translations.defaultProvider(List.of("en", "de")), config, stats);
+    var result = new LinkedHashMap<String,Object>();
+    long start = System.nanoTime();
+    try (var nodes = LongLongMap.from(args[1], "mmap", scratch.resolve("nodes"), true);
+         var polygons = LongLongMultimap.newReplaceableMultimap("mmap", scratch.resolve("polygons"), true);
+         var reader = new OsmReader("osm", new OsmInputFile(Path.of(args[0])), nodes, polygons, profile, stats)) {
+      reader.pass1(config);
+      result.put("pass1Seconds", (System.nanoTime() - start) / 1e9);
+      result.put("nodeMapType", args[1]);
+      result.put("nodeMapDiskBytes", nodes.diskUsageBytes());
+      result.put("nodeMapEstimatedMemoryBytes", nodes.estimateMemoryUsageBytes());
+      result.put("readerEstimatedMemoryBytes", reader.estimateMemoryUsageBytes());
+      var digest = MessageDigest.getInstance("SHA-256");
+      var random = new Random(20261026L);
+      int found = 0;
+      for (int i = 0; i < 100000; i++) {
+        long id = random.nextLong(16_000_000_000L);
+        long value = nodes.get(id);
+        if (value != LongLongMap.MISSING_VALUE) found++;
+        digest.update(ByteBuffer.allocate(16).putLong(id).putLong(value).array());
+      }
+      result.put("sampleLookupCount", 100000);
+      result.put("sampleLookupHits", found);
+      result.put("sampleLookupSha256", HexFormat.of().formatHex(digest.digest()));
+      result.put("dataErrors", stats.dataErrors());
+      new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(Path.of(args[3]).toFile(), result);
+      stats.printSummary();
+    }
+    System.out.println("PASS1_BENCHMARK_COMPLETE " + new ObjectMapper().writeValueAsString(result));
+  }
+}

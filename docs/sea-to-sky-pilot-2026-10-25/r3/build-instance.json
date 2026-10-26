@@ -1,0 +1,134 @@
+{
+    "Groups": [],
+    "Instances": [
+        {
+            "AmiLaunchIndex": 0,
+            "ImageId": "ami-09a93d801db0bafae",
+            "InstanceId": "i-05710dfa1a41726fc",
+            "InstanceType": "m7gd.16xlarge",
+            "LaunchTime": "2026-10-26T00:03:00+00:00",
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "Placement": {
+                "AvailabilityZone": "us-east-1d",
+                "GroupName": "",
+                "Tenancy": "default"
+            },
+            "PrivateDnsName": "ip-172-31-17-188.ec2.internal",
+            "PrivateIpAddress": "172.31.17.188",
+            "ProductCodes": [],
+            "PublicDnsName": "",
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "StateTransitionReason": "",
+            "SubnetId": "subnet-a56ccfef",
+            "VpcId": "vpc-b2e49fc9",
+            "Architecture": "arm64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "5955c7b0-878e-4e37-8d9c-632a0c7dd6b1",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::442073793062:instance-profile/outmap-planet-pilot-20261025",
+                "Id": "AIPAWN3NGYITE3TVSHKEP"
+            },
+            "InstanceLifecycle": "spot",
+            "NetworkInterfaces": [
+                {
+                    "Attachment": {
+                        "AttachTime": "2026-10-26T00:03:00+00:00",
+                        "AttachmentId": "eni-attach-00414f960de23bda4",
+                        "DeleteOnTermination": true,
+                        "DeviceIndex": 0,
+                        "Status": "attaching",
+                        "NetworkCardIndex": 0
+                    },
+                    "Description": "",
+                    "Groups": [
+                        {
+                            "GroupName": "default",
+                            "GroupId": "sg-73b33a3a"
+                        }
+                    ],
+                    "Ipv6Addresses": [],
+                    "MacAddress": "0a:ff:c9:45:cd:0f",
+                    "NetworkInterfaceId": "eni-09e5acb24ecf827b4",
+                    "OwnerId": "442073793062",
+                    "PrivateDnsName": "ip-172-31-17-188.ec2.internal",
+                    "PrivateIpAddress": "172.31.17.188",
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true,
+                            "PrivateDnsName": "ip-172-31-17-188.ec2.internal",
+                            "PrivateIpAddress": "172.31.17.188"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Status": "in-use",
+                    "SubnetId": "subnet-a56ccfef",
+                    "VpcId": "vpc-b2e49fc9",
+                    "InterfaceType": "interface"
+                }
+            ],
+            "RootDeviceName": "/dev/sda1",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+                {
+                    "GroupName": "default",
+                    "GroupId": "sg-73b33a3a"
+                }
+            ],
+            "SourceDestCheck": true,
+            "SpotInstanceRequestId": "sir-f3bqpa3h",
+            "StateReason": {
+                "Code": "pending",
+                "Message": "pending"
+            },
+            "Tags": [
+                {
+                    "Key": "Purpose",
+                    "Value": "temporary-pilot"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "outmap-sea-to-sky-r3-build"
+                }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+                "CoreCount": 64,
+                "ThreadsPerCore": 1
+            },
+            "CapacityReservationSpecification": {
+                "CapacityReservationPreference": "open"
+            },
+            "MetadataOptions": {
+                "State": "pending",
+                "HttpTokens": "required",
+                "HttpPutResponseHopLimit": 2,
+                "HttpEndpoint": "enabled",
+                "HttpProtocolIpv6": "disabled",
+                "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+                "Enabled": false
+            },
+            "BootMode": "uefi",
+            "PrivateDnsNameOptions": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "MaintenanceOptions": {
+                "AutoRecovery": "default"
+            },
+            "CurrentInstanceBootMode": "uefi"
+        }
+    ],
+    "OwnerId": "442073793062",
+    "ReservationId": "r-09958f2fbdec7f500"
+}

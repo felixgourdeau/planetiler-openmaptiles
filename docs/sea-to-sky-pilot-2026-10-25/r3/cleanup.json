@@ -1,0 +1,12 @@
+{
+  "instances": {
+    "i-0d0e5b3e3d0f10d91": "terminated by AWS Spot interruption",
+    "i-01aba0e926a279bec": "terminated after successful preparation",
+    "i-05710dfa1a41726fc": "terminated after successful build/upload"
+  },
+  "temporaryRoleDeleted": true,
+  "temporaryInstanceProfileDeleted": true,
+  "remainingAttachedVolumes": 0,
+  "deleteOnTerminationRootDisks": true,
+  "privateS3ArtifactsRetained": true
+}

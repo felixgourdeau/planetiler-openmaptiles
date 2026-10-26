@@ -1,0 +1,13 @@
+import java.nio.file.*;import java.util.*;import java.io.*;import java.util.zip.*;import com.onthegomap.planetiler.pmtiles.*;import com.onthegomap.planetiler.VectorTile;import com.onthegomap.planetiler.geo.TileCoord;import com.fasterxml.jackson.databind.ObjectMapper;
+class InspectPois {
+public static void main(String[] args)throws Exception{
+List<Object> examples=new ArrayList<>();Map<String,Long> coincident=new TreeMap<>();Map<String,Object> bulk=new TreeMap<>();
+try(var a=ReadablePmtiles.newReadFromFile(Path.of(args[0]));var all=a.getAllTiles()){
+while(all.hasNext()){var tile=all.next();var fs=VectorTile.decode(AuditAttributes.raw(tile.bytes()));Set<String> seen=new HashSet<>();Map<String,Long> classes=new TreeMap<>();List<VectorTile.Feature> pois=new ArrayList<>();
+for(var f:fs)if(f.layer().equals("poi")){pois.add(f);classes.merge(f.tags().get("class")+"/"+f.tags().get("subclass"),1L,Long::sum);String key=f.geometry().decode().toText()+"|"+new TreeMap<>(f.tags());if(!seen.add(key))coincident.merge("z"+tile.coord().z(),1L,Long::sum);
+if(examples.size()<8 && "yes".equals(f.tags().get("class")))examples.add(Map.of("id",f.id(),"tags",f.tags(),"tile",tile.coord().toString()));}
+if(tile.bytes().length>200000){var base=AuditAttributes.size(fs);Map<String,Integer> impact=new TreeMap<>();for(String category:classes.keySet()){List<VectorTile.Feature> subset=new ArrayList<>();for(var f:fs)if(!f.layer().equals("poi")||!(f.tags().get("class")+"/"+f.tags().get("subclass")).equals(category))subset.add(f);impact.put(category,base-AuditAttributes.size(subset));}
+bulk.put(tile.coord().z()+"/"+tile.coord().x()+"/"+tile.coord().y(),Map.of("gzip",tile.bytes().length,"poiCounts",classes,"diagnosticCategoryRemovalGzipSavings",impact));}
+}}
+new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(Path.of(args[1]).toFile(),Map.of("coincidentEqualAttributesIgnoringId",coincident,"yesClassExamples",examples,"largeTiles",bulk));
+}}

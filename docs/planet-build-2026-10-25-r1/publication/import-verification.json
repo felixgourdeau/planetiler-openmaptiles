@@ -1,0 +1,81 @@
+{
+  "key": "planet-20261025-r1/artifacts/planet-20261025-r1.pmtiles",
+  "head": {
+    "AcceptRanges": "bytes",
+    "LastModified": "2026-10-26T13:37:37+00:00",
+    "ContentLength": 104924743209,
+    "ETag": "\"f81222c93abea7c597df5dfc425833a9-1050\"",
+    "Metadata": {},
+    "PartsCount": 1050
+  },
+  "rangeChecks": [
+    {
+      "offset": 0,
+      "bytes": 16384,
+      "sha256": "95c7410e5cc347c255d3f4b38945d0b8981a6bcd3f6de5cb45035bb321dd3f70"
+    },
+    {
+      "offset": 52462371604,
+      "bytes": 1048576,
+      "sha256": "6705bf01eecea3a3a977d1a7a5ece7808d3b6bc033e533bb14909f400116e281"
+    },
+    {
+      "offset": 104824484503,
+      "bytes": 10199,
+      "sha256": "ea6e9ad4487b6f47df2de4a56f49c005b05c00b0f93c6eb47ba3b1d72d592e5b"
+    },
+    {
+      "offset": 104923694633,
+      "bytes": 1048576,
+      "sha256": "b7e8f14c2d8836bdf3e3dca24a0f4aef6e9c8d22b891cc90c89f8810deab4847"
+    },
+    {
+      "offset": 10492474320,
+      "bytes": 1048576,
+      "sha256": "2d469e0ed334e12a22b78215b75f0ace0cbe108fd6f01cb3752a23c0c4aa8509"
+    },
+    {
+      "offset": 20984948641,
+      "bytes": 1048576,
+      "sha256": "d014a309d7aaa59835a872624c4cf19e737b8ac16b3dece38f615aad334346ea"
+    },
+    {
+      "offset": 31477422962,
+      "bytes": 1048576,
+      "sha256": "ca6278e8fb971f13710eb7a1fdb5aa101c77e09e2093f7965f6b6742869eea00"
+    },
+    {
+      "offset": 41969897283,
+      "bytes": 1048576,
+      "sha256": "bf98db0d754305b2889e32cb581380318e1eeb11bb0a5ff0e9960fff4ead33c0"
+    },
+    {
+      "offset": 52462371604,
+      "bytes": 1048576,
+      "sha256": "6705bf01eecea3a3a977d1a7a5ece7808d3b6bc033e533bb14909f400116e281"
+    },
+    {
+      "offset": 62954845925,
+      "bytes": 1048576,
+      "sha256": "ece0f206846771c5a7d733e971bd17d42bd98e591d29ff480c5f153e324a1dd6"
+    },
+    {
+      "offset": 73447320246,
+      "bytes": 1048576,
+      "sha256": "0f2a9c182970d31038bb6ee382875134b45d5b79db0d50ae2b62e7b973a111e3"
+    },
+    {
+      "offset": 83939794567,
+      "bytes": 1048576,
+      "sha256": "eb9a4f2b5e3faa874abfdeaa7363256c5c9d7533daee7b1f1865a8d8979340f8"
+    },
+    {
+      "offset": 94432268888,
+      "bytes": 1048576,
+      "sha256": "ce830beab6ce2d466d5c978805a8f08cfb1d3dbe7e2cca8f813c7de2b3f0dab0"
+    }
+  ],
+  "sourceSha256": "c105a182bb9b921aafbce12ecfe40f2724d2f1c547786a7b44a0083c90e3a0d9",
+  "importShaMetadataPresent": false,
+  "scope": "Exact size, header/root, metadata and 11 sampled 1-MiB data ranges match S3. Super Slurper omitted custom SHA metadata. Source hash recorded as provenance, not an independent whole-file rehash."
+}

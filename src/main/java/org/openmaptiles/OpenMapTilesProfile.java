@@ -8,8 +8,10 @@ import com.onthegomap.planetiler.FeatureCollector;
 import com.onthegomap.planetiler.ForwardingProfile;
 import com.onthegomap.planetiler.Planetiler;
 import com.onthegomap.planetiler.Profile;
+import com.onthegomap.planetiler.VectorTile;
 import com.onthegomap.planetiler.config.PlanetilerConfig;
 import com.onthegomap.planetiler.expression.MultiExpression;
+import com.onthegomap.planetiler.geo.GeometryException;
 import com.onthegomap.planetiler.reader.SimpleFeature;
 import com.onthegomap.planetiler.reader.SourceFeature;
 import com.onthegomap.planetiler.reader.osm.OsmElement;
@@ -20,10 +22,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 import org.openmaptiles.addons.ExtraLayers;
+import org.openmaptiles.addons.IcelandNames;
 import org.openmaptiles.generated.OpenMapTilesSchema;
 import org.openmaptiles.generated.Tables;
 import org.openmaptiles.layers.Transportation;
 import org.openmaptiles.layers.TransportationName;
+import org.openmaptiles.util.OmtLanguageUtils;
 
 /**
  * Delegates the logic for generating a map to individual implementations in the {@code layers} package.
@@ -46,6 +50,23 @@ import org.openmaptiles.layers.TransportationName;
  */
 public class OpenMapTilesProfile extends ForwardingProfile {
 
+  @Override
+  public List<VectorTile.Feature> postProcessLayerFeatures(String layer, int zoom,
+    List<VectorTile.Feature> items) throws GeometryException {
+    var processed = super.postProcessLayerFeatures(layer, zoom, items);
+    if (processed != null) {
+      for (var feature : processed) OmtLanguageUtils.removeRedundantNames(feature.tags());
+    }
+    return processed;
+  }
+
+  @Override
+  public void processFeature(SourceFeature source, FeatureCollector features) {
+    if (OSM_SOURCE.equals(source.getSource()) &&
+      org.openmaptiles.util.ExcludedMapFeatures.excluded(source)) return;
+    super.processFeature(source, features);
+  }
+
   // IDs used in stats and logs for each input source, as well as argument/config file overrides to source locations
   public static final String LAKE_CENTERLINE_SOURCE = "lake_centerlines";
   public static final String WATER_POLYGON_SOURCE = "water_polygons";
@@ -55,6 +76,7 @@ public class OpenMapTilesProfile extends ForwardingProfile {
   private final MultiExpression.Index<RowDispatch> osmMappings;
   /** Index variant that filters out any table only used by layers that implement IgnoreWikidata class. */
   private final MultiExpression.Index<Boolean> wikidataMappings;
+  private final boolean includeIcelandNames;
 
   public OpenMapTilesProfile(Planetiler runner) {
     this(runner.translations(), runner.config(), runner.stats());
@@ -62,6 +84,8 @@ public class OpenMapTilesProfile extends ForwardingProfile {
 
   public OpenMapTilesProfile(Translations translations, PlanetilerConfig config, Stats stats) {
     super(config);
+    includeIcelandNames = !config.arguments()
+      .getString("iceland_names", "Reviewed Iceland names GeoJSON pilot snapshot", "").isBlank();
 
     // register release/finish/feature postprocessor/osm relationship handler methods...
     List<Handler> layers = new ArrayList<>();
@@ -93,7 +117,17 @@ public class OpenMapTilesProfile extends ForwardingProfile {
     }
 
     // register per-source input element handlers
+    if (includeIcelandNames) {
+      var icelandNames = new IcelandNames();
+      if (caresAboutLayer(icelandNames)) {
+        registerHandler(icelandNames);
+        registerSourceHandler("iceland_names", icelandNames::process);
+      }
+    }
     for (Handler handler : layers) {
+      if (handler instanceof org.openmaptiles.addons.TrailSegmentSnapshot snapshot) {
+        registerSourceHandler(org.openmaptiles.addons.TrailSegmentSnapshot.SOURCE, snapshot::process);
+      }
       if (handler instanceof NaturalEarthProcessor processor) {
         registerSourceHandler(NATURAL_EARTH_SOURCE,
           (source, features) -> processor.processNaturalEarth(source.getSourceLayer(), source, features));
@@ -180,7 +214,8 @@ public class OpenMapTilesProfile extends ForwardingProfile {
 
   @Override
   public String attribution() {
-    return OpenMapTilesSchema.ATTRIBUTION;
+    return OpenMapTilesSchema.ATTRIBUTION + (includeIcelandNames ?
+      " | <a href=\"https://www.natt.is/is/midlun/kortagogn/ornefni\">© NÁTT / IS 50V Örnefni</a> (CC BY 4.0)" : "");
   }
 
   @Override

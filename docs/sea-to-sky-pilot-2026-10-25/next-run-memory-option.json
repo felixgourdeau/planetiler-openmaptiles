@@ -1,0 +1,9 @@
+[
+  {
+    "instance": "m7gd.16xlarge",
+    "memory": "256 GiB",
+    "vcpus": "64",
+    "storage": "2 x 1900 NVMe SSD",
+    "hourlyUSD": "3.4171000000"
+  }
+]

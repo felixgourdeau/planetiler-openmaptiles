@@ -1,0 +1,138 @@
+{
+  "Groups": [],
+  "Instances": [
+    {
+      "AmiLaunchIndex": 0,
+      "ImageId": "ami-09a93d801db0bafae",
+      "InstanceId": "i-0a5c150ca613034c3",
+      "InstanceType": "m7gd.16xlarge",
+      "LaunchTime": "2026-10-26T05:03:11+00:00",
+      "Monitoring": {
+        "State": "disabled"
+      },
+      "Placement": {
+        "AvailabilityZone": "us-east-1a",
+        "GroupName": "",
+        "Tenancy": "default"
+      },
+      "PrivateDnsName": "ip-172-31-38-190.ec2.internal",
+      "PrivateIpAddress": "172.31.38.190",
+      "ProductCodes": [],
+      "PublicDnsName": "",
+      "State": {
+        "Code": 0,
+        "Name": "pending"
+      },
+      "StateTransitionReason": "",
+      "SubnetId": "subnet-a3fae5fe",
+      "VpcId": "vpc-b2e49fc9",
+      "Architecture": "arm64",
+      "BlockDeviceMappings": [],
+      "ClientToken": "0cec29fa-96a7-4ee5-898e-69991adcde7a",
+      "EbsOptimized": false,
+      "EnaSupport": true,
+      "Hypervisor": "xen",
+      "IamInstanceProfile": {
+        "Arn": "arn:aws:iam::442073793062:instance-profile/outmap-planet-build-20261025-r1",
+        "Id": "AIPAWN3NGYITD6PKF5NFB"
+      },
+      "InstanceLifecycle": "spot",
+      "NetworkInterfaces": [
+        {
+          "Attachment": {
+            "AttachTime": "2026-10-26T05:03:11+00:00",
+            "AttachmentId": "eni-attach-0579962471da69ac9",
+            "DeleteOnTermination": true,
+            "DeviceIndex": 0,
+            "Status": "attaching",
+            "NetworkCardIndex": 0
+          },
+          "Description": "",
+          "Groups": [
+            {
+              "GroupName": "default",
+              "GroupId": "sg-73b33a3a"
+            }
+          ],
+          "Ipv6Addresses": [],
+          "MacAddress": "0e:ff:d7:65:90:59",
+          "NetworkInterfaceId": "eni-07d7204da542cc19d",
+          "OwnerId": "442073793062",
+          "PrivateDnsName": "ip-172-31-38-190.ec2.internal",
+          "PrivateIpAddress": "172.31.38.190",
+          "PrivateIpAddresses": [
+            {
+              "Primary": true,
+              "PrivateDnsName": "ip-172-31-38-190.ec2.internal",
+              "PrivateIpAddress": "172.31.38.190"
+            }
+          ],
+          "SourceDestCheck": true,
+          "Status": "in-use",
+          "SubnetId": "subnet-a3fae5fe",
+          "VpcId": "vpc-b2e49fc9",
+          "InterfaceType": "interface"
+        }
+      ],
+      "RootDeviceName": "/dev/sda1",
+      "RootDeviceType": "ebs",
+      "SecurityGroups": [
+        {
+          "GroupName": "default",
+          "GroupId": "sg-73b33a3a"
+        }
+      ],
+      "SourceDestCheck": true,
+      "SpotInstanceRequestId": "sir-e7ezpyrk",
+      "StateReason": {
+        "Code": "pending",
+        "Message": "pending"
+      },
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "outmap-planet-20261025-r1-build"
+        },
+        {
+          "Key": "Run",
+          "Value": "planet-20261025-r1"
+        },
+        {
+          "Key": "Purpose",
+          "Value": "temporary-planet-build"
+        }
+      ],
+      "VirtualizationType": "hvm",
+      "CpuOptions": {
+        "CoreCount": 64,
+        "ThreadsPerCore": 1
+      },
+      "CapacityReservationSpecification": {
+        "CapacityReservationPreference": "open"
+      },
+      "MetadataOptions": {
+        "State": "pending",
+        "HttpTokens": "required",
+        "HttpPutResponseHopLimit": 2,
+        "HttpEndpoint": "enabled",
+        "HttpProtocolIpv6": "disabled",
+        "InstanceMetadataTags": "disabled"
+      },
+      "EnclaveOptions": {
+        "Enabled": false
+      },
+      "BootMode": "uefi",
+      "PrivateDnsNameOptions": {
+        "HostnameType": "ip-name",
+        "EnableResourceNameDnsARecord": false,
+        "EnableResourceNameDnsAAAARecord": false
+      },
+      "MaintenanceOptions": {
+        "AutoRecovery": "default"
+      },
+      "CurrentInstanceBootMode": "uefi"
+    }
+  ],
+  "OwnerId": "442073793062",
+  "ReservationId": "r-09813af650c193291"
+}

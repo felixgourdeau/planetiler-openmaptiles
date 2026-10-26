@@ -1,0 +1,79 @@
+{
+  "examples" : [ {
+    "tags" : {
+      "subclass" : "climbing",
+      "rank" : 1,
+      "class" : "climbing"
+    },
+    "id" : 122059724621
+  }, {
+    "tags" : {
+      "subclass" : "climbing",
+      "rank" : 1,
+      "class" : "climbing"
+    },
+    "id" : 122059724621
+  }, {
+    "tags" : {
+      "name" : "Colossus",
+      "subclass" : "climbing",
+      "rank" : 4,
+      "class" : "climbing"
+    },
+    "id" : 130613867061
+  }, {
+    "tags" : {
+      "name" : "TeJaKy Buttress",
+      "subclass" : "climbing",
+      "rank" : 1,
+      "class" : "climbing"
+    },
+    "id" : 130364597551
+  }, {
+    "tags" : {
+      "name" : "TeJaKy Buttress",
+      "subclass" : "climbing",
+      "rank" : 2,
+      "class" : "climbing"
+    },
+    "id" : 130364597641
+  }, {
+    "tags" : {
+      "name" : "Colossus",
+      "subclass" : "climbing",
+      "rank" : 4,
+      "class" : "climbing"
+    },
+    "id" : 130613867061
+  } ],
+  "zooms" : {
+    "0" : [ 1, 0, 21683, 21683, 21424, 21424 ],
+    "1" : [ 1, 0, 18515, 18515, 18232, 18232 ],
+    "2" : [ 1, 0, 13238, 13238, 13096, 13096 ],
+    "3" : [ 1, 0, 8724, 8724, 8651, 8651 ],
+    "4" : [ 1, 0, 45433, 45433, 45245, 45245 ],
+    "5" : [ 1, 0, 47953, 47953, 43602, 43602 ],
+    "6" : [ 1, 0, 50886, 50886, 47477, 47477 ],
+    "7" : [ 1, 0, 103718, 103718, 99777, 99777 ],
+    "8" : [ 4, 0, 276044, 276044, 264667, 264667 ],
+    "9" : [ 12, 0, 781470, 781470, 759264, 759264 ],
+    "10" : [ 35, 0, 1883100, 1883100, 1848389, 1848389 ],
+    "11" : [ 126, 0, 3209811, 3209811, 3158341, 3158341 ],
+    "12" : [ 468, 1360, 6782980, 6738094, 6519576, 6485241 ],
+    "13" : [ 1750, 1180, 13022416, 12982061, 12713216, 12681955 ],
+    "14" : [ 6900, 1321, 30223866, 30163034, 29126200, 29076236 ]
+  },
+  "uniqueIds" : 606,
+  "columns" : [ "tiles", "removedOccurrences", "baselineGzip", "withoutClimbingGzip", "namesBaselineGzip", "namesWithoutClimbingGzip" ],
+  "categories" : {
+    "climbing/climbing" : 3816,
+    "climbing_adventure/climbing_adventure" : 8,
+    "pitch/climbing" : 3,
+    "sports_centre/sports_centre" : 34
+  },
+  "climbingTagOccurrencesByLayer" : {
+    "poi:class" : 3816,
+    "poi:sport" : 1317,
+    "poi:subclass" : 3819
+  }
+}

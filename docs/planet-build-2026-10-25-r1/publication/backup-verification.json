@@ -1,0 +1,42 @@
+{
+  "original": {
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-09-03T16:29:45+00:00",
+    "ContentLength": 89749023592,
+    "ETag": "\"baa09f800c40d05f0dde18de5f69da87-5350\"",
+    "ContentType": "application/octet-stream",
+    "Metadata": {},
+    "PartsCount": 5350
+  },
+  "backup": {
+    "AcceptRanges": "bytes",
+    "LastModified": "2026-10-26T13:23:54+00:00",
+    "ContentLength": 89749023592,
+    "ETag": "\"f7cf0a19c5d1c918f0798862b130e7ec-84\"",
+    "ContentType": "application/octet-stream",
+    "Metadata": {
+      "btime": "2025-09-03T16:29:45Z",
+      "mtime": "1756916985"
+    },
+    "PartsCount": 84
+  },
+  "backupKey": "backups/planet-250825-before-20261026.pmtiles",
+  "rangeChecks": [
+    {
+      "offset": 0,
+      "bytes": 1048576,
+      "sha256": "d8a96e32c2915c7dd5497a5a6c94f90d3b4d0ba0587d470324c7680ce49b5096"
+    },
+    {
+      "offset": 44874511796,
+      "bytes": 1048576,
+      "sha256": "64775bb80cea0df16bd1c2194c98372efb5fa530d63df28275c808abd630b64b"
+    },
+    {
+      "offset": 89747975016,
+      "bytes": 1048576,
+      "sha256": "d8307d8a92184b1c1fdfceec54b9149cb8c2e76a5f747eae49857ea3b46bf49b"
+    }
+  ],
+  "scope": "Server-side copy, exact size and three 1-MiB range comparisons; not a full independent file hash."
+}

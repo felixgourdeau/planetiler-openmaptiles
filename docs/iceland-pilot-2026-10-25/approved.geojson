@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "34d4f2c5-d8e1-6316-2603-eec24472d7c0",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            -19.0755,
+            63.925
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Jónsfoss",
+        "name:is": "Jónsfoss",
+        "official_id": "34d4f2c5-d8e1-6316-2603-eec24472d7c0",
+        "class": "foss",
+        "source": "NÁTT / IS 50V Örnefni",
+        "source_revision": "IS 50V, útgáfa 22.10.2026",
+        "source_updated": "2026-10-22Z",
+        "license": "CC-BY-4.0",
+        "review_status": "approved",
+        "placement": "point"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "5c83757c-8364-432b-bdee-efddfb1f8699",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            -19.1006,
+            63.9147
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Tvílitafossar",
+        "name:is": "Tvílitafossar",
+        "official_id": "5c83757c-8364-432b-bdee-efddfb1f8699",
+        "class": "foss",
+        "source": "NÁTT / IS 50V Örnefni",
+        "source_revision": "IS 50V, útgáfa 22.10.2026",
+        "source_updated": "2026-10-22Z",
+        "license": "CC-BY-4.0",
+        "review_status": "approved",
+        "placement": "point"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "19544bcc-0921-1919-b83f-a9bc0d866b5d",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            -18.9502,
+            64.0061
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Bólið",
+        "name:is": "Bólið",
+        "official_id": "19544bcc-0921-1919-b83f-a9bc0d866b5d",
+        "class": "hóll",
+        "source": "NÁTT / IS 50V Örnefni",
+        "source_revision": "IS 50V, útgáfa 22.10.2026",
+        "source_updated": "2026-10-22Z",
+        "license": "CC-BY-4.0",
+        "review_status": "approved",
+        "placement": "point"
+      }
+    }
+  ]
+}

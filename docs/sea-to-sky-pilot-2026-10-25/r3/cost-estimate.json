@@ -1,0 +1,22 @@
+{
+  "currency": "USD",
+  "basis": "Observed launch-to-upload times and historical Spot rates; estimate, not AWS billing receipt",
+  "compute": {
+    "interruptedPreparation": 0.011653972222222222,
+    "successfulPreparation": 0.08358322222222223,
+    "generationInstance": 1.105515
+  },
+  "estimatedRunTotalRange": [
+    1.25,
+    1.4
+  ],
+  "excludes": [
+    "tax",
+    "ongoing retained S3 storage (~$2\u20133/month)",
+    "future delivery traffic"
+  ],
+  "generationSeconds": 2160.9,
+  "successfulStageSeconds": 3557,
+  "firstLaunchToFinalUploadSeconds": 4538,
+  "estimatedComputeTotal": 1.2007521944444444
+}

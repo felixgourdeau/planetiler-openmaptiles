@@ -102,6 +102,9 @@ public class Park implements
       .setMinPixelSize(2)
       .setMinZoom(4);
 
+    org.openmaptiles.util.CoverageAttributes.copy(element.source(), outline,
+      "protect_class", "operator", "designation", "access", "access:conditional", "protection_title");
+
     // park name label point (if it has one)
     if (element.name() != null) {
       try {

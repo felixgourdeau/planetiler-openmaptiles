@@ -107,11 +107,17 @@ public class Tables {
     }
 
     /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
-    public static final Expression MAPPING = and(
+    public static final Expression LEGACY_MAPPING = and(
       or(matchAny("landuse", "reservoir", "basin", "salt_pond"), matchAny("leisure", "swimming_pool"),
         matchAny("natural", "water", "bay", "spring"), matchAny("waterway", "dock"),
         matchAny("water", "river", "stream", "canal", "ditch", "drain", "pond", "basin", "wastewater")),
       not(matchAny("covered", "yes")), matchType("polygon"));
+
+    // Outmap extension: retain generic water without assuming it is a lake.
+    public static final Expression MAPPING = or(LEGACY_MAPPING,
+      and(matchAny("landcover", "water"), not(matchAny("covered", "yes")),
+        not(OsmLandcoverPolygon.LEGACY_MAPPING), not(matchField("wetland")),
+        not(matchAny("natural", "shingle", "mud", "reef", "shoal")), matchType("polygon")));
 
     /**
      * Interface for layer implementations to extend to subscribe to OSM elements filtered and parsed as
@@ -134,7 +140,7 @@ public class Tables {
 
     /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
     public static final Expression MAPPING =
-      and(matchAny("waterway", "stream", "river", "canal", "drain", "ditch"), matchType("linestring"));
+      and(matchAny("waterway", "stream", "river", "canal", "drain", "ditch", "dam", "weir"), matchType("linestring"));
 
     /**
      * Interface for layer implementations to extend to subscribe to OSM elements filtered and parsed as
@@ -152,7 +158,7 @@ public class Tables {
     }
 
     /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
-    public static final Expression MAPPING = and(or(
+    public static final Expression LEGACY_MAPPING = and(or(
       matchAny("landuse", "allotments", "farm", "farmland", "orchard", "flowerbed", "plant_nursery", "vineyard",
         "grass", "grassland", "meadow", "forest", "village_green", "recreation_ground"),
       matchAny("natural", "wood", "wetland", "fell", "grassland", "heath", "scrub", "shrubbery", "tundra", "glacier",
@@ -160,6 +166,11 @@ public class Tables {
       matchAny("leisure", "park", "garden", "golf_course"), matchAny("wetland", "bog", "swamp", "wet_meadow", "marsh",
         "reedbed", "saltern", "tidalflat", "saltmarsh", "mangrove")),
       matchType("polygon"));
+
+    // Outmap extensions are maintained manually; do not overwrite through regeneration.
+    public static final Expression MAPPING = or(LEGACY_MAPPING, and(
+      or(matchAny("natural", "shingle", "mud", "reef", "shoal"), matchField("landcover"),
+        matchField("wetland")), matchType("polygon")));
 
     /**
      * Interface for layer implementations to extend to subscribe to OSM elements filtered and parsed as

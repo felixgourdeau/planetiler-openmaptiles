@@ -190,7 +190,7 @@ public class Waterway implements
     String name = nullIfEmpty(element.name());
     boolean important = "river".equals(waterway) && name != null;
     int minzoom = important ? 9 : CLASS_MINZOOM.getOrDefault(element.waterway(), 14);
-    features.line(LAYER_NAME)
+    var output = features.line(LAYER_NAME)
       .setBufferPixels(BUFFER_SIZE)
       .setAttr(Fields.CLASS, element.waterway())
       .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
@@ -200,6 +200,9 @@ public class Waterway implements
       .setAttrWithMinzoom(Fields.INTERMITTENT, element.isIntermittent() ? 1 : 0, 12)
       // at lower zoom levels, we'll merge linestrings and limit length/clip afterwards
       .setBufferPixelOverrides(MIN_PIXEL_LENGTHS).setMinPixelSizeBelowZoom(11, 0);
+    org.openmaptiles.util.CoverageAttributes.copy(element.source(), output,
+      "whitewater:grade", "whitewater:section_name", "whitewater", "canoe", "boat", "seasonal",
+      "access", "access:conditional", "height", "tidal");
   }
 
   @Override

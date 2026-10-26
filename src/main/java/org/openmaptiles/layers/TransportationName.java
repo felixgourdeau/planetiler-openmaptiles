@@ -272,17 +272,19 @@ public class TransportationName implements
     // populate route_1_<something>, route_2_<something>, ... route_n_<something> tags and remove duplicates
     Set<String> routes = new HashSet<>();
     for (var route : relations) {
-      String routeString = route.network() + "=" +
+      String routeString = route.routeType() + "=" + route.network() + "=" +
         coalesce(route.ref(), "") + "=" +
         coalesce(route.name(), "") + "=" +
-        coalesce(route.colour(), "");
+        coalesce(route.colour(), "") + "=" + new java.util.TreeMap<>(route.details());
       if (routes.add(routeString)) {
         String keyPrefix = "route_" + routes.size() + "_";
 
+        feature.setAttr(keyPrefix + "type", route.routeType());
         feature.setAttr(keyPrefix + "network", route.network());
         feature.setAttr(keyPrefix + "ref", nullIfEmpty(route.ref()));
         feature.setAttr(keyPrefix + "name", route.name());
         feature.setAttr(keyPrefix + "colour", route.colour());
+        route.details().forEach((key, value) -> feature.setAttrWithMinzoom(keyPrefix + key, value, 14));
       }
     }
 

@@ -136,7 +136,8 @@ public class OpenMapTilesSchema {
        * <a href="http://wiki.openstreetmap.org/wiki/Tag:waterway=dock"><code>waterway=dock</code></a> are classified as
        * a <code>dock</code>. Various minor waterbodies are classified as a <code>pond</code>. Swimming pools tagged
        * <a href="https://wiki.openstreetmap.org/wiki/Tag:leisure=swimming_pool"><code>leisure=swimming_pool</code></a>
-       * are classified as a <code>swimming_pool</code> All other water bodies are classified as <code>lake</code>.
+       * are classified as a <code>swimming_pool</code>. Explicit landcover-only water has class
+       * <code>water</code>; other water bodies default to <code>lake</code>.
        * <p>
        * allowed values:
        * <ul>
@@ -146,6 +147,7 @@ public class OpenMapTilesSchema {
        * <li>lake
        * <li>ocean
        * <li>swimming_pool
+       * <li>water
        * </ul>
        */
       public static final String CLASS = "class";
@@ -175,13 +177,14 @@ public class OpenMapTilesSchema {
     }
     /** Attribute values for map elements in the water layer. */
     final class FieldValues {
+      public static final String CLASS_WATER = "water";
       public static final String CLASS_DOCK = "dock";
       public static final String CLASS_RIVER = "river";
       public static final String CLASS_POND = "pond";
       public static final String CLASS_LAKE = "lake";
       public static final String CLASS_OCEAN = "ocean";
       public static final String CLASS_SWIMMING_POOL = "swimming_pool";
-      public static final Set<String> CLASS_VALUES = Set.of("dock", "river", "pond", "lake", "ocean", "swimming_pool");
+      public static final Set<String> CLASS_VALUES = Set.of("dock", "river", "pond", "lake", "ocean", "swimming_pool", "water");
       public static final String BRUNNEL_BRIDGE = "bridge";
       public static final String BRUNNEL_TUNNEL = "tunnel";
       public static final Set<String> BRUNNEL_VALUES = Set.of("bridge", "tunnel");
@@ -313,6 +316,8 @@ public class OpenMapTilesSchema {
        * Names for selected landcover subclasses (e.g., bare_rock).
        */
       public static final String NAME = "name";
+      public static final String SURFACE = "surface";
+      public static final String TIDAL = "tidal";
       /**
        * Use the <strong>class</strong> to assign natural colors for <strong>landcover</strong>.
        * <p>
@@ -325,19 +330,45 @@ public class OpenMapTilesSchema {
        * <li>grass
        * <li>wetland
        * <li>sand
+       * <li>mud
+       * <li>bare_ground
+       * <li>mostly_rock
+       * <li>greenery
+       * <li>dry_swamp
+       * <li>reef
+       * <li>shoal
+       * <li>other
        * </ul>
        */
       public static final String CLASS = "class";
 
       /**
+       * Also accepts the original landcover tag value.
        * Use <strong>subclass</strong> to do more precise styling. Original value of either the
        * <a href="http://wiki.openstreetmap.org/wiki/Key:natural"><code>natural</code></a>,
        * <a href="http://wiki.openstreetmap.org/wiki/Key:landuse"><code>landuse</code></a>,
        * <a href="http://wiki.openstreetmap.org/wiki/Key:leisure"><code>leisure</code></a>, or
        * <a href="http://wiki.openstreetmap.org/wiki/Key:wetland"><code>wetland</code></a> tag.
        * <p>
-       * allowed values:
+       * Known values (additional explicit landcover/wetland values are preserved):
        * <ul>
+       * <li>"shingle"
+       * <li>"mud"
+       * <li>"fen"
+       * <li>"dambo"
+       * <li>"string_bog"
+       * <li>"carr"
+       * <li>"pocosin"
+       * <li>"varzea"
+       * <li>"trees"
+       * <li>"gravel"
+       * <li>"hedge"
+       * <li>"bare_ground"
+       * <li>"mostly_rock"
+       * <li>"greenery"
+       * <li>"dry_swamp"
+       * <li>"reef"
+       * <li>"shoal"
        * <li>"allotments"
        * <li>"bare_rock"
        * <li>"beach"
@@ -389,8 +420,17 @@ public class OpenMapTilesSchema {
       public static final String CLASS_GRASS = "grass";
       public static final String CLASS_WETLAND = "wetland";
       public static final String CLASS_SAND = "sand";
+      public static final String CLASS_MUD = "mud";
+      public static final String CLASS_BARE_GROUND = "bare_ground";
+      public static final String CLASS_MOSTLY_ROCK = "mostly_rock";
+      public static final String CLASS_GREENERY = "greenery";
+      public static final String CLASS_DRY_SWAMP = "dry_swamp";
+      public static final String CLASS_REEF = "reef";
+      public static final String CLASS_SHOAL = "shoal";
+      public static final String CLASS_OTHER = "other";
       public static final Set<String> CLASS_VALUES =
-        Set.of("farmland", "ice", "wood", "rock", "grass", "wetland", "sand");
+        Set.of("farmland", "ice", "wood", "rock", "grass", "wetland", "sand", "mud", "bare_ground", "mostly_rock",
+          "greenery", "dry_swamp", "reef", "shoal", "other");
       public static final String SUBCLASS_ALLOTMENTS = "allotments";
       public static final String SUBCLASS_BARE_ROCK = "bare_rock";
       public static final String SUBCLASS_BEACH = "beach";
@@ -429,11 +469,31 @@ public class OpenMapTilesSchema {
       public static final String SUBCLASS_WET_MEADOW = "wet_meadow";
       public static final String SUBCLASS_WETLAND = "wetland";
       public static final String SUBCLASS_WOOD = "wood";
+      public static final String SUBCLASS_SHINGLE = "shingle";
+      public static final String SUBCLASS_MUD = "mud";
+      public static final String SUBCLASS_FEN = "fen";
+      public static final String SUBCLASS_DAMBO = "dambo";
+      public static final String SUBCLASS_STRING_BOG = "string_bog";
+      public static final String SUBCLASS_CARR = "carr";
+      public static final String SUBCLASS_POCOSIN = "pocosin";
+      public static final String SUBCLASS_VARZEA = "varzea";
+      public static final String SUBCLASS_TREES = "trees";
+      public static final String SUBCLASS_GRAVEL = "gravel";
+      public static final String SUBCLASS_HEDGE = "hedge";
+      public static final String SUBCLASS_BARE_GROUND = "bare_ground";
+      public static final String SUBCLASS_MOSTLY_ROCK = "mostly_rock";
+      public static final String SUBCLASS_GREENERY = "greenery";
+      public static final String SUBCLASS_DRY_SWAMP = "dry_swamp";
+      public static final String SUBCLASS_REEF = "reef";
+      public static final String SUBCLASS_SHOAL = "shoal";
+      /** Known values; unknown explicit landcover/wetland values are also preserved. */
       public static final Set<String> SUBCLASS_VALUES =
         Set.of("allotments", "bare_rock", "beach", "bog", "dune", "scrub", "shrubbery", "farm", "farmland", "fell",
           "flowerbed", "forest", "garden", "glacier", "grass", "grassland", "golf_course", "heath", "mangrove", "marsh",
           "meadow", "orchard", "park", "plant_nursery", "recreation_ground", "reedbed", "saltern", "saltmarsh", "sand",
-          "scree", "swamp", "tidalflat", "tundra", "village_green", "vineyard", "wet_meadow", "wetland", "wood");
+          "scree", "swamp", "tidalflat", "tundra", "village_green", "vineyard", "wet_meadow", "wetland", "wood",
+          "shingle", "mud", "fen", "dambo", "string_bog", "carr", "pocosin", "varzea", "trees", "gravel", "hedge",
+          "bare_ground", "mostly_rock", "greenery", "dry_swamp", "reef", "shoal");
     }
     /** Complex mappings to generate attribute values from OSM element tags in the landcover layer. */
     final class FieldMappings {
@@ -443,14 +503,21 @@ public class OpenMapTilesSchema {
             MultiExpression.entry("farmland",
               matchAny("subclass", "farmland", "farm", "orchard", "vineyard", "plant_nursery")),
             MultiExpression.entry("ice", matchAny("subclass", "glacier", "ice_shelf")),
-            MultiExpression.entry("wood", matchAny("subclass", "wood", "forest")),
-            MultiExpression.entry("rock", matchAny("subclass", "bare_rock", "scree")),
+            MultiExpression.entry("wood", matchAny("subclass", "wood", "forest", "trees")),
+            MultiExpression.entry("rock", matchAny("subclass", "bare_rock", "scree", "shingle", "gravel")),
             MultiExpression.entry("grass",
               matchAny("subclass", "fell", "flowerbed", "grassland", "heath", "scrub", "shrubbery", "tundra", "grass",
-                "meadow", "allotments", "park", "village_green", "recreation_ground", "garden", "golf_course")),
+                "meadow", "allotments", "park", "village_green", "recreation_ground", "garden", "golf_course", "hedge")),
             MultiExpression.entry("wetland",
               matchAny("subclass", "wetland", "bog", "swamp", "wet_meadow", "marsh", "reedbed", "saltern", "tidalflat",
-                "saltmarsh", "mangrove")),
+                "saltmarsh", "mangrove", "fen", "dambo", "string_bog", "carr", "pocosin", "varzea")),
+            MultiExpression.entry("mud", matchAny("subclass", "mud")),
+            MultiExpression.entry("bare_ground", matchAny("subclass", "bare_ground")),
+            MultiExpression.entry("mostly_rock", matchAny("subclass", "mostly_rock")),
+            MultiExpression.entry("greenery", matchAny("subclass", "greenery")),
+            MultiExpression.entry("dry_swamp", matchAny("subclass", "dry_swamp")),
+            MultiExpression.entry("reef", matchAny("subclass", "reef")),
+            MultiExpression.entry("shoal", matchAny("subclass", "shoal")),
             MultiExpression.entry("sand", matchAny("subclass", "beach", "sand", "dune"))));
     }
   }
@@ -1881,6 +1948,10 @@ public class OpenMapTilesSchema {
        * </ul>
        */
       public static final String AGG_STOP = "agg_stop";
+      /** Outmap marine icon category; existing class/subclass classifications remain compatible. */
+      public static final String MARINE_KIND = "marine_kind";
+      /** Original seamark:type, when present. Not a depth or navigability assessment. */
+      public static final String SEAMARK_TYPE = "seamark_type";
       /** Original value of <a href="http://wiki.openstreetmap.org/wiki/Key:level"><code>level</code></a> tag. */
       public static final String LEVEL = "level";
       /** Original value of <a href="http://wiki.openstreetmap.org/wiki/Key:layer"><code>layer</code></a> tag. */

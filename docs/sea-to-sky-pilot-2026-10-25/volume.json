@@ -1,0 +1,9 @@
+[
+    {
+        "Id": "vol-0f94c42cbd859db6b",
+        "GiB": 200,
+        "Type": "gp3",
+        "Throughput": 500,
+        "Encrypted": true
+    }
+]

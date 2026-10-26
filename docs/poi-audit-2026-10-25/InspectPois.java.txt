@@ -1,0 +1,37 @@
+import java.nio.file.*;
+import java.io.*;
+import java.util.*;
+import java.util.zip.*;
+import com.onthegomap.planetiler.pmtiles.*;
+import com.onthegomap.planetiler.*;
+import com.fasterxml.jackson.databind.*;
+class InspectPois {
+ static final Path ROOT=Path.of("/private/tmp/outmap-poi-audit-20261025");
+ static final ObjectMapper JSON=new ObjectMapper();
+ static final Set<String> protectedTypes=new HashSet<>();
+ static byte[] raw(byte[] b) throws Exception { return b.length>1 && b[0]==31 && b[1]==(byte)139 ? new GZIPInputStream(new ByteArrayInputStream(b)).readAllBytes():b; }
+ static int gzip(byte[] b) throws Exception { var out=new ByteArrayOutputStream();try(var zip=new GZIPOutputStream(out)){zip.write(b);}return out.size(); }
+ static byte[] encode(List<VectorTile.Feature> fs) { var tile=new VectorTile();var layers=new LinkedHashMap<String,List<VectorTile.Feature>>();for(var f:fs)layers.computeIfAbsent(f.layer(),k->new ArrayList<>()).add(f);layers.forEach(tile::addLayerFeatures);return tile.encode(); }
+ static boolean protect(VectorTile.Feature f) { var t=f.tags();return protectedTypes.contains(Objects.toString(t.get("subclass"),"")) || protectedTypes.contains(Objects.toString(t.get("class"),"")) || Set.of("stadium","swimming","golf").contains(Objects.toString(t.get("class"),"")); }
+ static boolean retain(VectorTile.Feature f,int z) { if(!f.layer().equals("poi") || z<12 || z>=14)return true;var t=f.tags();Object rank=t.get("rank");return !(rank instanceof Number) || ((Number)rank).intValue()<=12 || protect(f) || Set.of("airport","rail").contains(Objects.toString(t.get("class"),"")) || ("bus".equals(t.get("class")) && "bus_stop".equals(t.get("subclass"))); }
+ static Map<String,Object> inspect(String name,int z,int x,int y,byte[] bytes) throws Exception {
+  var decoded=raw(bytes);var fs=VectorTile.decode(decoded);var pois=fs.stream().filter(f->f.layer().equals("poi")).toList();var kept=fs.stream().filter(f->retain(f,z)).toList();var classes=new TreeMap<String,Integer>();for(var f:pois)classes.merge(Objects.toString(f.tags().get("class"),"?"),1,Integer::sum);
+  var result=new LinkedHashMap<String,Object>();result.put("name",name);result.put("z",z);result.put("x",x);result.put("y",y);result.put("storedBytes",bytes.length);result.put("rawBytes",decoded.length);result.put("gzipOriginal",gzip(decoded));result.put("gzipReencodedBaseline",gzip(encode(fs)));result.put("gzipProposedRetention",gzip(encode(kept)));result.put("poiCount",pois.size());result.put("protectedPoiCount",pois.stream().filter(InspectPois::protect).count());result.put("removedPoiCount",fs.size()-kept.size());result.put("poiRawBytes",encode(pois).length);result.put("poiGzipBytes",gzip(encode(pois)));result.put("classes",classes);return result;
+ }
+ public static void main(String[] args) throws Exception {
+  for(var s:JSON.readTree(ROOT.resolve("protected-types.json").toFile()))protectedTypes.add(s.asText());
+  var report=new ArrayList<Map<String,Object>>();
+  for(var row:JSON.readTree(ROOT.resolve("production-samples.json").toFile())) { if(row.has("error"))continue;report.add(inspect(row.path("name").asText(),row.path("z").asInt(),row.path("x").asInt(),row.path("y").asInt(),Files.readAllBytes(Path.of(row.path("file").asText())))); }
+  JSON.writerWithDefaultPrettyPrinter().writeValue(ROOT.resolve("production-analysis.json").toFile(),report);
+  var local=new ArrayList<Map<String,Object>>();
+  for(var region:List.of("monaco","whistler"))for(var variant:List.of("baseline","updated")){
+   var unique=new TreeMap<Long,Map<String,Object>>();
+   try(var archive=ReadablePmtiles.newReadFromFile(ROOT.resolve(region+"-"+variant+".pmtiles"));var tiles=archive.getAllTiles()){
+    while(tiles.hasNext()) {var tile=tiles.next();int z=tile.coord().z();local.add(inspect(region+"-"+variant,z,tile.coord().x(),tile.coord().y(),tile.bytes()));if(z==14)for(var f:VectorTile.decode(raw(tile.bytes())))unique.put(f.id(),f.tags());}
+   }
+   JSON.writerWithDefaultPrettyPrinter().writeValue(ROOT.resolve(region+"-"+variant+"-features.json").toFile(),unique);
+  }
+  JSON.writerWithDefaultPrettyPrinter().writeValue(ROOT.resolve("local-analysis.json").toFile(),local);
+  System.out.println("Decoded "+report.size()+" production tiles and "+local.size()+" local archive tiles.");
+ }
+}

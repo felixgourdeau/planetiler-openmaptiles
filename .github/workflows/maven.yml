@@ -55,6 +55,8 @@ jobs:
         shell: cmd
 
   regenerate:
+    # Keep the existing check name for branch protection, but never regenerate
+    # Outmap's hand-customized mappings from upstream in CI.
     name: Regenerate
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -67,9 +69,12 @@ jobs:
           java-version: 21
           distribution: 'temurin'
           cache: 'maven'
-      - run: ./scripts/regenerate-openmaptiles.sh
+      - name: Record custom generated sources
+        run: sha256sum src/main/java/org/openmaptiles/generated/*.java > "$RUNNER_TEMP/outmap-generated.sha256"
       # Skip spotless since that gets checked in a separate task
       - run: ./mvnw -DskipTests -Dspotless.check.skip --batch-mode -no-transfer-progress clean verify
+      - name: Ensure build preserved custom generated sources
+        run: sha256sum --check "$RUNNER_TEMP/outmap-generated.sha256"
 
   run:
     name: Build / Run

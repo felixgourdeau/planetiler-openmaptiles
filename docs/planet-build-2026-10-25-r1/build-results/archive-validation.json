@@ -1,0 +1,955 @@
+{
+  "header" : {
+    "specVersion" : 3,
+    "rootDirOffset" : 127,
+    "rootDirLength" : 13945,
+    "jsonMetadataOffset" : 104824484503,
+    "jsonMetadataLength" : 10199,
+    "leafDirectoriesOffset" : 104824494702,
+    "leafDirectoriesLength" : 100248507,
+    "tileDataOffset" : 16384,
+    "tileDataLength" : 104824468119,
+    "numAddressedTiles" : 276920415,
+    "numTileEntries" : 52769565,
+    "numTileContents" : 46576870,
+    "clustered" : true,
+    "internalCompression" : "GZIP",
+    "tileCompression" : "GZIP",
+    "tileType" : "MVT",
+    "minZoom" : 0,
+    "maxZoom" : 14,
+    "minLonE7" : -1800000000,
+    "minLatE7" : -850511287,
+    "maxLonE7" : 1800000000,
+    "maxLatE7" : 850511287,
+    "centerZoom" : 0,
+    "centerLonE7" : 0,
+    "centerLatE7" : 0
+  },
+  "metadata" : {
+    "name" : "OpenMapTiles",
+    "description" : "A tileset showcasing all layers in OpenMapTiles. https://openmaptiles.org",
+    "attribution" : "<a href=\"https://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>",
+    "version" : "3.15.0",
+    "type" : "baselayer",
+    "format" : "pbf",
+    "bounds" : "-180,-85.05113,180,85.05113",
+    "center" : "0,0",
+    "minzoom" : "0",
+    "maxzoom" : "14",
+    "planetiler:buildtime" : "2025-06-19T14:30:46.214Z",
+    "planetiler:osm:osmosisreplicationseq" : "0",
+    "planetiler:osm:osmosisreplicationurl" : "",
+    "planetiler:githash" : "855fa914faef8e4046c9b704401a64bc5fe83ded",
+    "planetiler:osm:osmosisreplicationtime" : "2026-10-19T00:00:04Z",
+    "planetiler:version" : "0.9.1",
+    "compression" : "gzip",
+    "vector_layers" : "[{\"id\":\"aerodrome_label\",\"fields\":{\"class\":\"String\",\"ele\":\"Number\",\"ele_ft\":\"Number\",\"iata\":\"String\",\"icao\":\"String\",\"name\":\"String\",\"name:am\":\"String\",\"name:ar\":\"String\",\"name:az\":\"String\",\"name:be\":\"String\",\"name:bg\":\"String\",\"name:bn\":\"String\",\"name:br\":\"String\",\"name:bs\":\"String\",\"name:ca\":\"String\",\"name:co\":\"String\",\"name:cs\":\"String\",\"name:cy\":\"String\",\"name:da\":\"String\",\"name:de\":\"String\",\"name:el\":\"String\",\"name:en\":\"String\",\"name:eo\":\"String\",\"name:es\":\"String\",\"name:et\":\"String\",\"name:eu\":\"String\",\"name:fa\":\"String\",\"name:fi\":\"String\",\"name:fr\":\"String\",\"name:fy\":\"String\",\"name:ga\":\"String\",\"name:gd\":\"String\",\"name:he\":\"String\",\"name:hi\":\"String\",\"name:hr\":\"String\",\"name:hu\":\"String\",\"name:hy\":\"String\",\"name:id\":\"String\",\"name:is\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ja-Hira\":\"String\",\"name:ja-Latn\":\"String\",\"name:ja_rm\":\"String\",\"name:ka\":\"String\",\"name:kk\":\"String\",\"name:kn\":\"String\",\"name:ko\":\"String\",\"name:ko-Latn\":\"String\",\"name:ku\":\"String\",\"name:la\":\"String\",\"name:latin\":\"String\",\"name:lb\":\"String\",\"name:lt\":\"String\",\"name:lv\":\"String\",\"name:mk\":\"String\",\"name:ml\":\"String\",\"name:mt\":\"String\",\"name:nl\":\"String\",\"name:no\":\"String\",\"name:nonlatin\":\"String\",\"name:oc\":\"String\",\"name:pa\":\"String\",\"name:pl\":\"String\",\"name:pnb\":\"String\",\"name:pt\":\"String\",\"name:rm\":\"String\",\"name:ro\":\"String\",\"name:ru\":\"String\",\"name:sk\":\"String\",\"name:sl\":\"String\",\"name:sq\":\"String\",\"name:sr\":\"String\",\"name:sr-Latn\":\"String\",\"name:sv\":\"String\",\"name:ta\":\"String\",\"name:te\":\"String\",\"name:th\":\"String\",\"name:tr\":\"String\",\"name:uk\":\"String\",\"name:ur\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name:zh-Hans\":\"String\",\"name:zh-Hant\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\"},\"minzoom\":8,\"maxzoom\":14},{\"id\":\"aeroway\",\"fields\":{\"class\":\"String\",\"ref\":\"String\"},\"minzoom\":10,\"maxzoom\":14},{\"id\":\"boundary\",\"fields\":{\"adm0_l\":\"String\",\"adm0_r\":\"String\",\"admin_level\":\"Number\",\"claimed_by\":\"String\",\"class\":\"String\",\"disputed\":\"Number\",\"disputed_name\":\"String\",\"maritime\":\"Number\",\"name\":\"String\",\"name:az\":\"String\",\"name:br\":\"String\",\"name:de\":\"String\",\"name:en\":\"String\",\"name:es\":\"String\",\"name:fr\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ko\":\"String\",\"name:latin\":\"String\",\"name:nonlatin\":\"String\",\"name:pl\":\"String\",\"name:pt\":\"String\",\"name:uk\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\"},\"minzoom\":0,\"maxzoom\":14},{\"id\":\"building\",\"fields\":{\"building\":\"String\",\"building:part\":\"String\",\"building:use\":\"String\",\"colour\":\"String\",\"hide_3d\":\"Boolean\",\"render_height\":\"Number\",\"render_min_height\":\"Number\",\"roof:angle\":\"String\",\"roof:colour\":\"String\",\"roof:direction\":\"String\",\"roof:height\":\"String\",\"roof:levels\":\"String\",\"roof:material\":\"String\",\"roof:orientation\":\"String\",\"roof:shape\":\"String\"},\"minzoom\":13,\"maxzoom\":14},{\"id\":\"housenumber\",\"fields\":{\"housenumber\":\"String\"},\"minzoom\":14,\"maxzoom\":14},{\"id\":\"landcover\",\"fields\":{\"class\":\"String\",\"name\":\"String\",\"subclass\":\"String\",\"surface\":\"String\",\"tidal\":\"String\"},\"minzoom\":0,\"maxzoom\":14},{\"id\":\"landuse\",\"fields\":{\"class\":\"String\"},\"minzoom\":4,\"maxzoom\":14},{\"id\":\"mountain_peak\",\"fields\":{\"class\":\"String\",\"customary_ft\":\"Number\",\"ele\":\"Number\",\"ele_ft\":\"Number\",\"name\":\"String\",\"name:am\":\"String\",\"name:ar\":\"String\",\"name:az\":\"String\",\"name:be\":\"String\",\"name:bg\":\"String\",\"name:bn\":\"String\",\"name:br\":\"String\",\"name:bs\":\"String\",\"name:ca\":\"String\",\"name:co\":\"String\",\"name:cs\":\"String\",\"name:cy\":\"String\",\"name:da\":\"String\",\"name:de\":\"String\",\"name:el\":\"String\",\"name:en\":\"String\",\"name:eo\":\"String\",\"name:es\":\"String\",\"name:et\":\"String\",\"name:eu\":\"String\",\"name:fa\":\"String\",\"name:fi\":\"String\",\"name:fr\":\"String\",\"name:fy\":\"String\",\"name:ga\":\"String\",\"name:gd\":\"String\",\"name:he\":\"String\",\"name:hi\":\"String\",\"name:hr\":\"String\",\"name:hu\":\"String\",\"name:hy\":\"String\",\"name:id\":\"String\",\"name:is\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ja-Hira\":\"String\",\"name:ja-Latn\":\"String\",\"name:ja_rm\":\"String\",\"name:ka\":\"String\",\"name:kk\":\"String\",\"name:kn\":\"String\",\"name:ko\":\"String\",\"name:ko-Latn\":\"String\",\"name:ku\":\"String\",\"name:la\":\"String\",\"name:latin\":\"String\",\"name:lb\":\"String\",\"name:lt\":\"String\",\"name:lv\":\"String\",\"name:mk\":\"String\",\"name:ml\":\"String\",\"name:mt\":\"String\",\"name:nl\":\"String\",\"name:no\":\"String\",\"name:nonlatin\":\"String\",\"name:oc\":\"String\",\"name:pa\":\"String\",\"name:pl\":\"String\",\"name:pnb\":\"String\",\"name:pt\":\"String\",\"name:rm\":\"String\",\"name:ro\":\"String\",\"name:ru\":\"String\",\"name:sk\":\"String\",\"name:sl\":\"String\",\"name:sq\":\"String\",\"name:sr\":\"String\",\"name:sr-Latn\":\"String\",\"name:sv\":\"String\",\"name:ta\":\"String\",\"name:te\":\"String\",\"name:th\":\"String\",\"name:tr\":\"String\",\"name:uk\":\"String\",\"name:ur\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name:zh-Hans\":\"String\",\"name:zh-Hant\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\",\"rank\":\"Number\"},\"minzoom\":7,\"maxzoom\":14},{\"id\":\"outdoor\",\"fields\":{\"access\":\"String\",\"access:conditional\":\"String\",\"bicycle\":\"String\",\"canoe\":\"String\",\"class\":\"String\",\"colour\":\"String\",\"fence_type\":\"String\",\"foot\":\"String\",\"foot:conditional\":\"String\",\"height\":\"String\",\"horse\":\"String\",\"intermittent\":\"String\",\"locked\":\"String\",\"material\":\"String\",\"maxwidth:physical\":\"String\",\"name\":\"String\",\"name:am\":\"String\",\"name:ar\":\"String\",\"name:az\":\"String\",\"name:be\":\"String\",\"name:bg\":\"String\",\"name:bn\":\"String\",\"name:br\":\"String\",\"name:bs\":\"String\",\"name:ca\":\"String\",\"name:co\":\"String\",\"name:cs\":\"String\",\"name:cy\":\"String\",\"name:da\":\"String\",\"name:de\":\"String\",\"name:el\":\"String\",\"name:en\":\"String\",\"name:eo\":\"String\",\"name:es\":\"String\",\"name:et\":\"String\",\"name:eu\":\"String\",\"name:fa\":\"String\",\"name:fi\":\"String\",\"name:fr\":\"String\",\"name:fy\":\"String\",\"name:ga\":\"String\",\"name:gd\":\"String\",\"name:he\":\"String\",\"name:hi\":\"String\",\"name:hr\":\"String\",\"name:hu\":\"String\",\"name:hy\":\"String\",\"name:id\":\"String\",\"name:is\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ja-Hira\":\"String\",\"name:ja-Latn\":\"String\",\"name:ja_rm\":\"String\",\"name:ka\":\"String\",\"name:kk\":\"String\",\"name:kn\":\"String\",\"name:ko\":\"String\",\"name:ko-Latn\":\"String\",\"name:ku\":\"String\",\"name:la\":\"String\",\"name:latin\":\"String\",\"name:lb\":\"String\",\"name:lt\":\"String\",\"name:lv\":\"String\",\"name:mk\":\"String\",\"name:ml\":\"String\",\"name:mt\":\"String\",\"name:nl\":\"String\",\"name:no\":\"String\",\"name:nonlatin\":\"String\",\"name:oc\":\"String\",\"name:pa\":\"String\",\"name:pl\":\"String\",\"name:pnb\":\"String\",\"name:pt\":\"String\",\"name:rm\":\"String\",\"name:ro\":\"String\",\"name:ru\":\"String\",\"name:sk\":\"String\",\"name:sl\":\"String\",\"name:sq\":\"String\",\"name:sr\":\"String\",\"name:sr-Latn\":\"String\",\"name:sv\":\"String\",\"name:ta\":\"String\",\"name:te\":\"String\",\"name:th\":\"String\",\"name:tr\":\"String\",\"name:uk\":\"String\",\"name:ur\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name:zh-Hans\":\"String\",\"name:zh-Hant\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\",\"operator\":\"String\",\"patrolled\":\"String\",\"piste:difficulty\":\"String\",\"piste:grooming\":\"String\",\"piste:name\":\"String\",\"piste:ref\":\"String\",\"piste:type\":\"String\",\"portage\":\"String\",\"ref\":\"String\",\"route_10_colour\":\"String\",\"route_10_name\":\"String\",\"route_10_network\":\"String\",\"route_10_osmc:symbol\":\"String\",\"route_10_piste:difficulty\":\"String\",\"route_10_piste:grooming\":\"String\",\"route_10_piste:type\":\"String\",\"route_10_ref\":\"String\",\"route_10_route\":\"String\",\"route_11_colour\":\"String\",\"route_11_name\":\"String\",\"route_11_network\":\"String\",\"route_11_piste:difficulty\":\"String\",\"route_11_piste:grooming\":\"String\",\"route_11_piste:type\":\"String\",\"route_11_ref\":\"String\",\"route_11_route\":\"String\",\"route_12_colour\":\"String\",\"route_12_name\":\"String\",\"route_12_network\":\"String\",\"route_12_piste:difficulty\":\"String\",\"route_12_piste:grooming\":\"String\",\"route_12_piste:type\":\"String\",\"route_12_ref\":\"String\",\"route_12_route\":\"String\",\"route_13_colour\":\"String\",\"route_13_name\":\"String\",\"route_13_network\":\"String\",\"route_13_piste:difficulty\":\"String\",\"route_13_piste:type\":\"String\",\"route_13_ref\":\"String\",\"route_13_route\":\"String\",\"route_14_colour\":\"String\",\"route_14_name\":\"String\",\"route_14_network\":\"String\",\"route_14_piste:difficulty\":\"String\",\"route_14_piste:type\":\"String\",\"route_14_ref\":\"String\",\"route_14_route\":\"String\",\"route_1_colour\":\"String\",\"route_1_name\":\"String\",\"route_1_network\":\"String\",\"route_1_osmc:symbol\":\"String\",\"route_1_piste:difficulty\":\"String\",\"route_1_piste:grooming\":\"String\",\"route_1_piste:type\":\"String\",\"route_1_ref\":\"String\",\"route_1_route\":\"String\",\"route_2_colour\":\"String\",\"route_2_name\":\"String\",\"route_2_network\":\"String\",\"route_2_osmc:symbol\":\"String\",\"route_2_piste:difficulty\":\"String\",\"route_2_piste:grooming\":\"String\",\"route_2_piste:type\":\"String\",\"route_2_ref\":\"String\",\"route_2_route\":\"String\",\"route_3_colour\":\"String\",\"route_3_name\":\"String\",\"route_3_network\":\"String\",\"route_3_osmc:symbol\":\"String\",\"route_3_piste:difficulty\":\"String\",\"route_3_piste:grooming\":\"String\",\"route_3_piste:type\":\"String\",\"route_3_ref\":\"String\",\"route_3_route\":\"String\",\"route_4_colour\":\"String\",\"route_4_name\":\"String\",\"route_4_network\":\"String\",\"route_4_osmc:symbol\":\"String\",\"route_4_piste:difficulty\":\"String\",\"route_4_piste:grooming\":\"String\",\"route_4_piste:type\":\"String\",\"route_4_ref\":\"String\",\"route_4_route\":\"String\",\"route_5_colour\":\"String\",\"route_5_name\":\"String\",\"route_5_network\":\"String\",\"route_5_osmc:symbol\":\"String\",\"route_5_piste:difficulty\":\"String\",\"route_5_piste:grooming\":\"String\",\"route_5_piste:type\":\"String\",\"route_5_ref\":\"String\",\"route_5_route\":\"String\",\"route_6_colour\":\"String\",\"route_6_name\":\"String\",\"route_6_network\":\"String\",\"route_6_osmc:symbol\":\"String\",\"route_6_piste:difficulty\":\"String\",\"route_6_piste:grooming\":\"String\",\"route_6_piste:type\":\"String\",\"route_6_ref\":\"String\",\"route_6_route\":\"String\",\"route_7_colour\":\"String\",\"route_7_name\":\"String\",\"route_7_network\":\"String\",\"route_7_osmc:symbol\":\"String\",\"route_7_piste:difficulty\":\"String\",\"route_7_piste:grooming\":\"String\",\"route_7_piste:type\":\"String\",\"route_7_ref\":\"String\",\"route_7_route\":\"String\",\"route_8_colour\":\"String\",\"route_8_name\":\"String\",\"route_8_network\":\"String\",\"route_8_osmc:symbol\":\"String\",\"route_8_piste:difficulty\":\"String\",\"route_8_piste:grooming\":\"String\",\"route_8_piste:type\":\"String\",\"route_8_ref\":\"String\",\"route_8_route\":\"String\",\"route_9_colour\":\"String\",\"route_9_name\":\"String\",\"route_9_network\":\"String\",\"route_9_osmc:symbol\":\"String\",\"route_9_piste:difficulty\":\"String\",\"route_9_piste:grooming\":\"String\",\"route_9_piste:type\":\"String\",\"route_9_ref\":\"String\",\"route_9_route\":\"String\",\"seasonal\":\"String\",\"ski\":\"String\",\"subclass\":\"String\",\"via_ferrata_scale\":\"String\",\"whitewater\":\"String\",\"whitewater:grade\":\"String\",\"whitewater:section_name\":\"String\",\"width\":\"String\"},\"minzoom\":14,\"maxzoom\":14},{\"id\":\"park\",\"fields\":{\"access\":\"String\",\"access:conditional\":\"String\",\"class\":\"String\",\"designation\":\"String\",\"name\":\"String\",\"name:am\":\"String\",\"name:ar\":\"String\",\"name:az\":\"String\",\"name:be\":\"String\",\"name:bg\":\"String\",\"name:bn\":\"String\",\"name:br\":\"String\",\"name:bs\":\"String\",\"name:ca\":\"String\",\"name:co\":\"String\",\"name:cs\":\"String\",\"name:cy\":\"String\",\"name:da\":\"String\",\"name:de\":\"String\",\"name:el\":\"String\",\"name:en\":\"String\",\"name:eo\":\"String\",\"name:es\":\"String\",\"name:et\":\"String\",\"name:eu\":\"String\",\"name:fa\":\"String\",\"name:fi\":\"String\",\"name:fr\":\"String\",\"name:fy\":\"String\",\"name:ga\":\"String\",\"name:gd\":\"String\",\"name:he\":\"String\",\"name:hi\":\"String\",\"name:hr\":\"String\",\"name:hu\":\"String\",\"name:hy\":\"String\",\"name:id\":\"String\",\"name:is\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ja-Hira\":\"String\",\"name:ja-Latn\":\"String\",\"name:ja_rm\":\"String\",\"name:ka\":\"String\",\"name:kk\":\"String\",\"name:kn\":\"String\",\"name:ko\":\"String\",\"name:ko-Latn\":\"String\",\"name:ku\":\"String\",\"name:la\":\"String\",\"name:latin\":\"String\",\"name:lb\":\"String\",\"name:lt\":\"String\",\"name:lv\":\"String\",\"name:mk\":\"String\",\"name:ml\":\"String\",\"name:mt\":\"String\",\"name:nl\":\"String\",\"name:no\":\"String\",\"name:nonlatin\":\"String\",\"name:oc\":\"String\",\"name:pa\":\"String\",\"name:pl\":\"String\",\"name:pnb\":\"String\",\"name:pt\":\"String\",\"name:rm\":\"String\",\"name:ro\":\"String\",\"name:ru\":\"String\",\"name:sk\":\"String\",\"name:sl\":\"String\",\"name:sq\":\"String\",\"name:sr\":\"String\",\"name:sr-Latn\":\"String\",\"name:sv\":\"String\",\"name:ta\":\"String\",\"name:te\":\"String\",\"name:th\":\"String\",\"name:tr\":\"String\",\"name:uk\":\"String\",\"name:ur\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name:zh-Hans\":\"String\",\"name:zh-Hant\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\",\"operator\":\"String\",\"protect_class\":\"String\",\"protection_title\":\"String\",\"rank\":\"Number\"},\"minzoom\":4,\"maxzoom\":14},{\"id\":\"place\",\"fields\":{\"capital\":\"Number\",\"class\":\"String\",\"iso_a2\":\"String\",\"name\":\"String\",\"name:am\":\"String\",\"name:ar\":\"String\",\"name:az\":\"String\",\"name:be\":\"String\",\"name:bg\":\"String\",\"name:bn\":\"String\",\"name:br\":\"String\",\"name:bs\":\"String\",\"name:ca\":\"String\",\"name:co\":\"String\",\"name:cs\":\"String\",\"name:cy\":\"String\",\"name:da\":\"String\",\"name:de\":\"String\",\"name:el\":\"String\",\"name:en\":\"String\",\"name:eo\":\"String\",\"name:es\":\"String\",\"name:et\":\"String\",\"name:eu\":\"String\",\"name:fa\":\"String\",\"name:fi\":\"String\",\"name:fr\":\"String\",\"name:fy\":\"String\",\"name:ga\":\"String\",\"name:gd\":\"String\",\"name:he\":\"String\",\"name:hi\":\"String\",\"name:hr\":\"String\",\"name:hu\":\"String\",\"name:hy\":\"String\",\"name:id\":\"String\",\"name:is\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ja-Hira\":\"String\",\"name:ja-Latn\":\"String\",\"name:ja_rm\":\"String\",\"name:ka\":\"String\",\"name:kk\":\"String\",\"name:kn\":\"String\",\"name:ko\":\"String\",\"name:ko-Latn\":\"String\",\"name:ku\":\"String\",\"name:la\":\"String\",\"name:latin\":\"String\",\"name:lb\":\"String\",\"name:lt\":\"String\",\"name:lv\":\"String\",\"name:mk\":\"String\",\"name:ml\":\"String\",\"name:mt\":\"String\",\"name:nl\":\"String\",\"name:no\":\"String\",\"name:nonlatin\":\"String\",\"name:oc\":\"String\",\"name:pa\":\"String\",\"name:pl\":\"String\",\"name:pnb\":\"String\",\"name:pt\":\"String\",\"name:rm\":\"String\",\"name:ro\":\"String\",\"name:ru\":\"String\",\"name:sk\":\"String\",\"name:sl\":\"String\",\"name:sq\":\"String\",\"name:sr\":\"String\",\"name:sr-Latn\":\"String\",\"name:sv\":\"String\",\"name:ta\":\"String\",\"name:te\":\"String\",\"name:th\":\"String\",\"name:tr\":\"String\",\"name:uk\":\"String\",\"name:ur\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name:zh-Hans\":\"String\",\"name:zh-Hant\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\",\"rank\":\"Number\"},\"minzoom\":0,\"maxzoom\":14},{\"id\":\"poi\",\"fields\":{\"4wd_only_normalized\":\"String\",\"4wd_only_raw\":\"String\",\"abandoned:highway\":\"String\",\"abandoned_raw\":\"String\",\"access\":\"String\",\"access:backward:conditional\":\"String\",\"access:backward_normalized\":\"String\",\"access:backward_raw\":\"String\",\"access:conditional\":\"String\",\"access:forward:conditional\":\"String\",\"access:forward_normalized\":\"String\",\"access:forward_raw\":\"String\",\"access_normalized\":\"String\",\"access_raw\":\"String\",\"agg_stop\":\"Number\",\"agricultural:conditional\":\"String\",\"agricultural:forward_normalized\":\"String\",\"agricultural:forward_raw\":\"String\",\"agricultural_normalized\":\"String\",\"agricultural_raw\":\"String\",\"atv_normalized\":\"String\",\"atv_raw\":\"String\",\"backcountry\":\"String\",\"barrier_normalized\":\"String\",\"barrier_raw\":\"String\",\"bbq\":\"String\",\"bicycle:backward_normalized\":\"String\",\"bicycle:backward_raw\":\"String\",\"bicycle:conditional\":\"String\",\"bicycle:forward_normalized\":\"String\",\"bicycle:forward_raw\":\"String\",\"bicycle_normalized\":\"String\",\"bicycle_raw\":\"String\",\"boat\":\"String\",\"bridge_normalized\":\"String\",\"bridge_raw\":\"String\",\"canoe\":\"String\",\"capacity\":\"String\",\"caravans\":\"String\",\"class\":\"String\",\"construction:highway\":\"String\",\"construction_raw\":\"String\",\"crossing:signals_normalized\":\"String\",\"crossing:signals_raw\":\"String\",\"crossing_normalized\":\"String\",\"crossing_raw\":\"String\",\"demolished:highway\":\"String\",\"demolished_raw\":\"String\",\"depth_m\":\"Number\",\"depth_raw\":\"String\",\"designation_normalized\":\"String\",\"designation_raw\":\"String\",\"destroyed:highway\":\"String\",\"destroyed_raw\":\"String\",\"disused:highway\":\"String\",\"disused_raw\":\"String\",\"dog:conditional\":\"String\",\"dog_normalized\":\"String\",\"dog_raw\":\"String\",\"drinking_water\":\"String\",\"ele\":\"String\",\"electricity\":\"String\",\"email\":\"String\",\"emergency\":\"String\",\"est_width_m\":\"Number\",\"est_width_raw\":\"String\",\"fax\":\"String\",\"fee\":\"String\",\"fee:conditional\":\"String\",\"fee_normalized\":\"String\",\"fee_raw\":\"String\",\"fireplace\":\"String\",\"flood_prone_normalized\":\"String\",\"flood_prone_raw\":\"String\",\"foot:backward_normalized\":\"String\",\"foot:backward_raw\":\"String\",\"foot:conditional\":\"String\",\"foot:forward_normalized\":\"String\",\"foot:forward_raw\":\"String\",\"foot_normalized\":\"String\",\"foot_raw\":\"String\",\"ford_normalized\":\"String\",\"ford_raw\":\"String\",\"forestry_normalized\":\"String\",\"forestry_raw\":\"String\",\"handrail:left_normalized\":\"String\",\"handrail:left_raw\":\"String\",\"handrail:right_normalized\":\"String\",\"handrail:right_raw\":\"String\",\"handrail_normalized\":\"String\",\"handrail_raw\":\"String\",\"hazard:animal_normalized\":\"String\",\"hazard:animal_raw\":\"String\",\"hazard_normalized\":\"String\",\"hazard_raw\":\"String\",\"hgv:backward_normalized\":\"String\",\"hgv:backward_raw\":\"String\",\"hgv:conditional\":\"String\",\"hgv:forward_normalized\":\"String\",\"hgv:forward_raw\":\"String\",\"hgv_normalized\":\"String\",\"hgv_raw\":\"String\",\"highway_normalized\":\"String\",\"highway_raw\":\"String\",\"horse:backward_normalized\":\"String\",\"horse:backward_raw\":\"String\",\"horse:conditional\":\"String\",\"horse:forward_normalized\":\"String\",\"horse:forward_raw\":\"String\",\"horse_normalized\":\"String\",\"horse_raw\":\"String\",\"hot_water\":\"String\",\"ice_road_normalized\":\"String\",\"ice_road_raw\":\"String\",\"incline_direction\":\"String\",\"incline_percent\":\"Number\",\"incline_raw\":\"String\",\"indoor\":\"Number\",\"informal_normalized\":\"String\",\"informal_raw\":\"String\",\"intermittent\":\"String\",\"intermittent_normalized\":\"String\",\"intermittent_raw\":\"String\",\"junction_normalized\":\"String\",\"junction_raw\":\"String\",\"kind\":\"String\",\"ladder_normalized\":\"String\",\"ladder_raw\":\"String\",\"layer\":\"Number\",\"level\":\"Number\",\"lit_normalized\":\"String\",\"lit_raw\":\"String\",\"locked\":\"String\",\"locked:conditional\":\"String\",\"locked_normalized\":\"String\",\"locked_raw\":\"String\",\"maintained_normalized\":\"String\",\"maintained_raw\":\"String\",\"maintenance_normalized\":\"String\",\"maintenance_raw\":\"String\",\"marine_kind\":\"String\",\"maxaxleload_kg\":\"Number\",\"maxaxleload_raw\":\"String\",\"maxheight:conditional\":\"String\",\"maxheight:physical_m\":\"Number\",\"maxheight:physical_raw\":\"String\",\"maxheight_m\":\"Number\",\"maxheight_raw\":\"String\",\"maxlength:conditional\":\"String\",\"maxlength_m\":\"Number\",\"maxlength_raw\":\"String\",\"maxspeed:conditional\":\"String\",\"maxspeed_kmh\":\"Number\",\"maxspeed_raw\":\"String\",\"maxweight:conditional\":\"String\",\"maxweight_kg\":\"Number\",\"maxweight_raw\":\"String\",\"maxwidth:conditional\":\"String\",\"maxwidth:physical\":\"String\",\"maxwidth:physical:conditional\":\"String\",\"maxwidth:physical_m\":\"Number\",\"maxwidth:physical_raw\":\"String\",\"maxwidth_m\":\"Number\",\"maxwidth_raw\":\"String\",\"mobile\":\"String\",\"mooring\":\"String\",\"motor_vehicle:backward:conditional\":\"String\",\"motor_vehicle:backward_normalized\":\"String\",\"motor_vehicle:backward_raw\":\"String\",\"motor_vehicle:conditional\":\"String\",\"motor_vehicle:forward:conditional\":\"String\",\"motor_vehicle:forward_normalized\":\"String\",\"motor_vehicle:forward_raw\":\"String\",\"motor_vehicle_normalized\":\"String\",\"motor_vehicle_raw\":\"String\",\"motorcar:conditional\":\"String\",\"motorcar_normalized\":\"String\",\"motorcar_raw\":\"String\",\"motorcycle:conditional\":\"String\",\"motorcycle:forward_normalized\":\"String\",\"motorcycle:forward_raw\":\"String\",\"motorcycle_normalized\":\"String\",\"motorcycle_raw\":\"String\",\"motorhome\":\"String\",\"mtb:scale:imba_normalized\":\"String\",\"mtb:scale:imba_raw\":\"String\",\"mtb:scale:uphill_normalized\":\"String\",\"mtb:scale:uphill_raw\":\"String\",\"mtb:scale_normalized\":\"String\",\"mtb:scale_raw\":\"String\",\"name\":\"String\",\"name:am\":\"String\",\"name:ar\":\"String\",\"name:az\":\"String\",\"name:be\":\"String\",\"name:bg\":\"String\",\"name:bn\":\"String\",\"name:br\":\"String\",\"name:bs\":\"String\",\"name:ca\":\"String\",\"name:co\":\"String\",\"name:cs\":\"String\",\"name:cy\":\"String\",\"name:da\":\"String\",\"name:de\":\"String\",\"name:el\":\"String\",\"name:en\":\"String\",\"name:eo\":\"String\",\"name:es\":\"String\",\"name:et\":\"String\",\"name:eu\":\"String\",\"name:fa\":\"String\",\"name:fi\":\"String\",\"name:fr\":\"String\",\"name:fy\":\"String\",\"name:ga\":\"String\",\"name:gd\":\"String\",\"name:he\":\"String\",\"name:hi\":\"String\",\"name:hr\":\"String\",\"name:hu\":\"String\",\"name:hy\":\"String\",\"name:id\":\"String\",\"name:is\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ja-Hira\":\"String\",\"name:ja-Latn\":\"String\",\"name:ja_kana\":\"String\",\"name:ja_rm\":\"String\",\"name:ka\":\"String\",\"name:kk\":\"String\",\"name:kn\":\"String\",\"name:ko\":\"String\",\"name:ko-Latn\":\"String\",\"name:ku\":\"String\",\"name:la\":\"String\",\"name:latin\":\"String\",\"name:lb\":\"String\",\"name:lt\":\"String\",\"name:lv\":\"String\",\"name:mk\":\"String\",\"name:ml\":\"String\",\"name:mt\":\"String\",\"name:nl\":\"String\",\"name:no\":\"String\",\"name:nonlatin\":\"String\",\"name:oc\":\"String\",\"name:pa\":\"String\",\"name:pl\":\"String\",\"name:pnb\":\"String\",\"name:pt\":\"String\",\"name:rm\":\"String\",\"name:ro\":\"String\",\"name:ru\":\"String\",\"name:sk\":\"String\",\"name:sl\":\"String\",\"name:sq\":\"String\",\"name:sr\":\"String\",\"name:sr-Latn\":\"String\",\"name:sv\":\"String\",\"name:ta\":\"String\",\"name:te\":\"String\",\"name:th\":\"String\",\"name:tr\":\"String\",\"name:uk\":\"String\",\"name:ur\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name:zh-Hans\":\"String\",\"name:zh-Hant\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\",\"obstacle_normalized\":\"String\",\"obstacle_raw\":\"String\",\"ohv_normalized\":\"String\",\"ohv_raw\":\"String\",\"oneway:bicycle_normalized\":\"Number\",\"oneway:bicycle_raw\":\"String\",\"oneway:conditional\":\"String\",\"oneway:foot_normalized\":\"Number\",\"oneway:foot_raw\":\"String\",\"oneway:horse_normalized\":\"Number\",\"oneway:horse_raw\":\"String\",\"oneway:motor_vehicle_normalized\":\"Number\",\"oneway:motor_vehicle_raw\":\"String\",\"oneway:motorcycle_normalized\":\"Number\",\"oneway:motorcycle_raw\":\"String\",\"oneway_normalized\":\"Number\",\"oneway_raw\":\"String\",\"opening_hours\":\"String\",\"opening_hours:conditional\":\"String\",\"operator\":\"String\",\"outdoor:check_date\":\"String\",\"outdoor:check_date:access\":\"String\",\"outdoor:check_date:barrier\":\"String\",\"outdoor:description\":\"String\",\"outdoor:description:en\":\"String\",\"outdoor:name\":\"String\",\"outdoor:opening_hours\":\"String\",\"outdoor:opening_hours:conditional\":\"String\",\"outdoor:operator\":\"String\",\"outdoor:operator:type\":\"String\",\"outdoor:owner\":\"String\",\"outdoor:ref\":\"String\",\"outdoor:source\":\"String\",\"outdoor:source:access\":\"String\",\"outdoor:source:date\":\"String\",\"outdoor:source:surface\":\"String\",\"outdoor:survey:date\":\"String\",\"outdoor:url\":\"String\",\"outdoor:website\":\"String\",\"outdoor_geometry\":\"String\",\"outdoor_obstacle\":\"String\",\"phone\":\"String\",\"piste:difficulty_normalized\":\"String\",\"piste:difficulty_raw\":\"String\",\"piste:grooming_normalized\":\"String\",\"piste:grooming_raw\":\"String\",\"piste:type_normalized\":\"String\",\"piste:type_raw\":\"String\",\"proposed:highway\":\"String\",\"proposed_raw\":\"String\",\"ramp:bicycle_normalized\":\"String\",\"ramp:bicycle_raw\":\"String\",\"ramp:wheelchair_normalized\":\"String\",\"ramp:wheelchair_raw\":\"String\",\"ramp_normalized\":\"String\",\"ramp_raw\":\"String\",\"rank\":\"Number\",\"razed:highway\":\"String\",\"ref\":\"String\",\"removed:highway\":\"String\",\"removed_raw\":\"String\",\"reservation\":\"String\",\"sac_scale_normalized\":\"String\",\"sac_scale_raw\":\"String\",\"safety_rope_normalized\":\"String\",\"safety_rope_raw\":\"String\",\"seamark:1:notice:category\":\"String\",\"seamark:1:notice:direction\":\"String\",\"seamark:1:notice:function\":\"String\",\"seamark:1:notice:orientation\":\"String\",\"seamark:1:notice:system\":\"String\",\"seamark:1:type\":\"String\",\"seamark:2:notice:category\":\"String\",\"seamark:2:notice:direction\":\"String\",\"seamark:2:notice:function\":\"String\",\"seamark:2:notice:orientation\":\"String\",\"seamark:2:notice:system\":\"String\",\"seamark:2:type\":\"String\",\"seamark:alt_name\":\"String\",\"seamark:anchor_berth:category\":\"String\",\"seamark:anchor_berth:danger_class\":\"String\",\"seamark:anchor_berth:minimum_depth\":\"String\",\"seamark:anchor_berth:name\":\"String\",\"seamark:anchor_berth:radius\":\"String\",\"seamark:anchor_berth:radius:units\":\"String\",\"seamark:anchor_berth:restriction\":\"String\",\"seamark:anchor_berth:status\":\"String\",\"seamark:anchorage:category\":\"String\",\"seamark:anchorage:danger_class\":\"String\",\"seamark:anchorage:maximum_depth\":\"String\",\"seamark:anchorage:minimum_depth\":\"String\",\"seamark:anchorage:name\":\"String\",\"seamark:anchorage:period_end\":\"String\",\"seamark:anchorage:period_start\":\"String\",\"seamark:anchorage:radius\":\"String\",\"seamark:anchorage:restriction\":\"String\",\"seamark:anchorage:status\":\"String\",\"seamark:anchorage:surface\":\"String\",\"seamark:beacon:category\":\"String\",\"seamark:beacon:color\":\"String\",\"seamark:beacon:colour\":\"String\",\"seamark:beacon:colour_pattern\":\"String\",\"seamark:beacon:construction\":\"String\",\"seamark:beacon:height\":\"String\",\"seamark:beacon:shape\":\"String\",\"seamark:beacon_cardinal:category\":\"String\",\"seamark:beacon_cardinal:colour\":\"String\",\"seamark:beacon_cardinal:colour_pattern\":\"String\",\"seamark:beacon_cardinal:construction\":\"String\",\"seamark:beacon_cardinal:elevation\":\"String\",\"seamark:beacon_cardinal:height\":\"String\",\"seamark:beacon_cardinal:period_end\":\"String\",\"seamark:beacon_cardinal:period_start\":\"String\",\"seamark:beacon_cardinal:reflectivity\":\"String\",\"seamark:beacon_cardinal:shape\":\"String\",\"seamark:beacon_cardinal:shape:system\":\"String\",\"seamark:beacon_cardinal:status\":\"String\",\"seamark:beacon_isolated_danger:categroy\":\"String\",\"seamark:beacon_isolated_danger:colour\":\"String\",\"seamark:beacon_isolated_danger:colour_pattern\":\"String\",\"seamark:beacon_isolated_danger:conspicuity\":\"String\",\"seamark:beacon_isolated_danger:construction\":\"String\",\"seamark:beacon_isolated_danger:depth\":\"String\",\"seamark:beacon_isolated_danger:height\":\"String\",\"seamark:beacon_isolated_danger:pattern\":\"String\",\"seamark:beacon_isolated_danger:shape\":\"String\",\"seamark:beacon_isolated_danger:status\":\"String\",\"seamark:beacon_isolated_danger:vertical_length\":\"String\",\"seamark:beacon_lateral:category\":\"String\",\"seamark:beacon_lateral:colour\":\"String\",\"seamark:beacon_lateral:colour_pattern\":\"String\",\"seamark:beacon_lateral:conspicuity\":\"String\",\"seamark:beacon_lateral:construction\":\"String\",\"seamark:beacon_lateral:depth\":\"String\",\"seamark:beacon_lateral:elevation\":\"String\",\"seamark:beacon_lateral:height\":\"String\",\"seamark:beacon_lateral:impact\":\"String\",\"seamark:beacon_lateral:information\":\"String\",\"seamark:beacon_lateral:name\":\"String\",\"seamark:beacon_lateral:national_information\":\"String\",\"seamark:beacon_lateral:period_end\":\"String\",\"seamark:beacon_lateral:period_start\":\"String\",\"seamark:beacon_lateral:ref\":\"String\",\"seamark:beacon_lateral:reflectivity\":\"String\",\"seamark:beacon_lateral:shape\":\"String\",\"seamark:beacon_lateral:source\":\"String\",\"seamark:beacon_lateral:source_date\":\"String\",\"seamark:beacon_lateral:status\":\"String\",\"seamark:beacon_lateral:system\":\"String\",\"seamark:beacon_lateral:vertical_length\":\"String\",\"seamark:beacon_leading:colour\":\"String\",\"seamark:beacon_leading:shape\":\"String\",\"seamark:beacon_safe_water:colour\":\"String\",\"seamark:beacon_safe_water:colour_pattern\":\"String\",\"seamark:beacon_safe_water:construction\":\"String\",\"seamark:beacon_safe_water:shape\":\"String\",\"seamark:beacon_special_purpose\":\"String\",\"seamark:beacon_special_purpose:category\":\"String\",\"seamark:beacon_special_purpose:colour\":\"String\",\"seamark:beacon_special_purpose:colour_pattern\":\"String\",\"seamark:beacon_special_purpose:conspicuity\":\"String\",\"seamark:beacon_special_purpose:construction\":\"String\",\"seamark:beacon_special_purpose:depth\":\"String\",\"seamark:beacon_special_purpose:elevation\":\"String\",\"seamark:beacon_special_purpose:function\":\"String\",\"seamark:beacon_special_purpose:height\":\"String\",\"seamark:beacon_special_purpose:information\":\"String\",\"seamark:beacon_special_purpose:material\":\"String\",\"seamark:beacon_special_purpose:national_information\":\"String\",\"seamark:beacon_special_purpose:period_end\":\"String\",\"seamark:beacon_special_purpose:period_start\":\"String\",\"seamark:beacon_special_purpose:ref\":\"String\",\"seamark:beacon_special_purpose:reference\":\"String\",\"seamark:beacon_special_purpose:reflectivity\":\"String\",\"seamark:beacon_special_purpose:shape\":\"String\",\"seamark:beacon_special_purpose:source\":\"String\",\"seamark:beacon_special_purpose:source_date\":\"String\",\"seamark:beacon_special_purpose:status\":\"String\",\"seamark:beacon_special_purpose:system\":\"String\",\"seamark:beacon_special_purpose:vertical_length\":\"String\",\"seamark:berth:category\":\"String\",\"seamark:berth:class\":\"String\",\"seamark:berth:clearance_length\":\"String\",\"seamark:berth:clearance_width\":\"String\",\"seamark:berth:danger_class\":\"String\",\"seamark:berth:goods\":\"String\",\"seamark:berth:information\":\"String\",\"seamark:berth:maximum_depth\":\"String\",\"seamark:berth:minimum_depth\":\"String\",\"seamark:berth:name\":\"String\",\"seamark:berth:restriction\":\"String\",\"seamark:berth:vertical_datum\":\"String\",\"seamark:bouy:special_purpose:category\":\"String\",\"seamark:bridge:2:category\":\"String\",\"seamark:bridge:2:clearance_height\":\"String\",\"seamark:bridge:2:clearance_width\":\"String\",\"seamark:bridge:callsign\":\"String\",\"seamark:bridge:category\":\"String\",\"seamark:bridge:channel\":\"String\",\"seamark:bridge:clearance_height\":\"String\",\"seamark:bridge:clearance_height:units\":\"String\",\"seamark:bridge:clearance_height_closed\":\"String\",\"seamark:bridge:clearance_height_open\":\"String\",\"seamark:bridge:clearance_height_safe\":\"String\",\"seamark:bridge:clearance_width\":\"String\",\"seamark:bridge:clearance_width:units\":\"String\",\"seamark:bridge:colour\":\"String\",\"seamark:bridge:condition\":\"String\",\"seamark:bridge:conspicuity\":\"String\",\"seamark:bridge:construction\":\"String\",\"seamark:bridge:name\":\"String\",\"seamark:bridge:units\":\"String\",\"seamark:bridge:vertical_datum\":\"String\",\"seamark:building:colour\":\"String\",\"seamark:building:conspicuity\":\"String\",\"seamark:building:construction\":\"String\",\"seamark:building:function\":\"String\",\"seamark:building:ref\":\"String\",\"seamark:building:shape\":\"String\",\"seamark:bunker_station:category\":\"String\",\"seamark:buoy:colour\":\"String\",\"seamark:buoy_cardinal:category\":\"String\",\"seamark:buoy_cardinal:character\":\"String\",\"seamark:buoy_cardinal:colour\":\"String\",\"seamark:buoy_cardinal:colour_pattern\":\"String\",\"seamark:buoy_cardinal:depth\":\"String\",\"seamark:buoy_cardinal:period_end\":\"String\",\"seamark:buoy_cardinal:period_start\":\"String\",\"seamark:buoy_cardinal:ref\":\"String\",\"seamark:buoy_cardinal:reflectivity\":\"String\",\"seamark:buoy_cardinal:shape\":\"String\",\"seamark:buoy_cardinal:shape:system\":\"String\",\"seamark:buoy_cardinal:source\":\"String\",\"seamark:buoy_cardinal:source_date\":\"String\",\"seamark:buoy_cardinal:status\":\"String\",\"seamark:buoy_cardinal:system\":\"String\",\"seamark:buoy_installation:category\":\"String\",\"seamark:buoy_installation:colour\":\"String\",\"seamark:buoy_installation:colour_pattern\":\"String\",\"seamark:buoy_installation:reflectivity\":\"String\",\"seamark:buoy_installation:shape\":\"String\",\"seamark:buoy_isolated_danger:colour\":\"String\",\"seamark:buoy_isolated_danger:colour_pattern\":\"String\",\"seamark:buoy_isolated_danger:information\":\"String\",\"seamark:buoy_isolated_danger:ref\":\"String\",\"seamark:buoy_isolated_danger:shape\":\"String\",\"seamark:buoy_isolated_danger:source\":\"String\",\"seamark:buoy_isolated_danger:source_date\":\"String\",\"seamark:buoy_isolated_danger:status\":\"String\",\"seamark:buoy_lateral:category\":\"String\",\"seamark:buoy_lateral:character\":\"String\",\"seamark:buoy_lateral:colour\":\"String\",\"seamark:buoy_lateral:colour_pattern\":\"String\",\"seamark:buoy_lateral:conspicuity\":\"String\",\"seamark:buoy_lateral:construction\":\"String\",\"seamark:buoy_lateral:depth\":\"String\",\"seamark:buoy_lateral:elevation\":\"String\",\"seamark:buoy_lateral:group\":\"String\",\"seamark:buoy_lateral:height\":\"String\",\"seamark:buoy_lateral:information\":\"String\",\"seamark:buoy_lateral:name\":\"String\",\"seamark:buoy_lateral:period_end\":\"String\",\"seamark:buoy_lateral:period_start\":\"String\",\"seamark:buoy_lateral:ref\":\"String\",\"seamark:buoy_lateral:reflectivity\":\"String\",\"seamark:buoy_lateral:shape\":\"String\",\"seamark:buoy_lateral:source\":\"String\",\"seamark:buoy_lateral:source_date\":\"String\",\"seamark:buoy_lateral:status\":\"String\",\"seamark:buoy_lateral:system\":\"String\",\"seamark:buoy_lateral:vertical_length\":\"String\",\"seamark:buoy_safe_water:category\":\"String\",\"seamark:buoy_safe_water:colour\":\"String\",\"seamark:buoy_safe_water:colour_pattern\":\"String\",\"seamark:buoy_safe_water:information\":\"String\",\"seamark:buoy_safe_water:period_end\":\"String\",\"seamark:buoy_safe_water:period_start\":\"String\",\"seamark:buoy_safe_water:ref\":\"String\",\"seamark:buoy_safe_water:shape\":\"String\",\"seamark:buoy_safe_water:source\":\"String\",\"seamark:buoy_safe_water:source_date\":\"String\",\"seamark:buoy_safe_water:status\":\"String\",\"seamark:buoy_safe_water:system\":\"String\",\"seamark:buoy_special_purpose\":\"String\",\"seamark:buoy_special_purpose:category\":\"String\",\"seamark:buoy_special_purpose:colour\":\"String\",\"seamark:buoy_special_purpose:colour_pattern\":\"String\",\"seamark:buoy_special_purpose:construction\":\"String\",\"seamark:buoy_special_purpose:depth\":\"String\",\"seamark:buoy_special_purpose:information\":\"String\",\"seamark:buoy_special_purpose:period_end\":\"String\",\"seamark:buoy_special_purpose:period_start\":\"String\",\"seamark:buoy_special_purpose:ref\":\"String\",\"seamark:buoy_special_purpose:reflectivity\":\"String\",\"seamark:buoy_special_purpose:restriction\":\"String\",\"seamark:buoy_special_purpose:shape\":\"String\",\"seamark:buoy_special_purpose:source\":\"String\",\"seamark:buoy_special_purpose:source_date\":\"String\",\"seamark:buoy_special_purpose:status\":\"String\",\"seamark:buoy_special_purpose:system\":\"String\",\"seamark:buoy_special_purposecolour\":\"String\",\"seamark:cable\":\"String\",\"seamark:cable_area:category\":\"String\",\"seamark:cable_area:clearance_height_safe\":\"String\",\"seamark:cable_area:restriction\":\"String\",\"seamark:cable_overhead:category\":\"String\",\"seamark:cable_overhead:clearance_height\":\"String\",\"seamark:cable_overhead:clearance_height_safe\":\"String\",\"seamark:cable_overhead:clearance_height_safe:units\":\"String\",\"seamark:cable_overhead:clearance_width\":\"String\",\"seamark:cable_overhead:vertical_clearance_safe\":\"String\",\"seamark:cable_submarine:category\":\"String\",\"seamark:cable_submarine:condition\":\"String\",\"seamark:cable_submarine:depth_buried\":\"String\",\"seamark:cable_submarine:name\":\"String\",\"seamark:cable_submarine:restriction\":\"String\",\"seamark:cable_submarine:status\":\"String\",\"seamark:calling-in_point:callsign\":\"String\",\"seamark:calling-in_point:category\":\"String\",\"seamark:calling-in_point:channel\":\"String\",\"seamark:calling-in_point:direction\":\"String\",\"seamark:calling-in_point:orientation\":\"String\",\"seamark:calling-in_point:status\":\"String\",\"seamark:calling-in_point:traffic_flow\":\"String\",\"seamark:category\":\"String\",\"seamark:category:gate\":\"String\",\"seamark:causeway:water_level\":\"String\",\"seamark:channel:category\":\"String\",\"seamark:coastguard_station:channel\":\"String\",\"seamark:colour\":\"String\",\"seamark:communication_area:callsign\":\"String\",\"seamark:communication_area:category\":\"String\",\"seamark:communication_area:channel\":\"String\",\"seamark:condition\":\"String\",\"seamark:conspicuity\":\"String\",\"seamark:construction\":\"String\",\"seamark:control_point:category\":\"String\",\"seamark:conveyor:category\":\"String\",\"seamark:conveyor:clearance_height\":\"String\",\"seamark:crane:category\":\"String\",\"seamark:crane:conspicuity\":\"String\",\"seamark:crane:maximum_load\":\"String\",\"seamark:dam:category\":\"String\",\"seamark:daymark:category\":\"String\",\"seamark:daymark:colour\":\"String\",\"seamark:daymark:colour_pattern\":\"String\",\"seamark:daymark:construction\":\"String\",\"seamark:daymark:height\":\"String\",\"seamark:daymark:information\":\"String\",\"seamark:daymark:ref\":\"String\",\"seamark:daymark:reference\":\"String\",\"seamark:daymark:shape\":\"String\",\"seamark:daymark:source\":\"String\",\"seamark:daymark:source_date\":\"String\",\"seamark:depth\":\"String\",\"seamark:description\":\"String\",\"seamark:distance_mark:category\":\"String\",\"seamark:distance_mark:distance\":\"String\",\"seamark:distance_mark:units\":\"String\",\"seamark:distance_mark:unit⁠\":\"String\",\"seamark:dredged_area:minimum_depth\":\"String\",\"seamark:dumping_ground:category\":\"String\",\"seamark:dumping_ground:restriction\":\"String\",\"seamark:dumping_ground:status\":\"String\",\"seamark:exceptional_structure:category\":\"String\",\"seamark:fairway:information\":\"String\",\"seamark:fairway:minimum_depth\":\"String\",\"seamark:fairway:orientation\":\"String\",\"seamark:fairway:restriction\":\"String\",\"seamark:ferry_route:category\":\"String\",\"seamark:fishing_facility:category\":\"String\",\"seamark:fixme\":\"String\",\"seamark:fog_signal\":\"String\",\"seamark:fog_signal:category\":\"String\",\"seamark:fog_signal:character\":\"String\",\"seamark:fog_signal:frequency\":\"String\",\"seamark:fog_signal:generation\":\"String\",\"seamark:fog_signal:group\":\"String\",\"seamark:fog_signal:information\":\"String\",\"seamark:fog_signal:period\":\"String\",\"seamark:fog_signal:range\":\"String\",\"seamark:fog_signal:ref\":\"String\",\"seamark:fog_signal:reference\":\"String\",\"seamark:fog_signal:sequence\":\"String\",\"seamark:fog_signal:source\":\"String\",\"seamark:fog_signal:source_date\":\"String\",\"seamark:fog_signal:status\":\"String\",\"seamark:fog_signal_source_date\":\"String\",\"seamark:fortified_structure:category\":\"String\",\"seamark:foundation:type\":\"String\",\"seamark:gate:category\":\"String\",\"seamark:gate:clearance_height\":\"String\",\"seamark:gate:clearance_height_closed\":\"String\",\"seamark:gate:clearance_height_open\":\"String\",\"seamark:gate:clearance_width\":\"String\",\"seamark:gate:condition\":\"String\",\"seamark:gate:minimum_depth\":\"String\",\"seamark:gate:vertical_datum\":\"String\",\"seamark:gate:water_level\":\"String\",\"seamark:harbour:category\":\"String\",\"seamark:harbour:name\":\"String\",\"seamark:harbour:restriction\":\"String\",\"seamark:harbour:type\":\"String\",\"seamark:harbour_basin:restriction\":\"String\",\"seamark:hulk:category\":\"String\",\"seamark:iho_int-1_type\":\"String\",\"seamark:iho_s-101\":\"String\",\"seamark:information\":\"String\",\"seamark:isolated_danger:colour\":\"String\",\"seamark:landmark:category\":\"String\",\"seamark:landmark:colour\":\"String\",\"seamark:landmark:colour_pattern\":\"String\",\"seamark:landmark:condition\":\"String\",\"seamark:landmark:conspicuity\":\"String\",\"seamark:landmark:construction\":\"String\",\"seamark:landmark:elevation\":\"String\",\"seamark:landmark:function\":\"String\",\"seamark:landmark:height\":\"String\",\"seamark:landmark:information\":\"String\",\"seamark:landmark:name\":\"String\",\"seamark:landmark:production_area\":\"String\",\"seamark:landmark:ref\":\"String\",\"seamark:landmark:reference\":\"String\",\"seamark:landmark:reflectivity\":\"String\",\"seamark:landmark:source\":\"String\",\"seamark:landmark:source_date\":\"String\",\"seamark:landmark:status\":\"String\",\"seamark:landmark:vertical_length\":\"String\",\"seamark:light:10:category\":\"String\",\"seamark:light:10:character\":\"String\",\"seamark:light:10:colour\":\"String\",\"seamark:light:10:exhibition\":\"String\",\"seamark:light:10:group\":\"String\",\"seamark:light:10:height\":\"String\",\"seamark:light:10:national_information\":\"String\",\"seamark:light:10:orientation\":\"String\",\"seamark:light:10:period\":\"String\",\"seamark:light:10:range\":\"String\",\"seamark:light:10:sector_end\":\"String\",\"seamark:light:10:sector_start\":\"String\",\"seamark:light:10:sequence\":\"String\",\"seamark:light:10:vertical_datum\":\"String\",\"seamark:light:10:visibility\":\"String\",\"seamark:light:11:category\":\"String\",\"seamark:light:11:character\":\"String\",\"seamark:light:11:colour\":\"String\",\"seamark:light:11:exhibition\":\"String\",\"seamark:light:11:group\":\"String\",\"seamark:light:11:height\":\"String\",\"seamark:light:11:national_information\":\"String\",\"seamark:light:11:period\":\"String\",\"seamark:light:11:range\":\"String\",\"seamark:light:11:sector_end\":\"String\",\"seamark:light:11:sector_start\":\"String\",\"seamark:light:11:sequence\":\"String\",\"seamark:light:11:vertical_datum\":\"String\",\"seamark:light:11:visibility\":\"String\",\"seamark:light:12:category\":\"String\",\"seamark:light:12:character\":\"String\",\"seamark:light:12:colour\":\"String\",\"seamark:light:12:exhibition\":\"String\",\"seamark:light:12:group\":\"String\",\"seamark:light:12:height\":\"String\",\"seamark:light:12:national_information\":\"String\",\"seamark:light:12:period\":\"String\",\"seamark:light:12:range\":\"String\",\"seamark:light:12:sector_end\":\"String\",\"seamark:light:12:sector_start\":\"String\",\"seamark:light:12:sequence\":\"String\",\"seamark:light:12:vertical_datum\":\"String\",\"seamark:light:12:visibility\":\"String\",\"seamark:light:13:category\":\"String\",\"seamark:light:13:character\":\"String\",\"seamark:light:13:colour\":\"String\",\"seamark:light:13:exhibition\":\"String\",\"seamark:light:13:group\":\"String\",\"seamark:light:13:height\":\"String\",\"seamark:light:13:national_information\":\"String\",\"seamark:light:13:period\":\"String\",\"seamark:light:13:range\":\"String\",\"seamark:light:13:sector_end\":\"String\",\"seamark:light:13:sector_start\":\"String\",\"seamark:light:13:sequence\":\"String\",\"seamark:light:13:vertical_datum\":\"String\",\"seamark:light:14:category\":\"String\",\"seamark:light:14:character\":\"String\",\"seamark:light:14:colour\":\"String\",\"seamark:light:14:exhibition\":\"String\",\"seamark:light:14:group\":\"String\",\"seamark:light:14:height\":\"String\",\"seamark:light:14:national_information\":\"String\",\"seamark:light:14:period\":\"String\",\"seamark:light:14:range\":\"String\",\"seamark:light:14:sector_end\":\"String\",\"seamark:light:14:sector_start\":\"String\",\"seamark:light:14:sequence\":\"String\",\"seamark:light:15:character\":\"String\",\"seamark:light:15:colour\":\"String\",\"seamark:light:15:exhibition\":\"String\",\"seamark:light:15:group\":\"String\",\"seamark:light:15:height\":\"String\",\"seamark:light:15:national_information\":\"String\",\"seamark:light:15:period\":\"String\",\"seamark:light:15:range\":\"String\",\"seamark:light:15:sector_end\":\"String\",\"seamark:light:15:sector_start\":\"String\",\"seamark:light:15:sequence\":\"String\",\"seamark:light:16:category\":\"String\",\"seamark:light:16:character\":\"String\",\"seamark:light:16:colour\":\"String\",\"seamark:light:16:exhibition\":\"String\",\"seamark:light:16:group\":\"String\",\"seamark:light:16:height\":\"String\",\"seamark:light:16:national_information\":\"String\",\"seamark:light:16:period\":\"String\",\"seamark:light:16:range\":\"String\",\"seamark:light:16:sector_end\":\"String\",\"seamark:light:16:sector_start\":\"String\",\"seamark:light:16:sequence\":\"String\",\"seamark:light:17:character\":\"String\",\"seamark:light:17:colour\":\"String\",\"seamark:light:17:exhibition\":\"String\",\"seamark:light:17:group\":\"String\",\"seamark:light:17:height\":\"String\",\"seamark:light:17:national_information\":\"String\",\"seamark:light:17:period\":\"String\",\"seamark:light:17:range\":\"String\",\"seamark:light:17:sector_end\":\"String\",\"seamark:light:17:sector_start\":\"String\",\"seamark:light:17:sequence\":\"String\",\"seamark:light:18:character\":\"String\",\"seamark:light:18:colour\":\"String\",\"seamark:light:18:exhibition\":\"String\",\"seamark:light:18:group\":\"String\",\"seamark:light:18:height\":\"String\",\"seamark:light:18:national_information\":\"String\",\"seamark:light:18:period\":\"String\",\"seamark:light:18:range\":\"String\",\"seamark:light:18:sector_end\":\"String\",\"seamark:light:18:sector_start\":\"String\",\"seamark:light:18:sequence\":\"String\",\"seamark:light:19:category\":\"String\",\"seamark:light:19:character\":\"String\",\"seamark:light:19:colour\":\"String\",\"seamark:light:19:group\":\"String\",\"seamark:light:19:height\":\"String\",\"seamark:light:19:national_information\":\"String\",\"seamark:light:19:period\":\"String\",\"seamark:light:19:range\":\"String\",\"seamark:light:19:sector_end\":\"String\",\"seamark:light:19:sector_start\":\"String\",\"seamark:light:19:sequence\":\"String\",\"seamark:light:1:category\":\"String\",\"seamark:light:1:character\":\"String\",\"seamark:light:1:colour\":\"String\",\"seamark:light:1:exhibition\":\"String\",\"seamark:light:1:group\":\"String\",\"seamark:light:1:height\":\"String\",\"seamark:light:1:information\":\"String\",\"seamark:light:1:multiple\":\"String\",\"seamark:light:1:national_information\":\"String\",\"seamark:light:1:note\":\"String\",\"seamark:light:1:orientation\":\"String\",\"seamark:light:1:period\":\"String\",\"seamark:light:1:range\":\"String\",\"seamark:light:1:reference\":\"String\",\"seamark:light:1:sector_end\":\"String\",\"seamark:light:1:sector_start\":\"String\",\"seamark:light:1:sequence\":\"String\",\"seamark:light:1:status\":\"String\",\"seamark:light:1:vertical_datum\":\"String\",\"seamark:light:1:visibility\":\"String\",\"seamark:light:20:character\":\"String\",\"seamark:light:20:colour\":\"String\",\"seamark:light:20:group\":\"String\",\"seamark:light:20:height\":\"String\",\"seamark:light:20:national_information\":\"String\",\"seamark:light:20:period\":\"String\",\"seamark:light:20:range\":\"String\",\"seamark:light:20:sector_end\":\"String\",\"seamark:light:20:sector_start\":\"String\",\"seamark:light:20:sequence\":\"String\",\"seamark:light:21:character\":\"String\",\"seamark:light:21:colour\":\"String\",\"seamark:light:21:group\":\"String\",\"seamark:light:21:height\":\"String\",\"seamark:light:21:national_information\":\"String\",\"seamark:light:21:period\":\"String\",\"seamark:light:21:range\":\"String\",\"seamark:light:21:sector_end\":\"String\",\"seamark:light:21:sector_start\":\"String\",\"seamark:light:21:sequence\":\"String\",\"seamark:light:22:character\":\"String\",\"seamark:light:22:colour\":\"String\",\"seamark:light:22:group\":\"String\",\"seamark:light:22:height\":\"String\",\"seamark:light:22:national_information\":\"String\",\"seamark:light:22:period\":\"String\",\"seamark:light:22:range\":\"String\",\"seamark:light:22:sector_end\":\"String\",\"seamark:light:22:sector_start\":\"String\",\"seamark:light:22:sequence\":\"String\",\"seamark:light:23:character\":\"String\",\"seamark:light:23:colour\":\"String\",\"seamark:light:23:group\":\"String\",\"seamark:light:23:height\":\"String\",\"seamark:light:23:national_information\":\"String\",\"seamark:light:23:period\":\"String\",\"seamark:light:23:range\":\"String\",\"seamark:light:23:sector_end\":\"String\",\"seamark:light:23:sector_start\":\"String\",\"seamark:light:23:sequence\":\"String\",\"seamark:light:24:character\":\"String\",\"seamark:light:24:colour\":\"String\",\"seamark:light:24:group\":\"String\",\"seamark:light:24:height\":\"String\",\"seamark:light:24:national_information\":\"String\",\"seamark:light:24:period\":\"String\",\"seamark:light:24:range\":\"String\",\"seamark:light:24:sector_end\":\"String\",\"seamark:light:24:sector_start\":\"String\",\"seamark:light:24:sequence\":\"String\",\"seamark:light:25:character\":\"String\",\"seamark:light:25:colour\":\"String\",\"seamark:light:25:group\":\"String\",\"seamark:light:25:height\":\"String\",\"seamark:light:25:national_information\":\"String\",\"seamark:light:25:period\":\"String\",\"seamark:light:25:range\":\"String\",\"seamark:light:25:sector_end\":\"String\",\"seamark:light:25:sector_start\":\"String\",\"seamark:light:25:sequence\":\"String\",\"seamark:light:26:character\":\"String\",\"seamark:light:26:colour\":\"String\",\"seamark:light:26:group\":\"String\",\"seamark:light:26:height\":\"String\",\"seamark:light:26:national_information\":\"String\",\"seamark:light:26:period\":\"String\",\"seamark:light:26:range\":\"String\",\"seamark:light:26:sector_end\":\"String\",\"seamark:light:26:sector_start\":\"String\",\"seamark:light:26:sequence\":\"String\",\"seamark:light:27:character\":\"String\",\"seamark:light:27:colour\":\"String\",\"seamark:light:27:group\":\"String\",\"seamark:light:27:height\":\"String\",\"seamark:light:27:national_information\":\"String\",\"seamark:light:27:period\":\"String\",\"seamark:light:27:range\":\"String\",\"seamark:light:27:sector_end\":\"String\",\"seamark:light:27:sector_start\":\"String\",\"seamark:light:27:sequence\":\"String\",\"seamark:light:2:category\":\"String\",\"seamark:light:2:character\":\"String\",\"seamark:light:2:colour\":\"String\",\"seamark:light:2:exhibition\":\"String\",\"seamark:light:2:group\":\"String\",\"seamark:light:2:height\":\"String\",\"seamark:light:2:information\":\"String\",\"seamark:light:2:multiple\":\"String\",\"seamark:light:2:national_information\":\"String\",\"seamark:light:2:note\":\"String\",\"seamark:light:2:orientation\":\"String\",\"seamark:light:2:period\":\"String\",\"seamark:light:2:range\":\"String\",\"seamark:light:2:reference\":\"String\",\"seamark:light:2:sector_end\":\"String\",\"seamark:light:2:sector_start\":\"String\",\"seamark:light:2:sequence\":\"String\",\"seamark:light:2:status\":\"String\",\"seamark:light:2:vertical_datum\":\"String\",\"seamark:light:2:visibility\":\"String\",\"seamark:light:3:category\":\"String\",\"seamark:light:3:character\":\"String\",\"seamark:light:3:colour\":\"String\",\"seamark:light:3:exhibition\":\"String\",\"seamark:light:3:group\":\"String\",\"seamark:light:3:height\":\"String\",\"seamark:light:3:multiple\":\"String\",\"seamark:light:3:national_information\":\"String\",\"seamark:light:3:note\":\"String\",\"seamark:light:3:orientation\":\"String\",\"seamark:light:3:period\":\"String\",\"seamark:light:3:range\":\"String\",\"seamark:light:3:sector_end\":\"String\",\"seamark:light:3:sector_start\":\"String\",\"seamark:light:3:sequence\":\"String\",\"seamark:light:3:status\":\"String\",\"seamark:light:3:vertical_datum\":\"String\",\"seamark:light:3:visibility\":\"String\",\"seamark:light:4:category\":\"String\",\"seamark:light:4:character\":\"String\",\"seamark:light:4:colour\":\"String\",\"seamark:light:4:exhibition\":\"String\",\"seamark:light:4:group\":\"String\",\"seamark:light:4:height\":\"String\",\"seamark:light:4:national_information\":\"String\",\"seamark:light:4:note\":\"String\",\"seamark:light:4:orientation\":\"String\",\"seamark:light:4:period\":\"String\",\"seamark:light:4:range\":\"String\",\"seamark:light:4:sector_end\":\"String\",\"seamark:light:4:sector_start\":\"String\",\"seamark:light:4:sequence\":\"String\",\"seamark:light:4:vertical_datum\":\"String\",\"seamark:light:4:visibility\":\"String\",\"seamark:light:5:category\":\"String\",\"seamark:light:5:character\":\"String\",\"seamark:light:5:colour\":\"String\",\"seamark:light:5:exhibition\":\"String\",\"seamark:light:5:group\":\"String\",\"seamark:light:5:height\":\"String\",\"seamark:light:5:national_information\":\"String\",\"seamark:light:5:orientation\":\"String\",\"seamark:light:5:period\":\"String\",\"seamark:light:5:range\":\"String\",\"seamark:light:5:sector_end\":\"String\",\"seamark:light:5:sector_start\":\"String\",\"seamark:light:5:sequence\":\"String\",\"seamark:light:5:vertical_datum\":\"String\",\"seamark:light:5:visibility\":\"String\",\"seamark:light:6:category\":\"String\",\"seamark:light:6:character\":\"String\",\"seamark:light:6:colour\":\"String\",\"seamark:light:6:exhibition\":\"String\",\"seamark:light:6:group\":\"String\",\"seamark:light:6:height\":\"String\",\"seamark:light:6:national_information\":\"String\",\"seamark:light:6:orientation\":\"String\",\"seamark:light:6:period\":\"String\",\"seamark:light:6:range\":\"String\",\"seamark:light:6:sector_end\":\"String\",\"seamark:light:6:sector_start\":\"String\",\"seamark:light:6:sequence\":\"String\",\"seamark:light:6:vertical_datum\":\"String\",\"seamark:light:6:visibility\":\"String\",\"seamark:light:7:category\":\"String\",\"seamark:light:7:character\":\"String\",\"seamark:light:7:colour\":\"String\",\"seamark:light:7:exhibition\":\"String\",\"seamark:light:7:group\":\"String\",\"seamark:light:7:height\":\"String\",\"seamark:light:7:national_information\":\"String\",\"seamark:light:7:orientation\":\"String\",\"seamark:light:7:period\":\"String\",\"seamark:light:7:range\":\"String\",\"seamark:light:7:sector_end\":\"String\",\"seamark:light:7:sector_start\":\"String\",\"seamark:light:7:sequence\":\"String\",\"seamark:light:7:vertical_datum\":\"String\",\"seamark:light:7:visibility\":\"String\",\"seamark:light:8:category\":\"String\",\"seamark:light:8:character\":\"String\",\"seamark:light:8:colour\":\"String\",\"seamark:light:8:exhibition\":\"String\",\"seamark:light:8:group\":\"String\",\"seamark:light:8:height\":\"String\",\"seamark:light:8:national_information\":\"String\",\"seamark:light:8:period\":\"String\",\"seamark:light:8:range\":\"String\",\"seamark:light:8:sector_end\":\"String\",\"seamark:light:8:sector_start\":\"String\",\"seamark:light:8:sequence\":\"String\",\"seamark:light:8:vertical_datum\":\"String\",\"seamark:light:8:visibility\":\"String\",\"seamark:light:9:category\":\"String\",\"seamark:light:9:character\":\"String\",\"seamark:light:9:colour\":\"String\",\"seamark:light:9:exhibition\":\"String\",\"seamark:light:9:group\":\"String\",\"seamark:light:9:height\":\"String\",\"seamark:light:9:multiple\":\"String\",\"seamark:light:9:national_information\":\"String\",\"seamark:light:9:orientation\":\"String\",\"seamark:light:9:period\":\"String\",\"seamark:light:9:range\":\"String\",\"seamark:light:9:sector_end\":\"String\",\"seamark:light:9:sector_start\":\"String\",\"seamark:light:9:sequence\":\"String\",\"seamark:light:9:vertical_datum\":\"String\",\"seamark:light:9:visibility\":\"String\",\"seamark:light:category\":\"String\",\"seamark:light:character\":\"String\",\"seamark:light:colour\":\"String\",\"seamark:light:emergency:category\":\"String\",\"seamark:light:emergency:character\":\"String\",\"seamark:light:emergency:colour\":\"String\",\"seamark:light:emergency:exhibition\":\"String\",\"seamark:light:emergency:group\":\"String\",\"seamark:light:emergency:height\":\"String\",\"seamark:light:emergency:information\":\"String\",\"seamark:light:emergency:period\":\"String\",\"seamark:light:emergency:range\":\"String\",\"seamark:light:emergency:ref\":\"String\",\"seamark:light:emergency:sequence\":\"String\",\"seamark:light:emergency:source\":\"String\",\"seamark:light:emergency:source_date\":\"String\",\"seamark:light:emergency:visibility\":\"String\",\"seamark:light:exhibition\":\"String\",\"seamark:light:group\":\"String\",\"seamark:light:height\":\"String\",\"seamark:light:information\":\"String\",\"seamark:light:multiple\":\"String\",\"seamark:light:name\":\"String\",\"seamark:light:number\":\"String\",\"seamark:light:orientation\":\"String\",\"seamark:light:period\":\"String\",\"seamark:light:period_end\":\"String\",\"seamark:light:period_start\":\"String\",\"seamark:light:range\":\"String\",\"seamark:light:ref\":\"String\",\"seamark:light:referemce\":\"String\",\"seamark:light:reference\":\"String\",\"seamark:light:reference:admiralty\":\"String\",\"seamark:light:reference:arlhs\":\"String\",\"seamark:light:reference:nga\":\"String\",\"seamark:light:sector_end\":\"String\",\"seamark:light:sector_start\":\"String\",\"seamark:light:sequence\":\"String\",\"seamark:light:siggrp\":\"String\",\"seamark:light:sigper\":\"String\",\"seamark:light:sigseq\":\"String\",\"seamark:light:source\":\"String\",\"seamark:light:source_date\":\"String\",\"seamark:light:status\":\"String\",\"seamark:light:valnmr\":\"String\",\"seamark:light:vertical_datum\":\"String\",\"seamark:light:vertical_length\":\"String\",\"seamark:light:visibility\":\"String\",\"seamark:light_float:colour\":\"String\",\"seamark:light_float:colour_pattern\":\"String\",\"seamark:light_float:system\":\"String\",\"seamark:light_major:colour\":\"String\",\"seamark:light_major:colour_pattern\":\"String\",\"seamark:light_major:height\":\"String\",\"seamark:light_minor:category\":\"String\",\"seamark:light_minor:colour\":\"String\",\"seamark:light_minor:colour_pattern\":\"String\",\"seamark:light_minor:elevation\":\"String\",\"seamark:light_minor:height\":\"String\",\"seamark:light_vessel:colour\":\"String\",\"seamark:light_vessel:colour_pattern\":\"String\",\"seamark:lnam\":\"String\",\"seamark:lock_basin:minimum_depth\":\"String\",\"seamark:marine_farm:category\":\"String\",\"seamark:marine_farm:period_end\":\"String\",\"seamark:marine_farm:period_start\":\"String\",\"seamark:marine_farm:restriction\":\"String\",\"seamark:marine_farm:water_level\":\"String\",\"seamark:military_area:category\":\"String\",\"seamark:military_area:restriction\":\"String\",\"seamark:mooring\":\"String\",\"seamark:mooring:category\":\"String\",\"seamark:mooring:colour\":\"String\",\"seamark:mooring:colour_pattern\":\"String\",\"seamark:mooring:condition\":\"String\",\"seamark:mooring:conspicuity\":\"String\",\"seamark:mooring:construction\":\"String\",\"seamark:mooring:period_end\":\"String\",\"seamark:mooring:period_start\":\"String\",\"seamark:mooring:reflectivity\":\"String\",\"seamark:mooring:shape\":\"String\",\"seamark:mooring:status\":\"String\",\"seamark:mooring:surface\":\"String\",\"seamark:mooring:water_level\":\"String\",\"seamark:name:ar\":\"String\",\"seamark:name:br\":\"String\",\"seamark:name:de\":\"String\",\"seamark:name:en\":\"String\",\"seamark:name:fa\":\"String\",\"seamark:name:fi\":\"String\",\"seamark:name:fr\":\"String\",\"seamark:name:hu\":\"String\",\"seamark:name:ru\":\"String\",\"seamark:name:zh\":\"String\",\"seamark:national_information\":\"String\",\"seamark:national_name\":\"String\",\"seamark:navigation_line:category\":\"String\",\"seamark:navigation_line:name\":\"String\",\"seamark:navigation_line:orientation\":\"String\",\"seamark:navigation_line:status\":\"String\",\"seamark:note\":\"String\",\"seamark:notice\":\"String\",\"seamark:notice:1:addition\":\"String\",\"seamark:notice:1:bank\":\"String\",\"seamark:notice:1:category\":\"String\",\"seamark:notice:1:distance_down\":\"String\",\"seamark:notice:1:distance_end\":\"String\",\"seamark:notice:1:distance_start\":\"String\",\"seamark:notice:1:distance_up\":\"String\",\"seamark:notice:1:function\":\"String\",\"seamark:notice:1:impact\":\"String\",\"seamark:notice:1:information\":\"String\",\"seamark:notice:1:national_information\":\"String\",\"seamark:notice:1:orientation\":\"String\",\"seamark:notice:1:status\":\"String\",\"seamark:notice:1:system\":\"String\",\"seamark:notice:21:system\":\"String\",\"seamark:notice:2:addition\":\"String\",\"seamark:notice:2:bank\":\"String\",\"seamark:notice:2:category\":\"String\",\"seamark:notice:2:direction\":\"String\",\"seamark:notice:2:distance_down\":\"String\",\"seamark:notice:2:distance_end\":\"String\",\"seamark:notice:2:distance_start\":\"String\",\"seamark:notice:2:distance_up\":\"String\",\"seamark:notice:2:function\":\"String\",\"seamark:notice:2:impact\":\"String\",\"seamark:notice:2:information\":\"String\",\"seamark:notice:2:national_information\":\"String\",\"seamark:notice:2:orientation\":\"String\",\"seamark:notice:2:status\":\"String\",\"seamark:notice:2:system\":\"String\",\"seamark:notice:3:addition\":\"String\",\"seamark:notice:3:category\":\"String\",\"seamark:notice:3:distance_down\":\"String\",\"seamark:notice:3:distance_end\":\"String\",\"seamark:notice:3:distance_start\":\"String\",\"seamark:notice:3:distance_up\":\"String\",\"seamark:notice:3:function\":\"String\",\"seamark:notice:3:impact\":\"String\",\"seamark:notice:3:information\":\"String\",\"seamark:notice:3:national_information\":\"String\",\"seamark:notice:3:orientation\":\"String\",\"seamark:notice:3:status\":\"String\",\"seamark:notice:3:system\":\"String\",\"seamark:notice:4:addition\":\"String\",\"seamark:notice:4:category\":\"String\",\"seamark:notice:4:distance_down\":\"String\",\"seamark:notice:4:distance_end\":\"String\",\"seamark:notice:4:distance_start\":\"String\",\"seamark:notice:4:distance_up\":\"String\",\"seamark:notice:4:function\":\"String\",\"seamark:notice:4:impact\":\"String\",\"seamark:notice:4:information\":\"String\",\"seamark:notice:4:national_information\":\"String\",\"seamark:notice:4:orientation\":\"String\",\"seamark:notice:4:status\":\"String\",\"seamark:notice:4:system\":\"String\",\"seamark:notice:5:addition\":\"String\",\"seamark:notice:5:category\":\"String\",\"seamark:notice:5:distance_down\":\"String\",\"seamark:notice:5:distance_end\":\"String\",\"seamark:notice:5:distance_start\":\"String\",\"seamark:notice:5:distance_up\":\"String\",\"seamark:notice:5:function\":\"String\",\"seamark:notice:5:impact\":\"String\",\"seamark:notice:5:information\":\"String\",\"seamark:notice:5:orientation\":\"String\",\"seamark:notice:6:addition\":\"String\",\"seamark:notice:6:category\":\"String\",\"seamark:notice:6:distance_down\":\"String\",\"seamark:notice:6:distance_end\":\"String\",\"seamark:notice:6:distance_start\":\"String\",\"seamark:notice:6:distance_up\":\"String\",\"seamark:notice:6:function\":\"String\",\"seamark:notice:6:impact\":\"String\",\"seamark:notice:6:information\":\"String\",\"seamark:notice:6:orientation\":\"String\",\"seamark:notice:addition\":\"String\",\"seamark:notice:bank\":\"String\",\"seamark:notice:category\":\"String\",\"seamark:notice:channel\":\"String\",\"seamark:notice:colour\":\"String\",\"seamark:notice:direction\":\"String\",\"seamark:notice:distance\":\"String\",\"seamark:notice:distance_down\":\"String\",\"seamark:notice:distance_end\":\"String\",\"seamark:notice:distance_start\":\"String\",\"seamark:notice:distance_up\":\"String\",\"seamark:notice:function\":\"String\",\"seamark:notice:function:information\":\"String\",\"seamark:notice:impact\":\"String\",\"seamark:notice:information\":\"String\",\"seamark:notice:information:de\":\"String\",\"seamark:notice:national_information\":\"String\",\"seamark:notice:orientation\":\"String\",\"seamark:notice:status\":\"String\",\"seamark:notice:system\":\"String\",\"seamark:notice:value\":\"String\",\"seamark:notice:visibility\":\"String\",\"seamark:obstruction\":\"String\",\"seamark:obstruction:category\":\"String\",\"seamark:obstruction:condition\":\"String\",\"seamark:obstruction:depth\":\"String\",\"seamark:obstruction:height\":\"String\",\"seamark:obstruction:restriction\":\"String\",\"seamark:obstruction:status\":\"String\",\"seamark:obstruction:surface\":\"String\",\"seamark:obstruction:surface_qualification\":\"String\",\"seamark:obstruction:vertical_datum\":\"String\",\"seamark:obstruction:water_level\":\"String\",\"seamark:oil_barrier:category\":\"String\",\"seamark:operator\":\"String\",\"seamark:owner\":\"String\",\"seamark:period_end\":\"String\",\"seamark:period_start\":\"String\",\"seamark:pile:category\":\"String\",\"seamark:pile:colour\":\"String\",\"seamark:pile:condition\":\"String\",\"seamark:pile:conspicuity\":\"String\",\"seamark:pile:construction\":\"String\",\"seamark:pile:name\":\"String\",\"seamark:pile:status\":\"String\",\"seamark:pile:vertical_length\":\"String\",\"seamark:pile:water_level\":\"String\",\"seamark:pilot_boarding:category\":\"String\",\"seamark:pilot_boarding:channel\":\"String\",\"seamark:pilot_boarding:information\":\"String\",\"seamark:pilot_boarding:national_information\":\"String\",\"seamark:pipeline_area:category\":\"String\",\"seamark:pipeline_area:product\":\"String\",\"seamark:pipeline_area:restriction\":\"String\",\"seamark:pipeline_overhead:category\":\"String\",\"seamark:pipeline_overhead:clearance_height\":\"String\",\"seamark:pipeline_overhead:product\":\"String\",\"seamark:pipeline_submarine:category\":\"String\",\"seamark:pipeline_submarine:condition\":\"String\",\"seamark:pipeline_submarine:depth_buried\":\"String\",\"seamark:pipeline_submarine:information\":\"String\",\"seamark:pipeline_submarine:name\":\"String\",\"seamark:pipeline_submarine:product\":\"String\",\"seamark:pipeline_submarine:restriction\":\"String\",\"seamark:pipeline_submarine:status\":\"String\",\"seamark:pipeline_submarine:substance\":\"String\",\"seamark:platform:category\":\"String\",\"seamark:platform:colour\":\"String\",\"seamark:platform:colour_pattern\":\"String\",\"seamark:platform:conspicuity\":\"String\",\"seamark:platform:construction\":\"String\",\"seamark:platform:height\":\"String\",\"seamark:platform:product\":\"String\",\"seamark:platform:reflectivity\":\"String\",\"seamark:platform:restriction\":\"String\",\"seamark:platform:status\":\"String\",\"seamark:platform:vertical_length\":\"String\",\"seamark:platform:visibility\":\"String\",\"seamark:pontoon:construction\":\"String\",\"seamark:pontoon:water_level\":\"String\",\"seamark:power_supply:category\":\"String\",\"seamark:precautionary_area\":\"String\",\"seamark:precautionary_area:information\":\"String\",\"seamark:precautionary_area:restriction\":\"String\",\"seamark:production_area:category\":\"String\",\"seamark:production_area:condition\":\"String\",\"seamark:production_area:product\":\"String\",\"seamark:production_area:restriction\":\"String\",\"seamark:pumping_station:category\":\"String\",\"seamark:pylon:category\":\"String\",\"seamark:pylon:condition\":\"String\",\"seamark:pylon:construction\":\"String\",\"seamark:pylon:name\":\"String\",\"seamark:pylon:status\":\"String\",\"seamark:pylon:water_level\":\"String\",\"seamark:radar_reflector\":\"String\",\"seamark:radar_station:category\":\"String\",\"seamark:radar_station:channel\":\"String\",\"seamark:radar_station:conspicuity\":\"String\",\"seamark:radar_transponder\":\"String\",\"seamark:radar_transponder:category\":\"String\",\"seamark:radar_transponder:group\":\"String\",\"seamark:radar_transponder:height\":\"String\",\"seamark:radar_transponder:mmsi\":\"String\",\"seamark:radar_transponder:period\":\"String\",\"seamark:radar_transponder:period_end\":\"String\",\"seamark:radar_transponder:period_start\":\"String\",\"seamark:radar_transponder:range\":\"String\",\"seamark:radar_transponder:sector_end\":\"String\",\"seamark:radar_transponder:sector_start\":\"String\",\"seamark:radar_transponder:sequence\":\"String\",\"seamark:radar_transponder:status\":\"String\",\"seamark:radar_transponder:wavelength\":\"String\",\"seamark:radio_station:callsign\":\"String\",\"seamark:radio_station:category\":\"String\",\"seamark:radio_station:channel\":\"String\",\"seamark:radio_station:frequency\":\"String\",\"seamark:radio_station:group\":\"String\",\"seamark:radio_station:mmsi\":\"String\",\"seamark:radio_station:name\":\"String\",\"seamark:radio_station:range\":\"String\",\"seamark:recommended_track:category\":\"String\",\"seamark:recommended_track:maximum_depth\":\"String\",\"seamark:recommended_track:minimum_depth\":\"String\",\"seamark:recommended_track:name\":\"String\",\"seamark:recommended_track:orientation\":\"String\",\"seamark:recommended_track:status\":\"String\",\"seamark:recommended_track:traffic_flow\":\"String\",\"seamark:recommended_traffic_lane:orientation\":\"String\",\"seamark:ref\":\"String\",\"seamark:reference\":\"String\",\"seamark:reflectivity\":\"String\",\"seamark:rescue\":\"String\",\"seamark:rescue_station:category\":\"String\",\"seamark:restriced_area:information\":\"String\",\"seamark:restricted_area:category\":\"String\",\"seamark:restricted_area:information\":\"String\",\"seamark:restricted_area:information:en\":\"String\",\"seamark:restricted_area:maximum_depth\":\"String\",\"seamark:restricted_area:minimum_depth\":\"String\",\"seamark:restricted_area:name\":\"String\",\"seamark:restricted_area:national_information\":\"String\",\"seamark:restricted_area:perend\":\"String\",\"seamark:restricted_area:period_end\":\"String\",\"seamark:restricted_area:period_start\":\"String\",\"seamark:restricted_area:persta\":\"String\",\"seamark:restricted_area:restriction\":\"String\",\"seamark:restricted_area:restriction:conditional\":\"String\",\"seamark:restricted_area:schedule\":\"String\",\"seamark:restricted_area:status\":\"String\",\"seamark:restricted_area:surface\":\"String\",\"seamark:retro_reflector\":\"String\",\"seamark:retro_reflector:colour\":\"String\",\"seamark:rock:awash\":\"String\",\"seamark:rock:category\":\"String\",\"seamark:rock:depth\":\"String\",\"seamark:rock:exposition\":\"String\",\"seamark:rock:minimum_depth\":\"String\",\"seamark:rock:quality\":\"String\",\"seamark:rock:status\":\"String\",\"seamark:rock:vertical_datum\":\"String\",\"seamark:rock:water_level\":\"String\",\"seamark:safe_water:colour\":\"String\",\"seamark:safe_water:colour_pattern\":\"String\",\"seamark:safe_water:shape\":\"String\",\"seamark:safety_distance\":\"String\",\"seamark:sea_area:category\":\"String\",\"seamark:sea_area:restriction\":\"String\",\"seamark:sea_area_category\":\"String\",\"seamark:seabed_area:minimum_depth\":\"String\",\"seamark:seabed_area:quality\":\"String\",\"seamark:seabed_area:surface\":\"String\",\"seamark:seabed_area:surface_qualification\":\"String\",\"seamark:seabed_area:water_level\":\"String\",\"seamark:seagrass:category\":\"String\",\"seamark:seaplane_landing_area:restriction\":\"String\",\"seamark:separation_lane:orientation\":\"String\",\"seamark:separation_zone:category\":\"String\",\"seamark:shallow_water\":\"String\",\"seamark:shape\":\"String\",\"seamark:shoreline_construction:category\":\"String\",\"seamark:shoreline_construction:conspicuity\":\"String\",\"seamark:shoreline_construction:construction\":\"String\",\"seamark:shoreline_construction:restriction\":\"String\",\"seamark:shoreline_construction:status\":\"String\",\"seamark:shoreline_construction:water_level\":\"String\",\"seamark:sign:category\":\"String\",\"seamark:sign:shape\":\"String\",\"seamark:sign:waterway\":\"String\",\"seamark:signal_station:category\":\"String\",\"seamark:signal_station_traffic:callsign\":\"String\",\"seamark:signal_station_traffic:category\":\"String\",\"seamark:signal_station_traffic:channel\":\"String\",\"seamark:signal_station_traffic:impact\":\"String\",\"seamark:signal_station_traffic:information\":\"String\",\"seamark:signal_station_traffic:name\":\"String\",\"seamark:signal_station_traffic:orientation\":\"String\",\"seamark:signal_station_warning:category\":\"String\",\"seamark:signal_station_warning:channel\":\"String\",\"seamark:signal_station_warning:information\":\"String\",\"seamark:signal_station_warning:national_information\":\"String\",\"seamark:signal_station_warning:status\":\"String\",\"seamark:small_craft_facility\":\"String\",\"seamark:small_craft_facility:category\":\"String\",\"seamark:small_craft_facility:information\":\"String\",\"seamark:sounding:value\":\"String\",\"seamark:source\":\"String\",\"seamark:source:id\":\"String\",\"seamark:source_date\":\"String\",\"seamark:special_purpose:category\":\"String\",\"seamark:status\":\"String\",\"seamark:swept_area:minimum_depth\":\"String\",\"seamark:tank:category\":\"String\",\"seamark:tank:colour\":\"String\",\"seamark:tank:conspicuity\":\"String\",\"seamark:terminal:goods\":\"String\",\"seamark:topmark\":\"String\",\"seamark:topmark:colour\":\"String\",\"seamark:topmark:colour_pattern\":\"String\",\"seamark:topmark:construction\":\"String\",\"seamark:topmark:information\":\"String\",\"seamark:topmark:national_information\":\"String\",\"seamark:topmark:orientation\":\"String\",\"seamark:topmark:ref\":\"String\",\"seamark:topmark:shape\":\"String\",\"seamark:topmark:source\":\"String\",\"seamark:topmark:source_date\":\"String\",\"seamark:topmark:status\":\"String\",\"seamark:turning_basin:clearance_width\":\"String\",\"seamark:turning_basin:minimum_depth\":\"String\",\"seamark:type:1\":\"String\",\"seamark:type:2\":\"String\",\"seamark:type:3\":\"String\",\"seamark:type:category\":\"String\",\"seamark:type:gate\":\"String\",\"seamark:type:harbour:category\":\"String\",\"seamark:type:notice\":\"String\",\"seamark:type:obstruction\":\"String\",\"seamark:type:rock\":\"String\",\"seamark:valid\":\"String\",\"seamark:vegetation:category\":\"String\",\"seamark:vertical_length\":\"String\",\"seamark:virtual_aton:category\":\"String\",\"seamark:virtual_aton:mmsi\":\"String\",\"seamark:virtual_aton:name\":\"String\",\"seamark:virtual_aton:ref\":\"String\",\"seamark:wall:category\":\"String\",\"seamark:water_level\":\"String\",\"seamark:water_supply:category\":\"String\",\"seamark:water_turbulence:category\":\"String\",\"seamark:waterway_gauge:category\":\"String\",\"seamark:waterway_gauge:colour\":\"String\",\"seamark:waterway_gauge:orientation\":\"String\",\"seamark:waterway_gauge:reference\":\"String\",\"seamark:website\":\"String\",\"seamark:weed:category\":\"String\",\"seamark:wreck:category\":\"String\",\"seamark:wreck:conspicuity\":\"String\",\"seamark:wreck:depth\":\"String\",\"seamark:wreck:information\":\"String\",\"seamark:wreck:marked\":\"String\",\"seamark:wreck:reflectivity\":\"String\",\"seamark:wreck:restriction\":\"String\",\"seamark:wreck:status\":\"String\",\"seamark:wreck:water_level\":\"String\",\"seamark_type\":\"String\",\"seasonal\":\"String\",\"seasonal_normalized\":\"String\",\"seasonal_raw\":\"String\",\"segregated_normalized\":\"String\",\"segregated_raw\":\"String\",\"service_normalized\":\"String\",\"service_raw\":\"String\",\"shelter_normalized\":\"String\",\"shelter_raw\":\"String\",\"shelter_type\":\"String\",\"shower\":\"String\",\"ski:nordic_normalized\":\"String\",\"ski:nordic_raw\":\"String\",\"ski_normalized\":\"String\",\"ski_raw\":\"String\",\"smoothness_normalized\":\"String\",\"smoothness_raw\":\"String\",\"snowmobile_normalized\":\"String\",\"snowmobile_raw\":\"String\",\"sport\":\"String\",\"step_count_normalized\":\"Number\",\"step_count_raw\":\"String\",\"subclass\":\"String\",\"surface_normalized\":\"String\",\"surface_raw\":\"String\",\"tents\":\"String\",\"tidal_normalized\":\"String\",\"tidal_raw\":\"String\",\"toilets\":\"String\",\"tracktype_normalized\":\"String\",\"tracktype_raw\":\"String\",\"traffic_calming_normalized\":\"String\",\"traffic_calming_raw\":\"String\",\"trail_visibility_normalized\":\"String\",\"trail_visibility_raw\":\"String\",\"trailblazed:visibility_normalized\":\"String\",\"trailblazed:visibility_raw\":\"String\",\"trailblazed_normalized\":\"String\",\"trailblazed_raw\":\"String\",\"tunnel_normalized\":\"String\",\"tunnel_raw\":\"String\",\"usage_normalized\":\"String\",\"usage_raw\":\"String\",\"vehicle:backward_normalized\":\"String\",\"vehicle:backward_raw\":\"String\",\"vehicle:conditional\":\"String\",\"vehicle:forward:conditional\":\"String\",\"vehicle:forward_normalized\":\"String\",\"vehicle:forward_raw\":\"String\",\"vehicle_normalized\":\"String\",\"vehicle_raw\":\"String\",\"via_ferrata_scale_normalized\":\"String\",\"via_ferrata_scale_raw\":\"String\",\"website\":\"String\",\"wheelchair\":\"String\",\"wheelchair:conditional\":\"String\",\"wheelchair_normalized\":\"String\",\"wheelchair_raw\":\"String\",\"whitewater\":\"String\",\"width\":\"String\",\"width_m\":\"Number\",\"width_raw\":\"String\",\"winter_road_normalized\":\"String\",\"winter_road_raw\":\"String\",\"winter_service_normalized\":\"String\",\"winter_service_raw\":\"String\"},\"minzoom\":11,\"maxzoom\":14},{\"id\":\"polygon_label\",\"fields\":{\"class\":\"String\",\"line_available\":\"Boolean\",\"name\":\"String\",\"name:am\":\"String\",\"name:ar\":\"String\",\"name:az\":\"String\",\"name:be\":\"String\",\"name:bg\":\"String\",\"name:bn\":\"String\",\"name:br\":\"String\",\"name:bs\":\"String\",\"name:ca\":\"String\",\"name:co\":\"String\",\"name:cs\":\"String\",\"name:cy\":\"String\",\"name:da\":\"String\",\"name:de\":\"String\",\"name:el\":\"String\",\"name:en\":\"String\",\"name:eo\":\"String\",\"name:es\":\"String\",\"name:et\":\"String\",\"name:eu\":\"String\",\"name:fa\":\"String\",\"name:fi\":\"String\",\"name:fr\":\"String\",\"name:fy\":\"String\",\"name:ga\":\"String\",\"name:gd\":\"String\",\"name:he\":\"String\",\"name:hi\":\"String\",\"name:hr\":\"String\",\"name:hu\":\"String\",\"name:hy\":\"String\",\"name:id\":\"String\",\"name:is\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ja-Hira\":\"String\",\"name:ja-Latn\":\"String\",\"name:ja_kana\":\"String\",\"name:ja_rm\":\"String\",\"name:ka\":\"String\",\"name:kk\":\"String\",\"name:kn\":\"String\",\"name:ko\":\"String\",\"name:ko-Latn\":\"String\",\"name:ku\":\"String\",\"name:la\":\"String\",\"name:latin\":\"String\",\"name:lb\":\"String\",\"name:lt\":\"String\",\"name:lv\":\"String\",\"name:mk\":\"String\",\"name:ml\":\"String\",\"name:mt\":\"String\",\"name:nl\":\"String\",\"name:no\":\"String\",\"name:nonlatin\":\"String\",\"name:oc\":\"String\",\"name:pa\":\"String\",\"name:pl\":\"String\",\"name:pnb\":\"String\",\"name:pt\":\"String\",\"name:rm\":\"String\",\"name:ro\":\"String\",\"name:ru\":\"String\",\"name:sk\":\"String\",\"name:sl\":\"String\",\"name:sq\":\"String\",\"name:sr\":\"String\",\"name:sr-Latn\":\"String\",\"name:sv\":\"String\",\"name:ta\":\"String\",\"name:te\":\"String\",\"name:th\":\"String\",\"name:tr\":\"String\",\"name:uk\":\"String\",\"name:ur\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name:zh-Hans\":\"String\",\"name:zh-Hant\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\",\"placement\":\"String\"},\"minzoom\":5,\"maxzoom\":14},{\"id\":\"trail_segment_label\",\"fields\":{\"bearing\":\"Number\",\"length_m\":\"Number\",\"loop\":\"Number\"},\"minzoom\":14,\"maxzoom\":14},{\"id\":\"transportation\",\"fields\":{\"4wd_only_normalized\":\"String\",\"4wd_only_raw\":\"String\",\"abandoned:highway\":\"String\",\"abandoned_raw\":\"String\",\"access\":\"String\",\"access:backward:conditional\":\"String\",\"access:backward_normalized\":\"String\",\"access:backward_raw\":\"String\",\"access:conditional\":\"String\",\"access:forward:conditional\":\"String\",\"access:forward_normalized\":\"String\",\"access:forward_raw\":\"String\",\"access_normalized\":\"String\",\"access_raw\":\"String\",\"agricultural:backward:conditional\":\"String\",\"agricultural:backward_normalized\":\"String\",\"agricultural:backward_raw\":\"String\",\"agricultural:conditional\":\"String\",\"agricultural:forward:conditional\":\"String\",\"agricultural:forward_normalized\":\"String\",\"agricultural:forward_raw\":\"String\",\"agricultural_normalized\":\"String\",\"agricultural_raw\":\"String\",\"atv:backward_normalized\":\"String\",\"atv:backward_raw\":\"String\",\"atv:conditional\":\"String\",\"atv:forward_normalized\":\"String\",\"atv:forward_raw\":\"String\",\"atv_normalized\":\"String\",\"atv_raw\":\"String\",\"barrier_normalized\":\"String\",\"barrier_raw\":\"String\",\"bicycle\":\"String\",\"bicycle:backward:conditional\":\"String\",\"bicycle:backward_normalized\":\"String\",\"bicycle:backward_raw\":\"String\",\"bicycle:conditional\":\"String\",\"bicycle:forward:conditional\":\"String\",\"bicycle:forward_normalized\":\"String\",\"bicycle:forward_raw\":\"String\",\"bicycle_normalized\":\"String\",\"bicycle_raw\":\"String\",\"bridge_normalized\":\"String\",\"bridge_raw\":\"String\",\"brunnel\":\"String\",\"class\":\"String\",\"construction:highway\":\"String\",\"construction_raw\":\"String\",\"crossing:signals_normalized\":\"String\",\"crossing:signals_raw\":\"String\",\"crossing_normalized\":\"String\",\"crossing_raw\":\"String\",\"demolished:highway\":\"String\",\"demolished_raw\":\"String\",\"depth_m\":\"Number\",\"depth_raw\":\"String\",\"designation_normalized\":\"String\",\"designation_raw\":\"String\",\"destroyed:highway\":\"String\",\"destroyed_raw\":\"String\",\"disused:highway\":\"String\",\"disused_raw\":\"String\",\"dog:conditional\":\"String\",\"dog:forward_normalized\":\"String\",\"dog:forward_raw\":\"String\",\"dog_normalized\":\"String\",\"dog_raw\":\"String\",\"est_width_m\":\"Number\",\"est_width_raw\":\"String\",\"expressway\":\"Number\",\"fee:conditional\":\"String\",\"fee_normalized\":\"String\",\"fee_raw\":\"String\",\"flood_prone_normalized\":\"String\",\"flood_prone_raw\":\"String\",\"foot\":\"String\",\"foot:backward:conditional\":\"String\",\"foot:backward_normalized\":\"String\",\"foot:backward_raw\":\"String\",\"foot:conditional\":\"String\",\"foot:forward_normalized\":\"String\",\"foot:forward_raw\":\"String\",\"foot_normalized\":\"String\",\"foot_raw\":\"String\",\"ford_normalized\":\"String\",\"ford_raw\":\"String\",\"forestry:backward_normalized\":\"String\",\"forestry:backward_raw\":\"String\",\"forestry:conditional\":\"String\",\"forestry_normalized\":\"String\",\"forestry_raw\":\"String\",\"handrail:left_normalized\":\"String\",\"handrail:left_raw\":\"String\",\"handrail:right_normalized\":\"String\",\"handrail:right_raw\":\"String\",\"handrail_normalized\":\"String\",\"handrail_raw\":\"String\",\"hazard:animal_normalized\":\"String\",\"hazard:animal_raw\":\"String\",\"hazard_normalized\":\"String\",\"hazard_raw\":\"String\",\"hgv:backward:conditional\":\"String\",\"hgv:backward_normalized\":\"String\",\"hgv:backward_raw\":\"String\",\"hgv:conditional\":\"String\",\"hgv:forward:conditional\":\"String\",\"hgv:forward_normalized\":\"String\",\"hgv:forward_raw\":\"String\",\"hgv_normalized\":\"String\",\"hgv_raw\":\"String\",\"highway_normalized\":\"String\",\"highway_raw\":\"String\",\"horse\":\"String\",\"horse:backward_normalized\":\"String\",\"horse:backward_raw\":\"String\",\"horse:conditional\":\"String\",\"horse:forward:conditional\":\"String\",\"horse:forward_normalized\":\"String\",\"horse:forward_raw\":\"String\",\"horse_normalized\":\"String\",\"horse_raw\":\"String\",\"ice_road_normalized\":\"String\",\"ice_road_raw\":\"String\",\"incline_direction\":\"String\",\"incline_percent\":\"Number\",\"incline_raw\":\"String\",\"indoor\":\"Number\",\"informal_normalized\":\"String\",\"informal_raw\":\"String\",\"intermittent_normalized\":\"String\",\"intermittent_raw\":\"String\",\"junction_normalized\":\"String\",\"junction_raw\":\"String\",\"ladder_normalized\":\"String\",\"ladder_raw\":\"String\",\"layer\":\"Number\",\"level\":\"Number\",\"lifecycle\":\"String\",\"lit_normalized\":\"String\",\"lit_raw\":\"String\",\"locked_normalized\":\"String\",\"locked_raw\":\"String\",\"maintained_normalized\":\"String\",\"maintained_raw\":\"String\",\"maintenance_normalized\":\"String\",\"maintenance_raw\":\"String\",\"maxaxleload:conditional\":\"String\",\"maxaxleload_kg\":\"Number\",\"maxaxleload_raw\":\"String\",\"maxheight:conditional\":\"String\",\"maxheight:physical_m\":\"Number\",\"maxheight:physical_raw\":\"String\",\"maxheight_m\":\"Number\",\"maxheight_raw\":\"String\",\"maxlength:conditional\":\"String\",\"maxlength_m\":\"Number\",\"maxlength_raw\":\"String\",\"maxspeed:conditional\":\"String\",\"maxspeed_kmh\":\"Number\",\"maxspeed_raw\":\"String\",\"maxweight:conditional\":\"String\",\"maxweight_kg\":\"Number\",\"maxweight_raw\":\"String\",\"maxwidth:conditional\":\"String\",\"maxwidth:physical_m\":\"Number\",\"maxwidth:physical_raw\":\"String\",\"maxwidth_m\":\"Number\",\"maxwidth_raw\":\"String\",\"motor_vehicle:backward:conditional\":\"String\",\"motor_vehicle:backward_normalized\":\"String\",\"motor_vehicle:backward_raw\":\"String\",\"motor_vehicle:conditional\":\"String\",\"motor_vehicle:forward:conditional\":\"String\",\"motor_vehicle:forward_normalized\":\"String\",\"motor_vehicle:forward_raw\":\"String\",\"motor_vehicle_normalized\":\"String\",\"motor_vehicle_raw\":\"String\",\"motorcar:backward:conditional\":\"String\",\"motorcar:backward_normalized\":\"String\",\"motorcar:backward_raw\":\"String\",\"motorcar:conditional\":\"String\",\"motorcar:forward:conditional\":\"String\",\"motorcar:forward_normalized\":\"String\",\"motorcar:forward_raw\":\"String\",\"motorcar_normalized\":\"String\",\"motorcar_raw\":\"String\",\"motorcycle:backward:conditional\":\"String\",\"motorcycle:backward_normalized\":\"String\",\"motorcycle:backward_raw\":\"String\",\"motorcycle:conditional\":\"String\",\"motorcycle:forward:conditional\":\"String\",\"motorcycle:forward_normalized\":\"String\",\"motorcycle:forward_raw\":\"String\",\"motorcycle_normalized\":\"String\",\"motorcycle_raw\":\"String\",\"mtb:description\":\"String\",\"mtb:scale:amtb\":\"String\",\"mtb:scale:amtb:inclusive\":\"String\",\"mtb:scale:amtb:technical\":\"String\",\"mtb:scale:imba_normalized\":\"String\",\"mtb:scale:imba_raw\":\"String\",\"mtb:scale:uphill_normalized\":\"String\",\"mtb:scale:uphill_raw\":\"String\",\"mtb:scale_normalized\":\"String\",\"mtb:scale_raw\":\"String\",\"mtb_scale\":\"String\",\"network\":\"String\",\"obstacle_normalized\":\"String\",\"obstacle_raw\":\"String\",\"ohv:conditional\":\"String\",\"ohv_normalized\":\"String\",\"ohv_raw\":\"String\",\"oneway\":\"Number\",\"oneway:bicycle:conditional\":\"String\",\"oneway:bicycle_normalized\":\"Number\",\"oneway:bicycle_raw\":\"String\",\"oneway:conditional\":\"String\",\"oneway:foot_normalized\":\"Number\",\"oneway:foot_raw\":\"String\",\"oneway:horse_normalized\":\"Number\",\"oneway:horse_raw\":\"String\",\"oneway:motor_vehicle:conditional\":\"String\",\"oneway:motor_vehicle_normalized\":\"Number\",\"oneway:motor_vehicle_raw\":\"String\",\"oneway:motorcar:conditional\":\"String\",\"oneway:motorcar_normalized\":\"Number\",\"oneway:motorcar_raw\":\"String\",\"oneway:motorcycle:conditional\":\"String\",\"oneway:motorcycle_normalized\":\"Number\",\"oneway:motorcycle_raw\":\"String\",\"oneway:vehicle:conditional\":\"String\",\"oneway:vehicle_normalized\":\"Number\",\"oneway:vehicle_raw\":\"String\",\"oneway_normalized\":\"Number\",\"oneway_raw\":\"String\",\"outdoor:check_date\":\"String\",\"outdoor:check_date:access\":\"String\",\"outdoor:description\":\"String\",\"outdoor:description:en\":\"String\",\"outdoor:name\":\"String\",\"outdoor:opening_hours\":\"String\",\"outdoor:opening_hours:conditional\":\"String\",\"outdoor:operator\":\"String\",\"outdoor:operator:type\":\"String\",\"outdoor:owner\":\"String\",\"outdoor:ref\":\"String\",\"outdoor:source\":\"String\",\"outdoor:source:access\":\"String\",\"outdoor:source:date\":\"String\",\"outdoor:source:surface\":\"String\",\"outdoor:survey:date\":\"String\",\"outdoor:url\":\"String\",\"outdoor:website\":\"String\",\"patrolled\":\"String\",\"piste:difficulty_normalized\":\"String\",\"piste:difficulty_raw\":\"String\",\"piste:grooming_normalized\":\"String\",\"piste:grooming_raw\":\"String\",\"piste:name\":\"String\",\"piste:ref\":\"String\",\"piste:type_normalized\":\"String\",\"piste:type_raw\":\"String\",\"piste_type\":\"String\",\"proposed:highway\":\"String\",\"proposed_raw\":\"String\",\"ramp\":\"Number\",\"ramp:bicycle_normalized\":\"String\",\"ramp:bicycle_raw\":\"String\",\"ramp:wheelchair_normalized\":\"String\",\"ramp:wheelchair_raw\":\"String\",\"ramp_normalized\":\"String\",\"ramp_raw\":\"String\",\"razed:highway\":\"String\",\"razed_raw\":\"String\",\"removed:highway\":\"String\",\"removed_raw\":\"String\",\"sac_scale\":\"String\",\"sac_scale_normalized\":\"String\",\"sac_scale_raw\":\"String\",\"safety_rope_normalized\":\"String\",\"safety_rope_raw\":\"String\",\"seasonal_normalized\":\"String\",\"seasonal_raw\":\"String\",\"segregated_normalized\":\"String\",\"segregated_raw\":\"String\",\"service\":\"String\",\"service_normalized\":\"String\",\"service_raw\":\"String\",\"shelter_normalized\":\"String\",\"shelter_raw\":\"String\",\"ski:alpine_normalized\":\"String\",\"ski:alpine_raw\":\"String\",\"ski:conditional\":\"String\",\"ski:nordic:conditional\":\"String\",\"ski:nordic_normalized\":\"String\",\"ski:nordic_raw\":\"String\",\"ski_normalized\":\"String\",\"ski_raw\":\"String\",\"smoothness_normalized\":\"String\",\"smoothness_raw\":\"String\",\"snowmobile:conditional\":\"String\",\"snowmobile_normalized\":\"String\",\"snowmobile_raw\":\"String\",\"step_count_normalized\":\"Number\",\"step_count_raw\":\"String\",\"subclass\":\"String\",\"surface\":\"String\",\"surface_normalized\":\"String\",\"surface_raw\":\"String\",\"tidal_normalized\":\"String\",\"tidal_raw\":\"String\",\"toll\":\"Number\",\"tracktype_normalized\":\"String\",\"tracktype_raw\":\"String\",\"traffic_calming_normalized\":\"String\",\"traffic_calming_raw\":\"String\",\"trail_marking_normalized\":\"String\",\"trail_marking_raw\":\"String\",\"trail_visibility\":\"String\",\"trail_visibility_normalized\":\"String\",\"trail_visibility_raw\":\"String\",\"trailblazed:visibility_normalized\":\"String\",\"trailblazed:visibility_raw\":\"String\",\"trailblazed_normalized\":\"String\",\"trailblazed_raw\":\"String\",\"tunnel_normalized\":\"String\",\"tunnel_raw\":\"String\",\"usage_normalized\":\"String\",\"usage_raw\":\"String\",\"vehicle:backward:conditional\":\"String\",\"vehicle:backward_normalized\":\"String\",\"vehicle:backward_raw\":\"String\",\"vehicle:conditional\":\"String\",\"vehicle:forward:conditional\":\"String\",\"vehicle:forward_normalized\":\"String\",\"vehicle:forward_raw\":\"String\",\"vehicle_normalized\":\"String\",\"vehicle_raw\":\"String\",\"via_ferrata_scale_normalized\":\"String\",\"via_ferrata_scale_raw\":\"String\",\"wheelchair:conditional\":\"String\",\"wheelchair_normalized\":\"String\",\"wheelchair_raw\":\"String\",\"width_m\":\"Number\",\"width_raw\":\"String\",\"winter_road_normalized\":\"String\",\"winter_road_raw\":\"String\",\"winter_service_normalized\":\"String\",\"winter_service_raw\":\"String\"},\"minzoom\":4,\"maxzoom\":14},{\"id\":\"transportation_name\",\"fields\":{\"class\":\"String\",\"indoor\":\"Number\",\"layer\":\"Number\",\"level\":\"Number\",\"name\":\"String\",\"name:am\":\"String\",\"name:ar\":\"String\",\"name:az\":\"String\",\"name:be\":\"String\",\"name:bg\":\"String\",\"name:bn\":\"String\",\"name:br\":\"String\",\"name:bs\":\"String\",\"name:ca\":\"String\",\"name:co\":\"String\",\"name:cs\":\"String\",\"name:cy\":\"String\",\"name:da\":\"String\",\"name:de\":\"String\",\"name:el\":\"String\",\"name:en\":\"String\",\"name:eo\":\"String\",\"name:es\":\"String\",\"name:et\":\"String\",\"name:eu\":\"String\",\"name:fa\":\"String\",\"name:fi\":\"String\",\"name:fr\":\"String\",\"name:fy\":\"String\",\"name:ga\":\"String\",\"name:gd\":\"String\",\"name:he\":\"String\",\"name:hi\":\"String\",\"name:hr\":\"String\",\"name:hu\":\"String\",\"name:hy\":\"String\",\"name:id\":\"String\",\"name:is\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ja-Hira\":\"String\",\"name:ja-Latn\":\"String\",\"name:ja_kana\":\"String\",\"name:ja_rm\":\"String\",\"name:ka\":\"String\",\"name:kk\":\"String\",\"name:kn\":\"String\",\"name:ko\":\"String\",\"name:ko-Latn\":\"String\",\"name:ku\":\"String\",\"name:la\":\"String\",\"name:latin\":\"String\",\"name:lb\":\"String\",\"name:lt\":\"String\",\"name:lv\":\"String\",\"name:mk\":\"String\",\"name:ml\":\"String\",\"name:mt\":\"String\",\"name:nl\":\"String\",\"name:no\":\"String\",\"name:nonlatin\":\"String\",\"name:oc\":\"String\",\"name:pa\":\"String\",\"name:pl\":\"String\",\"name:pnb\":\"String\",\"name:pt\":\"String\",\"name:rm\":\"String\",\"name:ro\":\"String\",\"name:ru\":\"String\",\"name:sk\":\"String\",\"name:sl\":\"String\",\"name:sq\":\"String\",\"name:sr\":\"String\",\"name:sr-Latn\":\"String\",\"name:sv\":\"String\",\"name:ta\":\"String\",\"name:te\":\"String\",\"name:th\":\"String\",\"name:tr\":\"String\",\"name:uk\":\"String\",\"name:ur\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name:zh-Hans\":\"String\",\"name:zh-Hant\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\",\"network\":\"String\",\"ref\":\"String\",\"ref_length\":\"Number\",\"route_10_name\":\"String\",\"route_10_network\":\"String\",\"route_10_type\":\"String\",\"route_1_colour\":\"String\",\"route_1_name\":\"String\",\"route_1_network\":\"String\",\"route_1_osmc:symbol\":\"String\",\"route_1_piste:difficulty\":\"String\",\"route_1_piste:grooming\":\"String\",\"route_1_piste:type\":\"String\",\"route_1_ref\":\"String\",\"route_1_type\":\"String\",\"route_2_colour\":\"String\",\"route_2_name\":\"String\",\"route_2_network\":\"String\",\"route_2_osmc:symbol\":\"String\",\"route_2_piste:difficulty\":\"String\",\"route_2_piste:type\":\"String\",\"route_2_ref\":\"String\",\"route_2_type\":\"String\",\"route_3_colour\":\"String\",\"route_3_name\":\"String\",\"route_3_network\":\"String\",\"route_3_osmc:symbol\":\"String\",\"route_3_ref\":\"String\",\"route_3_type\":\"String\",\"route_4_colour\":\"String\",\"route_4_name\":\"String\",\"route_4_network\":\"String\",\"route_4_osmc:symbol\":\"String\",\"route_4_ref\":\"String\",\"route_4_type\":\"String\",\"route_5_colour\":\"String\",\"route_5_name\":\"String\",\"route_5_network\":\"String\",\"route_5_ref\":\"String\",\"route_5_type\":\"String\",\"route_6_colour\":\"String\",\"route_6_name\":\"String\",\"route_6_network\":\"String\",\"route_6_ref\":\"String\",\"route_6_type\":\"String\",\"route_7_colour\":\"String\",\"route_7_name\":\"String\",\"route_7_network\":\"String\",\"route_7_ref\":\"String\",\"route_7_type\":\"String\",\"route_8_name\":\"String\",\"route_8_network\":\"String\",\"route_8_ref\":\"String\",\"route_8_type\":\"String\",\"route_9_name\":\"String\",\"route_9_network\":\"String\",\"route_9_ref\":\"String\",\"route_9_type\":\"String\",\"subclass\":\"String\"},\"minzoom\":6,\"maxzoom\":14},{\"id\":\"water\",\"fields\":{\"brunnel\":\"String\",\"class\":\"String\",\"id\":\"Number\",\"intermittent\":\"Number\"},\"minzoom\":0,\"maxzoom\":14},{\"id\":\"water_name\",\"fields\":{\"class\":\"String\",\"intermittent\":\"Number\",\"name\":\"String\",\"name:am\":\"String\",\"name:ar\":\"String\",\"name:az\":\"String\",\"name:be\":\"String\",\"name:bg\":\"String\",\"name:bn\":\"String\",\"name:br\":\"String\",\"name:bs\":\"String\",\"name:ca\":\"String\",\"name:co\":\"String\",\"name:cs\":\"String\",\"name:cy\":\"String\",\"name:da\":\"String\",\"name:de\":\"String\",\"name:el\":\"String\",\"name:en\":\"String\",\"name:eo\":\"String\",\"name:es\":\"String\",\"name:et\":\"String\",\"name:eu\":\"String\",\"name:fa\":\"String\",\"name:fi\":\"String\",\"name:fr\":\"String\",\"name:fy\":\"String\",\"name:ga\":\"String\",\"name:gd\":\"String\",\"name:he\":\"String\",\"name:hi\":\"String\",\"name:hr\":\"String\",\"name:hu\":\"String\",\"name:hy\":\"String\",\"name:id\":\"String\",\"name:is\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ja-Hira\":\"String\",\"name:ja-Latn\":\"String\",\"name:ja_rm\":\"String\",\"name:ka\":\"String\",\"name:kk\":\"String\",\"name:kn\":\"String\",\"name:ko\":\"String\",\"name:ko-Latn\":\"String\",\"name:ku\":\"String\",\"name:la\":\"String\",\"name:latin\":\"String\",\"name:lb\":\"String\",\"name:lt\":\"String\",\"name:lv\":\"String\",\"name:mk\":\"String\",\"name:ml\":\"String\",\"name:mt\":\"String\",\"name:nl\":\"String\",\"name:no\":\"String\",\"name:nonlatin\":\"String\",\"name:oc\":\"String\",\"name:pa\":\"String\",\"name:pl\":\"String\",\"name:pnb\":\"String\",\"name:pt\":\"String\",\"name:rm\":\"String\",\"name:ro\":\"String\",\"name:ru\":\"String\",\"name:sk\":\"String\",\"name:sl\":\"String\",\"name:sq\":\"String\",\"name:sr\":\"String\",\"name:sr-Latn\":\"String\",\"name:sv\":\"String\",\"name:ta\":\"String\",\"name:te\":\"String\",\"name:th\":\"String\",\"name:tr\":\"String\",\"name:uk\":\"String\",\"name:ur\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name:zh-Hans\":\"String\",\"name:zh-Hant\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\"},\"minzoom\":0,\"maxzoom\":14},{\"id\":\"waterway\",\"fields\":{\"access\":\"String\",\"access:conditional\":\"String\",\"boat\":\"String\",\"brunnel\":\"String\",\"canoe\":\"String\",\"class\":\"String\",\"height\":\"String\",\"intermittent\":\"Number\",\"name\":\"String\",\"name:am\":\"String\",\"name:ar\":\"String\",\"name:az\":\"String\",\"name:be\":\"String\",\"name:bg\":\"String\",\"name:bn\":\"String\",\"name:br\":\"String\",\"name:bs\":\"String\",\"name:ca\":\"String\",\"name:co\":\"String\",\"name:cs\":\"String\",\"name:cy\":\"String\",\"name:da\":\"String\",\"name:de\":\"String\",\"name:el\":\"String\",\"name:en\":\"String\",\"name:eo\":\"String\",\"name:es\":\"String\",\"name:et\":\"String\",\"name:eu\":\"String\",\"name:fa\":\"String\",\"name:fi\":\"String\",\"name:fr\":\"String\",\"name:fy\":\"String\",\"name:ga\":\"String\",\"name:gd\":\"String\",\"name:he\":\"String\",\"name:hi\":\"String\",\"name:hr\":\"String\",\"name:hu\":\"String\",\"name:hy\":\"String\",\"name:id\":\"String\",\"name:is\":\"String\",\"name:it\":\"String\",\"name:ja\":\"String\",\"name:ja-Hira\":\"String\",\"name:ja-Latn\":\"String\",\"name:ja_rm\":\"String\",\"name:ka\":\"String\",\"name:kk\":\"String\",\"name:kn\":\"String\",\"name:ko\":\"String\",\"name:ko-Latn\":\"String\",\"name:ku\":\"String\",\"name:la\":\"String\",\"name:latin\":\"String\",\"name:lb\":\"String\",\"name:lt\":\"String\",\"name:lv\":\"String\",\"name:mk\":\"String\",\"name:ml\":\"String\",\"name:mt\":\"String\",\"name:nl\":\"String\",\"name:no\":\"String\",\"name:nonlatin\":\"String\",\"name:oc\":\"String\",\"name:pa\":\"String\",\"name:pl\":\"String\",\"name:pnb\":\"String\",\"name:pt\":\"String\",\"name:rm\":\"String\",\"name:ro\":\"String\",\"name:ru\":\"String\",\"name:sk\":\"String\",\"name:sl\":\"String\",\"name:sq\":\"String\",\"name:sr\":\"String\",\"name:sr-Latn\":\"String\",\"name:sv\":\"String\",\"name:ta\":\"String\",\"name:te\":\"String\",\"name:th\":\"String\",\"name:tr\":\"String\",\"name:uk\":\"String\",\"name:ur\":\"String\",\"name:vi\":\"String\",\"name:zh\":\"String\",\"name:zh-Hans\":\"String\",\"name:zh-Hant\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"name_int\":\"String\",\"seasonal\":\"String\",\"tidal\":\"String\",\"whitewater\":\"String\",\"whitewater:section_name\":\"String\"},\"minzoom\":3,\"maxzoom\":14}]",
+    "zoom" : "0.0"
+  },
+  "directoryAddressedTiles" : 276920415,
+  "tileCountsByZoom" : {
+    "0" : 1,
+    "1" : 4,
+    "2" : 16,
+    "3" : 64,
+    "4" : 256,
+    "5" : 1024,
+    "6" : 4096,
+    "7" : 13977,
+    "8" : 55170,
+    "9" : 218478,
+    "10" : 863815,
+    "11" : 3398465,
+    "12" : 13355020,
+    "13" : 52557861,
+    "14" : 206452168
+  },
+  "sampleCoordinates" : 4255,
+  "sampleMissingCoordinates" : 0,
+  "decodedFeatures" : 783402,
+  "decodedTrailDistances" : 4287,
+  "sampleLayerFeatureCounts" : {
+    "aerodrome_label" : 106,
+    "aeroway" : 1179,
+    "boundary" : 4434,
+    "building" : 8057,
+    "housenumber" : 9224,
+    "landcover" : 21425,
+    "landuse" : 8773,
+    "mountain_peak" : 15218,
+    "outdoor" : 322,
+    "park" : 57597,
+    "place" : 109737,
+    "poi" : 192230,
+    "polygon_label" : 2965,
+    "trail_segment_label" : 4287,
+    "transportation" : 319854,
+    "transportation_name" : 9722,
+    "water" : 10647,
+    "water_name" : 3300,
+    "waterway" : 4325
+  },
+  "sampleDetails" : [ {
+    "tile" : "0/0/0",
+    "features" : 79,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 44868
+  }, {
+    "tile" : "1/0/0",
+    "features" : 164,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 97102
+  }, {
+    "tile" : "1/0/1",
+    "features" : 159,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 92397
+  }, {
+    "tile" : "1/1/1",
+    "features" : 154,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 94014
+  }, {
+    "tile" : "1/1/0",
+    "features" : 156,
+    "layers" : [ "boundary", "place", "water", "water_name" ],
+    "gzipBytes" : 113641
+  }, {
+    "tile" : "2/0/0",
+    "features" : 512,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 119276
+  }, {
+    "tile" : "2/1/0",
+    "features" : 1113,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 247252
+  }, {
+    "tile" : "2/1/1",
+    "features" : 1399,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 289995
+  }, {
+    "tile" : "2/0/1",
+    "features" : 810,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 158297
+  }, {
+    "tile" : "2/0/2",
+    "features" : 714,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 144842
+  }, {
+    "tile" : "2/0/3",
+    "features" : 264,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 42312
+  }, {
+    "tile" : "2/1/3",
+    "features" : 366,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 48995
+  }, {
+    "tile" : "2/1/2",
+    "features" : 1381,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 281636
+  }, {
+    "tile" : "2/2/2",
+    "features" : 1579,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 331813
+  }, {
+    "tile" : "2/2/3",
+    "features" : 405,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 58092
+  }, {
+    "tile" : "2/3/3",
+    "features" : 271,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 40307
+  }, {
+    "tile" : "2/3/2",
+    "features" : 1301,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 284002
+  }, {
+    "tile" : "2/3/1",
+    "features" : 1306,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 293584
+  }, {
+    "tile" : "2/2/1",
+    "features" : 1668,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 365652
+  }, {
+    "tile" : "2/2/0",
+    "features" : 1241,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 282223
+  }, {
+    "tile" : "2/3/0",
+    "features" : 1063,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 248242
+  }, {
+    "tile" : "3/0/0",
+    "features" : 7,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 1040
+  }, {
+    "tile" : "3/0/1",
+    "features" : 76,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 17926
+  }, {
+    "tile" : "3/1/1",
+    "features" : 107,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 28789
+  }, {
+    "tile" : "3/1/0",
+    "features" : 11,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 1949
+  }, {
+    "tile" : "3/2/0",
+    "features" : 27,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 5765
+  }, {
+    "tile" : "3/3/0",
+    "features" : 27,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 5025
+  }, {
+    "tile" : "3/3/1",
+    "features" : 313,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 112077
+  }, {
+    "tile" : "3/2/1",
+    "features" : 132,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 34692
+  }, {
+    "tile" : "3/2/2",
+    "features" : 469,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 108942
+  }, {
+    "tile" : "3/3/2",
+    "features" : 939,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 240315
+  }, {
+    "tile" : "3/3/3",
+    "features" : 1295,
+    "layers" : [ "boundary", "place", "water", "water_name" ],
+    "gzipBytes" : 287481
+  }, {
+    "tile" : "3/2/3",
+    "features" : 609,
+    "layers" : [ "boundary", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 131566
+  }, {
+    "tile" : "3/1/3",
+    "features" : 493,
+    "layers" : [ "boundary", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 98992
+  }, {
+    "tile" : "3/1/2",
+    "features" : 413,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 82481
+  }, {
+    "tile" : "3/0/2",
+    "features" : 216,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 47194
+  }, {
+    "tile" : "3/0/3",
+    "features" : 219,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 51951
+  }, {
+    "tile" : "3/0/4",
+    "features" : 162,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 40742
+  }, {
+    "tile" : "3/1/4",
+    "features" : 405,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 79958
+  }, {
+    "tile" : "3/1/5",
+    "features" : 186,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 30195
+  }, {
+    "tile" : "3/0/5",
+    "features" : 56,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 16102
+  }, {
+    "tile" : "3/0/6",
+    "features" : 27,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 5855
+  }, {
+    "tile" : "3/0/7",
+    "features" : 9,
+    "layers" : [ "landcover", "water" ],
+    "gzipBytes" : 1449
+  }, {
+    "tile" : "3/1/7",
+    "features" : 1,
+    "layers" : [ "landcover" ],
+    "gzipBytes" : 103
+  }, {
+    "tile" : "3/1/6",
+    "features" : 39,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 8420
+  }, {
+    "tile" : "3/2/6",
+    "features" : 49,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 13132
+  }, {
+    "tile" : "3/2/7",
+    "features" : 8,
+    "layers" : [ "landcover", "water" ],
+    "gzipBytes" : 1604
+  }, {
+    "tile" : "3/3/7",
+    "features" : 8,
+    "layers" : [ "landcover", "place", "water" ],
+    "gzipBytes" : 1962
+  }, {
+    "tile" : "3/3/6",
+    "features" : 31,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 10424
+  }, {
+    "tile" : "3/3/5",
+    "features" : 390,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 58757
+  }, {
+    "tile" : "3/2/5",
+    "features" : 245,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 40050
+  }, {
+    "tile" : "3/2/4",
+    "features" : 538,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 114982
+  }, {
+    "tile" : "3/3/4",
+    "features" : 1026,
+    "layers" : [ "boundary", "place", "water", "water_name" ],
+    "gzipBytes" : 185075
+  }, {
+    "tile" : "3/4/4",
+    "features" : 948,
+    "layers" : [ "boundary", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 195299
+  }, {
+    "tile" : "3/5/4",
+    "features" : 1063,
+    "layers" : [ "boundary", "place", "water", "water_name" ],
+    "gzipBytes" : 223958
+  }, {
+    "tile" : "3/5/5",
+    "features" : 251,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 40080
+  }, {
+    "tile" : "3/4/5",
+    "features" : 220,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 35095
+  }, {
+    "tile" : "3/4/6",
+    "features" : 14,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 6086
+  }, {
+    "tile" : "3/4/7",
+    "features" : 2,
+    "layers" : [ "landcover", "place" ],
+    "gzipBytes" : 1235
+  }, {
+    "tile" : "3/5/7",
+    "features" : 2,
+    "layers" : [ "landcover", "place" ],
+    "gzipBytes" : 1237
+  }, {
+    "tile" : "3/5/6",
+    "features" : 15,
+    "layers" : [ "landcover", "place", "water" ],
+    "gzipBytes" : 2870
+  }, {
+    "tile" : "3/6/6",
+    "features" : 15,
+    "layers" : [ "landcover", "place", "water" ],
+    "gzipBytes" : 4210
+  }, {
+    "tile" : "3/6/7",
+    "features" : 1,
+    "layers" : [ "landcover" ],
+    "gzipBytes" : 103
+  }, {
+    "tile" : "3/7/7",
+    "features" : 4,
+    "layers" : [ "landcover", "water" ],
+    "gzipBytes" : 753
+  }, {
+    "tile" : "3/7/6",
+    "features" : 33,
+    "layers" : [ "landcover", "place", "water" ],
+    "gzipBytes" : 5772
+  }, {
+    "tile" : "3/7/5",
+    "features" : 106,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 26535
+  }, {
+    "tile" : "3/6/5",
+    "features" : 123,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 28106
+  }, {
+    "tile" : "3/6/4",
+    "features" : 570,
+    "layers" : [ "boundary", "place", "water", "water_name" ],
+    "gzipBytes" : 148969
+  }, {
+    "tile" : "3/7/4",
+    "features" : 340,
+    "layers" : [ "boundary", "place", "water", "water_name" ],
+    "gzipBytes" : 91408
+  }, {
+    "tile" : "3/7/3",
+    "features" : 404,
+    "layers" : [ "boundary", "place", "water", "water_name" ],
+    "gzipBytes" : 105329
+  }, {
+    "tile" : "3/7/2",
+    "features" : 325,
+    "layers" : [ "boundary", "place", "water", "water_name" ],
+    "gzipBytes" : 88672
+  }, {
+    "tile" : "3/6/2",
+    "features" : 618,
+    "layers" : [ "boundary", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 166588
+  }, {
+    "tile" : "3/6/3",
+    "features" : 731,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 194841
+  }, {
+    "tile" : "3/5/3",
+    "features" : 1490,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 360322
+  }, {
+    "tile" : "3/4/3",
+    "features" : 1280,
+    "layers" : [ "boundary", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 315273
+  }, {
+    "tile" : "3/4/2",
+    "features" : 1114,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 297152
+  }, {
+    "tile" : "3/5/2",
+    "features" : 1224,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 323599
+  }, {
+    "tile" : "3/5/1",
+    "features" : 383,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 130658
+  }, {
+    "tile" : "3/4/1",
+    "features" : 356,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 124326
+  }, {
+    "tile" : "3/4/0",
+    "features" : 16,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 4497
+  }, {
+    "tile" : "3/5/0",
+    "features" : 34,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 5076
+  }, {
+    "tile" : "3/6/0",
+    "features" : 17,
+    "layers" : [ "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 3203
+  }, {
+    "tile" : "3/6/1",
+    "features" : 159,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 43679
+  }, {
+    "tile" : "3/7/1",
+    "features" : 92,
+    "layers" : [ "boundary", "landcover", "place", "water", "water_name" ],
+    "gzipBytes" : 24709
+  }, {
+    "tile" : "3/7/0",
+    "features" : 10,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 2093
+  }, {
+    "tile" : "4/0/0",
+    "features" : 1,
+    "layers" : [ "water" ],
+    "gzipBytes" : 86
+  }, {
+    "tile" : "4/1/0",
+    "features" : 1,
+    "layers" : [ "water" ],
+    "gzipBytes" : 81
+  }, {
+    "tile" : "4/1/1",
+    "features" : 1,
+    "layers" : [ "water" ],
+    "gzipBytes" : 79
+  }, {
+    "tile" : "4/0/1",
+    "features" : 1,
+    "layers" : [ "water" ],
+    "gzipBytes" : 86
+  }, {
+    "tile" : "4/0/2",
+    "features" : 5,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 831
+  }, {
+    "tile" : "4/0/3",
+    "features" : 28,
+    "layers" : [ "boundary", "park", "place", "water", "water_name" ],
+    "gzipBytes" : 9035
+  }, {
+    "tile" : "4/1/3",
+    "features" : 44,
+    "layers" : [ "boundary", "landcover", "park", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 11784
+  }, {
+    "tile" : "4/1/2",
+    "features" : 8,
+    "layers" : [ "place", "water", "water_name" ],
+    "gzipBytes" : 966
+  }, {
+    "tile" : "4/2/2",
+    "features" : 12,
+    "layers" : [ "boundary", "park", "place", "water", "water_name" ],
+    "gzipBytes" : 2144
+  }, {
+    "tile" : "4/2/3",
+    "features" : 63,
+    "layers" : [ "boundary", "park", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 19510
+  }, {
+    "tile" : "4/3/3",
+    "features" : 71,
+    "layers" : [ "boundary", "park", "place", "water", "water_name", "waterway" ],
+    "gzipBytes" : 23334
+  }, {
+    "tile" : "4/3/2",
+    "features" : 19,
+    "layers" : [ "boundary", "landcover", "park", "place", "water", "water_name" ],
+    "gzipBytes" : 7468
+  }, {
+    "tile" : "4/3/1",
+    "features" : 8,
+    "layers" : [ "boundary", "landcover", "park", "place", "water", "water_name" ],
+    "gzipBytes" : 2931
+  }, {
+    "tile" : "4/2/1",
+    "features" : 2,
+    "layers" : [ "place", "water" ],
+    "gzipBytes" : 246
+  }, {
+    "tile" : "4/2/0",
+    "features" : 1,
+    "layers" : [ "water" ],
+    "gzipBytes" : 81
+  }, {
+    "tile" : "14/4189/5825",
+    "features" : 27,
+    "layers" : [ "outdoor", "park", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 1658
+  }, {
+    "tile" : "14/4383/6107",
+    "features" : 436,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "mountain_peak", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "waterway" ],
+    "gzipBytes" : 22639
+  }, {
+    "tile" : "14/4673/6091",
+    "features" : 18,
+    "layers" : [ "park", "place", "poi", "trail_segment_label", "transportation", "transportation_name" ],
+    "gzipBytes" : 1216
+  }, {
+    "tile" : "14/5007/5923",
+    "features" : 106,
+    "layers" : [ "housenumber", "landcover", "mountain_peak", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 4835
+  }, {
+    "tile" : "14/8060/5293",
+    "features" : 4159,
+    "layers" : [ "building", "housenumber", "landcover", "landuse", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "waterway" ],
+    "gzipBytes" : 128558
+  }, {
+    "tile" : "14/7884/5382",
+    "features" : 47,
+    "layers" : [ "boundary", "building", "landcover", "landuse", "mountain_peak", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water_name", "waterway" ],
+    "gzipBytes" : 3968
+  }, {
+    "tile" : "14/8166/5972",
+    "features" : 679,
+    "layers" : [ "building", "housenumber", "landcover", "landuse", "outdoor", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water", "waterway" ],
+    "gzipBytes" : 39824
+  }, {
+    "tile" : "14/8028/6212",
+    "features" : 52,
+    "layers" : [ "boundary", "landcover", "outdoor", "trail_segment_label", "transportation", "transportation_name" ],
+    "gzipBytes" : 6301
+  }, {
+    "tile" : "14/4556/6369",
+    "features" : 53,
+    "layers" : [ "housenumber", "outdoor", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 3706
+  }, {
+    "tile" : "14/4208/6714",
+    "features" : 48,
+    "layers" : [ "landcover", "poi", "trail_segment_label", "transportation", "transportation_name", "water" ],
+    "gzipBytes" : 6481
+  }, {
+    "tile" : "14/3744/7213",
+    "features" : 32,
+    "layers" : [ "building", "landcover", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water", "waterway" ],
+    "gzipBytes" : 2107
+  }, {
+    "tile" : "14/2905/6479",
+    "features" : 17,
+    "layers" : [ "park", "poi", "trail_segment_label", "transportation", "transportation_name", "waterway" ],
+    "gzipBytes" : 1499
+  }, {
+    "tile" : "14/2925/6154",
+    "features" : 148,
+    "layers" : [ "boundary", "building", "landcover", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water_name" ],
+    "gzipBytes" : 10372
+  }, {
+    "tile" : "14/3520/6729",
+    "features" : 5,
+    "layers" : [ "trail_segment_label", "transportation" ],
+    "gzipBytes" : 413
+  }, {
+    "tile" : "14/3618/5722",
+    "features" : 24,
+    "layers" : [ "landcover", "trail_segment_label", "transportation", "transportation_name", "water", "waterway" ],
+    "gzipBytes" : 1465
+  }, {
+    "tile" : "14/2872/5473",
+    "features" : 12,
+    "layers" : [ "landcover", "trail_segment_label", "transportation", "waterway" ],
+    "gzipBytes" : 899
+  }, {
+    "tile" : "14/2932/5668",
+    "features" : 483,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "waterway" ],
+    "gzipBytes" : 27292
+  }, {
+    "tile" : "14/5402/9326",
+    "features" : 14,
+    "layers" : [ "boundary", "landcover", "trail_segment_label", "transportation", "transportation_name" ],
+    "gzipBytes" : 1170
+  }, {
+    "tile" : "14/4973/9600",
+    "features" : 2,
+    "layers" : [ "trail_segment_label", "transportation" ],
+    "gzipBytes" : 401
+  }, {
+    "tile" : "14/5765/8481",
+    "features" : 3,
+    "layers" : [ "landcover", "trail_segment_label", "transportation" ],
+    "gzipBytes" : 417
+  }, {
+    "tile" : "14/8877/8878",
+    "features" : 12,
+    "layers" : [ "place", "polygon_label", "trail_segment_label", "transportation", "transportation_name" ],
+    "gzipBytes" : 1285
+  }, {
+    "tile" : "14/9015/9774",
+    "features" : 3,
+    "layers" : [ "boundary", "trail_segment_label", "transportation" ],
+    "gzipBytes" : 370
+  }, {
+    "tile" : "14/9584/9047",
+    "features" : 5,
+    "layers" : [ "building", "trail_segment_label", "transportation" ],
+    "gzipBytes" : 2309
+  }, {
+    "tile" : "14/13611/8327",
+    "features" : 20,
+    "layers" : [ "building", "mountain_peak", "place", "trail_segment_label", "transportation", "waterway" ],
+    "gzipBytes" : 1410
+  }, {
+    "tile" : "14/14688/8376",
+    "features" : 4,
+    "layers" : [ "building", "place", "trail_segment_label", "transportation" ],
+    "gzipBytes" : 648
+  }, {
+    "tile" : "14/14783/10048",
+    "features" : 1224,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 53295
+  }, {
+    "tile" : "14/14691/5753",
+    "features" : 9,
+    "layers" : [ "landcover", "mountain_peak", "trail_segment_label", "transportation", "waterway" ],
+    "gzipBytes" : 868
+  }, {
+    "tile" : "14/13620/5481",
+    "features" : 10,
+    "layers" : [ "trail_segment_label", "transportation", "waterway" ],
+    "gzipBytes" : 726
+  }, {
+    "tile" : "14/13226/7137",
+    "features" : 33,
+    "layers" : [ "boundary", "landcover", "mountain_peak", "place", "trail_segment_label", "transportation" ],
+    "gzipBytes" : 2596
+  }, {
+    "tile" : "14/12882/7561",
+    "features" : 15,
+    "layers" : [ "boundary", "building", "landuse", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "water", "water_name" ],
+    "gzipBytes" : 2648
+  }, {
+    "tile" : "14/11568/7497",
+    "features" : 44,
+    "layers" : [ "boundary", "landcover", "landuse", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water_name", "waterway" ],
+    "gzipBytes" : 2952
+  }, {
+    "tile" : "14/11768/7277",
+    "features" : 16,
+    "layers" : [ "place", "poi", "trail_segment_label", "transportation", "waterway" ],
+    "gzipBytes" : 1524
+  }, {
+    "tile" : "14/12230/6917",
+    "features" : 10,
+    "layers" : [ "building", "landcover", "trail_segment_label", "transportation", "waterway" ],
+    "gzipBytes" : 2534
+  }, {
+    "tile" : "14/11638/6293",
+    "features" : 11,
+    "layers" : [ "place", "poi", "trail_segment_label", "transportation", "waterway" ],
+    "gzipBytes" : 1038
+  }, {
+    "tile" : "14/9384/6205",
+    "features" : 35,
+    "layers" : [ "boundary", "landcover", "outdoor", "park", "place", "trail_segment_label", "transportation", "waterway" ],
+    "gzipBytes" : 2707
+  }, {
+    "tile" : "14/9514/6716",
+    "features" : 514,
+    "layers" : [ "building", "housenumber", "landcover", "landuse", "outdoor", "park", "poi", "trail_segment_label", "transportation", "transportation_name", "water" ],
+    "gzipBytes" : 16411
+  }, {
+    "tile" : "14/9797/6180",
+    "features" : 15,
+    "layers" : [ "landcover", "mountain_peak", "place", "trail_segment_label", "transportation" ],
+    "gzipBytes" : 1299
+  }, {
+    "tile" : "14/9716/5547",
+    "features" : 48,
+    "layers" : [ "building", "landcover", "place", "trail_segment_label", "transportation", "transportation_name", "water" ],
+    "gzipBytes" : 2994
+  }, {
+    "tile" : "14/9300/5468",
+    "features" : 66,
+    "layers" : [ "building", "housenumber", "landuse", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "waterway" ],
+    "gzipBytes" : 4438
+  }, {
+    "tile" : "14/9448/5883",
+    "features" : 14,
+    "layers" : [ "boundary", "building", "landcover", "place", "poi", "trail_segment_label", "transportation", "transportation_name" ],
+    "gzipBytes" : 1019
+  }, {
+    "tile" : "14/9185/5781",
+    "features" : 432,
+    "layers" : [ "building", "housenumber", "landcover", "landuse", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water", "waterway" ],
+    "gzipBytes" : 9270
+  }, {
+    "tile" : "14/8709/5792",
+    "features" : 150,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "mountain_peak", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water_name", "waterway" ],
+    "gzipBytes" : 10307
+  }, {
+    "tile" : "14/8650/5956",
+    "features" : 588,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 26887
+  }, {
+    "tile" : "14/8345/5960",
+    "features" : 75,
+    "layers" : [ "boundary", "building", "landcover", "landuse", "outdoor", "park", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water" ],
+    "gzipBytes" : 4977
+  }, {
+    "tile" : "14/8484/5862",
+    "features" : 340,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water_name", "waterway" ],
+    "gzipBytes" : 15705
+  }, {
+    "tile" : "14/8513/5546",
+    "features" : 669,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water_name", "waterway" ],
+    "gzipBytes" : 25675
+  }, {
+    "tile" : "14/8192/5304",
+    "features" : 82,
+    "layers" : [ "boundary", "building", "landuse", "outdoor", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 5108
+  }, {
+    "tile" : "14/8609/5122",
+    "features" : 110,
+    "layers" : [ "aeroway", "boundary", "building", "housenumber", "landcover", "outdoor", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water", "waterway" ],
+    "gzipBytes" : 5805
+  }, {
+    "tile" : "14/8800/5540",
+    "features" : 372,
+    "layers" : [ "building", "housenumber", "landcover", "landuse", "mountain_peak", "outdoor", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 18310
+  }, {
+    "tile" : "14/9184/5437",
+    "features" : 365,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "place", "poi", "trail_segment_label", "transportation", "water", "waterway" ],
+    "gzipBytes" : 12848
+  }, {
+    "tile" : "14/8987/4491",
+    "features" : 5,
+    "layers" : [ "landcover", "trail_segment_label", "transportation", "transportation_name", "water_name" ],
+    "gzipBytes" : 667
+  }, {
+    "tile" : "14/9124/4157",
+    "features" : 27,
+    "layers" : [ "landcover", "place", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name" ],
+    "gzipBytes" : 2849
+  }, {
+    "tile" : "14/9459/4582",
+    "features" : 41,
+    "layers" : [ "building", "housenumber", "landcover", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name" ],
+    "gzipBytes" : 3015
+  }, {
+    "tile" : "14/9476/4701",
+    "features" : 10,
+    "layers" : [ "landcover", "trail_segment_label", "transportation", "transportation_name", "waterway" ],
+    "gzipBytes" : 1106
+  }, {
+    "tile" : "14/10732/4898",
+    "features" : 25,
+    "layers" : [ "landcover", "place", "trail_segment_label", "transportation", "waterway" ],
+    "gzipBytes" : 3131
+  }, {
+    "tile" : "14/10346/5122",
+    "features" : 15,
+    "layers" : [ "landcover", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "water_name" ],
+    "gzipBytes" : 1037
+  }, {
+    "tile" : "14/10326/5554",
+    "features" : 140,
+    "layers" : [ "boundary", "building", "housenumber", "landuse", "outdoor", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water", "waterway" ],
+    "gzipBytes" : 9650
+  }, {
+    "tile" : "14/9140/3734",
+    "features" : 70,
+    "layers" : [ "building", "housenumber", "landcover", "outdoor", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 6011
+  }, {
+    "tile" : "14/2588/5577",
+    "features" : 1139,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "mountain_peak", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 41893
+  }, {
+    "tile" : "14/2595/5548",
+    "features" : 1235,
+    "layers" : [ "building", "housenumber", "landcover", "landuse", "mountain_peak", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 55376
+  }, {
+    "tile" : "14/2588/5607",
+    "features" : 10525,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 333118
+  }, {
+    "tile" : "14/8298/5636",
+    "features" : 26907,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 862881
+  }, {
+    "tile" : "14/14549/6451",
+    "features" : 10033,
+    "layers" : [ "aeroway", "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 509953
+  }, {
+    "tile" : "14/12075/6878",
+    "features" : 7676,
+    "layers" : [ "aeroway", "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 423869
+  }, {
+    "tile" : "14/8544/5827",
+    "features" : 1997,
+    "layers" : [ "building", "housenumber", "landcover", "landuse", "mountain_peak", "outdoor", "place", "poi", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 85519
+  }, {
+    "tile" : "14/9030/9834",
+    "features" : 5609,
+    "layers" : [ "aeroway", "boundary", "building", "housenumber", "landcover", "landuse", "mountain_peak", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 204438
+  }, {
+    "tile" : "14/4975/9809",
+    "features" : 5109,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name" ],
+    "gzipBytes" : 148112
+  }, {
+    "tile" : "14/6225/9263",
+    "features" : 4369,
+    "layers" : [ "aeroway", "boundary", "building", "housenumber", "landcover", "landuse", "mountain_peak", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 201091
+  }, {
+    "tile" : "14/15073/9831",
+    "features" : 15669,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "mountain_peak", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 412023
+  }, {
+    "tile" : "14/16145/9998",
+    "features" : 17953,
+    "layers" : [ "aeroway", "building", "housenumber", "landcover", "landuse", "mountain_peak", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 477446
+  }, {
+    "tile" : "14/4825/6157",
+    "features" : 13793,
+    "layers" : [ "boundary", "building", "housenumber", "landcover", "landuse", "outdoor", "park", "place", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water", "water_name", "waterway" ],
+    "gzipBytes" : 498208
+  }, {
+    "tile" : "14/3386/6182",
+    "features" : 522,
+    "layers" : [ "building", "housenumber", "landcover", "landuse", "mountain_peak", "park", "poi", "polygon_label", "trail_segment_label", "transportation", "transportation_name", "water_name", "waterway" ],
+    "gzipBytes" : 21681
+  } ],
+  "scope" : "All directory coordinates checked; sampled MVT contents only. No exhaustive worldwide geometry/rendering certification."
+}

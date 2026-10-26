@@ -1,0 +1,232 @@
+{
+  "/Users/felixgourdeau/repos/outmap-landing-page/public/style/outmap-v7-light.json": {
+    "sha256": "3a89c88efa14b6597cf15b0b47dbd548883028c19854929de686b444a3ad7ba0",
+    "matchesPriorHash": true,
+    "poiPropertyReferences": {
+      "class": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_icon",
+        ".poi_transit_bus_label",
+        ".poi_transit"
+      ],
+      "subclass": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_icon",
+        ".poi_transit_bus_label"
+      ],
+      "name_en": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit"
+      ],
+      "name": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit"
+      ],
+      "name:latin": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit"
+      ],
+      "rank": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1"
+      ],
+      "name:nonlatin": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit"
+      ]
+    }
+  },
+  "/Users/felixgourdeau/repos/outmap-landing-page/public/style/outmap-v7.json": {
+    "sha256": "ba24d7afb9878510b484e9ceafbef40641269aa840a051d80a13b9bc8f236d9f",
+    "matchesPriorHash": true,
+    "poiPropertyReferences": {
+      "class": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_icon",
+        ".poi_transit_bus_label",
+        ".poi_transit",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_icon",
+        "_poi_transit_bus_label",
+        "_poi_transit"
+      ],
+      "subclass": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_icon",
+        ".poi_transit_bus_label",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_icon",
+        "_poi_transit_bus_label"
+      ],
+      "name_en": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_label",
+        "_poi_transit"
+      ],
+      "name": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_label",
+        "_poi_transit"
+      ],
+      "name:latin": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_label",
+        "_poi_transit"
+      ],
+      "rank": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1"
+      ],
+      "name:nonlatin": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_label",
+        "_poi_transit"
+      ]
+    }
+  },
+  "/Users/felixgourdeau/repos/outmap2/src/modules/page-map/styles/outmap-v7.json": {
+    "sha256": "88fa0d9022a3ee4da8d2178f399528d20be1b9365b56107e693e6fad68d6436d",
+    "matchesPriorHash": true,
+    "poiPropertyReferences": {
+      "class": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_icon",
+        ".poi_transit_bus_label",
+        ".poi_transit",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_icon",
+        "_poi_transit_bus_label",
+        "_poi_transit"
+      ],
+      "subclass": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_icon",
+        ".poi_transit_bus_label",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_icon",
+        "_poi_transit_bus_label"
+      ],
+      "name_en": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_label",
+        "_poi_transit"
+      ],
+      "name": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_label",
+        "_poi_transit"
+      ],
+      "name:latin": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_label",
+        "_poi_transit"
+      ],
+      "rank": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1"
+      ],
+      "name:nonlatin": [
+        ".poi_r20",
+        ".poi_r7",
+        ".poi_r1",
+        ".poi_transit_bus_label",
+        ".poi_transit",
+        "_poi_r20",
+        "_poi_r7",
+        "_poi_r1",
+        "_poi_transit_bus_label",
+        "_poi_transit"
+      ]
+    }
+  }
+}

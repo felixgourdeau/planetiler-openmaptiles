@@ -1,0 +1,12 @@
+[
+    {
+        "Id": "i-01aba0e926a279bec",
+        "State": "terminated",
+        "Reason": "User initiated"
+    },
+    {
+        "Id": "i-05710dfa1a41726fc",
+        "State": "terminated",
+        "Reason": "User initiated"
+    }
+]

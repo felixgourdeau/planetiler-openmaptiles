@@ -1,0 +1,128 @@
+{
+  "outmap-marine-wreck": {
+    "file": "outmap-marine-wreck.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-lighthouse": {
+    "file": "outmap-marine-lighthouse.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-buoy": {
+    "file": "outmap-marine-buoy.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-beacon": {
+    "file": "outmap-marine-beacon.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-slipway": {
+    "file": "outmap-marine-slipway.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-surfing": {
+    "file": "outmap-marine-surfing.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-marine_rock": {
+    "file": "outmap-marine-marine_rock.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-reef": {
+    "file": "outmap-marine-reef.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-shoal": {
+    "file": "outmap-marine-shoal.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-marina": {
+    "file": "outmap-marine-marina.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-dock": {
+    "file": "outmap-marine-dock.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-pier": {
+    "file": "outmap-marine-pier.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-swimming": {
+    "file": "outmap-marine-swimming.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-scuba_diving": {
+    "file": "outmap-marine-scuba_diving.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-canoe": {
+    "file": "outmap-marine-canoe.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-rowing": {
+    "file": "outmap-marine-rowing.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-sailing": {
+    "file": "outmap-marine-sailing.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-water_ski": {
+    "file": "outmap-marine-water_ski.png",
+    "width": 48,
+    "height": 48,
+    "pixelRatio": 2
+  },
+  "outmap-marine-shoal-pattern": {
+    "file": "outmap-marine-shoal-pattern.png",
+    "width": 64,
+    "height": 64,
+    "pixelRatio": 2
+  },
+  "outmap-marine-reef-pattern": {
+    "file": "outmap-marine-reef-pattern.png",
+    "width": 64,
+    "height": 64,
+    "pixelRatio": 2
+  },
+  "outmap-marine-tidal-pattern": {
+    "file": "outmap-marine-tidal-pattern.png",
+    "width": 64,
+    "height": 64,
+    "pixelRatio": 2
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "Role": {
+    "Path": "/",
+    "RoleName": "outmap-index-benchmark-20261026",
+    "RoleId": "AROAWN3NGYITB2UUYVXMH",
+    "Arn": "arn:aws:iam::442073793062:role/outmap-index-benchmark-20261026",
+    "CreateDate": "2026-10-26T02:01:27+00:00",
+    "AssumeRolePolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    }
+  }
+}

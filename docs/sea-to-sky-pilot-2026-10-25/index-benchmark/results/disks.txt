@@ -1,0 +1,10 @@
+NAME         MODEL                             SIZE MOUNTPOINT
+loop0                                           69M /snap/core22/2988
+loop1                                         24.3M /snap/amazon-ssm-agent/13348
+loop2                                         38.6M /snap/snapd/28255
+nvme0n1      Amazon Elastic Block Store         16G 
+├─nvme0n1p1                                     15G /
+├─nvme0n1p15                                    99M /boot/efi
+└─nvme0n1p16                                   923M /boot
+nvme1n1      Amazon EC2 NVMe Instance Storage  1.7T /mnt/index-benchmark
+nvme2n1      Amazon EC2 NVMe Instance Storage  1.7T 

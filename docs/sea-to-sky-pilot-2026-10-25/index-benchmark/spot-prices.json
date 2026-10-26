@@ -1,0 +1,9 @@
+[
+    {
+        "AvailabilityZone": "us-east-1a",
+        "InstanceType": "m7gd.16xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "1.278700",
+        "Timestamp": "2026-10-26T01:00:00+00:00"
+    }
+]

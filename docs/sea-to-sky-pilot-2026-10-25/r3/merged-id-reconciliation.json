@@ -1,0 +1,21 @@
+[ {
+  "representativeId" : 13404789632,
+  "unexplainedLengthPixels" : 0.0,
+  "oldLengthPixels" : 16.65889537901507,
+  "removedSourceWayIds" : [ 1340666623, 1340666624, 1340666625, 1340666626, 1340666628, 1340666633, 1340666634 ]
+}, {
+  "representativeId" : 15286044932,
+  "unexplainedLengthPixels" : 0.0,
+  "oldLengthPixels" : 71.99157211855899,
+  "removedSourceWayIds" : [ 863070935, 1528604495, 1528604507, 1552174458 ]
+}, {
+  "representativeId" : 13528082672,
+  "unexplainedLengthPixels" : 0.0,
+  "oldLengthPixels" : 3.1006211628826748,
+  "removedSourceWayIds" : [ 871434418, 1252568786, 1252568797, 1360442835, 1360442837, 1389676811, 1389676812, 1389676813, 1389676814, 1389676821, 1389960847 ]
+}, {
+  "representativeId" : 4734965542,
+  "unexplainedLengthPixels" : 0.0,
+  "oldLengthPixels" : 31.560096132824725,
+  "removedSourceWayIds" : [ 548064473, 619010289, 1386675165 ]
+} ]

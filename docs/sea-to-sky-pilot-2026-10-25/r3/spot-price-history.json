@@ -1,0 +1,116 @@
+{
+    "SpotPriceHistory": [
+        {
+            "AvailabilityZone": "us-east-1a",
+            "InstanceType": "m7g.xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.085800",
+            "Timestamp": "2026-10-26T00:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1d",
+            "InstanceType": "m7gd.16xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "1.539000",
+            "Timestamp": "2026-10-25T23:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1c",
+            "InstanceType": "m7g.xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.097600",
+            "Timestamp": "2026-10-25T23:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1a",
+            "InstanceType": "m7g.4xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.266100",
+            "Timestamp": "2026-10-25T23:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1d",
+            "InstanceType": "m7g.4xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.283600",
+            "Timestamp": "2026-10-25T23:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1f",
+            "InstanceType": "m7gd.16xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "2.537600",
+            "Timestamp": "2026-10-25T22:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1f",
+            "InstanceType": "m7g.xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.093600",
+            "Timestamp": "2026-10-25T22:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1c",
+            "InstanceType": "m7g.4xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.360000",
+            "Timestamp": "2026-10-25T22:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1b",
+            "InstanceType": "m7gd.16xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "1.541100",
+            "Timestamp": "2026-10-25T21:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1d",
+            "InstanceType": "m7g.xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.094600",
+            "Timestamp": "2026-10-25T21:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1f",
+            "InstanceType": "m7g.4xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.553500",
+            "Timestamp": "2026-10-25T21:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1a",
+            "InstanceType": "m7g.xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.085100",
+            "Timestamp": "2026-10-25T19:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1b",
+            "InstanceType": "m7g.xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.097200",
+            "Timestamp": "2026-10-25T18:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1b",
+            "InstanceType": "m7g.4xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "0.373600",
+            "Timestamp": "2026-10-25T18:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1a",
+            "InstanceType": "m7gd.16xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "1.255400",
+            "Timestamp": "2026-10-25T17:00:00+00:00"
+        },
+        {
+            "AvailabilityZone": "us-east-1c",
+            "InstanceType": "m7gd.16xlarge",
+            "ProductDescription": "Linux/UNIX",
+            "SpotPrice": "1.543000",
+            "Timestamp": "2026-10-25T17:00:00+00:00"
+        }
+    ]
+}
