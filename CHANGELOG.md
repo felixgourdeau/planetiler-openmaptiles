@@ -15,7 +15,7 @@ resources. No build, deployment, or cloud lookup was performed to write it.
 | Sea to Sky r3 | Prepared trail snapshot, generated archive, decoded all 9,303 tiles and rendered four locations with the existing style. |
 | Full planet | Generated and saved `planet-20261025-r1.pmtiles`; directory validation and stratified content sampling passed. |
 | R2 transfer | Later receipt records completed import into R2 `tiles` under `planet-20261025-r1/artifacts/planet-20261025-r1.pmtiles`. |
-| Production replacement | Backup of the old production archive is recorded. The committed evidence does **not** establish final replacement of `planet-250825.pmtiles`, served-tile validation, cache purge, or migration-credential cleanup. |
+| Production replacement | A receipt created during this documentation pass records the new archive at `planet-250825.pmtiles`, with matching size and sampled ranges. Served-tile validation, cache purge and migration-credential cleanup are not established by that receipt. |
 | New style helpers | Committed here; their existence does not establish web/mobile integration or a released app. |
 
 Earlier feature READMEs describe their state at implementation time. In particular,
@@ -311,11 +311,22 @@ default. Evidence in [publication/](docs/planet-build-2026-10-25-r1/publication/
   AWS credential with separately approved bucket listing. Credentials were kept
   outside Git. See [publication notes/policy](docs/planet-build-2026-10-25-r1/publication/README.md).
 
-The committed evidence stops at import verification. Before resuming any
-replacement, inspect actual production/backup/import state and migration-user
-cleanup rather than trusting an old “running” note or repeating the operation.
-Final production copy, served-tile checks, targeted cache purge and deletion of
-temporary user/key need their own receipts. For an authorized same-key rollback,
+A concurrent local receipt,
+`docs/planet-build-2026-10-25-r1/publication/production-verification.json`, appeared
+while this changelog was being committed. It records production key
+`planet-250825.pmtiles`, LastModified `2026-10-26T13:44:28Z`, size
+104,924,743,209 bytes, `outmap-dataset-revision=planet-20261025-r1`, and SHA metadata
+`c105a182bb9b921aafbce12ecfe40f2724d2f1c547786a7b44a0083c90e3a0d9`. Its sampled
+range hashes match the import receipt. The receipt was untracked when inspected
+and is not included in this documentation-only commit; this paragraph preserves
+the observed result. Its copied scope text says metadata was omitted during
+Super Slurper import, but the production HEAD explicitly contains the restored
+SHA metadata. Neither metadata nor sampled ranges are a full-file rehash.
+
+Before resuming publication, inspect actual production/backup/import state and
+migration-user cleanup rather than trusting an old “running” note or repeating
+the replacement. Served-tile checks, targeted cache purge and deletion of the
+temporary user/key still need their own receipts. For an authorized same-key rollback,
 the verified old backup is the recovery source; do not remove it. Same-key updates
 can leave online caches stale for their lifetime and do not replace offline packs.
 
